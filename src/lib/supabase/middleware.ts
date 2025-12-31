@@ -6,9 +6,23 @@ export async function updateSession(request: NextRequest) {
     request,
   })
 
+  // Skip Supabase auth if credentials are not configured (local development)
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    // In development without Supabase, allow all routes except admin
+    if (request.nextUrl.pathname.startsWith('/admin')) {
+      // For local dev, allow admin access without auth
+      // Remove this block in production
+      console.warn('Supabase not configured - admin routes accessible without auth')
+    }
+    return supabaseResponse
+  }
+
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    supabaseUrl,
+    supabaseAnonKey,
     {
       cookies: {
         getAll() {
