@@ -210,7 +210,7 @@ export default function BrazilTicketsPage() {
 
                 <div className="pt-4 border-t">
                   <Link
-                    href="/fifa-world-cup-2026-tickets/groups/group-c"
+                    href="/fixtures/group-c-world-cup-2026-tickets"
                     className="text-green-600 hover:underline text-sm font-medium"
                   >
                     View Full Group C Standings & Schedule →
@@ -296,36 +296,65 @@ export default function BrazilTicketsPage() {
               </CardContent>
             </Card>
 
-            {/* Team Info */}
+            {/* Team Info - Comprehensive Article */}
             <Card>
               <CardHeader>
-                <CardTitle>About Brazil National Team</CardTitle>
+                <CardTitle>Brazil World Cup 2026: Complete Guide to the Seleção&apos;s Quest for a Sixth Title</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose prose-slate max-w-none">
                 <p>
-                  The <strong>Brazil national football team</strong> (Portuguese: Seleção Brasileira de Futebol)
-                  is the most successful team in World Cup history with five titles (1958, 1962, 1970, 1994, 2002).
+                  The <strong>Brazil national football team</strong> (Portuguese: Seleção Brasileira de Futebol) enters the <Link href="/fifa-world-cup-2026-tickets" className="text-blue-600 hover:underline">2026 FIFA World Cup</Link> as the most successful nation in tournament history with five titles (1958, 1962, 1970, 1994, 2002). After two consecutive quarter-final exits in 2018 and 2022, Brazil is determined to end their 24-year wait for a sixth World Cup trophy.
                 </p>
 
-                <h3>2026 World Cup Prospects</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">2026 World Cup Prospects</h2>
                 <p>
-                  Brazil enter 2026 with renewed hope after early exits in 2018 and 2022. The team features
-                  an exciting young core led by Vinícius Júnior, Rodrygo, and teenage sensation Endrick,
-                  all from Real Madrid. The 24-year wait for a sixth title could end in North America.
+                  Brazil boasts one of the most exciting young squads in world football. The &quot;Real Madrid Connection&quot; — Vinícius Júnior, Rodrygo, and teenage sensation Endrick — leads the attack with devastating pace and technical brilliance. Vinícius Jr., the Ballon d&apos;Or contender, has emerged as Brazil&apos;s talisman and biggest hope for glory.
+                </p>
+                <p>
+                  Under coach Dorival Júnior, Brazil has returned to their traditional &quot;Jogo Bonito&quot; (Beautiful Game) philosophy while maintaining tactical discipline. The squad depth is exceptional, with world-class options in every position.
                 </p>
 
-                <h3>Playing Style</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">Group C Analysis</h2>
                 <p>
-                  Known as &quot;Jogo Bonito&quot; (The Beautiful Game), Brazil traditionally plays an attacking,
-                  skilful style of football. Under Dorival Júnior, the team emphasizes technical excellence
-                  and creative flair combined with tactical discipline.
+                  Brazil has been drawn into <Link href="/fixtures/group-c-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group C</Link> alongside <Link href="/teams/morocco-world-cup-2026-tickets" className="text-blue-600 hover:underline">Morocco</Link>, <Link href="/teams/haiti-world-cup-2026-tickets" className="text-blue-600 hover:underline">Haiti</Link>, and <Link href="/teams/scotland-world-cup-2026-tickets" className="text-blue-600 hover:underline">Scotland</Link>. While Brazil are favorites, each opponent presents unique challenges:
+                </p>
+                <ul>
+                  <li><strong><Link href="/teams/morocco-world-cup-2026-tickets" className="text-blue-600 hover:underline">Morocco</Link></strong> — The 2022 semifinalists who shocked the world in Qatar. Their organized defense and counter-attacking prowess make this match a blockbuster. This could be the match of the group stage.</li>
+                  <li><strong><Link href="/teams/haiti-world-cup-2026-tickets" className="text-blue-600 hover:underline">Haiti</Link></strong> — CONCACAF qualifiers making their second World Cup appearance. They bring Caribbean flair and passionate support.</li>
+                  <li><strong><Link href="/teams/scotland-world-cup-2026-tickets" className="text-blue-600 hover:underline">Scotland</Link></strong> — A physical, well-organized European side. Their fans create an incredible atmosphere and they&apos;ll be up for this challenge.</li>
+                </ul>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">Match Venues</h2>
+                <p>Brazil&apos;s group stage matches are scheduled at premier East Coast venues:</p>
+                <ul>
+                  <li><Link href="/venues/lincoln-financial-field-world-cup-2026-tickets" className="text-blue-600 hover:underline">Lincoln Financial Field</Link> (Philadelphia) — vs Morocco (the match of the group stage!)</li>
+                  <li><Link href="/venues/gillette-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Gillette Stadium</Link> (Boston) — vs Haiti</li>
+                  <li><Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium</Link> (New York/NJ) — vs Scotland (at the venue hosting the Final!)</li>
+                </ul>
+                <p>
+                  Playing at <Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium</Link> in the group stage could give Brazil valuable experience at the Final venue.
                 </p>
 
-                <h3>Group C Analysis</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">CONMEBOL Rivals &amp; Potential Clashes</h2>
                 <p>
-                  Brazil faces Morocco, Haiti, and Scotland in Group C. The match against Morocco promises
-                  to be a highlight, pitting two attacking teams against each other. Brazil are expected
-                  to top the group comfortably.
+                  Brazil&apos;s South American rivals are all dangerous opponents. The classic matchups fans dream of:
+                </p>
+                <ul>
+                  <li><Link href="/teams/argentina-world-cup-2026-tickets" className="text-blue-600 hover:underline">Argentina</Link> — The eternal superclássico. Brazil will want revenge for Argentina&apos;s 2022 triumph</li>
+                  <li><Link href="/teams/colombia-world-cup-2026-tickets" className="text-blue-600 hover:underline">Colombia</Link> — Always a fierce battle when these South American giants meet</li>
+                  <li><Link href="/teams/uruguay-world-cup-2026-tickets" className="text-blue-600 hover:underline">Uruguay</Link> — Historic rivalry dating back to the 1950 World Cup final heartbreak</li>
+                  <li><Link href="/teams/ecuador-world-cup-2026-tickets" className="text-blue-600 hover:underline">Ecuador</Link> — Rising South American force that has troubled Brazil in qualifiers</li>
+                  <li><Link href="/teams/paraguay-world-cup-2026-tickets" className="text-blue-600 hover:underline">Paraguay</Link> — Always a physical, competitive affair</li>
+                </ul>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">World Cup History</h2>
+                <p>
+                  Brazil is the only nation to have won 5 World Cups and the only team to have played in every World Cup since 1930. Their golden generation of 1970 — featuring Pelé, Jairzinho, and Rivelino — is considered the greatest team ever assembled. The 2002 triumph, led by Ronaldo, Ronaldinho, and Rivaldo, marked their last title.
+                </p>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">How to Buy Brazil Tickets</h2>
+                <p>
+                  Brazil matches are among the highest-demand fixtures at any World Cup. We compare prices from Ticketmaster, StubHub, Viagogo, and SeatGeek. Group stage tickets start from approximately $140, with the Brazil vs Morocco clash commanding premium prices. Book early as Brazil matches sell out fast!
                 </p>
               </CardContent>
             </Card>

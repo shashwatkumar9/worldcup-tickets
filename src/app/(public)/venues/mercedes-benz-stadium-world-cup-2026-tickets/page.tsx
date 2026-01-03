@@ -73,11 +73,78 @@ export default function MercedesBenzStadiumPage() {
               </div>
             </div>
 
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Mercedes-Benz Stadium: Mbappé vs Haaland Comes to Atlanta</h2>
+              <p>
+                When <Link href="/teams/france-world-cup-2026-tickets" className="text-red-600 hover:underline">France</Link> faces
+                <Link href="/teams/norway-world-cup-2026-tickets" className="text-red-600 hover:underline">Norway</Link> at
+                Mercedes-Benz Stadium on June 15, 2026, the world will witness the most anticipated group stage match
+                of the entire tournament. Kylian Mbappé - the fastest player on Earth - against Erling Haaland - the
+                most prolific goalscorer of his generation. Atlanta&apos;s stunning stadium provides the perfect stage for
+                football&apos;s generational showdown.
+              </p>
+              <p>
+                Mercedes-Benz Stadium represents the future of football venues. The eight-panel retractable roof,
+                inspired by the Roman Pantheon, opens like a camera aperture. The 360-degree halo video board - the
+                world&apos;s largest - wraps around the interior. This is where Atlanta United proved America&apos;s soccer
+                passion, regularly filling 70,000 seats. The World Cup elevates this already electric atmosphere.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">France vs Norway: The Superstar Clash</h3>
+              <p>
+                This Group I fixture transcends normal group stage significance. <Link href="/teams/france-world-cup-2026-tickets" className="text-red-600 hover:underline">Kylian Mbappé</Link> at
+                27 enters his absolute peak - the 2022 World Cup hat-trick hero now captains Les Bleus as the world&apos;s
+                best player. <Link href="/teams/norway-world-cup-2026-tickets" className="text-red-600 hover:underline">Erling Haaland</Link> at
+                25 has shattered every Premier League scoring record and seeks World Cup glory. These two titans
+                colliding in Atlanta creates must-watch drama.
+              </p>
+              <p>
+                The supporting casts amplify the spectacle. France brings Ousmane Dembélé, Aurélien Tchouaméni, and
+                William Saliba from their endless talent pool. Norway pairs Haaland with Martin Ødegaard&apos;s Arsenal
+                midfield genius. Atlanta&apos;s 71,000 fans will witness elite football from opening whistle to final horn.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Atlanta: America&apos;s Soccer City</h3>
+              <p>
+                Atlanta United&apos;s 2018 MLS Cup championship in front of 73,000 fans proved Atlanta embraces football.
+                The Five Stripes regularly outdraw every other MLS franchise, and the passionate supporter groups -
+                Terminus Legion, Footie Mob, Resurgence - create atmospheres rivaling European ultras. This existing
+                football culture ensures World Cup matches at Mercedes-Benz Stadium deliver authentic passion.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Stadium Experience: The Halo Effect</h3>
+              <p>
+                The 360-degree halo video board measures 63,800 square feet - visible from every seat in the stadium.
+                Replays, statistics, and fan engagement reach unprecedented heights under this technological marvel.
+                The retractable roof opens in 8 minutes, allowing natural light to flood the pitch when conditions permit.
+              </p>
+              <p>
+                Fan-friendly pricing on concessions has made Mercedes-Benz Stadium famous nationwide. $2 hot dogs and
+                $3 sodas ensure families can afford the complete matchday experience. This commitment to accessibility
+                reflects Atlanta&apos;s welcoming culture for World Cup visitors from across the globe.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Atlanta Experience: Southern Football Culture</h3>
+              <p>
+                Atlanta offers world-class entertainment beyond the stadium. The
+                <Link href="/cities/atlanta-world-cup-2026-travel-guide" className="text-red-600 hover:underline">Atlanta travel guide</Link> covers
+                everything from the Georgia Aquarium to the Martin Luther King Jr. historic sites, from Ponce City
+                Market food halls to the BeltLine urban trail.
+              </p>
+              <p>
+                Combine Mercedes-Benz Stadium matches with fixtures at
+                <Link href="/venues/hard-rock-stadium-world-cup-2026-tickets" className="text-red-600 hover:underline">Hard Rock Stadium in Miami</Link> for
+                the Southeast World Cup experience. Direct flights connect Atlanta to every US venue city, making the
+                city an ideal World Cup base.
+              </p>
+            </article>
+
             <Card>
               <CardHeader><CardTitle>About Mercedes-Benz Stadium</CardTitle></CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-slate-600">Mercedes-Benz Stadium features a unique eight-panel retractable roof designed to mimic the Roman Pantheon. Home to Atlanta United (MLS) and the Atlanta Falcons (NFL).</p>
-                <p className="text-slate-600">The stadium's 360-degree LED halo video board is the largest in the world. Atlanta United regularly draws 70,000+ fans, proving Atlanta is a true soccer city.</p>
+                <p className="text-slate-600">The stadium&apos;s 360-degree LED halo video board is the largest in the world. Atlanta United regularly draws 70,000+ fans, proving Atlanta is a true soccer city.</p>
               </CardContent>
             </Card>
 

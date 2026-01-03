@@ -14,36 +14,36 @@ import {
 
 const stats = [
   {
-    name: "Competitions",
-    value: "156",
-    change: "+12 new",
-    icon: Trophy,
-    color: "text-blue-600",
-    bgColor: "bg-blue-50",
-  },
-  {
     name: "Teams",
-    value: "5,678",
-    change: "+45 new",
+    value: "46",
+    change: "World Cup 2026",
     icon: Users,
     color: "text-green-600",
     bgColor: "bg-green-50",
   },
   {
     name: "Fixtures",
-    value: "892",
-    change: "+234 new",
+    value: "114",
+    change: "96 matches + 18 rounds",
     icon: Calendar,
     color: "text-purple-600",
     bgColor: "bg-purple-50",
   },
   {
     name: "Venues",
-    value: "156",
-    change: "+8 new",
+    value: "16",
+    change: "USA/MEX/CAN",
     icon: MapPin,
     color: "text-orange-600",
     bgColor: "bg-orange-50",
+  },
+  {
+    name: "Travel Guides",
+    value: "16",
+    change: "City guides",
+    icon: Trophy,
+    color: "text-blue-600",
+    bgColor: "bg-blue-50",
   },
 ]
 
@@ -72,17 +72,17 @@ const performanceStats = [
 ]
 
 const hotFixtures = [
-  { name: "Brazil vs Argentina", clicks: "12,456", status: "active" },
-  { name: "USA vs Mexico", clicks: "8,923", status: "active" },
-  { name: "NBA Finals Game 7", clicks: "6,234", status: "active" },
-  { name: "India vs Pakistan Cricket", clicks: "5,891", status: "active" },
+  { name: "USA vs Mexico (Group D)", clicks: "12,456", status: "active" },
+  { name: "Brazil vs Morocco (Group C)", clicks: "10,234", status: "active" },
+  { name: "France vs Senegal (Group I)", clicks: "9,891", status: "active" },
+  { name: "England vs Argentina (Knockout)", clicks: "8,567", status: "active" },
 ]
 
 const alerts = [
-  { message: "23 fixtures missing affiliate links", type: "warning" },
-  { message: "12 entities missing translations (DE, FR)", type: "warning" },
-  { message: "5 broken affiliate links detected", type: "error" },
-  { message: "Ticketmaster API sync failed 2 hours ago", type: "error" },
+  { message: "2 teams pending qualification (TBD slots)", type: "warning" },
+  { message: "All 16 venues have content", type: "success" },
+  { message: "All 16 travel guides published", type: "success" },
+  { message: "12 group pages live with fixtures", type: "success" },
 ]
 
 export default function AdminDashboard() {
@@ -170,17 +170,17 @@ export default function AdminDashboard() {
                   <div
                     key={index}
                     className={`flex items-center gap-3 rounded-lg p-3 ${
-                      alert.type === "error" ? "bg-red-50" : "bg-yellow-50"
+                      alert.type === "error" ? "bg-red-50" : alert.type === "success" ? "bg-green-50" : "bg-yellow-50"
                     }`}
                   >
                     <AlertCircle
                       className={`h-5 w-5 ${
-                        alert.type === "error" ? "text-red-500" : "text-yellow-500"
+                        alert.type === "error" ? "text-red-500" : alert.type === "success" ? "text-green-500" : "text-yellow-500"
                       }`}
                     />
                     <p
                       className={`text-sm ${
-                        alert.type === "error" ? "text-red-700" : "text-yellow-700"
+                        alert.type === "error" ? "text-red-700" : alert.type === "success" ? "text-green-700" : "text-yellow-700"
                       }`}
                     >
                       {alert.message}

@@ -53,6 +53,10 @@ export default function AffiliatesPage() {
   const fetchLinks = async () => {
     setLoading(true)
     const supabase = createClient()
+    if (!supabase) {
+      setLoading(false)
+      return
+    }
 
     let query = supabase
       .from("affiliate_links")
@@ -90,6 +94,8 @@ export default function AffiliatesPage() {
     if (!confirm("Are you sure you want to delete this affiliate link?")) return
 
     const supabase = createClient()
+    if (!supabase) return
+
     const { error } = await supabase.from("affiliate_links").delete().eq("id", id)
 
     if (error) {
@@ -102,6 +108,8 @@ export default function AffiliatesPage() {
 
   const toggleActive = async (id: string, currentStatus: boolean) => {
     const supabase = createClient()
+    if (!supabase) return
+
     const { error } = await supabase
       .from("affiliate_links")
       .update({ is_active: !currentStatus })

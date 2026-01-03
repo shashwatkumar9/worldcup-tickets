@@ -52,6 +52,66 @@ export default function EgyptTicketsPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-8">
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Egypt World Cup 2026: The Pharaohs Rise with Salah</h2>
+              <p>
+                Mohamed Salah is one of football&apos;s brightest stars, and Egypt&apos;s qualification for the 2026 FIFA World Cup
+                gives the Liverpool forward another chance at the global glory that has eluded him. The Pharaohs missed
+                the 2022 World Cup after a heartbreaking penalty shootout loss to <Link href="/teams/senegal-world-cup-2026-tickets" className="text-red-600 hover:underline">Senegal</Link>.
+                In 2026, Salah leads Egypt back to football&apos;s greatest stage with a point to prove.
+              </p>
+              <p>
+                Egyptian football passion is legendary. With over 100 million people, Egypt has the largest population
+                of any African nation, and when the national team plays, the entire country stops. The passionate
+                support, the drums, the songs - Egyptian fans create atmospheres that rival any in world football.
+                American stadiums will experience the full force of this support in 2026.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Group G: Belgium and the Golden Generation</h3>
+              <p>
+                Egypt faces <Link href="/teams/belgium-world-cup-2026-tickets" className="text-red-600 hover:underline">Belgium</Link> in
+                the opening match at <Link href="/venues/hard-rock-stadium-world-cup-2026" className="text-red-600 hover:underline">Hard Rock Stadium in Miami</Link> -
+                a clash between Salah&apos;s brilliance and Kevin De Bruyne&apos;s creativity. The second match against
+                <Link href="/teams/iran-world-cup-2026-tickets" className="text-red-600 hover:underline">Iran</Link> at
+                <Link href="/venues/levis-stadium-world-cup-2026" className="text-red-600 hover:underline">Levi&apos;s Stadium in San Francisco</Link> brings
+                Middle Eastern rivalry, while <Link href="/teams/new-zealand-world-cup-2026-tickets" className="text-red-600 hover:underline">New Zealand</Link> at
+                <Link href="/venues/sofi-stadium-world-cup-2026" className="text-red-600 hover:underline">SoFi Stadium in Los Angeles</Link> offers
+                a crucial final group match.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Salah&apos;s Quest: The Missing Glory</h3>
+              <p>
+                Mohamed Salah has won everything at club level - Premier League, Champions League, countless individual
+                awards. But international glory has remained elusive. At 34 during the 2026 World Cup, this represents
+                one of his final opportunities to add World Cup success to his incredible legacy. Every Egypt match
+                will be a Salah showcase, and the world will be watching.
+              </p>
+              <p>
+                Supporting Salah is a new generation of Egyptian talent. Omar Marmoush has emerged as a Bundesliga
+                star at Eintracht Frankfurt, adding another dangerous attacking option. The blend of Salah&apos;s
+                world-class ability and emerging talents gives Egypt genuine hope of advancing beyond the group stage.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">African Representation: CAF Nations United</h3>
+              <p>
+                Egypt enters as one of nine CAF nations at the 2026 World Cup, alongside
+                <Link href="/teams/morocco-world-cup-2026-tickets" className="text-red-600 hover:underline">Morocco</Link>,
+                <Link href="/teams/senegal-world-cup-2026-tickets" className="text-red-600 hover:underline">Senegal</Link>,
+                <Link href="/teams/algeria-world-cup-2026-tickets" className="text-red-600 hover:underline">Algeria</Link>,
+                <Link href="/teams/ghana-world-cup-2026-tickets" className="text-red-600 hover:underline">Ghana</Link>,
+                <Link href="/teams/tunisia-world-cup-2026-tickets" className="text-red-600 hover:underline">Tunisia</Link>, and others.
+                The expanded 48-team format provides unprecedented opportunity for African football to shine.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Egyptian-American Diaspora: Passionate Support</h3>
+              <p>
+                The Egyptian-American community, particularly concentrated in California and New Jersey, will provide
+                passionate support. Los Angeles and Miami matches will see Egyptian flags waving throughout the
+                stadiums, while the global Egyptian diaspora ensures Pharaoh support worldwide.
+              </p>
+            </article>
+
             <Card className="border-yellow-400 bg-yellow-50">
               <CardContent className="p-6">
                 <h3 className="font-bold text-yellow-900">The Salah Factor</h3>

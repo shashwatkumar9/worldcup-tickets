@@ -59,6 +59,61 @@ export default function AustraliaTicketsPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-8">
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Australia World Cup 2026: Socceroos Face the Hosts</h2>
+              <p>
+                The Socceroos captured Australian hearts at the 2022 World Cup, reaching the Round of 16 and pushing
+                eventual champions <Link href="/teams/argentina-world-cup-2026-tickets" className="text-green-600 hover:underline">Argentina</Link> harder
+                than anyone expected. That tournament sparked renewed passion for football in Australia, and the 2026
+                World Cup represents the opportunity to build on that momentum - with the added drama of facing host
+                nation <Link href="/teams/usa-world-cup-2026-tickets" className="text-green-600 hover:underline">USA</Link> in
+                the group stage.
+              </p>
+              <p>
+                Australian football has evolved dramatically. The days of Route One tactics are long gone, replaced by
+                a technical approach that sees Socceroos players compete in European leagues across the continent.
+                The national team now possesses genuine quality throughout the squad, not just in isolated star positions.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Group D: USA Showdown on West Coast</h3>
+              <p>
+                Australia draws Group D alongside hosts <Link href="/teams/usa-world-cup-2026-tickets" className="text-green-600 hover:underline">USA</Link> and
+                <Link href="/teams/paraguay-world-cup-2026-tickets" className="text-green-600 hover:underline">Paraguay</Link>.
+                The clash against the Americans at <Link href="/venues/levis-stadium-world-cup-2026" className="text-green-600 hover:underline">Levi&apos;s Stadium in San Francisco</Link> will
+                be one of the most-watched matches of the tournament, with 70,000 fans creating an intense atmosphere.
+                Australia opens against Paraguay at <Link href="/venues/sofi-stadium-world-cup-2026" className="text-green-600 hover:underline">SoFi Stadium in Los Angeles</Link>,
+                where the large Australian expat community in California will provide passionate support.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">A-League to Europe: Player Development Revolution</h3>
+              <p>
+                The current Socceroos squad reflects Australia&apos;s improved player pathway. Mat Ryan, the captain,
+                has played in La Liga, the Premier League, and now in the Eredivisie. Jackson Irvine captains
+                St. Pauli in the Bundesliga, while Riley McGree and Cameron Devlin compete in the English
+                Championship and Scottish Premiership respectively. This European experience gives Australia
+                the tactical maturity to compete with anyone.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">AFC Ambitions: Asian Football Rising</h3>
+              <p>
+                Australia competes as part of the AFC, entering alongside <Link href="/teams/japan-world-cup-2026-tickets" className="text-green-600 hover:underline">Japan</Link>,
+                <Link href="/teams/korea-world-cup-2026-tickets" className="text-green-600 hover:underline">South Korea</Link>,
+                <Link href="/teams/saudi-arabia-world-cup-2026-tickets" className="text-green-600 hover:underline">Saudi Arabia</Link>, and
+                <Link href="/teams/iran-world-cup-2026-tickets" className="text-green-600 hover:underline">Iran</Link>.
+                The expanded 48-team format provides Asian football unprecedented opportunity, and Australia&apos;s
+                2022 success proved the continent can compete at the highest level.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Traveling Support: Green and Gold Army</h3>
+              <p>
+                Australian fans are famous for their traveling support. Despite the distance, thousands will make
+                the journey to the United States, with California&apos;s existing Australian expat community swelling
+                the numbers. The Green and Gold Army&apos;s chants, particularly the famous &quot;Aussie Aussie Aussie, Oi Oi Oi,&quot;
+                will echo through American stadiums as Australia seeks to write new chapters in Socceroos history.
+              </p>
+            </article>
+
             <Card>
               <CardHeader><CardTitle className="flex items-center gap-2"><Calendar className="h-5 w-5 text-green-600" />Group D Schedule</CardTitle></CardHeader>
               <CardContent className="space-y-4">

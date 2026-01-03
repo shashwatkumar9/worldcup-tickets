@@ -73,10 +73,46 @@ export default function BMOFieldPage() {
               </div>
             </div>
 
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">BMO Field: Canada&apos;s Football Home Welcomes the World</h2>
+              <p>
+                BMO Field represents everything <Link href="/teams/canada-world-cup-2026-tickets" className="text-red-600 hover:underline">Canada</Link> has
+                built toward in football. The nation&apos;s first soccer-specific stadium, expanded to 45,000 for the World
+                Cup, hosts the majority of Canada&apos;s home matches in their historic tournament. Alphonso Davies, Jonathan
+                David, and the golden generation of Canadian talent will perform before their home fans at the venue where
+                Toronto FC built one of MLS&apos;s most passionate supporter cultures.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Canada&apos;s Group B Campaign: Home Court Advantage</h3>
+              <p>
+                BMO Field hosts multiple <Link href="/teams/canada-world-cup-2026-tickets" className="text-red-600 hover:underline">Canada</Link> matches
+                including clashes with <Link href="/teams/qatar-world-cup-2026-tickets" className="text-red-600 hover:underline">Qatar</Link> (the
+                2022 hosts) and <Link href="/teams/switzerland-world-cup-2026-tickets" className="text-red-600 hover:underline">Switzerland</Link>.
+                The intimate 45,000-seat capacity creates intense atmosphere, with every cheer amplified by the stadium&apos;s
+                acoustic design. Canadian supporters, organized and passionate, will make this a fortress.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Lake Ontario Setting: Waterfront Football</h3>
+              <p>
+                BMO Field sits on Toronto&apos;s Exhibition Place grounds with Lake Ontario and the CN Tower providing
+                spectacular backdrop. Summer evening matches offer golden-hour light across the pitch, creating
+                picture-perfect World Cup moments.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Toronto Experience: Canada&apos;s Global City</h3>
+              <p>
+                Toronto offers world-class hospitality. The CN Tower, Royal Ontario Museum, diverse neighborhoods from
+                Kensington Market to Little Italy, and endless dining options await. The
+                <Link href="/cities/toronto-world-cup-2026-travel-guide" className="text-red-600 hover:underline">Toronto travel guide</Link> covers
+                accommodation from downtown financial district luxury to charming Queen West boutiques.
+              </p>
+            </article>
+
             <Card>
               <CardHeader><CardTitle>About BMO Field</CardTitle></CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-slate-600">BMO Field opened in 2007 as Canada's first soccer-specific stadium. It has been expanded multiple times and now also hosts the Toronto Argonauts (CFL).</p>
+                <p className="text-slate-600">BMO Field opened in 2007 as Canada&apos;s first soccer-specific stadium. It has been expanded multiple times and now also hosts the Toronto Argonauts (CFL).</p>
                 <p className="text-slate-600">Located on the Exhibition Place grounds with stunning views of Lake Ontario and the Toronto skyline. The stadium will be further expanded to 45,000 seats for the World Cup.</p>
               </CardContent>
             </Card>

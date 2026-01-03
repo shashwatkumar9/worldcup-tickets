@@ -287,35 +287,66 @@ export default function SpainTicketsPage() {
               </CardContent>
             </Card>
 
+            {/* Team Info - Comprehensive Article */}
             <Card>
               <CardHeader>
-                <CardTitle>About Spain National Team</CardTitle>
+                <CardTitle>Spain World Cup 2026: Complete Guide to La Roja&apos;s New Golden Generation</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose prose-slate max-w-none">
                 <p>
-                  The <strong>Spain national football team</strong> (Spanish: Selección Española de Fútbol)
-                  won the 2010 World Cup and is the current European Champion after winning Euro 2024 in Germany.
+                  The <strong>Spain national football team</strong> (Spanish: Selección Española de Fútbol) enters the <Link href="/fifa-world-cup-2026-tickets" className="text-blue-600 hover:underline">2026 FIFA World Cup</Link> as the reigning European Champions after their dominant Euro 2024 triumph. La Roja has seamlessly transitioned from the legendary 2010 World Cup-winning generation to an exciting new era led by teenage sensation Lamine Yamal.
                 </p>
 
-                <h3>2026 World Cup Prospects</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">2026 World Cup Prospects</h2>
                 <p>
-                  Spain enter 2026 as one of the favorites after their dominant Euro 2024 triumph. The team
-                  has seamlessly transitioned from the golden generation to an exciting new era, with 17-year-old
-                  Lamine Yamal already a star and other young talents like Pedri and Nico Williams in their prime.
+                  Spain&apos;s blend of youth and experience makes them genuine favorites. At just 18 years old, Lamine Yamal is already one of the world&apos;s most exciting players — his performances at Euro 2024 (where he became the youngest player and youngest scorer in the tournament&apos;s history) announced a generational talent.
+                </p>
+                <p>
+                  The midfield remains Spain&apos;s engine room, with Pedri, Gavi, and Rodri controlling games with their trademark passing precision. Nico Williams provides pace and directness on the wing, while established stars like Álvaro Morata and Dani Olmo offer experience.
                 </p>
 
-                <h3>The Yamal Phenomenon</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">Group H Analysis</h2>
                 <p>
-                  Lamine Yamal became the youngest player to appear at a European Championship at Euro 2024 and
-                  dazzled the world with his performances. By 2026, at just 18 years old, he&apos;ll be one of
-                  the most watched players in world football.
+                  Spain has been drawn into <Link href="/fixtures/group-h-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group H</Link> alongside <Link href="/teams/cape-verde-world-cup-2026-tickets" className="text-blue-600 hover:underline">Cape Verde</Link>, <Link href="/teams/saudi-arabia-world-cup-2026-tickets" className="text-blue-600 hover:underline">Saudi Arabia</Link>, and <Link href="/teams/uruguay-world-cup-2026-tickets" className="text-blue-600 hover:underline">Uruguay</Link>. A fascinating group awaits:
+                </p>
+                <ul>
+                  <li><strong><Link href="/teams/cape-verde-world-cup-2026-tickets" className="text-blue-600 hover:underline">Cape Verde</Link></strong> — Making their World Cup debut! The Blue Sharks will bring African football&apos;s flair and passion.</li>
+                  <li><strong><Link href="/teams/saudi-arabia-world-cup-2026-tickets" className="text-blue-600 hover:underline">Saudi Arabia</Link></strong> — Giant killers who shocked Argentina in 2022. Never underestimate them.</li>
+                  <li><strong><Link href="/teams/uruguay-world-cup-2026-tickets" className="text-blue-600 hover:underline">Uruguay</Link></strong> — The highlight! Two World Cup winners with rich history. A La Liga-dominated affair with familiar faces.</li>
+                </ul>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">Match Venues</h2>
+                <p>Spain will play across major American cities:</p>
+                <ul>
+                  <li><Link href="/venues/hard-rock-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Hard Rock Stadium</Link> (Miami) — vs Cape Verde (huge Spanish-speaking crowd expected)</li>
+                  <li><Link href="/venues/att-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">AT&T Stadium</Link> (Dallas) — vs Saudi Arabia</li>
+                  <li><Link href="/venues/mercedes-benz-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Mercedes-Benz Stadium</Link> (Atlanta) — vs Uruguay (game of the group!)</li>
+                </ul>
+                <p>
+                  Spain will benefit from massive Latino support in Miami and Dallas. <Link href="/venues/att-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">AT&T Stadium</Link> hosts a semifinal, making it a potential preview of later rounds.
                 </p>
 
-                <h3>Tiki-Taka Evolution</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">UEFA Rivals &amp; Knockout Stage Matchups</h2>
                 <p>
-                  While Spain remain masters of possession football, Luis de la Fuente has added directness
-                  and pace to the traditional tiki-taka style. The combination of technical excellence and
-                  attacking threat makes this Spanish team extremely dangerous.
+                  Spain will need to beat Europe&apos;s best again to lift the trophy:
+                </p>
+                <ul>
+                  <li><Link href="/teams/england-world-cup-2026-tickets" className="text-blue-600 hover:underline">England</Link> — Euro 2024 final rematch potential. England will want revenge.</li>
+                  <li><Link href="/teams/france-world-cup-2026-tickets" className="text-blue-600 hover:underline">France</Link> — Classic rivalry between two possession-based philosophies.</li>
+                  <li><Link href="/teams/germany-world-cup-2026-tickets" className="text-blue-600 hover:underline">Germany</Link> — Euro 2024 quarterfinal drama still fresh.</li>
+                  <li><Link href="/teams/portugal-world-cup-2026-tickets" className="text-blue-600 hover:underline">Portugal</Link> — Iberian derby on the biggest stage.</li>
+                  <li><Link href="/teams/netherlands-world-cup-2026-tickets" className="text-blue-600 hover:underline">Netherlands</Link> — 2010 World Cup Final rematch?</li>
+                  <li><Link href="/teams/italy-world-cup-2026-tickets" className="text-blue-600 hover:underline">Italy</Link> — Memories of Euro 2020 semifinal victory.</li>
+                </ul>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">World Cup History</h2>
+                <p>
+                  Spain&apos;s World Cup glory came in 2010, when they won their first title in South Africa with Andrés Iniesta&apos;s extra-time winner against the <Link href="/teams/netherlands-world-cup-2026-tickets" className="text-blue-600 hover:underline">Netherlands</Link>. That team also won Euro 2008 and 2012, establishing Spain as the dominant force in world football. The 2026 generation aims to match that legacy.
+                </p>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">How to Buy Spain Tickets</h2>
+                <p>
+                  Spain&apos;s passionate fanbase travels in numbers, and matches in cities with large Hispanic populations (Miami, Dallas) will see incredible atmospheres. We compare prices from Ticketmaster, StubHub, Viagogo, and SeatGeek. Group stage tickets start from approximately $130. The Spain vs Uruguay clash is expected to command premium prices.
                 </p>
               </CardContent>
             </Card>

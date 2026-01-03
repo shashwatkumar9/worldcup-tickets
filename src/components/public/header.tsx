@@ -116,22 +116,22 @@ const wc2026Venues = {
 }
 
 const wc2026TravelGuides = [
-  { city: "New York", country: "🇺🇸", slug: "new-york-travel-guide" },
-  { city: "Los Angeles", country: "🇺🇸", slug: "los-angeles-travel-guide" },
-  { city: "Dallas", country: "🇺🇸", slug: "dallas-travel-guide" },
-  { city: "Atlanta", country: "🇺🇸", slug: "atlanta-travel-guide" },
-  { city: "Miami", country: "🇺🇸", slug: "miami-travel-guide" },
-  { city: "Houston", country: "🇺🇸", slug: "houston-travel-guide" },
-  { city: "Philadelphia", country: "🇺🇸", slug: "philadelphia-travel-guide" },
-  { city: "Seattle", country: "🇺🇸", slug: "seattle-travel-guide" },
-  { city: "San Francisco", country: "🇺🇸", slug: "san-francisco-travel-guide" },
-  { city: "Boston", country: "🇺🇸", slug: "boston-travel-guide" },
-  { city: "Kansas City", country: "🇺🇸", slug: "kansas-city-travel-guide" },
-  { city: "Mexico City", country: "🇲🇽", slug: "mexico-city-travel-guide" },
-  { city: "Guadalajara", country: "🇲🇽", slug: "guadalajara-travel-guide" },
-  { city: "Monterrey", country: "🇲🇽", slug: "monterrey-travel-guide" },
-  { city: "Toronto", country: "🇨🇦", slug: "toronto-travel-guide" },
-  { city: "Vancouver", country: "🇨🇦", slug: "vancouver-travel-guide" },
+  { city: "New York", country: "🇺🇸", slug: "new-york-world-cup-2026-travel-guide" },
+  { city: "Los Angeles", country: "🇺🇸", slug: "los-angeles-world-cup-2026-travel-guide" },
+  { city: "Dallas", country: "🇺🇸", slug: "dallas-world-cup-2026-travel-guide" },
+  { city: "Atlanta", country: "🇺🇸", slug: "atlanta-world-cup-2026-travel-guide" },
+  { city: "Miami", country: "🇺🇸", slug: "miami-world-cup-2026-travel-guide" },
+  { city: "Houston", country: "🇺🇸", slug: "houston-world-cup-2026-travel-guide" },
+  { city: "Philadelphia", country: "🇺🇸", slug: "philadelphia-world-cup-2026-travel-guide" },
+  { city: "Seattle", country: "🇺🇸", slug: "seattle-world-cup-2026-travel-guide" },
+  { city: "San Francisco", country: "🇺🇸", slug: "san-francisco-world-cup-2026-travel-guide" },
+  { city: "Boston", country: "🇺🇸", slug: "boston-world-cup-2026-travel-guide" },
+  { city: "Kansas City", country: "🇺🇸", slug: "kansas-city-world-cup-2026-travel-guide" },
+  { city: "Mexico City", country: "🇲🇽", slug: "mexico-city-world-cup-2026-travel-guide" },
+  { city: "Guadalajara", country: "🇲🇽", slug: "guadalajara-world-cup-2026-travel-guide" },
+  { city: "Monterrey", country: "🇲🇽", slug: "monterrey-world-cup-2026-travel-guide" },
+  { city: "Toronto", country: "🇨🇦", slug: "toronto-world-cup-2026-travel-guide" },
+  { city: "Vancouver", country: "🇨🇦", slug: "vancouver-world-cup-2026-travel-guide" },
 ]
 
 const megaMenuItems = [
@@ -428,7 +428,7 @@ export function PublicHeader() {
                           </div>
                           <div className="mt-4 pt-4 border-t text-center">
                             <Link
-                              href="/fifa-world-cup-2026-tickets/teams"
+                              href="/fifa-world-cup-2026-tickets#teams"
                               className="text-blue-600 text-sm font-medium hover:underline"
                             >
                               View All 48 Teams →
@@ -513,7 +513,7 @@ export function PublicHeader() {
                           </div>
                           <div className="mt-4 pt-4 border-t text-center">
                             <Link
-                              href="/fifa-world-cup-2026-tickets/venues"
+                              href="/fifa-world-cup-2026-tickets#venues"
                               className="text-blue-600 text-sm font-medium hover:underline"
                             >
                               View All 16 Venues →
@@ -533,7 +533,7 @@ export function PublicHeader() {
                                 {["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"].map((group) => (
                                   <li key={group}>
                                     <Link
-                                      href={`/fifa-world-cup-2026-tickets/groups/group-${group.toLowerCase()}`}
+                                      href={`/fixtures/group-${group.toLowerCase()}-world-cup-2026-tickets`}
                                       className="text-sm text-slate-600 hover:text-blue-600"
                                     >
                                       Group {group}
@@ -548,25 +548,25 @@ export function PublicHeader() {
                               <h4 className="font-semibold text-slate-900 mb-3">Knockout Stage</h4>
                               <ul className="space-y-2">
                                 <li>
-                                  <Link href="/fifa-world-cup-2026-tickets/round-of-32" className="text-sm text-slate-600 hover:text-blue-600">
+                                  <Link href="/fixtures/round-of-32-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600">
                                     Round of 32
                                   </Link>
                                   <span className="text-xs text-slate-400 block">June 28 - July 3</span>
                                 </li>
                                 <li>
-                                  <Link href="/fifa-world-cup-2026-tickets/round-of-16" className="text-sm text-slate-600 hover:text-blue-600">
+                                  <Link href="/fixtures/round-of-16-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600">
                                     Round of 16
                                   </Link>
                                   <span className="text-xs text-slate-400 block">July 4-7</span>
                                 </li>
                                 <li>
-                                  <Link href="/fifa-world-cup-2026-tickets/quarter-finals" className="text-sm text-slate-600 hover:text-blue-600">
+                                  <Link href="/fixtures/quarter-finals-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600">
                                     Quarter-Finals
                                   </Link>
                                   <span className="text-xs text-slate-400 block">July 9-11</span>
                                 </li>
                                 <li>
-                                  <Link href="/fifa-world-cup-2026-tickets/semi-finals" className="text-sm text-slate-600 hover:text-blue-600">
+                                  <Link href="/fixtures/semi-finals-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600">
                                     Semi-Finals
                                   </Link>
                                   <span className="text-xs text-slate-400 block">July 14-15</span>
@@ -579,20 +579,20 @@ export function PublicHeader() {
                               <h4 className="font-semibold text-slate-900 mb-3">Special Matches</h4>
                               <ul className="space-y-2">
                                 <li>
-                                  <Link href="/fifa-world-cup-2026-tickets/opening-match" className="text-sm text-slate-600 hover:text-blue-600 flex items-center gap-1">
+                                  <Link href="/fixtures/mexico-vs-south-africa-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600 flex items-center gap-1">
                                     Opening Match
                                     <span className="text-xs bg-green-100 text-green-700 px-1 rounded">Jun 11</span>
                                   </Link>
                                   <span className="text-xs text-slate-400 block">Mexico vs South Africa</span>
                                 </li>
                                 <li>
-                                  <Link href="/fifa-world-cup-2026-tickets/third-place" className="text-sm text-slate-600 hover:text-blue-600">
+                                  <Link href="/fixtures/third-place-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600">
                                     Third Place Match
                                   </Link>
                                   <span className="text-xs text-slate-400 block">July 18, Miami</span>
                                 </li>
                                 <li>
-                                  <Link href="/fifa-world-cup-2026-tickets/final" className="text-sm font-medium text-yellow-600 hover:text-yellow-700 flex items-center gap-1">
+                                  <Link href="/fixtures/final-world-cup-2026-tickets" className="text-sm font-medium text-yellow-600 hover:text-yellow-700 flex items-center gap-1">
                                     🏆 WORLD CUP FINAL
                                     <span className="text-xs bg-yellow-100 text-yellow-700 px-1 rounded">Jul 19</span>
                                   </Link>
@@ -634,7 +634,7 @@ export function PublicHeader() {
                           </div>
                           <div className="mt-4 pt-4 border-t text-center">
                             <Link
-                              href="/fifa-world-cup-2026-tickets/fixtures"
+                              href="/fifa-world-cup-2026-tickets"
                               className="text-blue-600 text-sm font-medium hover:underline"
                             >
                               View Full Match Schedule →
@@ -650,7 +650,7 @@ export function PublicHeader() {
                             {wc2026TravelGuides.map((city) => (
                               <Link
                                 key={city.slug}
-                                href={`/fifa-world-cup-2026-tickets/travel/${city.slug}`}
+                                href={`/travel/${city.slug}`}
                                 className="flex items-center gap-2 p-3 rounded-lg border hover:bg-slate-50 transition-colors"
                               >
                                 <span className="text-xl">{city.country}</span>
@@ -674,7 +674,7 @@ export function PublicHeader() {
                           </div>
                           <div className="mt-4 text-center">
                             <Link
-                              href="/fifa-world-cup-2026-tickets/travel"
+                              href="/fifa-world-cup-2026-tickets#travel"
                               className="text-blue-600 text-sm font-medium hover:underline"
                             >
                               View All Travel Guides →

@@ -88,6 +88,79 @@ export default function HardRockStadiumPage() {
               </div>
             </div>
 
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Hard Rock Stadium: Miami&apos;s World Cup Showcase</h2>
+              <p>
+                Miami brings the heat to the 2026 World Cup, and Hard Rock Stadium sits at the center of South Florida&apos;s
+                football fiesta. This venue hosts the Third Place Play-off - the bronze medal match of the World Cup -
+                alongside a Quarter-Final and group stage fixtures. Miami&apos;s Latin American community ensures every match
+                delivers carnival atmosphere, while the stadium&apos;s innovative canopy provides shade from the Florida sun.
+              </p>
+              <p>
+                Hard Rock Stadium has evolved into one of America&apos;s premier sports destinations. From the Miami Dolphins
+                to Formula 1&apos;s Miami Grand Prix, from the Miami Open tennis tournament to six Super Bowls, this venue
+                knows how to host world-class events. The 2026 World Cup adds football&apos;s greatest tournament to this
+                impressive resume.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Third Place Play-off: The Bronze Medal Match</h3>
+              <p>
+                The Third Place Play-off carries unique significance. Two teams who came agonizingly close to the Final
+                compete for World Cup bronze. Recent editions have produced memorable matches - <Link href="/teams/croatia-world-cup-2026-tickets" className="text-orange-600 hover:underline">Croatia</Link> vs
+                <Link href="/teams/morocco-world-cup-2026-tickets" className="text-orange-600 hover:underline">Morocco</Link> in 2022 showcased
+                incredible quality. On July 18, 2026, Miami hosts this contest between the World Cup&apos;s third and fourth
+                best teams.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Group G Fixtures: Belgium and Egypt in the Sunshine</h3>
+              <p>
+                Hard Rock Stadium hosts blockbuster Group G fixtures including
+                <Link href="/teams/belgium-world-cup-2026-tickets" className="text-orange-600 hover:underline">Belgium</Link> vs
+                <Link href="/teams/egypt-world-cup-2026-tickets" className="text-orange-600 hover:underline">Egypt</Link> - a clash
+                between Kevin De Bruyne&apos;s creativity and Mohamed Salah&apos;s brilliance. The stadium&apos;s massive international
+                appeal draws fans from across the globe, while Miami&apos;s Egyptian and Middle Eastern communities will
+                create electric atmospheres for Egypt fixtures.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Stadium Innovation: The Canopy Revolution</h3>
+              <p>
+                Hard Rock Stadium&apos;s $550 million renovation, completed in 2016, transformed the venue with an iconic
+                canopy structure. The four towering supports hold a partial roof that provides shade to 92% of seats
+                while maintaining an open-air feel. For summer World Cup matches in Florida, this engineering marvel
+                ensures fan comfort during afternoon kickoffs.
+              </p>
+              <p>
+                The stadium configuration for football includes temporary natural grass over the NFL field, meeting FIFA&apos;s
+                exacting standards. With 65,000 capacity, every seat offers excellent sightlines and atmosphere.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Miami Experience: World Cup Party Central</h3>
+              <p>
+                Miami offers the ultimate World Cup destination for fans seeking sun, beach, and nightlife alongside
+                football. South Beach, Brickell, Wynwood, and Little Havana provide diverse entertainment options.
+                The <Link href="/cities/miami-world-cup-2026-travel-guide" className="text-orange-600 hover:underline">Miami travel guide</Link> covers
+                everything from Art Deco hotels to Cuban cuisine.
+              </p>
+              <p>
+                Miami&apos;s Latin American connections run deep. The city&apos;s Colombian, Argentine, Brazilian, and Cuban
+                communities transform into passionate football supporters during tournaments. When
+                <Link href="/teams/argentina-world-cup-2026-tickets" className="text-orange-600 hover:underline">Argentina</Link>,
+                <Link href="/teams/brazil-world-cup-2026-tickets" className="text-orange-600 hover:underline">Brazil</Link>, or
+                <Link href="/teams/colombia-world-cup-2026-tickets" className="text-orange-600 hover:underline">Colombia</Link> play,
+                the entire city celebrates.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Southern US Venues: Gulf Coast World Cup Trail</h3>
+              <p>
+                Combine Hard Rock Stadium matches with fixtures at
+                <Link href="/venues/mercedes-benz-stadium-world-cup-2026-tickets" className="text-orange-600 hover:underline">Mercedes-Benz Stadium in Atlanta</Link> or
+                <Link href="/venues/nrg-stadium-world-cup-2026-tickets" className="text-orange-600 hover:underline">NRG Stadium in Houston</Link> for
+                the Southern World Cup experience. Flight connections across the Gulf Coast make multi-venue itineraries
+                accessible.
+              </p>
+            </article>
+
             <Card>
               <CardHeader><CardTitle>About Hard Rock Stadium</CardTitle></CardHeader>
               <CardContent className="space-y-4">

@@ -71,6 +71,62 @@ export default function JapanTicketsPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-8">
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Japan World Cup 2026: The Giant Killers Return</h2>
+              <p>
+                No team captured the imagination at the 2022 World Cup quite like Japan. The Samurai Blue stunned
+                the football world by defeating both <Link href="/teams/germany-world-cup-2026-tickets" className="text-red-600 hover:underline">Germany</Link> and
+                <Link href="/teams/spain-world-cup-2026-tickets" className="text-red-600 hover:underline">Spain</Link> in
+                the group stage - two World Cup winners brought to their knees by Japanese precision and discipline.
+                In 2026, this golden generation of European-based stars enters their prime, hungry to finally break
+                through the Round of 16 barrier that has frustrated Japanese football for decades.
+              </p>
+              <p>
+                Japan&apos;s transformation from Asian power to genuine global contender is complete. Where once the
+                Samurai Blue relied on J-League talent supplemented by European-based players, the current squad
+                features starters at Liverpool, Arsenal, Brighton, and Real Sociedad. This isn&apos;t a team that hopes
+                to compete with Europe&apos;s best - it&apos;s a team that has already proven it can beat them.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Group F: Netherlands Clash Headlines</h3>
+              <p>
+                Japan faces a challenging Group F, opening against <Link href="/teams/netherlands-world-cup-2026-tickets" className="text-red-600 hover:underline">Netherlands</Link> at
+                <Link href="/venues/mercedes-benz-stadium-world-cup-2026" className="text-red-600 hover:underline">Mercedes-Benz Stadium in Atlanta</Link>.
+                The Dutch, three-time World Cup finalists, represent exactly the caliber of opponent Japan has learned
+                to defeat. <Link href="/teams/tunisia-world-cup-2026-tickets" className="text-red-600 hover:underline">Tunisia</Link> at
+                <Link href="/venues/nrg-stadium-world-cup-2026" className="text-red-600 hover:underline">NRG Stadium in Houston</Link> provides
+                the second test before the final group match at <Link href="/venues/hard-rock-stadium-world-cup-2026" className="text-red-600 hover:underline">Hard Rock Stadium in Miami</Link>.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Premier League Stars Lead the Charge</h3>
+              <p>
+                Wataru Endo captains the side from Liverpool&apos;s midfield, bringing Anfield&apos;s winning mentality
+                to the national team. Takehiro Tomiyasu anchors the defense with Arsenal&apos;s tactical discipline,
+                while Kaoru Mitoma has emerged as one of the Premier League&apos;s most exciting dribblers at Brighton.
+                Add Takefusa Kubo&apos;s creative brilliance at Real Sociedad and Ritsu Dōan&apos;s Bundesliga experience,
+                and Japan possesses attacking options to trouble any defense.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Asian Powerhouse: Continental Rivals</h3>
+              <p>
+                Japan leads Asian football&apos;s charge at the expanded 48-team World Cup. Fellow AFC nations
+                <Link href="/teams/korea-world-cup-2026-tickets" className="text-red-600 hover:underline">South Korea</Link>,
+                <Link href="/teams/australia-world-cup-2026-tickets" className="text-red-600 hover:underline">Australia</Link>,
+                <Link href="/teams/saudi-arabia-world-cup-2026-tickets" className="text-red-600 hover:underline">Saudi Arabia</Link>, and
+                <Link href="/teams/iran-world-cup-2026-tickets" className="text-red-600 hover:underline">Iran</Link> all
+                qualified, but Japan enters as the continent&apos;s best hope for deep tournament progress.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Japanese-American Support</h3>
+              <p>
+                The substantial Japanese-American population ensures passionate support throughout the tournament.
+                Cities like Los Angeles, Seattle, and Honolulu have significant Japanese communities, while Japanese
+                tourists will travel in large numbers. The discipline and respect Japanese fans bring to stadiums
+                - cleaning up after matches has become their trademark - adds to their global popularity.
+              </p>
+            </article>
+
             <Card>
               <CardHeader><CardTitle className="flex items-center gap-2"><Calendar className="h-5 w-5 text-red-600" />Group F Schedule</CardTitle></CardHeader>
               <CardContent className="space-y-4">

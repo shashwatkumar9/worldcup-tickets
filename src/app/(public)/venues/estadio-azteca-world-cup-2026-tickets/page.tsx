@@ -74,6 +74,73 @@ export default function EstadioAztecaPage() {
               </div>
             </div>
 
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Estadio Azteca: Football&apos;s Cathedral Opens the 2026 World Cup</h2>
+              <p>
+                No stadium on Earth carries more World Cup history than Estadio Azteca. The legendary venue will make
+                history again as the first stadium ever to host three FIFA World Cup tournaments when
+                <Link href="/teams/mexico-world-cup-2026-tickets" className="text-green-600 hover:underline">Mexico</Link> kicks
+                off the 2026 World Cup on June 11th. This is where Pelé lifted the trophy in 1970, where Diego Maradona
+                scored the &quot;Goal of the Century&quot; and &quot;Hand of God&quot; in 1986. Now, a new generation of
+                legends will write their names on these hallowed grounds.
+              </p>
+              <p>
+                The opening match atmosphere at Estadio Azteca will be unlike anything in World Cup history. 87,000
+                Mexican fans creating the famous &quot;Ola&quot; wave, the deafening &quot;Si se puede&quot; chants, and
+                the passionate support that makes El Tri one of the world&apos;s most beloved national teams. Every match
+                here feels like a religious experience - this is football&apos;s true cathedral.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">1970 and 1986: The Finals That Defined Football</h3>
+              <p>
+                Estadio Azteca hosted two of the greatest World Cup Finals in history. In 1970,
+                <Link href="/teams/brazil-world-cup-2026-tickets" className="text-green-600 hover:underline">Brazil&apos;s</Link> legendary
+                squad featuring Pelé, Jairzinho, and Carlos Alberto crushed <Link href="/teams/italy-world-cup-2026-tickets" className="text-green-600 hover:underline">Italy</Link> 4-1
+                in what many consider the most beautiful football ever played. Carlos Alberto&apos;s famous team goal
+                remains the defining image of Total Football.
+              </p>
+              <p>
+                In 1986, Diego Maradona cemented his immortality with two quarter-final goals against England that
+                remain the most famous in World Cup history - the controversial &quot;Hand of God&quot; and the stunning
+                solo run known as the &quot;Goal of the Century.&quot; <Link href="/teams/argentina-world-cup-2026-tickets" className="text-green-600 hover:underline">Argentina</Link> went
+                on to defeat <Link href="/teams/germany-world-cup-2026-tickets" className="text-green-600 hover:underline">Germany</Link> 3-2
+                in a dramatic final. The stadium&apos;s walls whisper with these legends.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">The Altitude Challenge: 2,200m Above Sea Level</h3>
+              <p>
+                Estadio Azteca sits at 2,200 meters above sea level in Mexico City, creating unique playing conditions.
+                The thin air affects ball flight and player stamina - advantages that Mexico has exploited for decades.
+                European and South American teams often struggle with the altitude, while <Link href="/teams/mexico-world-cup-2026-tickets" className="text-green-600 hover:underline">El Tri</Link> thrives.
+                The tournament opening match gives Mexico their ultimate home advantage.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Group A Action: Mexico vs Korea Republic</h3>
+              <p>
+                Estadio Azteca will host crucial Group A fixtures including <Link href="/teams/mexico-world-cup-2026-tickets" className="text-green-600 hover:underline">Mexico</Link> vs
+                <Link href="/teams/korea-world-cup-2026-tickets" className="text-green-600 hover:underline">Korea Republic</Link> - a
+                clash between passionate football nations with massive traveling support. <Link href="/teams/south-africa-world-cup-2026-tickets" className="text-green-600 hover:underline">South Africa</Link> also
+                features in Group A matches, adding African flair to the Mexican fiesta.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Mexico City: A World Cup Destination</h3>
+              <p>
+                Mexico City offers one of the world&apos;s great cultural experiences. From the ancient pyramids of
+                Teotihuacán to the vibrant colors of Frida Kahlo&apos;s Casa Azul, from world-class tacos to
+                mezcal bars in Roma Norte, the capital delivers endless discovery. The
+                <Link href="/cities/mexico-city-world-cup-2026-travel-guide" className="text-green-600 hover:underline">Mexico City travel guide</Link> helps
+                visitors navigate this 21-million-person metropolis.
+              </p>
+              <p>
+                Mexican hospitality is legendary. Visitors will find a city that embraces World Cup guests with open
+                arms, incredible food at every corner, and a passion for football that runs through the nation&apos;s
+                veins. Combine Estadio Azteca with matches at <Link href="/venues/estadio-akron-world-cup-2026-tickets" className="text-green-600 hover:underline">Estadio Akron in Guadalajara</Link> and
+                <Link href="/venues/estadio-bbva-world-cup-2026-tickets" className="text-green-600 hover:underline">Estadio BBVA in Monterrey</Link> for
+                the complete Mexican World Cup experience.
+              </p>
+            </article>
+
             <Card>
               <CardHeader><CardTitle>About Estadio Azteca</CardTitle></CardHeader>
               <CardContent className="space-y-4">

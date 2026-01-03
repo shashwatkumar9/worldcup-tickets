@@ -3,6 +3,7 @@
 import { useEffect, useState, use } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { createClient } from "@/lib/supabase/client"
 import { AdminHeader } from "@/components/admin/header"
 import { Button } from "@/components/ui/button"
@@ -12,6 +13,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Switch } from "@/components/ui/switch"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Badge } from "@/components/ui/badge"
 import {
   Select,
   SelectContent,
@@ -19,7 +21,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { ArrowLeft, Save, Loader2 } from "lucide-react"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+import { ArrowLeft, Save, Loader2, Plus, Trash2, ExternalLink } from "lucide-react"
+
+const RichTextEditor = dynamic(
+  () => import("@/components/ui/rich-text-editor"),
+  { ssr: false, loading: () => <div className="h-[300px] bg-slate-800 rounded-lg animate-pulse" /> }
+)
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -32,6 +47,9 @@ const LANGUAGES = [
   { code: "es", name: "Spanish" },
   { code: "it", name: "Italian" },
   { code: "ar", name: "Arabic" },
+  { code: "pt", name: "Portuguese" },
+  { code: "ja", name: "Japanese" },
+  { code: "zh", name: "Chinese" },
 ]
 
 const SPORT_TYPES = [
@@ -50,6 +68,26 @@ const TEAM_TYPES = [
   { value: "club", label: "Club Team" },
 ]
 
+const AFFILIATE_PARTNERS = [
+  { value: "ticketmaster", label: "Ticketmaster" },
+  { value: "stubhub", label: "StubHub" },
+  { value: "viagogo", label: "Viagogo" },
+  { value: "ticombo", label: "TiCombo" },
+  { value: "vivid_seats", label: "VividSeats" },
+  { value: "seat_geek", label: "SeatGeek" },
+  { value: "hello_tickets", label: "HelloTickets" },
+  { value: "manual", label: "Manual" },
+]
+
+interface AffiliateLink {
+  id?: string
+  partner: string
+  url: string
+  price_from: number | null
+  is_active: boolean
+  priority: number
+}
+
 interface TeamFormData {
   slug: string
   team_type: string
@@ -63,10 +101,12 @@ interface TeamFormData {
     [key: string]: {
       name: string
       description: string
+      content_html: string
       meta_title: string
       meta_description: string
     }
   }
+  affiliate_links: AffiliateLink[]
 }
 
 export default function TeamEditPage({ params }: PageProps) {
@@ -76,6 +116,7 @@ export default function TeamEditPage({ params }: PageProps) {
 
   const [loading, setLoading] = useState(!isNew)
   const [saving, setSaving] = useState(false)
+  const [activeTab, setActiveTab] = useState("en")
   const [formData, setFormData] = useState<TeamFormData>({
     slug: "",
     team_type: "national",
@@ -86,8 +127,9 @@ export default function TeamEditPage({ params }: PageProps) {
     is_featured: false,
     is_hot: false,
     translations: {
-      en: { name: "", description: "", meta_title: "", meta_description: "" },
+      en: { name: "", description: "", content_html: "", meta_title: "", meta_description: "" },
     },
+    affiliate_links: [],
   })
 
   useEffect(() => {
@@ -103,7 +145,8 @@ export default function TeamEditPage({ params }: PageProps) {
       .from("teams")
       .select(`
         *,
-        translations(*)
+        translations(*),
+        page_content:page_content(*)
       `)
       .eq("id", id)
       .single()
@@ -114,19 +157,28 @@ export default function TeamEditPage({ params }: PageProps) {
       return
     }
 
+    // Fetch affiliate links
+    const { data: affiliateLinks } = await supabase
+      .from("affiliate_links")
+      .select("*")
+      .eq("entity_type", "team")
+      .eq("entity_id", id)
+      .order("priority", { ascending: false })
+
     const translations: TeamFormData["translations"] = {}
     team.translations?.forEach((t: any) => {
+      const pageContent = team.page_content?.find((p: any) => p.language === t.language)
       translations[t.language] = {
         name: t.name || "",
         description: t.description || "",
+        content_html: pageContent?.content_html || t.content_html || "",
         meta_title: t.meta_title || "",
         meta_description: t.meta_description || "",
       }
     })
 
-    // Ensure English translation exists
     if (!translations.en) {
-      translations.en = { name: "", description: "", meta_title: "", meta_description: "" }
+      translations.en = { name: "", description: "", content_html: "", meta_title: "", meta_description: "" }
     }
 
     setFormData({
@@ -139,6 +191,14 @@ export default function TeamEditPage({ params }: PageProps) {
       is_featured: team.is_featured,
       is_hot: team.is_hot,
       translations,
+      affiliate_links: affiliateLinks?.map((link: any) => ({
+        id: link.id,
+        partner: link.partner,
+        url: link.url,
+        price_from: link.price_from,
+        is_active: link.is_active,
+        priority: link.priority,
+      })) || [],
     })
     setLoading(false)
   }
@@ -164,7 +224,6 @@ export default function TeamEditPage({ params }: PageProps) {
       },
     }))
 
-    // Auto-generate slug from English name
     if (lang === "en" && isNew) {
       setFormData((prev) => ({
         ...prev,
@@ -173,11 +232,7 @@ export default function TeamEditPage({ params }: PageProps) {
     }
   }
 
-  const handleTranslationChange = (
-    lang: string,
-    field: string,
-    value: string
-  ) => {
+  const handleTranslationChange = (lang: string, field: string, value: string) => {
     setFormData((prev) => ({
       ...prev,
       translations: {
@@ -196,10 +251,37 @@ export default function TeamEditPage({ params }: PageProps) {
         ...prev,
         translations: {
           ...prev.translations,
-          [lang]: { name: "", description: "", meta_title: "", meta_description: "" },
+          [lang]: { name: "", description: "", content_html: "", meta_title: "", meta_description: "" },
         },
       }))
+      setActiveTab(lang)
     }
+  }
+
+  const addAffiliateLink = () => {
+    setFormData((prev) => ({
+      ...prev,
+      affiliate_links: [
+        ...prev.affiliate_links,
+        { partner: "ticketmaster", url: "", price_from: null, is_active: true, priority: prev.affiliate_links.length },
+      ],
+    }))
+  }
+
+  const updateAffiliateLink = (index: number, field: string, value: any) => {
+    setFormData((prev) => ({
+      ...prev,
+      affiliate_links: prev.affiliate_links.map((link, i) =>
+        i === index ? { ...link, [field]: value } : link
+      ),
+    }))
+  }
+
+  const removeAffiliateLink = (index: number) => {
+    setFormData((prev) => ({
+      ...prev,
+      affiliate_links: prev.affiliate_links.filter((_, i) => i !== index),
+    }))
   }
 
   const handleSave = async () => {
@@ -244,6 +326,20 @@ export default function TeamEditPage({ params }: PageProps) {
           .delete()
           .eq("entity_type", "team")
           .eq("entity_id", id)
+
+        // Delete existing page content
+        await supabase
+          .from("page_content")
+          .delete()
+          .eq("entity_type", "team")
+          .eq("entity_id", id)
+
+        // Delete existing affiliate links
+        await supabase
+          .from("affiliate_links")
+          .delete()
+          .eq("entity_type", "team")
+          .eq("entity_id", id)
       }
 
       // Insert translations
@@ -265,6 +361,50 @@ export default function TeamEditPage({ params }: PageProps) {
           .insert(translationInserts)
 
         if (transError) throw transError
+      }
+
+      // Insert page content for rich text
+      const pageContentInserts = Object.entries(formData.translations)
+        .filter(([_, t]) => t.content_html)
+        .map(([lang, t]) => ({
+          entity_type: "team",
+          entity_id: teamId,
+          language: lang,
+          content_html: t.content_html,
+          meta_title: t.meta_title || null,
+          meta_description: t.meta_description || null,
+        }))
+
+      if (pageContentInserts.length > 0) {
+        const { error: contentError } = await supabase
+          .from("page_content")
+          .insert(pageContentInserts)
+
+        if (contentError) throw contentError
+      }
+
+      // Insert affiliate links
+      if (formData.affiliate_links.length > 0) {
+        const affiliateInserts = formData.affiliate_links
+          .filter((link) => link.url)
+          .map((link, index) => ({
+            entity_type: "team",
+            entity_id: teamId,
+            partner: link.partner,
+            url: link.url,
+            price_from: link.price_from,
+            is_active: link.is_active,
+            priority: index,
+            source_type: "manual",
+          }))
+
+        if (affiliateInserts.length > 0) {
+          const { error: affError } = await supabase
+            .from("affiliate_links")
+            .insert(affiliateInserts)
+
+          if (affError) throw affError
+        }
       }
 
       router.push("/admin/teams")
@@ -319,13 +459,13 @@ export default function TeamEditPage({ params }: PageProps) {
         <div className="grid gap-6 lg:grid-cols-3">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Translations */}
+            {/* Basic Info & Content */}
             <Card>
               <CardHeader>
                 <CardTitle>Content</CardTitle>
               </CardHeader>
               <CardContent>
-                <Tabs defaultValue="en">
+                <Tabs value={activeTab} onValueChange={setActiveTab}>
                   <div className="flex items-center justify-between mb-4">
                     <TabsList>
                       {Object.keys(formData.translations).map((lang) => (
@@ -357,64 +497,179 @@ export default function TeamEditPage({ params }: PageProps) {
                         <Label>Name *</Label>
                         <Input
                           value={formData.translations[lang]?.name || ""}
-                          onChange={(e) =>
-                            handleNameChange(lang, e.target.value)
-                          }
+                          onChange={(e) => handleNameChange(lang, e.target.value)}
                           placeholder="e.g., Argentina National Team"
                         />
                       </div>
 
                       <div className="space-y-2">
-                        <Label>Description</Label>
+                        <Label>Short Description</Label>
                         <Textarea
                           value={formData.translations[lang]?.description || ""}
                           onChange={(e) =>
-                            handleTranslationChange(
-                              lang,
-                              "description",
-                              e.target.value
-                            )
+                            handleTranslationChange(lang, "description", e.target.value)
                           }
-                          rows={4}
-                          placeholder="Team description..."
+                          rows={3}
+                          placeholder="Brief description for listings..."
                         />
                       </div>
 
                       <div className="space-y-2">
-                        <Label>Meta Title (SEO)</Label>
-                        <Input
-                          value={formData.translations[lang]?.meta_title || ""}
-                          onChange={(e) =>
-                            handleTranslationChange(
-                              lang,
-                              "meta_title",
-                              e.target.value
-                            )
+                        <Label>Article Content</Label>
+                        <p className="text-sm text-slate-500 mb-2">
+                          Write comprehensive content about this team for SEO
+                        </p>
+                        <RichTextEditor
+                          content={formData.translations[lang]?.content_html || ""}
+                          onChange={(html) =>
+                            handleTranslationChange(lang, "content_html", html)
                           }
-                          placeholder="SEO title for search engines"
+                          placeholder="Write detailed content about the team, their history, key players, achievements..."
                         />
                       </div>
 
-                      <div className="space-y-2">
-                        <Label>Meta Description (SEO)</Label>
-                        <Textarea
-                          value={
-                            formData.translations[lang]?.meta_description || ""
-                          }
-                          onChange={(e) =>
-                            handleTranslationChange(
-                              lang,
-                              "meta_description",
-                              e.target.value
-                            )
-                          }
-                          rows={2}
-                          placeholder="SEO description for search engines"
-                        />
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <Label>Meta Title (SEO)</Label>
+                          <Input
+                            value={formData.translations[lang]?.meta_title || ""}
+                            onChange={(e) =>
+                              handleTranslationChange(lang, "meta_title", e.target.value)
+                            }
+                            placeholder="SEO title"
+                            maxLength={70}
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label>Meta Description (SEO)</Label>
+                          <Textarea
+                            value={formData.translations[lang]?.meta_description || ""}
+                            onChange={(e) =>
+                              handleTranslationChange(lang, "meta_description", e.target.value)
+                            }
+                            rows={2}
+                            placeholder="SEO description"
+                            maxLength={170}
+                          />
+                        </div>
                       </div>
                     </TabsContent>
                   ))}
                 </Tabs>
+              </CardContent>
+            </Card>
+
+            {/* Affiliate Links */}
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between">
+                <CardTitle>Affiliate Links</CardTitle>
+                <Button size="sm" onClick={addAffiliateLink}>
+                  <Plus className="mr-2 h-4 w-4" />
+                  Add Link
+                </Button>
+              </CardHeader>
+              <CardContent>
+                {formData.affiliate_links.length === 0 ? (
+                  <div className="text-center py-6 text-slate-500">
+                    <p>No affiliate links added yet</p>
+                    <Button variant="outline" size="sm" className="mt-2" onClick={addAffiliateLink}>
+                      <Plus className="mr-2 h-4 w-4" />
+                      Add your first link
+                    </Button>
+                  </div>
+                ) : (
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Partner</TableHead>
+                        <TableHead>URL</TableHead>
+                        <TableHead>Price From</TableHead>
+                        <TableHead>Active</TableHead>
+                        <TableHead></TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {formData.affiliate_links.map((link, index) => (
+                        <TableRow key={index}>
+                          <TableCell>
+                            <Select
+                              value={link.partner}
+                              onValueChange={(value) =>
+                                updateAffiliateLink(index, "partner", value)
+                              }
+                            >
+                              <SelectTrigger className="w-32">
+                                <SelectValue />
+                              </SelectTrigger>
+                              <SelectContent>
+                                {AFFILIATE_PARTNERS.map((p) => (
+                                  <SelectItem key={p.value} value={p.value}>
+                                    {p.label}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex items-center gap-2">
+                              <Input
+                                value={link.url}
+                                onChange={(e) =>
+                                  updateAffiliateLink(index, "url", e.target.value)
+                                }
+                                placeholder="https://..."
+                                className="min-w-[200px]"
+                              />
+                              {link.url && (
+                                <a
+                                  href={link.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-blue-500 hover:text-blue-600"
+                                >
+                                  <ExternalLink className="h-4 w-4" />
+                                </a>
+                              )}
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <Input
+                              type="number"
+                              value={link.price_from || ""}
+                              onChange={(e) =>
+                                updateAffiliateLink(
+                                  index,
+                                  "price_from",
+                                  e.target.value ? parseFloat(e.target.value) : null
+                                )
+                              }
+                              placeholder="$"
+                              className="w-24"
+                            />
+                          </TableCell>
+                          <TableCell>
+                            <Switch
+                              checked={link.is_active}
+                              onCheckedChange={(checked) =>
+                                updateAffiliateLink(index, "is_active", checked)
+                              }
+                            />
+                          </TableCell>
+                          <TableCell>
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              onClick={() => removeAffiliateLink(index)}
+                            >
+                              <Trash2 className="h-4 w-4 text-red-500" />
+                            </Button>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                )}
               </CardContent>
             </Card>
           </div>
@@ -437,7 +692,7 @@ export default function TeamEditPage({ params }: PageProps) {
                     placeholder="team-name-tickets"
                   />
                   <p className="text-xs text-slate-500">
-                    URL-friendly identifier (must end with -tickets)
+                    URL: /{formData.slug || "..."}
                   </p>
                 </div>
 
@@ -507,6 +762,16 @@ export default function TeamEditPage({ params }: PageProps) {
                     }
                     placeholder="https://..."
                   />
+                  {formData.logo_url && (
+                    <img
+                      src={formData.logo_url}
+                      alt="Logo preview"
+                      className="w-16 h-16 object-contain rounded mt-2"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).style.display = "none"
+                      }}
+                    />
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -539,9 +804,7 @@ export default function TeamEditPage({ params }: PageProps) {
                 <div className="flex items-center justify-between">
                   <div>
                     <Label>Featured</Label>
-                    <p className="text-sm text-slate-500">
-                      Show on homepage
-                    </p>
+                    <p className="text-sm text-slate-500">Show on homepage</p>
                   </div>
                   <Switch
                     checked={formData.is_featured}
@@ -554,9 +817,7 @@ export default function TeamEditPage({ params }: PageProps) {
                 <div className="flex items-center justify-between">
                   <div>
                     <Label>Hot</Label>
-                    <p className="text-sm text-slate-500">
-                      Mark as popular
-                    </p>
+                    <p className="text-sm text-slate-500">Mark as popular</p>
                   </div>
                   <Switch
                     checked={formData.is_hot}

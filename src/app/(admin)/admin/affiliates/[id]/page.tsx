@@ -95,6 +95,11 @@ export default function AffiliateLinkEditPage({ params }: PageProps) {
 
   const fetchLink = async () => {
     const supabase = createClient()
+    if (!supabase) {
+      console.error("Supabase client not configured")
+      setLoading(false)
+      return
+    }
 
     const { data: link, error } = await supabase
       .from("affiliate_links")
@@ -123,6 +128,8 @@ export default function AffiliateLinkEditPage({ params }: PageProps) {
 
   const fetchEntities = async (entityType: string) => {
     const supabase = createClient()
+    if (!supabase) return
+
     let tableName = ""
     let selectQuery = ""
 
@@ -185,6 +192,9 @@ export default function AffiliateLinkEditPage({ params }: PageProps) {
 
     try {
       const supabase = createClient()
+      if (!supabase) {
+        throw new Error("Supabase client not configured")
+      }
 
       const linkData = {
         entity_type: formData.entity_type,

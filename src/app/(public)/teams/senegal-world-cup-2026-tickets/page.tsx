@@ -70,6 +70,64 @@ export default function SenegalTicketsPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-8">
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Senegal World Cup 2026: Lions of Teranga Hunt for Glory</h2>
+              <p>
+                Senegal has established itself as Africa&apos;s premier footballing nation. AFCON 2021 champions,
+                2022 World Cup Round of 16 qualifiers, and home to some of the continent&apos;s brightest talents -
+                the Lions of Teranga arrive at the 2026 FIFA World Cup as genuine contenders to become the first
+                African nation to reach a World Cup final since <Link href="/teams/morocco-world-cup-2026-tickets" className="text-green-700 hover:underline">Morocco</Link>&apos;s
+                breakthrough in 2022.
+              </p>
+              <p>
+                The foundation of Senegalese football excellence lies in the remarkable talent production that
+                has supplied Europe&apos;s top leagues for decades. From El Hadji Diouf to Sadio Mané, and now to
+                Nicolas Jackson, Ismaïla Sarr, and Iliman Ndiaye, Senegal consistently develops world-class
+                attackers who thrive in the Premier League and beyond.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Group I: The France Showdown</h3>
+              <p>
+                Senegal faces defending champions <Link href="/teams/france-world-cup-2026-tickets" className="text-green-700 hover:underline">France</Link> in
+                one of the most culturally significant matches of the tournament at <Link href="/venues/mercedes-benz-stadium-world-cup-2026" className="text-green-700 hover:underline">Mercedes-Benz Stadium in Atlanta</Link>.
+                Many French-born players of Senegalese descent have chosen Les Lions, creating a unique emotional
+                dynamic. Senegal also faces <Link href="/teams/norway-world-cup-2026-tickets" className="text-green-700 hover:underline">Norway</Link> at
+                <Link href="/venues/lincoln-financial-field-world-cup-2026" className="text-green-700 hover:underline">Lincoln Financial Field in Philadelphia</Link> and
+                completes the group at <Link href="/venues/metlife-stadium-world-cup-2026" className="text-green-700 hover:underline">MetLife Stadium in New York</Link>.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Koulibaly&apos;s Leadership: Defensive Excellence</h3>
+              <p>
+                Kalidou Koulibaly captains Senegal with the commanding presence that made him one of Europe&apos;s
+                most feared defenders during his Napoli and Chelsea years. Now playing in Saudi Arabia, his
+                experience and leadership remain invaluable. Édouard Mendy, despite moving to the Saudi league,
+                brings Champions League-winning pedigree between the posts.
+              </p>
+              <p>
+                The attack features Nicolas Jackson, whose breakthrough season at Chelsea has established him
+                as one of the Premier League&apos;s most exciting strikers. Ismaïla Sarr&apos;s pace and Iliman Ndiaye&apos;s
+                creativity provide the cutting edge, while Idrissa Gueye&apos;s midfield tenacity ensures balance.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">African Pride: Continental Leadership</h3>
+              <p>
+                Senegal enters alongside fellow African hopefuls including <Link href="/teams/morocco-world-cup-2026-tickets" className="text-green-700 hover:underline">Morocco</Link>,
+                <Link href="/teams/nigeria-world-cup-2026-tickets" className="text-green-700 hover:underline">Nigeria</Link>,
+                <Link href="/teams/cameroon-world-cup-2026-tickets" className="text-green-700 hover:underline">Cameroon</Link>, and
+                <Link href="/teams/egypt-world-cup-2026-tickets" className="text-green-700 hover:underline">Egypt</Link>.
+                The expanded 48-team format provides unprecedented opportunity for African football to make its mark.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Teranga: The Hospitality Legacy</h3>
+              <p>
+                &quot;Teranga&quot; means hospitality in Wolof, and Senegalese fans embody this spirit at every tournament.
+                The passionate drumming, dancing, and singing that accompanies Les Lions creates unforgettable
+                atmospheres. American venues will experience the full force of Senegalese support, with the
+                diaspora community and traveling fans combining to create a sea of green, yellow, and red.
+              </p>
+            </article>
+
             <Card className="border-yellow-400 bg-yellow-50">
               <CardContent className="p-6">
                 <h3 className="font-bold text-yellow-900">France vs Senegal</h3>

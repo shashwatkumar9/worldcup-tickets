@@ -43,7 +43,15 @@ CREATE TYPE affiliate_partner AS ENUM (
 );
 
 CREATE TYPE language_code AS ENUM (
-  'en', 'de', 'fr', 'es', 'it', 'ar'
+  'en', 'de', 'fr', 'es', 'it', 'ar', 'pt', 'ja', 'zh'
+);
+
+CREATE TYPE blog_status AS ENUM (
+  'draft', 'published', 'scheduled', 'archived'
+);
+
+CREATE TYPE blog_category AS ENUM (
+  'news', 'guide', 'travel', 'tickets', 'teams', 'venues', 'analysis', 'preview', 'review'
 );
 
 -- =====================================================
@@ -472,6 +480,122 @@ CREATE TABLE admin_users (
 );
 
 -- =====================================================
+-- BLOG POSTS TABLE
+-- =====================================================
+
+CREATE TABLE blog_posts (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  slug VARCHAR(255) UNIQUE NOT NULL,
+
+  -- Type & Category
+  category blog_category NOT NULL DEFAULT 'news',
+  sport_type sport_type DEFAULT 'football',
+
+  -- Related entities (optional)
+  competition_id UUID REFERENCES competitions(id),
+  team_id UUID REFERENCES teams(id),
+  venue_id UUID REFERENCES venues(id),
+  fixture_id UUID REFERENCES fixtures(id),
+
+  -- Media
+  featured_image_url TEXT,
+  thumbnail_url TEXT,
+  gallery TEXT[] DEFAULT '{}',
+
+  -- Status & Scheduling
+  status blog_status DEFAULT 'draft',
+  published_at TIMESTAMPTZ,
+  scheduled_for TIMESTAMPTZ,
+
+  -- SEO & Display
+  is_featured BOOLEAN DEFAULT false,
+  is_sticky BOOLEAN DEFAULT false,
+  display_order INTEGER DEFAULT 0,
+
+  -- Reading metrics
+  reading_time_minutes INTEGER DEFAULT 5,
+  view_count INTEGER DEFAULT 0,
+
+  -- Tags (stored as array for flexibility)
+  tags TEXT[] DEFAULT '{}',
+
+  -- Metadata
+  author_id UUID REFERENCES auth.users(id),
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- =====================================================
+-- BLOG POST TRANSLATIONS TABLE
+-- =====================================================
+
+CREATE TABLE blog_post_translations (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  blog_post_id UUID NOT NULL REFERENCES blog_posts(id) ON DELETE CASCADE,
+  language language_code NOT NULL,
+
+  -- Content
+  title VARCHAR(255) NOT NULL,
+  excerpt TEXT,
+  content_html TEXT NOT NULL,
+
+  -- SEO
+  meta_title VARCHAR(70),
+  meta_description VARCHAR(170),
+
+  -- Localized slug
+  slug VARCHAR(255),
+
+  -- Status
+  is_complete BOOLEAN DEFAULT false,
+
+  -- Metadata
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_by UUID REFERENCES auth.users(id),
+
+  -- Unique constraint
+  UNIQUE(blog_post_id, language)
+);
+
+-- =====================================================
+-- PAGE CONTENT TABLE (for entity pages like teams, venues)
+-- =====================================================
+
+CREATE TABLE page_content (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+
+  -- Reference to entity
+  entity_type VARCHAR(20) NOT NULL CHECK (entity_type IN ('competition', 'team', 'fixture', 'venue')),
+  entity_id UUID NOT NULL,
+  language language_code NOT NULL DEFAULT 'en',
+
+  -- Main content (TipTap HTML)
+  content_html TEXT,
+
+  -- Structured sections (JSON for flexible content blocks)
+  sections JSONB DEFAULT '[]',
+
+  -- SEO content
+  meta_title VARCHAR(70),
+  meta_description VARCHAR(170),
+
+  -- FAQ section
+  faqs JSONB DEFAULT '[]',
+
+  -- Status
+  is_complete BOOLEAN DEFAULT false,
+
+  -- Metadata
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_by UUID REFERENCES auth.users(id),
+
+  -- Unique constraint
+  UNIQUE(entity_type, entity_id, language)
+);
+
+-- =====================================================
 -- INDEXES
 -- =====================================================
 
@@ -521,6 +645,24 @@ CREATE INDEX idx_competitions_search ON competitions USING gin(to_tsvector('engl
 CREATE INDEX idx_teams_search ON teams USING gin(to_tsvector('english', slug));
 CREATE INDEX idx_venues_search ON venues USING gin(to_tsvector('english', name || ' ' || city));
 
+-- Blog Posts
+CREATE INDEX idx_blog_posts_status ON blog_posts(status);
+CREATE INDEX idx_blog_posts_category ON blog_posts(category);
+CREATE INDEX idx_blog_posts_published ON blog_posts(published_at) WHERE status = 'published';
+CREATE INDEX idx_blog_posts_featured ON blog_posts(is_featured) WHERE is_featured = true;
+CREATE INDEX idx_blog_posts_competition ON blog_posts(competition_id) WHERE competition_id IS NOT NULL;
+CREATE INDEX idx_blog_posts_team ON blog_posts(team_id) WHERE team_id IS NOT NULL;
+CREATE INDEX idx_blog_posts_venue ON blog_posts(venue_id) WHERE venue_id IS NOT NULL;
+CREATE INDEX idx_blog_posts_tags ON blog_posts USING gin(tags);
+
+-- Blog Post Translations
+CREATE INDEX idx_blog_translations_post ON blog_post_translations(blog_post_id);
+CREATE INDEX idx_blog_translations_language ON blog_post_translations(language);
+
+-- Page Content
+CREATE INDEX idx_page_content_entity ON page_content(entity_type, entity_id);
+CREATE INDEX idx_page_content_language ON page_content(language);
+
 -- =====================================================
 -- ROW LEVEL SECURITY (RLS)
 -- =====================================================
@@ -535,6 +677,9 @@ ALTER TABLE affiliate_clicks ENABLE ROW LEVEL SECURITY;
 ALTER TABLE menu_items ENABLE ROW LEVEL SECURITY;
 ALTER TABLE menu_item_translations ENABLE ROW LEVEL SECURITY;
 ALTER TABLE homepage_sections ENABLE ROW LEVEL SECURITY;
+ALTER TABLE blog_posts ENABLE ROW LEVEL SECURITY;
+ALTER TABLE blog_post_translations ENABLE ROW LEVEL SECURITY;
+ALTER TABLE page_content ENABLE ROW LEVEL SECURITY;
 
 -- Public read access for published content
 CREATE POLICY "Public read competitions" ON competitions
@@ -566,6 +711,15 @@ CREATE POLICY "Public read menu_item_translations" ON menu_item_translations
 
 CREATE POLICY "Public read homepage_sections" ON homepage_sections
   FOR SELECT USING (is_active = true);
+
+CREATE POLICY "Public read blog_posts" ON blog_posts
+  FOR SELECT USING (status = 'published');
+
+CREATE POLICY "Public read blog_post_translations" ON blog_post_translations
+  FOR SELECT USING (true);
+
+CREATE POLICY "Public read page_content" ON page_content
+  FOR SELECT USING (true);
 
 -- Admin full access function
 CREATE OR REPLACE FUNCTION is_admin()
@@ -609,6 +763,15 @@ CREATE POLICY "Admin full access menu_item_translations" ON menu_item_translatio
 CREATE POLICY "Admin full access homepage_sections" ON homepage_sections
   FOR ALL USING (is_admin());
 
+CREATE POLICY "Admin full access blog_posts" ON blog_posts
+  FOR ALL USING (is_admin());
+
+CREATE POLICY "Admin full access blog_post_translations" ON blog_post_translations
+  FOR ALL USING (is_admin());
+
+CREATE POLICY "Admin full access page_content" ON page_content
+  FOR ALL USING (is_admin());
+
 -- =====================================================
 -- TRIGGERS FOR updated_at
 -- =====================================================
@@ -643,4 +806,13 @@ CREATE TRIGGER update_menu_items_updated_at BEFORE UPDATE ON menu_items
     FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
 CREATE TRIGGER update_homepage_sections_updated_at BEFORE UPDATE ON homepage_sections
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_blog_posts_updated_at BEFORE UPDATE ON blog_posts
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_blog_post_translations_updated_at BEFORE UPDATE ON blog_post_translations
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_page_content_updated_at BEFORE UPDATE ON page_content
     FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();

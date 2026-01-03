@@ -285,34 +285,53 @@ export default function GermanyTicketsPage() {
               </CardContent>
             </Card>
 
+            {/* Team Info - Comprehensive Article */}
             <Card>
               <CardHeader>
-                <CardTitle>About Germany National Team</CardTitle>
+                <CardTitle>Germany World Cup 2026: Complete Guide to Die Mannschaft&apos;s Redemption Quest</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose prose-slate max-w-none">
                 <p>
-                  The <strong>Germany national football team</strong> (German: Deutsche Fußballnationalmannschaft)
-                  is one of the most successful teams in football history with four World Cup titles (1954, 1974, 1990, 2014).
+                  The <strong>Germany national football team</strong> (German: Deutsche Fußballnationalmannschaft) enters the <Link href="/fifa-world-cup-2026-tickets" className="text-blue-600 hover:underline">2026 FIFA World Cup</Link> seeking redemption after consecutive group-stage exits in 2018 and 2022. With four World Cup titles (1954, 1974, 1990, 2014), Germany remains one of the most successful nations in tournament history, and their new golden generation is ready to restore national pride.
                 </p>
 
-                <h3>2026 World Cup Prospects</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">2026 World Cup Prospects</h2>
                 <p>
-                  After shocking group-stage exits in 2018 and 2022, Germany are in the midst of a major rebuild.
-                  Under Julian Nagelsmann, the team has found new life with young stars Jamal Musiala and
-                  Florian Wirtz forming one of the most exciting attacking partnerships in world football.
+                  Under Julian Nagelsmann, Germany has undergone a complete transformation. The Musiala-Wirtz axis is the most exciting attacking partnership in world football — Jamal Musiala&apos;s dribbling magic combined with Florian Wirtz&apos;s creative brilliance gives Germany genuine star power.
+                </p>
+                <p>
+                  The experienced core includes Ilkay Gündogan, Joshua Kimmich, and Antonio Rüdiger, providing the backbone for the new generation to flourish. Manuel Neuer may have retired, but Marc-André ter Stegen is world-class.
                 </p>
 
-                <h3>The New Generation</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">Group E Analysis</h2>
                 <p>
-                  Musiala and Wirtz represent Germany&apos;s future and present. Both players showed glimpses
-                  of their talent at Euro 2024, and by 2026 they&apos;ll be at the perfect age to lead
-                  Germany&apos;s challenge for a fifth World Cup title.
+                  Germany has been drawn into <Link href="/fixtures/group-e-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group E</Link> alongside <Link href="/teams/curacao-world-cup-2026-tickets" className="text-blue-600 hover:underline">Curaçao</Link>, <Link href="/teams/ivory-coast-world-cup-2026-tickets" className="text-blue-600 hover:underline">Ivory Coast</Link>, and <Link href="/teams/ecuador-world-cup-2026-tickets" className="text-blue-600 hover:underline">Ecuador</Link>:
                 </p>
+                <ul>
+                  <li><strong><Link href="/teams/curacao-world-cup-2026-tickets" className="text-blue-600 hover:underline">Curaçao</Link></strong> — Making their World Cup debut! The Caribbean minnows will create a party atmosphere.</li>
+                  <li><strong><Link href="/teams/ivory-coast-world-cup-2026-tickets" className="text-blue-600 hover:underline">Ivory Coast</Link></strong> — AFCON champions with pace and power. The Elephants are dangerous.</li>
+                  <li><strong><Link href="/teams/ecuador-world-cup-2026-tickets" className="text-blue-600 hover:underline">Ecuador</Link></strong> — South American rising force with altitude-hardened fitness.</li>
+                </ul>
 
-                <h3>Group E Analysis</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">Match Venues</h2>
+                <ul>
+                  <li><Link href="/venues/hard-rock-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Hard Rock Stadium</Link> (Miami) — vs Curaçao</li>
+                  <li><Link href="/venues/sofi-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">SoFi Stadium</Link> (Los Angeles) — vs Ivory Coast</li>
+                  <li><Link href="/venues/att-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">AT&T Stadium</Link> (Dallas) — vs Ecuador</li>
+                </ul>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">UEFA Rivals</h2>
+                <ul>
+                  <li><Link href="/teams/france-world-cup-2026-tickets" className="text-blue-600 hover:underline">France</Link> — Les Bleus stopped Germany in Euro 2020/2021</li>
+                  <li><Link href="/teams/spain-world-cup-2026-tickets" className="text-blue-600 hover:underline">Spain</Link> — Euro 2024 heartbreak in extra time</li>
+                  <li><Link href="/teams/england-world-cup-2026-tickets" className="text-blue-600 hover:underline">England</Link> — Historic rivalry since 1966</li>
+                  <li><Link href="/teams/netherlands-world-cup-2026-tickets" className="text-blue-600 hover:underline">Netherlands</Link> — Classic European rivalry</li>
+                  <li><Link href="/teams/italy-world-cup-2026-tickets" className="text-blue-600 hover:underline">Italy</Link> — Tactical battles with the Azzurri</li>
+                </ul>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">World Cup History</h2>
                 <p>
-                  Germany face Curacao, Ivory Coast, and Ecuador in Group E. While they should progress comfortably,
-                  the matches against Ivory Coast and Ecuador will be important tests before the knockout rounds.
+                  Germany is one of the giants of World Cup football with 4 titles. The &quot;Miracle of Bern&quot; (1954), total football at home (1974), reunification glory (1990), and the Götze moment in 2014 — Germany&apos;s World Cup legacy is unmatched. The 2026 generation aims to add a fifth star.
                 </p>
               </CardContent>
             </Card>

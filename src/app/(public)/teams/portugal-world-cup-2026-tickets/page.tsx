@@ -298,35 +298,56 @@ export default function PortugalTicketsPage() {
               </CardContent>
             </Card>
 
+            {/* Team Info - Comprehensive Article */}
             <Card>
               <CardHeader>
-                <CardTitle>About Portugal National Team</CardTitle>
+                <CardTitle>Portugal World Cup 2026: Complete Guide to Ronaldo&apos;s Final Quest for Glory</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose prose-slate max-w-none">
                 <p>
-                  The <strong>Portugal national football team</strong> (Portuguese: Seleção Portuguesa de Futebol)
-                  won Euro 2016 and the 2019 UEFA Nations League. Despite producing legendary players,
-                  Portugal has never won the World Cup.
+                  The <strong>Portugal national football team</strong> (Portuguese: Seleção Portuguesa de Futebol) enters the <Link href="/fifa-world-cup-2026-tickets" className="text-blue-600 hover:underline">2026 FIFA World Cup</Link> with arguably their most complete squad ever, yet missing the one trophy that has eluded even their greatest players: the World Cup. For 41-year-old Cristiano Ronaldo, this is likely his final chance to lift football&apos;s ultimate prize.
                 </p>
 
-                <h3>2026 World Cup Prospects</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">2026 World Cup Prospects</h2>
                 <p>
-                  Portugal boast one of the deepest squads in world football. Beyond Ronaldo, they have
-                  Rafael Leão, Bruno Fernandes, Bernardo Silva, and a new generation of talented players.
-                  Roberto Martínez has transformed them into a well-organized unit.
+                  Under Roberto Martínez, Portugal has evolved into a tactical powerhouse. The squad blends Ronaldo&apos;s experience with an extraordinary new generation: Rafael Leão (AC Milan), Bruno Fernandes (Manchester United), Bernardo Silva (Manchester City), João Félix, and Vitinha provide creative excellence. In defense, Rúben Dias marshals a solid backline.
+                </p>
+                <p>
+                  Ronaldo, now playing in Saudi Arabia, has broken nearly every international record — most goals (130+), most appearances, most hat-tricks. A World Cup would complete his legendary status.
                 </p>
 
-                <h3>Ronaldo&apos;s Legacy</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">Group K Analysis</h2>
                 <p>
-                  Cristiano Ronaldo has broken nearly every record in football: most international goals (130+),
-                  most Champions League goals, and countless other achievements. A World Cup would cement
-                  his place as the greatest of all time in the eyes of many.
+                  Portugal has been drawn into <Link href="/fixtures/group-k-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group K</Link> alongside <Link href="/teams/colombia-world-cup-2026-tickets" className="text-blue-600 hover:underline">Colombia</Link>, <Link href="/teams/uzbekistan-world-cup-2026-tickets" className="text-blue-600 hover:underline">Uzbekistan</Link>, and a playoff winner:
+                </p>
+                <ul>
+                  <li><strong><Link href="/teams/colombia-world-cup-2026-tickets" className="text-blue-600 hover:underline">Colombia</Link></strong> — The standout match! Colombia&apos;s attacking talent against Portugal&apos;s quality. A potential group stage classic at <Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium</Link>.</li>
+                  <li><strong><Link href="/teams/uzbekistan-world-cup-2026-tickets" className="text-blue-600 hover:underline">Uzbekistan</Link></strong> — Making their World Cup debut. The Asian side will bring determination and organized defense.</li>
+                </ul>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">Match Venues</h2>
+                <ul>
+                  <li><Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium</Link> (New York/NJ) — vs Colombia (at the Final venue!)</li>
+                  <li><Link href="/venues/gillette-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Gillette Stadium</Link> (Boston) — vs Uzbekistan</li>
+                </ul>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">UEFA Rivals</h2>
+                <ul>
+                  <li><Link href="/teams/france-world-cup-2026-tickets" className="text-blue-600 hover:underline">France</Link> — Euro 2016 final victory, but recent losses</li>
+                  <li><Link href="/teams/spain-world-cup-2026-tickets" className="text-blue-600 hover:underline">Spain</Link> — The Iberian derby is always intense</li>
+                  <li><Link href="/teams/germany-world-cup-2026-tickets" className="text-blue-600 hover:underline">Germany</Link> — Euro 2024 elimination still stings</li>
+                  <li><Link href="/teams/england-world-cup-2026-tickets" className="text-blue-600 hover:underline">England</Link> — Historic rivalry with Ronaldo connections</li>
+                  <li><Link href="/teams/belgium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Belgium</Link> — Roberto Martínez&apos;s former team</li>
+                </ul>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">World Cup History</h2>
+                <p>
+                  Portugal&apos;s best World Cup finish was third place in 1966, led by the legendary Eusébio. Despite producing incredible talents like Figo, Ronaldo, and the Euro 2016-winning generation, the World Cup has remained elusive. 2026 represents their best chance with this golden generation.
                 </p>
 
-                <h3>Group K Analysis</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">How to Buy Portugal Tickets</h2>
                 <p>
-                  Portugal faces Colombia, Uzbekistan, and a playoff winner in Group K. The match against
-                  Colombia at MetLife Stadium will be a highlight, pitting two attacking teams against each other.
+                  Portugal matches draw massive demand from their passionate fanbase. The Portugal vs Colombia clash at MetLife Stadium is expected to be one of the hottest tickets. We compare prices from Ticketmaster, StubHub, Viagogo, and SeatGeek. Group stage tickets start from approximately $140.
                 </p>
               </CardContent>
             </Card>

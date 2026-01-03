@@ -102,6 +102,91 @@ export default function ItalyTicketsPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-8">
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Italy World Cup 2026: The Azzurri&apos;s Redemption Arc</h2>
+              <p>
+                Few nations carry the weight of expectation like Italy. With four World Cup titles (1934, 1938, 1982, 2006)
+                and the most recent European Championship (Euro 2020), the Azzurri are football royalty. Yet the shame of
+                missing two consecutive World Cups - 2018 in Russia and 2022 in Qatar - left Italian football in crisis.
+                The 2026 FIFA World Cup represents a chance for redemption, a return to the stage where Italy has so often
+                written football history.
+              </p>
+              <p>
+                The heartbreak of failing to qualify for Qatar 2022, losing to North Macedonia in the playoffs just months
+                after winning the European Championship, shook Italian football to its foundations. Under Luciano Spalletti,
+                a new generation has emerged, blending the tactical discipline Italy is renowned for with the technical
+                excellence of Serie A&apos;s finest talents. This tournament marks their return to where they belong.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Returning to American Soil: 1994 Memories</h3>
+              <p>
+                The 2026 World Cup holds special significance for Italy. In 1994, the Azzurri reached the final in
+                <Link href="/teams/usa-world-cup-2026-tickets" className="text-blue-700 hover:underline">the United States</Link>,
+                losing to <Link href="/teams/brazil-world-cup-2026-tickets" className="text-blue-700 hover:underline">Brazil</Link> in
+                a dramatic penalty shootout at the Rose Bowl. Roberto Baggio&apos;s missed penalty remains one of football&apos;s most
+                iconic and heartbreaking moments. Three decades later, Italy returns to American soil seeking to finally
+                claim victory where they fell so close.
+              </p>
+              <p>
+                The large Italian-American diaspora ensures passionate support across host cities. From the tri-state area
+                around <Link href="/venues/metlife-stadium-world-cup-2026" className="text-blue-700 hover:underline">MetLife Stadium</Link> to
+                Chicago, Boston, and beyond, Italian fans will create a home-like atmosphere wherever the Azzurri play.
+                Venues like <Link href="/venues/gillette-stadium-world-cup-2026" className="text-blue-700 hover:underline">Gillette Stadium</Link> and
+                <Link href="/venues/lincoln-financial-field-world-cup-2026" className="text-blue-700 hover:underline">Lincoln Financial Field</Link> in
+                the Northeast will see particularly strong Italian support.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Donnarumma&apos;s Generation: New Heroes Emerge</h3>
+              <p>
+                Gianluigi Donnarumma, the hero of Euro 2020&apos;s penalty shootout victory over <Link href="/teams/england-world-cup-2026-tickets" className="text-blue-700 hover:underline">England</Link>,
+                leads this Italian generation. The PSG goalkeeper&apos;s remarkable shot-stopping and presence make Italy
+                formidable in any knockout situation. His partnership with a defense built around Riccardo Calafiori
+                provides the solid foundation Italian football demands.
+              </p>
+              <p>
+                The midfield belongs to Nicolò Barella, the Inter Milan dynamo whose box-to-box brilliance drives Italian
+                play. Sandro Tonali, after his Newcastle suspension, brings Premier League steel and technical excellence.
+                Federico Chiesa, when fit, provides the attacking spark, while Gianluca Scamacca offers the physical presence
+                and finishing touch Italy&apos;s attack needs.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">European Rivalries: Classic Battles Await</h3>
+              <p>
+                Italian football history is defined by epic clashes with European giants. The rivalry with
+                <Link href="/teams/germany-world-cup-2026-tickets" className="text-blue-700 hover:underline">Germany</Link> produced
+                the unforgettable 2006 semi-final and the dramatic 1970 &quot;Game of the Century.&quot; Matches against
+                <Link href="/teams/france-world-cup-2026-tickets" className="text-blue-700 hover:underline">France</Link> evoke
+                memories of the 2006 final triumph, while encounters with
+                <Link href="/teams/spain-world-cup-2026-tickets" className="text-blue-700 hover:underline">Spain</Link> have
+                become modern classics in tournament football.
+              </p>
+              <p>
+                <Link href="/teams/england-world-cup-2026-tickets" className="text-blue-700 hover:underline">England</Link>,
+                their Euro 2020 final opponents, represent a potential grudge match.
+                <Link href="/teams/portugal-world-cup-2026-tickets" className="text-blue-700 hover:underline">Portugal</Link>,
+                <Link href="/teams/netherlands-world-cup-2026-tickets" className="text-blue-700 hover:underline">Netherlands</Link>, and
+                <Link href="/teams/belgium-world-cup-2026-tickets" className="text-blue-700 hover:underline">Belgium</Link> similarly
+                represent the caliber of European opposition Italy must overcome.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Host Nation Clashes: Canada Connection</h3>
+              <p>
+                A potential fixture against <Link href="/teams/canada-world-cup-2026-tickets" className="text-blue-700 hover:underline">Canada</Link> carries
+                unique resonance. The substantial Italian-Canadian population in Toronto, Montreal, and Vancouver creates
+                a special connection between these nations. A match at <Link href="/venues/bmo-field-world-cup-2026" className="text-blue-700 hover:underline">BMO Field in Toronto</Link> or
+                another Canadian venue would feature divided loyalties among fans with roots in both countries.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Italian Tactical Heritage</h3>
+              <p>
+                Italy&apos;s football philosophy - the famous &quot;Catenaccio&quot; evolved into modern tactical flexibility - remains
+                their competitive advantage. No nation defends better under pressure or better understands tournament football&apos;s
+                unique demands. Spalletti&apos;s Italy combines this defensive heritage with attacking ambition, creating a team
+                capable of winning ugly when necessary but beautiful when opportunity allows.
+              </p>
+            </article>
+
             <Card className="border-blue-200 bg-blue-50">
               <CardContent className="p-6">
                 <h3 className="font-bold text-blue-900">Italy&apos;s Return</h3>
@@ -151,6 +236,30 @@ export default function ItalyTicketsPage() {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Potential Venues Section */}
+            <Card>
+              <CardHeader><CardTitle className="flex items-center gap-2"><MapPin className="h-5 w-5 text-blue-700" />Key US Venues with Italian Support</CardTitle></CardHeader>
+              <CardContent>
+                <div className="grid gap-4 md:grid-cols-3">
+                  <Link href="/venues/metlife-stadium-world-cup-2026" className="p-4 rounded-lg border hover:bg-blue-50 transition-colors">
+                    <p className="font-semibold text-slate-900">MetLife Stadium</p>
+                    <p className="text-sm text-slate-500">New York/New Jersey</p>
+                    <p className="text-xs text-blue-700 mt-1">Large Italian-American community</p>
+                  </Link>
+                  <Link href="/venues/gillette-stadium-world-cup-2026" className="p-4 rounded-lg border hover:bg-blue-50 transition-colors">
+                    <p className="font-semibold text-slate-900">Gillette Stadium</p>
+                    <p className="text-sm text-slate-500">Boston, USA</p>
+                    <p className="text-xs text-blue-700 mt-1">Strong Northeast support</p>
+                  </Link>
+                  <Link href="/venues/lincoln-financial-field-world-cup-2026" className="p-4 rounded-lg border hover:bg-blue-50 transition-colors">
+                    <p className="font-semibold text-slate-900">Lincoln Financial Field</p>
+                    <p className="text-sm text-slate-500">Philadelphia, USA</p>
+                    <p className="text-xs text-blue-700 mt-1">Italian-American heartland</p>
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
           </div>
           <div className="space-y-6">
             <Card className="sticky top-24">
@@ -175,6 +284,15 @@ export default function ItalyTicketsPage() {
                 <div className="flex justify-between"><span className="text-slate-600">FIFA Ranking</span><span className="font-medium">#{teamInfo.fifaRanking}</span></div>
                 <div className="flex justify-between"><span className="text-slate-600">Coach</span><span className="font-medium">{teamInfo.coach}</span></div>
                 <div className="flex justify-between"><span className="text-slate-600">WC Titles</span><span className="font-medium">4 (1934, 38, 82, 2006)</span></div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle>UEFA Rivals</CardTitle></CardHeader>
+              <CardContent className="space-y-2">
+                <Link href="/teams/germany-world-cup-2026-tickets" className="flex items-center gap-2 p-2 rounded hover:bg-slate-50"><span>🇩🇪</span> Germany</Link>
+                <Link href="/teams/france-world-cup-2026-tickets" className="flex items-center gap-2 p-2 rounded hover:bg-slate-50"><span>🇫🇷</span> France</Link>
+                <Link href="/teams/spain-world-cup-2026-tickets" className="flex items-center gap-2 p-2 rounded hover:bg-slate-50"><span>🇪🇸</span> Spain</Link>
+                <Link href="/teams/england-world-cup-2026-tickets" className="flex items-center gap-2 p-2 rounded hover:bg-slate-50"><span>🏴󠁧󠁢󠁥󠁮󠁧󠁿</span> England</Link>
               </CardContent>
             </Card>
           </div>

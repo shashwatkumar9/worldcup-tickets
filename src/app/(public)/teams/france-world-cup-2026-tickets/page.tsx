@@ -282,28 +282,64 @@ export default function FranceTicketsPage() {
               </CardContent>
             </Card>
 
+            {/* Team Info - Comprehensive Article */}
             <Card>
               <CardHeader>
-                <CardTitle>About France National Team</CardTitle>
+                <CardTitle>France World Cup 2026: Complete Guide to Les Bleus&apos; Quest for Redemption</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose prose-slate max-w-none">
                 <p>
-                  The <strong>France national football team</strong> (French: Équipe de France de football)
-                  is one of the most successful teams in international football, with two World Cup titles (1998, 2018)
-                  and two European Championships (1984, 2000).
+                  The <strong>France national football team</strong> (French: Équipe de France de football) enters the <Link href="/fifa-world-cup-2026-tickets" className="text-blue-600 hover:underline">2026 FIFA World Cup</Link> seeking redemption after the heartbreak of losing the 2022 final to <Link href="/teams/argentina-world-cup-2026-tickets" className="text-blue-600 hover:underline">Argentina</Link> on penalties. With two World Cup titles (1998, 2018) and a squad packed with elite talent, Les Bleus are among the favorites in North America.
                 </p>
 
-                <h3>2026 World Cup Prospects</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">2026 World Cup Prospects</h2>
                 <p>
-                  France are among the favorites for 2026, with many players in their prime. Kylian Mbappé,
-                  now at Real Madrid, leads a talented squad that includes multiple Champions League winners.
-                  The heartbreak of losing the 2022 final will drive their quest for redemption.
+                  France possess arguably the deepest squad in world football. Kylian Mbappé, now at Real Madrid, leads an attack capable of scoring against anyone. At 27, Mbappé will be at the absolute peak of his powers — already a World Cup winner (2018) and scorer of a hat-trick in the 2022 final.
+                </p>
+                <p>
+                  The midfield talent is extraordinary, with Antoine Griezmann providing creativity, Aurélien Tchouaméni controlling the tempo, and emerging stars like Eduardo Camavinga and Warren Zaïre-Emery pushing for places. In defense, the experienced core of Ibrahima Konaté and William Saliba provides stability.
                 </p>
 
-                <h3>The Mbappé Era</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">Group I Analysis</h2>
                 <p>
-                  At 27, Kylian Mbappé will be at the peak of his powers in 2026. Already a World Cup winner (2018)
-                  and runner-up (2022) with a hat-trick in the final, he&apos;s aiming to add another title to his legacy.
+                  France has been drawn into <Link href="/fixtures/group-i-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group I</Link> alongside <Link href="/teams/senegal-world-cup-2026-tickets" className="text-blue-600 hover:underline">Senegal</Link>, a UEFA playoff winner, and <Link href="/teams/norway-world-cup-2026-tickets" className="text-blue-600 hover:underline">Norway</Link>. The fixtures promise excitement:
+                </p>
+                <ul>
+                  <li><strong><Link href="/teams/senegal-world-cup-2026-tickets" className="text-blue-600 hover:underline">Senegal</Link></strong> — The African champions with pace and physicality. A rematch of memorable past encounters.</li>
+                  <li><strong><Link href="/teams/norway-world-cup-2026-tickets" className="text-blue-600 hover:underline">Norway</Link></strong> — Featuring Erling Haaland! The France vs Norway clash could be a Mbappé vs Haaland showdown for the ages.</li>
+                </ul>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">Match Venues</h2>
+                <p>France&apos;s group stage matches will showcase their quality at top American venues:</p>
+                <ul>
+                  <li><Link href="/venues/lincoln-financial-field-world-cup-2026-tickets" className="text-blue-600 hover:underline">Lincoln Financial Field</Link> (Philadelphia) — vs Senegal</li>
+                  <li><Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium</Link> (New York/NJ) — vs Norway (Mbappé vs Haaland at the Final venue!)</li>
+                </ul>
+                <p>
+                  Playing at <Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium</Link> will give France a taste of the venue where they hope to lift the trophy on July 19.
+                </p>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">UEFA Rivals &amp; Potential Clashes</h2>
+                <p>
+                  Europe&apos;s elite nations all aim to stop France. Potential knockout stage opponents include:
+                </p>
+                <ul>
+                  <li><Link href="/teams/spain-world-cup-2026-tickets" className="text-blue-600 hover:underline">Spain</Link> — Euro 2024 champions with their brilliant young talents</li>
+                  <li><Link href="/teams/england-world-cup-2026-tickets" className="text-blue-600 hover:underline">England</Link> — A potential semifinal clash with the Three Lions</li>
+                  <li><Link href="/teams/germany-world-cup-2026-tickets" className="text-blue-600 hover:underline">Germany</Link> — Always dangerous in major tournaments</li>
+                  <li><Link href="/teams/portugal-world-cup-2026-tickets" className="text-blue-600 hover:underline">Portugal</Link> — Cristiano Ronaldo&apos;s final World Cup?</li>
+                  <li><Link href="/teams/netherlands-world-cup-2026-tickets" className="text-blue-600 hover:underline">Netherlands</Link> — Tactical battles with the Dutch</li>
+                  <li><Link href="/teams/belgium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Belgium</Link> — Their golden generation&apos;s last chance</li>
+                </ul>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">World Cup History</h2>
+                <p>
+                  France has won the World Cup twice — on home soil in 1998 with Zidane&apos;s brilliance, and in Russia 2018 with a young Mbappé emerging as a superstar. They also reached the 2006 and 2022 finals, making them one of the most consistent performers in World Cup history.
+                </p>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">How to Buy France Tickets</h2>
+                <p>
+                  France matches draw massive demand from their passionate fanbase. We compare prices from Ticketmaster, StubHub, Viagogo, and SeatGeek. Group stage tickets start from approximately $145, with premium prices for the France vs Norway clash featuring the Mbappé-Haaland showdown.
                 </p>
               </CardContent>
             </Card>

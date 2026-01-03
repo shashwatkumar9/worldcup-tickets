@@ -40,6 +40,48 @@ export default function GilletteStadiumPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-6">
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Gillette Stadium: New England&apos;s World Cup Celebration</h2>
+              <p>
+                New England brings championship culture to the 2026 World Cup. Home of the legendary New England Patriots
+                dynasty and the New England Revolution, Gillette Stadium understands big moments. Boston-area sports fans
+                are among America&apos;s most passionate, and that energy will transform every World Cup match into an event.
+                The stadium&apos;s Lighthouse at Patriot Place provides an iconic backdrop for football history.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Croatia vs Ghana: 2022 Rematch</h3>
+              <p>
+                <Link href="/teams/croatia-world-cup-2026-tickets" className="text-blue-600 hover:underline">Croatia</Link> vs
+                <Link href="/teams/ghana-world-cup-2026-tickets" className="text-blue-600 hover:underline">Ghana</Link> in
+                Group L offers a rematch of their 2022 encounter. Luka Modrić&apos;s potential final World Cup adds poignancy,
+                while Ghana seeks redemption after heartbreaking 2022 elimination. The Black Stars&apos; passionate diaspora
+                and Croatia&apos;s dedicated traveling support guarantee incredible atmosphere in Foxborough.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Morocco: Semi-Final Heroes Return</h3>
+              <p>
+                <Link href="/teams/morocco-world-cup-2026-tickets" className="text-blue-600 hover:underline">Morocco</Link> vs
+                Haiti brings the 2022 semi-finalists to New England. The Atlas Lions captivated the world with their
+                historic Qatar run, and expectations remain sky-high. Boston&apos;s Moroccan community will transform
+                Gillette Stadium into a celebration of African football excellence.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Boston Experience: Championship City</h3>
+              <p>
+                Boston offers world-class attractions alongside World Cup football. Walk the Freedom Trail through
+                American Revolution history, explore Harvard and MIT campuses, or catch a Red Sox game at Fenway Park.
+                The <Link href="/cities/boston-world-cup-2026-travel-guide" className="text-blue-600 hover:underline">Boston travel guide</Link> covers
+                accommodation from Back Bay luxury to Cambridge boutique hotels.
+              </p>
+              <p>
+                The New England Revolution&apos;s MLS presence means authentic football culture already exists in Boston.
+                Combine Gillette with <Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium in New York</Link> and
+                <Link href="/venues/lincoln-financial-field-world-cup-2026-tickets" className="text-blue-600 hover:underline">Lincoln Financial Field in Philadelphia</Link> for
+                the complete Northeast World Cup experience.
+              </p>
+            </article>
+
             <Card><CardContent className="p-6"><p className="text-slate-600">Home of the New England Patriots dynasty and New England Revolution (MLS). Gillette Stadium is the heart of sports in New England and will bring passionate Boston sports fans to the World Cup.</p></CardContent></Card>
             <div>
               <h2 className="text-2xl font-bold mb-4 flex items-center gap-2"><Calendar className="h-6 w-6" />Scheduled Matches</h2>

@@ -108,6 +108,85 @@ export default function MoroccoTicketsPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-8">
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Morocco World Cup 2026: The Atlas Lions Roar Again</h2>
+              <p>
+                In the winter of 2022, Morocco wrote the most remarkable chapter in African football history.
+                The Atlas Lions became the first African and Arab nation to reach a World Cup semi-final, defeating
+                <Link href="/teams/belgium-world-cup-2026-tickets" className="text-green-700 hover:underline">Belgium</Link>,
+                <Link href="/teams/spain-world-cup-2026-tickets" className="text-green-700 hover:underline">Spain</Link>, and
+                <Link href="/teams/portugal-world-cup-2026-tickets" className="text-green-700 hover:underline">Portugal</Link> along
+                the way. The 2026 FIFA World Cup represents their opportunity to prove that historic run was no fluke -
+                and perhaps go even further.
+              </p>
+              <p>
+                Walid Regragui&apos;s tactical masterclass in Qatar combined defensive organization with rapid counter-attacks,
+                but this Moroccan side is more than just a well-coached team. They possess genuine world-class talent in
+                Achraf Hakimi, one of the best full-backs on the planet, and a midfield featuring Premier League and
+                top European league players. The depth and quality available to Morocco now rivals traditional powerhouses.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Group C: The Brazil Blockbuster</h3>
+              <p>
+                Morocco drew the most anticipated group stage clash of the entire tournament:
+                <Link href="/teams/brazil-world-cup-2026-tickets" className="text-green-700 hover:underline">Brazil</Link> vs Morocco
+                at <Link href="/venues/lincoln-financial-field-world-cup-2026" className="text-green-700 hover:underline">Lincoln Financial Field in Philadelphia</Link>.
+                Two nations with passionate fanbases and attacking traditions - the atmosphere will be electric. Morocco
+                also faces <Link href="/teams/haiti-world-cup-2026-tickets" className="text-green-700 hover:underline">Haiti</Link> at
+                <Link href="/venues/metlife-stadium-world-cup-2026" className="text-green-700 hover:underline">MetLife Stadium</Link> and
+                <Link href="/teams/scotland-world-cup-2026-tickets" className="text-green-700 hover:underline">Scotland</Link> at
+                <Link href="/venues/gillette-stadium-world-cup-2026" className="text-green-700 hover:underline">Gillette Stadium in Boston</Link>.
+              </p>
+              <p>
+                The Brazil match carries enormous weight. Morocco has never beaten Brazil, but their performance against
+                European giants in 2022 suggests they can compete with anyone. A result against the five-time champions
+                would effectively guarantee knockout stage qualification and potentially first place in Group C.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Hakimi&apos;s Excellence: World-Class Leadership</h3>
+              <p>
+                Achraf Hakimi is the poster boy for African football&apos;s new era. The PSG full-back combines
+                blistering pace with elite technical ability and has won major honors at Real Madrid, Inter Milan,
+                and Paris. His chipped penalty to eliminate Spain in Qatar became one of the World Cup&apos;s iconic
+                moments - celebrating by running to his mother in the stands.
+              </p>
+              <p>
+                Supporting Hakimi is a squad stacked with quality. Hakim Ziyech&apos;s creativity terrorizes defenses,
+                while Sofyan Amrabat&apos;s midfield dominance (which earned him a Manchester United move) anchors the team.
+                Yassine Bounou (Bono) has established himself as one of the world&apos;s best goalkeepers, and the
+                emergence of Azzedine Ounahi added another dimension to Moroccan midfield play.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">African Pride: Continental Representation</h3>
+              <p>
+                Morocco carries the hopes of an entire continent. African nations have long been underestimated at
+                World Cups, but Morocco&apos;s 2022 run changed perceptions forever. They&apos;ll be joined by fellow African
+                qualifiers including <Link href="/teams/nigeria-world-cup-2026-tickets" className="text-green-700 hover:underline">Nigeria</Link>,
+                <Link href="/teams/cameroon-world-cup-2026-tickets" className="text-green-700 hover:underline">Cameroon</Link>,
+                <Link href="/teams/egypt-world-cup-2026-tickets" className="text-green-700 hover:underline">Egypt</Link>, and
+                <Link href="/teams/senegal-world-cup-2026-tickets" className="text-green-700 hover:underline">Senegal</Link>,
+                but Morocco enters as Africa&apos;s flagship nation.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Moroccan-American Community: Passionate Support</h3>
+              <p>
+                The Moroccan diaspora in America is substantial and passionate. Cities like New York, Boston, and
+                Philadelphia have significant Moroccan communities who will create incredible atmospheres at Morocco
+                matches. The scenes in Qatar - where Morocco&apos;s fanbase was among the loudest - will be replicated
+                on American soil. Combined with the already large Arab-American population, Morocco will enjoy
+                support rivaling any team in the tournament.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">2030 World Cup Ambitions</h3>
+              <p>
+                Morocco is part of the joint bid (with Spain and Portugal) to host the 2030 World Cup. A strong
+                performance in 2026 would bolster Morocco&apos;s credentials as a footballing nation capable of hosting
+                and succeeding at the highest level. The Atlas Lions play not just for glory but for African football&apos;s
+                future on the world stage.
+              </p>
+            </article>
+
             <Card className="border-yellow-400 bg-yellow-50">
               <CardContent className="p-6">
                 <h3 className="font-bold text-yellow-900">The Group C Blockbuster</h3>

@@ -40,7 +40,53 @@ export default function NRGStadiumPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-6">
-            <Card><CardContent className="p-6"><p className="text-slate-600">NRG Stadium's retractable roof makes it perfect for World Cup matches in Houston's summer heat. Home of the Houston Texans (NFL) and the Houston Rodeo.</p></CardContent></Card>
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">NRG Stadium: Houston&apos;s Climate-Controlled World Cup Venue</h2>
+              <p>
+                Houston&apos;s NRG Stadium brings Texas-sized hospitality and climate-controlled comfort to the 2026 World Cup.
+                The retractable roof stadium ensures perfect playing conditions regardless of Texas summer heat, while the
+                72,000 capacity delivers impressive atmosphere. Houston&apos;s status as America&apos;s most diverse city guarantees
+                passionate support for every competing nation.
+              </p>
+              <p>
+                As home to the Houston Texans and the legendary Houston Rodeo, NRG Stadium knows how to host major events.
+                The 2026 World Cup adds football&apos;s greatest tournament to this impressive venue&apos;s resume.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Uruguay vs Saudi Arabia: Group H Showdown</h3>
+              <p>
+                NRG Stadium hosts <Link href="/teams/uruguay-world-cup-2026-tickets" className="text-blue-600 hover:underline">Uruguay</Link> vs
+                <Link href="/teams/saudi-arabia-world-cup-2026-tickets" className="text-blue-600 hover:underline">Saudi Arabia</Link> - a
+                clash between South American tradition and Middle Eastern ambition. Uruguay brings World Cup pedigree (two-time
+                champions), while Saudi Arabia carries momentum from their stunning 2022 victory over
+                <Link href="/teams/argentina-world-cup-2026-tickets" className="text-blue-600 hover:underline">Argentina</Link>. Houston&apos;s
+                significant Latin American and Arab communities ensure electric atmosphere.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Climate Control: Perfect Football Conditions</h3>
+              <p>
+                Houston&apos;s June-July temperatures can exceed 95°F with high humidity. NRG Stadium&apos;s retractable roof
+                solves this challenge, providing climate-controlled comfort for players and fans alike. The stadium
+                can be configured for open-air natural atmosphere when conditions permit, offering flexibility other
+                venues can&apos;t match.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Houston Experience: Space City Welcomes the World</h3>
+              <p>
+                Houston offers incredible World Cup experiences beyond the stadium. Visit NASA&apos;s Johnson Space Center,
+                explore the Museum District&apos;s world-class collections, or dive into the diverse culinary scene from
+                Vietnamese in Midtown to Tex-Mex in Montrose. The
+                <Link href="/cities/houston-world-cup-2026-travel-guide" className="text-blue-600 hover:underline">Houston travel guide</Link> covers
+                accommodation and attractions throughout Space City.
+              </p>
+              <p>
+                Combine NRG Stadium with <Link href="/venues/att-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">AT&amp;T Stadium in Dallas</Link> for
+                the Texas World Cup double - two iconic venues, one incredible state.
+              </p>
+            </article>
+
+            <Card><CardContent className="p-6"><p className="text-slate-600">NRG Stadium&apos;s retractable roof makes it perfect for World Cup matches in Houston&apos;s summer heat. Home of the Houston Texans (NFL) and the Houston Rodeo.</p></CardContent></Card>
             <div>
               <h2 className="text-2xl font-bold mb-4 flex items-center gap-2"><Calendar className="h-6 w-6" />Scheduled Matches</h2>
               <div className="space-y-3">

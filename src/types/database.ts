@@ -59,7 +59,20 @@ export type AffiliatePartner =
   | 'seat_geek'
   | 'manual';
 
-export type LanguageCode = 'en' | 'de' | 'fr' | 'es' | 'it' | 'ar';
+export type LanguageCode = 'en' | 'de' | 'fr' | 'es' | 'it' | 'ar' | 'pt' | 'ja' | 'zh';
+
+export type BlogStatus = 'draft' | 'published' | 'scheduled' | 'archived';
+
+export type BlogCategory =
+  | 'news'
+  | 'guide'
+  | 'travel'
+  | 'tickets'
+  | 'teams'
+  | 'venues'
+  | 'analysis'
+  | 'preview'
+  | 'review';
 
 export type TeamType = 'national' | 'franchise' | 'club';
 
@@ -307,6 +320,78 @@ export interface AdminUser {
   created_at: string;
 }
 
+export interface BlogPost {
+  id: string;
+  slug: string;
+  category: BlogCategory;
+  sport_type: SportType;
+  competition_id: string | null;
+  team_id: string | null;
+  venue_id: string | null;
+  fixture_id: string | null;
+  featured_image_url: string | null;
+  thumbnail_url: string | null;
+  gallery: string[];
+  status: BlogStatus;
+  published_at: string | null;
+  scheduled_for: string | null;
+  is_featured: boolean;
+  is_sticky: boolean;
+  display_order: number;
+  reading_time_minutes: number;
+  view_count: number;
+  tags: string[];
+  author_id: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface BlogPostTranslation {
+  id: string;
+  blog_post_id: string;
+  language: LanguageCode;
+  title: string;
+  excerpt: string | null;
+  content_html: string;
+  meta_title: string | null;
+  meta_description: string | null;
+  slug: string | null;
+  is_complete: boolean;
+  created_at: string;
+  updated_at: string;
+  updated_by: string | null;
+}
+
+export interface PageContent {
+  id: string;
+  entity_type: 'competition' | 'team' | 'fixture' | 'venue';
+  entity_id: string;
+  language: LanguageCode;
+  content_html: string | null;
+  sections: ContentSection[];
+  meta_title: string | null;
+  meta_description: string | null;
+  faqs: FAQ[];
+  is_complete: boolean;
+  created_at: string;
+  updated_at: string;
+  updated_by: string | null;
+}
+
+export interface ContentSection {
+  id: string;
+  type: 'text' | 'image' | 'gallery' | 'table' | 'cta' | 'faq';
+  title?: string;
+  content?: string;
+  data?: Record<string, unknown>;
+  order: number;
+}
+
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
 // Extended types with relations
 export interface CompetitionWithRelations extends Competition {
   translations?: Translation[];
@@ -338,6 +423,15 @@ export interface VenueWithRelations extends Venue {
   affiliate_links?: AffiliateLink[];
   fixtures?: Fixture[];
   home_teams?: Team[];
+  page_content?: PageContent | null;
+}
+
+export interface BlogPostWithRelations extends BlogPost {
+  translations?: BlogPostTranslation[];
+  competition?: Competition | null;
+  team?: Team | null;
+  venue?: Venue | null;
+  fixture?: Fixture | null;
 }
 
 // Form types for creating/updating entities
@@ -347,3 +441,6 @@ export type FixtureFormData = Omit<Fixture, 'id' | 'created_at' | 'updated_at' |
 export type VenueFormData = Omit<Venue, 'id' | 'created_at' | 'updated_at' | 'created_by'>;
 export type TranslationFormData = Omit<Translation, 'id' | 'created_at' | 'updated_at' | 'updated_by'>;
 export type AffiliateLinkFormData = Omit<AffiliateLink, 'id' | 'created_at' | 'updated_at' | 'click_count' | 'last_clicked'>;
+export type BlogPostFormData = Omit<BlogPost, 'id' | 'created_at' | 'updated_at' | 'author_id' | 'view_count'>;
+export type BlogPostTranslationFormData = Omit<BlogPostTranslation, 'id' | 'created_at' | 'updated_at' | 'updated_by'>;
+export type PageContentFormData = Omit<PageContent, 'id' | 'created_at' | 'updated_at' | 'updated_by'>;

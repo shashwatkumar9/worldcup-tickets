@@ -211,7 +211,7 @@ export default function ArgentinaTicketsPage() {
 
                 <div className="pt-4 border-t">
                   <Link
-                    href="/fifa-world-cup-2026-tickets/groups/group-j"
+                    href="/fixtures/group-j-world-cup-2026-tickets"
                     className="text-sky-600 hover:underline text-sm font-medium"
                   >
                     View Full Group J Standings & Schedule →
@@ -297,35 +297,65 @@ export default function ArgentinaTicketsPage() {
               </CardContent>
             </Card>
 
-            {/* Team Info */}
+            {/* Team Info - Comprehensive Article */}
             <Card>
               <CardHeader>
-                <CardTitle>About Argentina National Team</CardTitle>
+                <CardTitle>Argentina World Cup 2026: Complete Guide to La Albiceleste&apos;s Title Defense</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose prose-slate max-w-none">
                 <p>
-                  The <strong>Argentina national football team</strong> (Spanish: Selección de fútbol de Argentina)
-                  represents Argentina in international football and is administered by the Argentine Football Association (AFA).
+                  The <strong>Argentina national football team</strong> (Spanish: Selección de fútbol de Argentina) enters the <Link href="/fifa-world-cup-2026-tickets" className="text-blue-600 hover:underline">2026 FIFA World Cup</Link> as the defending champions, seeking to become the first team since <Link href="/teams/brazil-world-cup-2026-tickets" className="text-blue-600 hover:underline">Brazil</Link> (1958, 1962) to win back-to-back World Cup titles. Led by the legendary Lionel Messi in what is expected to be his final World Cup at age 39, Argentina are one of the favorites for the tournament.
                 </p>
 
-                <h3>2026 World Cup Prospects</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">2026 World Cup Prospects</h2>
                 <p>
-                  As defending champions, Argentina enter the 2026 World Cup as one of the tournament favorites.
-                  The team has maintained its core squad from 2022, with Lionel Messi potentially playing in
-                  what could be his final World Cup at age 38.
+                  Under coach Lionel Scaloni, Argentina has maintained the core squad that delivered their third World Cup title in Qatar 2022. The team&apos;s blend of experience and emerging talent makes them formidable contenders. Key to their success will be the form of Messi, who continues to defy age with his performances at Inter Miami.
+                </p>
+                <p>
+                  The squad depth is impressive, with Julián Álvarez emerging as one of the world&apos;s best strikers at Manchester City, while Enzo Fernández provides world-class creativity from midfield. In goal, Emiliano &quot;Dibu&quot; Martínez remains Argentina&apos;s penalty shootout hero.
                 </p>
 
-                <h3>Playing Style</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">Group J Analysis</h2>
                 <p>
-                  Under coach Lionel Scaloni, Argentina plays a possession-based style with quick transitions.
-                  The team is known for its defensive solidity combined with creative attacking play centered around Messi.
+                  Argentina has been drawn into <Link href="/fixtures/group-j-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group J</Link> alongside <Link href="/teams/algeria-world-cup-2026-tickets" className="text-blue-600 hover:underline">Algeria</Link>, <Link href="/teams/austria-world-cup-2026-tickets" className="text-blue-600 hover:underline">Austria</Link>, and <Link href="/teams/jordan-world-cup-2026-tickets" className="text-blue-600 hover:underline">Jordan</Link>. While Argentina are heavy favorites to top the group, each opponent brings unique challenges:
+                </p>
+                <ul>
+                  <li><strong><Link href="/teams/algeria-world-cup-2026-tickets" className="text-blue-600 hover:underline">Algeria</Link></strong> — A passionate North African side with talented players from top European leagues. The Fennec Foxes will be determined to make their mark.</li>
+                  <li><strong><Link href="/teams/austria-world-cup-2026-tickets" className="text-blue-600 hover:underline">Austria</Link></strong> — A well-organized European team that reached the Round of 16 at Euro 2024. Their pressing style could trouble any opponent.</li>
+                  <li><strong><Link href="/teams/jordan-world-cup-2026-tickets" className="text-blue-600 hover:underline">Jordan</Link></strong> — Making their World Cup debut after reaching the Asian Cup final. They&apos;ll have nothing to lose against the champions.</li>
+                </ul>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">Match Venues</h2>
+                <p>Argentina&apos;s group stage matches will be played at some of the best venues in the tournament:</p>
+                <ul>
+                  <li><Link href="/venues/arrowhead-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Arrowhead Stadium</Link> (Kansas City) — vs Algeria</li>
+                  <li><Link href="/venues/att-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">AT&T Stadium</Link> (Dallas) — vs Austria</li>
+                  <li><Link href="/venues/att-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">AT&T Stadium</Link> (Dallas) — vs Jordan</li>
+                </ul>
+                <p>
+                  If Argentina tops their group, they would likely play Round of 32 matches in Dallas or Kansas City before potential knockout stage matches at <Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium</Link> (the Final venue) or <Link href="/venues/att-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">AT&T Stadium</Link> (Semifinal venue).
                 </p>
 
-                <h3>Group J Analysis</h3>
+                <h2 className="text-xl font-bold mt-6 mb-3">CONMEBOL Rivals</h2>
                 <p>
-                  Argentina has been drawn into Group J alongside Algeria, Austria, and Jordan. While they are
-                  heavy favorites to top the group, all three opponents will be highly motivated to cause an upset
-                  against the world champions.
+                  Argentina&apos;s South American rivals will all be looking to challenge for the title. Watch for potential clashes with:
+                </p>
+                <ul>
+                  <li><Link href="/teams/brazil-world-cup-2026-tickets" className="text-blue-600 hover:underline">Brazil</Link> — The 5-time champions and eternal rivals, seeking revenge for 2022</li>
+                  <li><Link href="/teams/colombia-world-cup-2026-tickets" className="text-blue-600 hover:underline">Colombia</Link> — Lost the 2024 Copa America final to Argentina</li>
+                  <li><Link href="/teams/uruguay-world-cup-2026-tickets" className="text-blue-600 hover:underline">Uruguay</Link> — The 2-time World Cup winners with a talented squad</li>
+                  <li><Link href="/teams/ecuador-world-cup-2026-tickets" className="text-blue-600 hover:underline">Ecuador</Link> — Rising South American force</li>
+                  <li><Link href="/teams/paraguay-world-cup-2026-tickets" className="text-blue-600 hover:underline">Paraguay</Link> — Traditional rivals in the Río de la Plata derby</li>
+                </ul>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">World Cup History</h2>
+                <p>
+                  Argentina has won the World Cup three times: 1978 (as hosts), 1986 (led by Diego Maradona), and 2022 (led by Lionel Messi). They have also been runners-up three times (1930, 1990, 2014). The team has reached the final of 6 World Cups, making them one of the most successful nations in tournament history.
+                </p>
+
+                <h2 className="text-xl font-bold mt-6 mb-3">How to Buy Argentina Tickets</h2>
+                <p>
+                  Tickets for Argentina matches are among the highest-demand in the tournament. We compare prices from Ticketmaster, StubHub, Viagogo, and SeatGeek to help you find the best deals. Group stage tickets start from approximately $150, with knockout stage prices increasing significantly.
                 </p>
               </CardContent>
             </Card>
@@ -437,7 +467,7 @@ export default function ArgentinaTicketsPage() {
                 <CardTitle>Related</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                <Link href="/fifa-world-cup-2026-tickets/groups/group-j" className="block p-2 rounded hover:bg-slate-50 text-sm">
+                <Link href="/fixtures/group-j-world-cup-2026-tickets" className="block p-2 rounded hover:bg-slate-50 text-sm">
                   → Group J Full Schedule
                 </Link>
                 <Link href="/venues/nrg-stadium-world-cup-2026-tickets" className="block p-2 rounded hover:bg-slate-50 text-sm">

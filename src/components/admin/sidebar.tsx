@@ -17,6 +17,9 @@ import {
   BarChart3,
   LogOut,
   Ticket,
+  FileText,
+  Plane,
+  Grid3X3,
 } from "lucide-react"
 
 const navigation = [
@@ -46,14 +49,29 @@ const navigation = [
     icon: MapPin,
   },
   {
+    name: "Groups",
+    href: "/admin/groups",
+    icon: Grid3X3,
+  },
+  {
+    name: "Travel Guides",
+    href: "/admin/travel-guides",
+    icon: Plane,
+  },
+  {
+    name: "Affiliates",
+    href: "/admin/affiliates",
+    icon: LinkIcon,
+  },
+  {
+    name: "Blog",
+    href: "/admin/blog",
+    icon: FileText,
+  },
+  {
     name: "Translations",
     href: "/admin/translations",
     icon: Languages,
-  },
-  {
-    name: "Affiliate Links",
-    href: "/admin/affiliate-links",
-    icon: LinkIcon,
   },
   {
     name: "Menu Builder",

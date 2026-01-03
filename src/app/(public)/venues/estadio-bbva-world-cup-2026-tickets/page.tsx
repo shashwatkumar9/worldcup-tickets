@@ -39,6 +39,39 @@ export default function EstadioBBVAPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-6">
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Estadio BBVA: Monterrey&apos;s Modern Football Cathedral</h2>
+              <p>
+                Estadio BBVA offers one of football&apos;s most breathtaking settings. The dramatic Cerro de la Silla mountain
+                rises behind the stadium, creating a backdrop that photographers and broadcasters will capture in stunning
+                detail. This 2015-built venue represents the best of modern Mexican stadium design, combining
+                state-of-the-art facilities with the passionate atmosphere that makes Liga MX one of the world&apos;s most
+                exciting leagues.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Group A Action: Mexico&apos;s Northern Base</h3>
+              <p>
+                Estadio BBVA hosts crucial Group A fixtures as <Link href="/teams/mexico-world-cup-2026-tickets" className="text-blue-600 hover:underline">Mexico</Link> spreads
+                their home advantage across three venues. <Link href="/teams/korea-world-cup-2026-tickets" className="text-blue-600 hover:underline">South Korea</Link> and
+                <Link href="/teams/south-africa-world-cup-2026-tickets" className="text-blue-600 hover:underline">South Africa</Link> matches
+                bring international flavor to Monterrey, while passionate Rayados fans ensure incredible atmosphere.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Monterrey Experience: Industrial Heart of Mexico</h3>
+              <p>
+                Monterrey, Mexico&apos;s industrial powerhouse, offers unique World Cup experiences. The Fundidora Park
+                transforms historic steel foundries into cultural spaces, while the Macroplaza provides Latin America&apos;s
+                largest urban square. The <Link href="/cities/monterrey-world-cup-2026-travel-guide" className="text-blue-600 hover:underline">Monterrey travel guide</Link> covers
+                accommodation from luxury hotels to charming mountain retreats in nearby Chipinque.
+              </p>
+              <p>
+                Combine Estadio BBVA with <Link href="/venues/estadio-azteca-world-cup-2026-tickets" className="text-blue-600 hover:underline">Estadio Azteca in Mexico City</Link> and
+                <Link href="/venues/estadio-akron-world-cup-2026-tickets" className="text-blue-600 hover:underline">Estadio Akron in Guadalajara</Link> for
+                the complete Mexican World Cup experience.
+              </p>
+            </article>
+
             <Card className="border-blue-400 bg-blue-50"><CardContent className="p-6">
               <div className="flex items-center gap-2 mb-2"><Star className="h-6 w-6 text-blue-600" /><h3 className="font-bold text-xl text-blue-900">Spectacular Mountain Setting</h3></div>
               <p className="text-blue-800">Estadio BBVA offers one of the most dramatic backdrops in world football - the Cerro de la Silla mountain. Home of CF Monterrey (Rayados), this modern stadium opened in 2015 and is considered one of the best in the Americas.</p>

@@ -69,6 +69,67 @@ export default function ColombiaTicketsPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-8">
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Colombia World Cup 2026: Los Cafeteros Return to Dance</h2>
+              <p>
+                Colombia&apos;s absence from the 2022 World Cup was felt across the football world. The passionate
+                Cafeteros and their famous yellow shirts bring an atmosphere unlike any other nation. In 2026,
+                Colombia returns with a squad headlined by Luis Díaz - the Liverpool winger whose dazzling skills
+                and infectious smile have made him a global star - and the evergreen James Rodríguez, still pulling
+                strings from midfield and creating moments of magic.
+              </p>
+              <p>
+                Colombian football carries unique cultural significance. When Colombia plays, the entire nation stops.
+                The rhythmic celebrations, the Vallenato music echoing through stadiums, and the sheer joy of Colombian
+                fans create unforgettable tournament experiences. The 2014 quarter-final run under James Rodríguez remains
+                etched in World Cup memory, and Los Cafeteros seek to surpass that historic achievement.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Group K: Portugal Showdown at MetLife</h3>
+              <p>
+                Colombia opens against <Link href="/teams/portugal-world-cup-2026-tickets" className="text-yellow-700 hover:underline">Portugal</Link> at
+                <Link href="/venues/metlife-stadium-world-cup-2026" className="text-yellow-700 hover:underline">MetLife Stadium in New York/New Jersey</Link> in
+                one of the group stage&apos;s marquee fixtures. Cristiano Ronaldo potentially in his final World Cup versus
+                Luis Díaz in his prime - the contrast of generations creates compelling narrative.
+                <Link href="/teams/uzbekistan-world-cup-2026-tickets" className="text-yellow-700 hover:underline">Uzbekistan</Link> at
+                <Link href="/venues/lincoln-financial-field-world-cup-2026" className="text-yellow-700 hover:underline">Lincoln Financial Field in Philadelphia</Link> and
+                a third match at <Link href="/venues/gillette-stadium-world-cup-2026" className="text-yellow-700 hover:underline">Gillette Stadium in Boston</Link> complete
+                the group stage campaign.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Luis Díaz: Liverpool&apos;s Colombian Joy</h3>
+              <p>
+                Luis Díaz has become one of the Premier League&apos;s most electrifying players since joining Liverpool.
+                His direct running, finishing ability, and pure joy in playing football makes him the perfect
+                Colombian talisman. At 29 during the 2026 World Cup, he enters his peak years ready to lead
+                Colombia to glory.
+              </p>
+              <p>
+                James Rodríguez remains the orchestra conductor. The 2014 Golden Boot winner may have moved to
+                São Paulo, but his technical genius and passing range remain unmatched. Jefferson Lerma adds
+                Crystal Palace steel to midfield, while a new generation of Colombian talent emerges through
+                European academies.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">CONMEBOL Rivals: South American Battles</h3>
+              <p>
+                Colombia enters alongside South American giants <Link href="/teams/brazil-world-cup-2026-tickets" className="text-yellow-700 hover:underline">Brazil</Link>,
+                <Link href="/teams/argentina-world-cup-2026-tickets" className="text-yellow-700 hover:underline">Argentina</Link>, and
+                <Link href="/teams/uruguay-world-cup-2026-tickets" className="text-yellow-700 hover:underline">Uruguay</Link>.
+                The fierce CONMEBOL qualifying rounds prepare South American teams for World Cup intensity, and
+                Colombia&apos;s battles with continental rivals have produced classic encounters throughout history.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Colombian-American Support: Tri-State Takeover</h3>
+              <p>
+                The substantial Colombian-American population, particularly in New York, New Jersey, and Florida,
+                ensures passionate support. Colombian flags will dominate MetLife Stadium for the Portugal opener,
+                and every Colombia match will feel like a home game. The singing, dancing, and celebration that
+                Colombian fans bring transforms stadiums into festivals of football.
+              </p>
+            </article>
+
             <Card className="border-yellow-400 bg-yellow-50">
               <CardContent className="p-6">
                 <h3 className="font-bold text-yellow-900">Portugal vs Colombia Showdown</h3>

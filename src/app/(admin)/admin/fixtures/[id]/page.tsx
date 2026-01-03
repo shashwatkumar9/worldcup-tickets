@@ -3,6 +3,7 @@
 import { useEffect, useState, use } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { createClient } from "@/lib/supabase/client"
 import { AdminHeader } from "@/components/admin/header"
 import { Button } from "@/components/ui/button"
@@ -19,7 +20,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { ArrowLeft, Save, Loader2 } from "lucide-react"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+import { ArrowLeft, Save, Loader2, Plus, Trash2, ExternalLink } from "lucide-react"
+
+const RichTextEditor = dynamic(
+  () => import("@/components/ui/rich-text-editor"),
+  { ssr: false, loading: () => <div className="h-[300px] bg-slate-800 rounded-lg animate-pulse" /> }
+)
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -32,6 +46,9 @@ const LANGUAGES = [
   { code: "es", name: "Spanish" },
   { code: "it", name: "Italian" },
   { code: "ar", name: "Arabic" },
+  { code: "pt", name: "Portuguese" },
+  { code: "ja", name: "Japanese" },
+  { code: "zh", name: "Chinese" },
 ]
 
 const SPORT_TYPES = [
@@ -40,9 +57,6 @@ const SPORT_TYPES = [
   { value: "tennis", label: "Tennis" },
   { value: "rugby", label: "Rugby" },
   { value: "cricket", label: "Cricket" },
-  { value: "athletics", label: "Athletics" },
-  { value: "swimming", label: "Swimming" },
-  { value: "other", label: "Other" },
 ]
 
 const FIXTURE_TYPES = [
@@ -53,8 +67,6 @@ const FIXTURE_TYPES = [
   { value: "semi_final", label: "Semi Final" },
   { value: "third_place", label: "Third Place Playoff" },
   { value: "final", label: "Final" },
-  { value: "friendly", label: "Friendly" },
-  { value: "qualifier", label: "Qualifier" },
 ]
 
 const FIXTURE_STATUSES = [
@@ -65,6 +77,26 @@ const FIXTURE_STATUSES = [
   { value: "cancelled", label: "Cancelled" },
 ]
 
+const AFFILIATE_PARTNERS = [
+  { value: "ticketmaster", label: "Ticketmaster" },
+  { value: "stubhub", label: "StubHub" },
+  { value: "viagogo", label: "Viagogo" },
+  { value: "ticombo", label: "TiCombo" },
+  { value: "vivid_seats", label: "VividSeats" },
+  { value: "seat_geek", label: "SeatGeek" },
+  { value: "hello_tickets", label: "HelloTickets" },
+  { value: "manual", label: "Manual" },
+]
+
+interface AffiliateLink {
+  id?: string
+  partner: string
+  url: string
+  price_from: number | null
+  is_active: boolean
+  priority: number
+}
+
 interface FixtureFormData {
   slug: string
   fixture_type: string
@@ -73,6 +105,7 @@ interface FixtureFormData {
   venue_id: string
   home_team_id: string
   away_team_id: string
+  group_name: string
   date: string
   time: string
   status: string
@@ -82,10 +115,12 @@ interface FixtureFormData {
     [key: string]: {
       name: string
       description: string
+      content_html: string
       meta_title: string
       meta_description: string
     }
   }
+  affiliate_links: AffiliateLink[]
 }
 
 interface SelectOption {
@@ -100,6 +135,7 @@ export default function FixtureEditPage({ params }: PageProps) {
 
   const [loading, setLoading] = useState(!isNew)
   const [saving, setSaving] = useState(false)
+  const [activeTab, setActiveTab] = useState("en")
   const [competitions, setCompetitions] = useState<SelectOption[]>([])
   const [venues, setVenues] = useState<SelectOption[]>([])
   const [teams, setTeams] = useState<SelectOption[]>([])
@@ -111,14 +147,16 @@ export default function FixtureEditPage({ params }: PageProps) {
     venue_id: "",
     home_team_id: "",
     away_team_id: "",
+    group_name: "",
     date: "",
     time: "",
     status: "scheduled",
     is_featured: false,
     is_hot: false,
     translations: {
-      en: { name: "", description: "", meta_title: "", meta_description: "" },
+      en: { name: "", description: "", content_html: "", meta_title: "", meta_description: "" },
     },
+    affiliate_links: [],
   })
 
   useEffect(() => {
@@ -131,7 +169,6 @@ export default function FixtureEditPage({ params }: PageProps) {
   const fetchRelatedData = async () => {
     const supabase = createClient()
 
-    // Fetch competitions
     const { data: comps } = await supabase
       .from("competitions")
       .select("id, translations(name, language)")
@@ -146,7 +183,6 @@ export default function FixtureEditPage({ params }: PageProps) {
       )
     }
 
-    // Fetch venues
     const { data: venueData } = await supabase
       .from("venues")
       .select("id, name")
@@ -156,7 +192,6 @@ export default function FixtureEditPage({ params }: PageProps) {
       setVenues(venueData.map((v: any) => ({ id: v.id, name: v.name })))
     }
 
-    // Fetch teams
     const { data: teamData } = await supabase
       .from("teams")
       .select("id, translations(name, language)")
@@ -179,7 +214,8 @@ export default function FixtureEditPage({ params }: PageProps) {
       .from("fixtures")
       .select(`
         *,
-        translations(*)
+        translations(*),
+        page_content:page_content(*)
       `)
       .eq("id", id)
       .single()
@@ -190,18 +226,27 @@ export default function FixtureEditPage({ params }: PageProps) {
       return
     }
 
+    const { data: affiliateLinks } = await supabase
+      .from("affiliate_links")
+      .select("*")
+      .eq("entity_type", "fixture")
+      .eq("entity_id", id)
+      .order("priority", { ascending: false })
+
     const translations: FixtureFormData["translations"] = {}
     fixture.translations?.forEach((t: any) => {
+      const pageContent = fixture.page_content?.find((p: any) => p.language === t.language)
       translations[t.language] = {
         name: t.name || "",
         description: t.description || "",
+        content_html: pageContent?.content_html || t.content_html || "",
         meta_title: t.meta_title || "",
         meta_description: t.meta_description || "",
       }
     })
 
     if (!translations.en) {
-      translations.en = { name: "", description: "", meta_title: "", meta_description: "" }
+      translations.en = { name: "", description: "", content_html: "", meta_title: "", meta_description: "" }
     }
 
     setFormData({
@@ -212,12 +257,21 @@ export default function FixtureEditPage({ params }: PageProps) {
       venue_id: fixture.venue_id || "",
       home_team_id: fixture.home_team_id || "",
       away_team_id: fixture.away_team_id || "",
+      group_name: fixture.group_name || "",
       date: fixture.date || "",
       time: fixture.time || "",
       status: fixture.status,
       is_featured: fixture.is_featured,
       is_hot: fixture.is_hot,
       translations,
+      affiliate_links: affiliateLinks?.map((link: any) => ({
+        id: link.id,
+        partner: link.partner,
+        url: link.url,
+        price_from: link.price_from,
+        is_active: link.is_active,
+        priority: link.priority,
+      })) || [],
     })
     setLoading(false)
   }
@@ -251,11 +305,7 @@ export default function FixtureEditPage({ params }: PageProps) {
     }
   }
 
-  const handleTranslationChange = (
-    lang: string,
-    field: string,
-    value: string
-  ) => {
+  const handleTranslationChange = (lang: string, field: string, value: string) => {
     setFormData((prev) => ({
       ...prev,
       translations: {
@@ -274,10 +324,37 @@ export default function FixtureEditPage({ params }: PageProps) {
         ...prev,
         translations: {
           ...prev.translations,
-          [lang]: { name: "", description: "", meta_title: "", meta_description: "" },
+          [lang]: { name: "", description: "", content_html: "", meta_title: "", meta_description: "" },
         },
       }))
+      setActiveTab(lang)
     }
+  }
+
+  const addAffiliateLink = () => {
+    setFormData((prev) => ({
+      ...prev,
+      affiliate_links: [
+        ...prev.affiliate_links,
+        { partner: "ticketmaster", url: "", price_from: null, is_active: true, priority: prev.affiliate_links.length },
+      ],
+    }))
+  }
+
+  const updateAffiliateLink = (index: number, field: string, value: any) => {
+    setFormData((prev) => ({
+      ...prev,
+      affiliate_links: prev.affiliate_links.map((link, i) =>
+        i === index ? { ...link, [field]: value } : link
+      ),
+    }))
+  }
+
+  const removeAffiliateLink = (index: number) => {
+    setFormData((prev) => ({
+      ...prev,
+      affiliate_links: prev.affiliate_links.filter((_, i) => i !== index),
+    }))
   }
 
   const handleSave = async () => {
@@ -294,6 +371,7 @@ export default function FixtureEditPage({ params }: PageProps) {
         venue_id: formData.venue_id || null,
         home_team_id: formData.home_team_id || null,
         away_team_id: formData.away_team_id || null,
+        group_name: formData.group_name || null,
         date: formData.date || null,
         time: formData.time || null,
         status: formData.status,
@@ -320,11 +398,9 @@ export default function FixtureEditPage({ params }: PageProps) {
 
         if (updateError) throw updateError
 
-        await supabase
-          .from("translations")
-          .delete()
-          .eq("entity_type", "fixture")
-          .eq("entity_id", id)
+        await supabase.from("translations").delete().eq("entity_type", "fixture").eq("entity_id", id)
+        await supabase.from("page_content").delete().eq("entity_type", "fixture").eq("entity_id", id)
+        await supabase.from("affiliate_links").delete().eq("entity_type", "fixture").eq("entity_id", id)
       }
 
       const translationInserts = Object.entries(formData.translations)
@@ -340,11 +416,41 @@ export default function FixtureEditPage({ params }: PageProps) {
         }))
 
       if (translationInserts.length > 0) {
-        const { error: transError } = await supabase
-          .from("translations")
-          .insert(translationInserts)
+        await supabase.from("translations").insert(translationInserts)
+      }
 
-        if (transError) throw transError
+      const pageContentInserts = Object.entries(formData.translations)
+        .filter(([_, t]) => t.content_html)
+        .map(([lang, t]) => ({
+          entity_type: "fixture",
+          entity_id: fixtureId,
+          language: lang,
+          content_html: t.content_html,
+          meta_title: t.meta_title || null,
+          meta_description: t.meta_description || null,
+        }))
+
+      if (pageContentInserts.length > 0) {
+        await supabase.from("page_content").insert(pageContentInserts)
+      }
+
+      if (formData.affiliate_links.length > 0) {
+        const affiliateInserts = formData.affiliate_links
+          .filter((link) => link.url)
+          .map((link, index) => ({
+            entity_type: "fixture",
+            entity_id: fixtureId,
+            partner: link.partner,
+            url: link.url,
+            price_from: link.price_from,
+            is_active: link.is_active,
+            priority: index,
+            source_type: "manual",
+          }))
+
+        if (affiliateInserts.length > 0) {
+          await supabase.from("affiliate_links").insert(affiliateInserts)
+        }
       }
 
       router.push("/admin/fixtures")
@@ -396,15 +502,14 @@ export default function FixtureEditPage({ params }: PageProps) {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
-          {/* Main Content */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Translations */}
+            {/* Content */}
             <Card>
               <CardHeader>
                 <CardTitle>Content</CardTitle>
               </CardHeader>
               <CardContent>
-                <Tabs defaultValue="en">
+                <Tabs value={activeTab} onValueChange={setActiveTab}>
                   <div className="flex items-center justify-between mb-4">
                     <TabsList>
                       {Object.keys(formData.translations).map((lang) => (
@@ -419,9 +524,7 @@ export default function FixtureEditPage({ params }: PageProps) {
                         <SelectValue placeholder="Add language" />
                       </SelectTrigger>
                       <SelectContent>
-                        {LANGUAGES.filter(
-                          (l) => !formData.translations[l.code]
-                        ).map((lang) => (
+                        {LANGUAGES.filter((l) => !formData.translations[l.code]).map((lang) => (
                           <SelectItem key={lang.code} value={lang.code}>
                             {lang.name}
                           </SelectItem>
@@ -433,63 +536,56 @@ export default function FixtureEditPage({ params }: PageProps) {
                   {Object.keys(formData.translations).map((lang) => (
                     <TabsContent key={lang} value={lang} className="space-y-4">
                       <div className="space-y-2">
-                        <Label>Name *</Label>
+                        <Label>Match Title *</Label>
                         <Input
                           value={formData.translations[lang]?.name || ""}
-                          onChange={(e) =>
-                            handleNameChange(lang, e.target.value)
-                          }
-                          placeholder="e.g., USA vs Mexico - Group Stage"
+                          onChange={(e) => handleNameChange(lang, e.target.value)}
+                          placeholder="e.g., Brazil vs Scotland World Cup 2026"
                         />
                       </div>
 
                       <div className="space-y-2">
-                        <Label>Description</Label>
+                        <Label>Short Description</Label>
                         <Textarea
                           value={formData.translations[lang]?.description || ""}
-                          onChange={(e) =>
-                            handleTranslationChange(
-                              lang,
-                              "description",
-                              e.target.value
-                            )
-                          }
-                          rows={4}
-                          placeholder="Fixture description..."
+                          onChange={(e) => handleTranslationChange(lang, "description", e.target.value)}
+                          rows={3}
+                          placeholder="Brief description for listings..."
                         />
                       </div>
 
                       <div className="space-y-2">
-                        <Label>Meta Title (SEO)</Label>
-                        <Input
-                          value={formData.translations[lang]?.meta_title || ""}
-                          onChange={(e) =>
-                            handleTranslationChange(
-                              lang,
-                              "meta_title",
-                              e.target.value
-                            )
-                          }
-                          placeholder="SEO title for search engines"
+                        <Label>Article Content</Label>
+                        <p className="text-sm text-slate-500 mb-2">
+                          Write comprehensive match preview with internal links to teams, venue, and related fixtures
+                        </p>
+                        <RichTextEditor
+                          content={formData.translations[lang]?.content_html || ""}
+                          onChange={(html) => handleTranslationChange(lang, "content_html", html)}
+                          placeholder="Write detailed match preview, team analysis, ticket information..."
                         />
                       </div>
 
-                      <div className="space-y-2">
-                        <Label>Meta Description (SEO)</Label>
-                        <Textarea
-                          value={
-                            formData.translations[lang]?.meta_description || ""
-                          }
-                          onChange={(e) =>
-                            handleTranslationChange(
-                              lang,
-                              "meta_description",
-                              e.target.value
-                            )
-                          }
-                          rows={2}
-                          placeholder="SEO description for search engines"
-                        />
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <Label>Meta Title (SEO)</Label>
+                          <Input
+                            value={formData.translations[lang]?.meta_title || ""}
+                            onChange={(e) => handleTranslationChange(lang, "meta_title", e.target.value)}
+                            placeholder="SEO title"
+                            maxLength={70}
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label>Meta Description (SEO)</Label>
+                          <Textarea
+                            value={formData.translations[lang]?.meta_description || ""}
+                            onChange={(e) => handleTranslationChange(lang, "meta_description", e.target.value)}
+                            rows={2}
+                            placeholder="SEO description"
+                            maxLength={170}
+                          />
+                        </div>
                       </div>
                     </TabsContent>
                   ))}
@@ -508,9 +604,7 @@ export default function FixtureEditPage({ params }: PageProps) {
                     <Label>Home Team</Label>
                     <Select
                       value={formData.home_team_id}
-                      onValueChange={(value) =>
-                        setFormData((prev) => ({ ...prev, home_team_id: value }))
-                      }
+                      onValueChange={(value) => setFormData((prev) => ({ ...prev, home_team_id: value }))}
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Select home team" />
@@ -518,9 +612,7 @@ export default function FixtureEditPage({ params }: PageProps) {
                       <SelectContent>
                         <SelectItem value="">None</SelectItem>
                         {teams.map((team) => (
-                          <SelectItem key={team.id} value={team.id}>
-                            {team.name}
-                          </SelectItem>
+                          <SelectItem key={team.id} value={team.id}>{team.name}</SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
@@ -530,9 +622,7 @@ export default function FixtureEditPage({ params }: PageProps) {
                     <Label>Away Team</Label>
                     <Select
                       value={formData.away_team_id}
-                      onValueChange={(value) =>
-                        setFormData((prev) => ({ ...prev, away_team_id: value }))
-                      }
+                      onValueChange={(value) => setFormData((prev) => ({ ...prev, away_team_id: value }))}
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Select away team" />
@@ -540,9 +630,7 @@ export default function FixtureEditPage({ params }: PageProps) {
                       <SelectContent>
                         <SelectItem value="">None</SelectItem>
                         {teams.map((team) => (
-                          <SelectItem key={team.id} value={team.id}>
-                            {team.name}
-                          </SelectItem>
+                          <SelectItem key={team.id} value={team.id}>{team.name}</SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
@@ -550,11 +638,100 @@ export default function FixtureEditPage({ params }: PageProps) {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Affiliate Links */}
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between">
+                <CardTitle>Affiliate Links</CardTitle>
+                <Button size="sm" onClick={addAffiliateLink}>
+                  <Plus className="mr-2 h-4 w-4" />
+                  Add Link
+                </Button>
+              </CardHeader>
+              <CardContent>
+                {formData.affiliate_links.length === 0 ? (
+                  <div className="text-center py-6 text-slate-500">
+                    <p>No affiliate links added yet</p>
+                    <Button variant="outline" size="sm" className="mt-2" onClick={addAffiliateLink}>
+                      <Plus className="mr-2 h-4 w-4" />
+                      Add your first link
+                    </Button>
+                  </div>
+                ) : (
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Partner</TableHead>
+                        <TableHead>URL</TableHead>
+                        <TableHead>Price From</TableHead>
+                        <TableHead>Active</TableHead>
+                        <TableHead></TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {formData.affiliate_links.map((link, index) => (
+                        <TableRow key={index}>
+                          <TableCell>
+                            <Select
+                              value={link.partner}
+                              onValueChange={(value) => updateAffiliateLink(index, "partner", value)}
+                            >
+                              <SelectTrigger className="w-32">
+                                <SelectValue />
+                              </SelectTrigger>
+                              <SelectContent>
+                                {AFFILIATE_PARTNERS.map((p) => (
+                                  <SelectItem key={p.value} value={p.value}>{p.label}</SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex items-center gap-2">
+                              <Input
+                                value={link.url}
+                                onChange={(e) => updateAffiliateLink(index, "url", e.target.value)}
+                                placeholder="https://..."
+                                className="min-w-[200px]"
+                              />
+                              {link.url && (
+                                <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-blue-500">
+                                  <ExternalLink className="h-4 w-4" />
+                                </a>
+                              )}
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <Input
+                              type="number"
+                              value={link.price_from || ""}
+                              onChange={(e) => updateAffiliateLink(index, "price_from", e.target.value ? parseFloat(e.target.value) : null)}
+                              placeholder="$"
+                              className="w-24"
+                            />
+                          </TableCell>
+                          <TableCell>
+                            <Switch
+                              checked={link.is_active}
+                              onCheckedChange={(checked) => updateAffiliateLink(index, "is_active", checked)}
+                            />
+                          </TableCell>
+                          <TableCell>
+                            <Button variant="ghost" size="icon" onClick={() => removeAffiliateLink(index)}>
+                              <Trash2 className="h-4 w-4 text-red-500" />
+                            </Button>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                )}
+              </CardContent>
+            </Card>
           </div>
 
           {/* Sidebar */}
           <div className="space-y-6">
-            {/* Settings */}
             <Card>
               <CardHeader>
                 <CardTitle>Settings</CardTitle>
@@ -564,72 +741,47 @@ export default function FixtureEditPage({ params }: PageProps) {
                   <Label>Slug *</Label>
                   <Input
                     value={formData.slug}
-                    onChange={(e) =>
-                      setFormData((prev) => ({ ...prev, slug: e.target.value }))
-                    }
-                    placeholder="match-name-tickets"
+                    onChange={(e) => setFormData((prev) => ({ ...prev, slug: e.target.value }))}
+                    placeholder="brazil-vs-scotland-tickets"
                   />
+                  <p className="text-xs text-slate-500">/{formData.slug || "..."}</p>
                 </div>
 
                 <div className="space-y-2">
                   <Label>Fixture Type *</Label>
                   <Select
                     value={formData.fixture_type}
-                    onValueChange={(value) =>
-                      setFormData((prev) => ({ ...prev, fixture_type: value }))
-                    }
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, fixture_type: value }))}
                   >
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
+                    <SelectTrigger><SelectValue /></SelectTrigger>
                     <SelectContent>
                       {FIXTURE_TYPES.map((type) => (
-                        <SelectItem key={type.value} value={type.value}>
-                          {type.label}
-                        </SelectItem>
+                        <SelectItem key={type.value} value={type.value}>{type.label}</SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div className="space-y-2">
-                  <Label>Sport Type *</Label>
-                  <Select
-                    value={formData.sport_type}
-                    onValueChange={(value) =>
-                      setFormData((prev) => ({ ...prev, sport_type: value }))
-                    }
-                  >
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {SPORT_TYPES.map((sport) => (
-                        <SelectItem key={sport.value} value={sport.value}>
-                          {sport.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  <Label>Group</Label>
+                  <Input
+                    value={formData.group_name}
+                    onChange={(e) => setFormData((prev) => ({ ...prev, group_name: e.target.value }))}
+                    placeholder="e.g., Group A"
+                  />
                 </div>
 
                 <div className="space-y-2">
                   <Label>Competition</Label>
                   <Select
                     value={formData.competition_id}
-                    onValueChange={(value) =>
-                      setFormData((prev) => ({ ...prev, competition_id: value }))
-                    }
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, competition_id: value }))}
                   >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select competition" />
-                    </SelectTrigger>
+                    <SelectTrigger><SelectValue placeholder="Select competition" /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="">None</SelectItem>
                       {competitions.map((comp) => (
-                        <SelectItem key={comp.id} value={comp.id}>
-                          {comp.name}
-                        </SelectItem>
+                        <SelectItem key={comp.id} value={comp.id}>{comp.name}</SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -639,19 +791,13 @@ export default function FixtureEditPage({ params }: PageProps) {
                   <Label>Venue</Label>
                   <Select
                     value={formData.venue_id}
-                    onValueChange={(value) =>
-                      setFormData((prev) => ({ ...prev, venue_id: value }))
-                    }
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, venue_id: value }))}
                   >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select venue" />
-                    </SelectTrigger>
+                    <SelectTrigger><SelectValue placeholder="Select venue" /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="">None</SelectItem>
                       {venues.map((venue) => (
-                        <SelectItem key={venue.id} value={venue.id}>
-                          {venue.name}
-                        </SelectItem>
+                        <SelectItem key={venue.id} value={venue.id}>{venue.name}</SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -663,20 +809,15 @@ export default function FixtureEditPage({ params }: PageProps) {
                     <Input
                       type="date"
                       value={formData.date}
-                      onChange={(e) =>
-                        setFormData((prev) => ({ ...prev, date: e.target.value }))
-                      }
+                      onChange={(e) => setFormData((prev) => ({ ...prev, date: e.target.value }))}
                     />
                   </div>
-
                   <div className="space-y-2">
                     <Label>Time</Label>
                     <Input
                       type="time"
                       value={formData.time}
-                      onChange={(e) =>
-                        setFormData((prev) => ({ ...prev, time: e.target.value }))
-                      }
+                      onChange={(e) => setFormData((prev) => ({ ...prev, time: e.target.value }))}
                     />
                   </div>
                 </div>
@@ -685,18 +826,12 @@ export default function FixtureEditPage({ params }: PageProps) {
                   <Label>Status *</Label>
                   <Select
                     value={formData.status}
-                    onValueChange={(value) =>
-                      setFormData((prev) => ({ ...prev, status: value }))
-                    }
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, status: value }))}
                   >
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
+                    <SelectTrigger><SelectValue /></SelectTrigger>
                     <SelectContent>
                       {FIXTURE_STATUSES.map((status) => (
-                        <SelectItem key={status.value} value={status.value}>
-                          {status.label}
-                        </SelectItem>
+                        <SelectItem key={status.value} value={status.value}>{status.label}</SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -704,7 +839,6 @@ export default function FixtureEditPage({ params }: PageProps) {
               </CardContent>
             </Card>
 
-            {/* Visibility */}
             <Card>
               <CardHeader>
                 <CardTitle>Visibility</CardTitle>
@@ -713,30 +847,21 @@ export default function FixtureEditPage({ params }: PageProps) {
                 <div className="flex items-center justify-between">
                   <div>
                     <Label>Featured</Label>
-                    <p className="text-sm text-slate-500">
-                      Show on homepage
-                    </p>
+                    <p className="text-sm text-slate-500">Show on homepage</p>
                   </div>
                   <Switch
                     checked={formData.is_featured}
-                    onCheckedChange={(checked) =>
-                      setFormData((prev) => ({ ...prev, is_featured: checked }))
-                    }
+                    onCheckedChange={(checked) => setFormData((prev) => ({ ...prev, is_featured: checked }))}
                   />
                 </div>
-
                 <div className="flex items-center justify-between">
                   <div>
                     <Label>Hot</Label>
-                    <p className="text-sm text-slate-500">
-                      Mark as trending
-                    </p>
+                    <p className="text-sm text-slate-500">Mark as trending</p>
                   </div>
                   <Switch
                     checked={formData.is_hot}
-                    onCheckedChange={(checked) =>
-                      setFormData((prev) => ({ ...prev, is_hot: checked }))
-                    }
+                    onCheckedChange={(checked) => setFormData((prev) => ({ ...prev, is_hot: checked }))}
                   />
                 </div>
               </CardContent>

@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { useParams } from "next/navigation"
 import { AdminHeader } from "@/components/admin/header"
 import { Button } from "@/components/ui/button"
@@ -26,6 +27,14 @@ import {
 } from "@/components/ui/select"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+import {
   ArrowLeft,
   Save,
   Eye,
@@ -34,7 +43,15 @@ import {
   Link as LinkIcon,
   Check,
   X,
+  Plus,
+  Trash2,
+  ExternalLink,
 } from "lucide-react"
+
+const RichTextEditor = dynamic(
+  () => import("@/components/ui/rich-text-editor"),
+  { ssr: false, loading: () => <div className="h-[400px] bg-slate-100 rounded-lg animate-pulse" /> }
+)
 
 const sportTypes = [
   { value: "football", label: "Football" },
@@ -73,8 +90,18 @@ const affiliatePartners = [
   { id: "ticombo", name: "Ticombo", logo: "🎟️" },
   { id: "stubhub", name: "StubHub", logo: "🎫" },
   { id: "viagogo", name: "Viagogo", logo: "🎟️" },
-  { id: "hello_tickets", name: "Hello Tickets", logo: "🎫" },
+  { id: "seatgeek", name: "SeatGeek", logo: "🎫" },
+  { id: "vividseats", name: "Vivid Seats", logo: "🎟️" },
 ]
+
+interface AffiliateLink {
+  id: string
+  partner: string
+  url: string
+  cta_text: string
+  is_active: boolean
+  priority: number
+}
 
 export default function CompetitionEditPage() {
   const params = useParams()
@@ -94,7 +121,36 @@ export default function CompetitionEditPage() {
       ? ""
       : "The FIFA World Cup 2026 will be held across USA, Canada, and Mexico, featuring 48 teams in the expanded format.",
     host_countries: isNew ? [] : ["US", "CA", "MX"],
+    content_html: isNew ? "" : "",
   })
+
+  const [affiliateLinks, setAffiliateLinks] = useState<AffiliateLink[]>(isNew ? [] : [
+    { id: "1", partner: "Ticketmaster", url: "https://www.ticketmaster.com/fifa-world-cup-2026", cta_text: "Buy on Ticketmaster", is_active: true, priority: 1 },
+    { id: "2", partner: "StubHub", url: "https://www.stubhub.com/fifa-world-cup-2026", cta_text: "Buy on StubHub", is_active: true, priority: 2 },
+    { id: "3", partner: "Viagogo", url: "https://www.viagogo.com/fifa-world-cup-2026", cta_text: "Buy on Viagogo", is_active: true, priority: 3 },
+  ])
+
+  const addAffiliateLink = () => {
+    const newLink: AffiliateLink = {
+      id: Date.now().toString(),
+      partner: "",
+      url: "",
+      cta_text: "Buy Tickets",
+      is_active: true,
+      priority: affiliateLinks.length + 1,
+    }
+    setAffiliateLinks([...affiliateLinks, newLink])
+  }
+
+  const updateAffiliateLink = (id: string, field: keyof AffiliateLink, value: string | boolean | number) => {
+    setAffiliateLinks(affiliateLinks.map(link =>
+      link.id === id ? { ...link, [field]: value } : link
+    ))
+  }
+
+  const removeAffiliateLink = (id: string) => {
+    setAffiliateLinks(affiliateLinks.filter(link => link.id !== id))
+  }
 
   const [translations, setTranslations] = useState({
     en: { name: "FIFA World Cup 2026", description: "", meta_title: "", meta_description: "", status: "complete" },
@@ -154,8 +210,9 @@ export default function CompetitionEditPage() {
 
         {/* Tabs */}
         <Tabs defaultValue="basic" className="space-y-6">
-          <TabsList className="bg-white border">
+          <TabsList className="bg-white border flex-wrap">
             <TabsTrigger value="basic">Basic Info</TabsTrigger>
+            <TabsTrigger value="content">Content</TabsTrigger>
             <TabsTrigger value="translations">Translations</TabsTrigger>
             <TabsTrigger value="teams">Teams</TabsTrigger>
             <TabsTrigger value="fixtures">Fixtures</TabsTrigger>
@@ -404,6 +461,38 @@ export default function CompetitionEditPage() {
             </div>
           </TabsContent>
 
+          {/* Content Tab */}
+          <TabsContent value="content">
+            <Card>
+              <CardHeader>
+                <CardTitle>Competition Article Content</CardTitle>
+                <CardDescription>
+                  Write comprehensive content for the competition page with rich formatting, tables, images, and internal links
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="rounded-lg border bg-blue-50 p-4">
+                    <h4 className="font-medium text-blue-900">Content Guidelines</h4>
+                    <ul className="mt-2 text-sm text-blue-800 list-disc list-inside space-y-1">
+                      <li>Write 1000+ words for optimal SEO performance</li>
+                      <li>Include internal links to all 48 participating teams</li>
+                      <li>Link to all 16 host venues across USA, Canada, and Mexico</li>
+                      <li>Add tables for group stage draws and match schedules</li>
+                      <li>Include ticket buying guide with affiliate CTAs</li>
+                      <li>Add FAQs about tickets, travel, and accommodation</li>
+                    </ul>
+                  </div>
+                  <RichTextEditor
+                    content={formData.content_html}
+                    onChange={(html) => setFormData({ ...formData, content_html: html })}
+                    placeholder="Write your comprehensive World Cup 2026 article content here..."
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
           {/* Translations Tab */}
           <TabsContent value="translations">
             <Card>
@@ -529,33 +618,117 @@ export default function CompetitionEditPage() {
                 <div>
                   <CardTitle>Affiliate Links</CardTitle>
                   <CardDescription>
-                    Manage affiliate links for ticket sales
+                    Manage affiliate links for ticket sales. Links are displayed in priority order.
                   </CardDescription>
                 </div>
-                <Button>
-                  <LinkIcon className="mr-2 h-4 w-4" />
+                <Button onClick={addAffiliateLink}>
+                  <Plus className="mr-2 h-4 w-4" />
                   Add Link
                 </Button>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
-                  {affiliatePartners.map((partner) => (
-                    <div
-                      key={partner.id}
-                      className="flex items-center justify-between rounded-lg border p-4"
-                    >
-                      <div className="flex items-center gap-3">
-                        <span className="text-2xl">{partner.logo}</span>
-                        <div>
-                          <p className="font-medium">{partner.name}</p>
-                          <p className="text-sm text-slate-500">No link added</p>
-                        </div>
-                      </div>
-                      <Button variant="outline" size="sm">
-                        Add Link
-                      </Button>
-                    </div>
-                  ))}
+                {affiliateLinks.length === 0 ? (
+                  <div className="text-center py-8 text-slate-500">
+                    <LinkIcon className="mx-auto h-12 w-12 text-slate-300 mb-3" />
+                    <p>No affiliate links added yet.</p>
+                    <p className="text-sm">Click &quot;Add Link&quot; to add your first affiliate link.</p>
+                  </div>
+                ) : (
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="w-[50px]">Priority</TableHead>
+                        <TableHead className="w-[150px]">Partner</TableHead>
+                        <TableHead>URL</TableHead>
+                        <TableHead className="w-[180px]">CTA Text</TableHead>
+                        <TableHead className="w-[80px]">Active</TableHead>
+                        <TableHead className="w-[100px]">Actions</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {affiliateLinks.sort((a, b) => a.priority - b.priority).map((link) => (
+                        <TableRow key={link.id}>
+                          <TableCell>
+                            <Input
+                              type="number"
+                              min="1"
+                              value={link.priority}
+                              onChange={(e) => updateAffiliateLink(link.id, "priority", parseInt(e.target.value) || 1)}
+                              className="w-16 h-8"
+                            />
+                          </TableCell>
+                          <TableCell>
+                            <Select
+                              value={link.partner}
+                              onValueChange={(value) => updateAffiliateLink(link.id, "partner", value)}
+                            >
+                              <SelectTrigger className="h-8">
+                                <SelectValue placeholder="Select" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                {affiliatePartners.map((partner) => (
+                                  <SelectItem key={partner.id} value={partner.name}>
+                                    {partner.logo} {partner.name}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex items-center gap-2">
+                              <Input
+                                value={link.url}
+                                onChange={(e) => updateAffiliateLink(link.id, "url", e.target.value)}
+                                placeholder="https://..."
+                                className="h-8"
+                              />
+                              {link.url && (
+                                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                                  <Button variant="ghost" size="icon" className="h-8 w-8">
+                                    <ExternalLink className="h-4 w-4" />
+                                  </Button>
+                                </a>
+                              )}
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <Input
+                              value={link.cta_text}
+                              onChange={(e) => updateAffiliateLink(link.id, "cta_text", e.target.value)}
+                              placeholder="Buy Tickets"
+                              className="h-8"
+                            />
+                          </TableCell>
+                          <TableCell>
+                            <Switch
+                              checked={link.is_active}
+                              onCheckedChange={(checked) => updateAffiliateLink(link.id, "is_active", checked)}
+                            />
+                          </TableCell>
+                          <TableCell>
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              className="h-8 w-8 text-red-600 hover:text-red-700 hover:bg-red-50"
+                              onClick={() => removeAffiliateLink(link.id)}
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </Button>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                )}
+                <div className="mt-4 rounded-lg bg-amber-50 border border-amber-200 p-4">
+                  <h4 className="font-medium text-amber-900">Available Affiliate Partners</h4>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {affiliatePartners.map((partner) => (
+                      <Badge key={partner.id} variant="outline" className="bg-white">
+                        {partner.logo} {partner.name}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </CardContent>
             </Card>

@@ -109,6 +109,76 @@ export default function CroatiaTicketsPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-8">
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Croatia World Cup 2026: The Vatreni&apos;s Quest for Elusive Glory</h2>
+              <p>
+                No nation of 4 million people has achieved what Croatia has in World Cup football. Silver medalists
+                in 2018, bronze in 2022 and 1998 - the Vatreni consistently punch above their weight on football&apos;s
+                grandest stage. With Luka Modrić likely playing his final World Cup at age 40, the 2026 FIFA World
+                Cup represents one last opportunity for the golden generation to claim the ultimate prize.
+              </p>
+              <p>
+                Croatia&apos;s journey from a newly independent nation in 1991 to perennial World Cup contenders is
+                one of football&apos;s greatest stories. The class of 1998 stunned the world by reaching the semi-finals
+                in their second-ever major tournament. Twenty years later, Modrić led them to the final in Russia.
+                In Qatar 2022, they added another bronze medal to their collection. This tiny Adriatic nation has
+                won more World Cup medals (3) than giants like <Link href="/teams/portugal-world-cup-2026-tickets" className="text-red-600 hover:underline">Portugal</Link>,
+                <Link href="/teams/spain-world-cup-2026-tickets" className="text-red-600 hover:underline">Spain</Link>, or
+                <Link href="/teams/england-world-cup-2026-tickets" className="text-red-600 hover:underline">England</Link>.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Group L: The England Rematch</h3>
+              <p>
+                Croatia find themselves in Group L alongside <Link href="/teams/england-world-cup-2026-tickets" className="text-red-600 hover:underline">England</Link>,
+                <Link href="/teams/ghana-world-cup-2026-tickets" className="text-red-600 hover:underline">Ghana</Link>, and
+                <Link href="/teams/panama-world-cup-2026-tickets" className="text-red-600 hover:underline">Panama</Link>.
+                The clash with England at <Link href="/venues/att-stadium-world-cup-2026" className="text-red-600 hover:underline">AT&T Stadium in Dallas</Link> is
+                the marquee fixture - a rematch of the unforgettable 2018 semi-final where Mario Mandžukić&apos;s
+                extra-time winner broke English hearts.
+              </p>
+              <p>
+                Croatia opens against Panama at <Link href="/venues/hard-rock-stadium-world-cup-2026" className="text-red-600 hover:underline">Hard Rock Stadium in Miami</Link>,
+                where the large Croatian-American population in Florida will create a fervent atmosphere. The second
+                match against Ghana at <Link href="/venues/gillette-stadium-world-cup-2026" className="text-red-600 hover:underline">Gillette Stadium in Boston</Link> pits
+                two nations with excellent World Cup pedigrees against each other.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Modrić&apos;s Final Chapter: A Legend&apos;s Farewell</h3>
+              <p>
+                Luka Modrić is widely regarded as one of the greatest midfielders in football history. The 2018
+                Ballon d&apos;Or winner has won five Champions League titles with Real Madrid and has been the heartbeat
+                of Croatian football for nearly two decades. At 40, this World Cup represents the culmination of
+                an extraordinary career - and the Vatreni will do everything to send their captain out as a champion.
+              </p>
+              <p>
+                Supporting Modrić is the next generation of Croatian excellence. Joško Gvardiol has established
+                himself as one of the world&apos;s best defenders at Manchester City, while Mateo Kovačić provides
+                the midfield partnership that has served Croatia so well. Dominik Livaković, the penalty-saving
+                hero of Qatar 2022, guards the goal, while veterans like Ivan Perišić bring experience to the attack.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">European Battles: Continental Rivals</h3>
+              <p>
+                Should Croatia advance, familiar European foes await. Potential matchups against
+                <Link href="/teams/france-world-cup-2026-tickets" className="text-red-600 hover:underline">France</Link> would
+                reprise the 2018 final, while <Link href="/teams/germany-world-cup-2026-tickets" className="text-red-600 hover:underline">Germany</Link> and
+                <Link href="/teams/netherlands-world-cup-2026-tickets" className="text-red-600 hover:underline">Netherlands</Link> represent
+                the caliber of opposition Croatia has proven capable of defeating.
+                <Link href="/teams/belgium-world-cup-2026-tickets" className="text-red-600 hover:underline">Belgium</Link> and
+                <Link href="/teams/italy-world-cup-2026-tickets" className="text-red-600 hover:underline">Italy</Link> similarly
+                await in the knockout rounds.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Croatian Diaspora: Global Support</h3>
+              <p>
+                The Croatian diaspora is massive relative to the home population, with significant communities in
+                the United States, Canada, Australia, and Germany. American cities with Croatian heritage - Cleveland,
+                Pittsburgh, Chicago - will see passionate support for the Vatreni. The checkered red and white jersey
+                is one of football&apos;s most recognizable, and it will be visible throughout the tournament.
+              </p>
+            </article>
+
             <Card className="border-yellow-400 bg-yellow-50">
               <CardContent className="p-6">
                 <h3 className="font-bold text-yellow-900">Modrić&apos;s Final Dance?</h3>

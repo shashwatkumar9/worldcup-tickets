@@ -39,9 +39,43 @@ export default function EstadioAkronPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-6">
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Estadio Akron: Home of Chivas Welcomes the World</h2>
+              <p>
+                Estadio Akron, also known as the Omnilife Stadium, is home to CD Guadalajara - &quot;Chivas&quot; - Mexico&apos;s
+                most popular football club. Built into the Guadalajara hillside like a volcanic crater, this
+                architectural marvel creates an intimate atmosphere that amplifies crowd passion. When
+                <Link href="/teams/mexico-world-cup-2026-tickets" className="text-red-600 hover:underline">Mexico</Link> plays,
+                the Chivas faithful transform into El Tri supporters, creating atmospheres that intimidate even the
+                strongest opponents.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Mexico vs Korea Republic: Group A Showdown</h3>
+              <p>
+                Estadio Akron hosts <Link href="/teams/mexico-world-cup-2026-tickets" className="text-red-600 hover:underline">Mexico</Link> vs
+                <Link href="/teams/korea-world-cup-2026-tickets" className="text-red-600 hover:underline">Korea Republic</Link> - a
+                clash between passionate football nations with massive global support. El Tri&apos;s home advantage in
+                Guadalajara faces Son Heung-min and Korea&apos;s talented golden generation. The 67,000-seat venue will
+                be filled with Mexican green, creating an incredible atmosphere.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Guadalajara Experience: Mexico&apos;s Cultural Capital</h3>
+              <p>
+                Guadalajara is the birthplace of mariachi music, tequila, and Mexican rodeo. The historic centro
+                features stunning colonial architecture, while the suburb of Tlaquepaque offers artisan markets and
+                traditional cuisine. The <Link href="/cities/guadalajara-world-cup-2026-travel-guide" className="text-red-600 hover:underline">Guadalajara travel guide</Link> covers
+                accommodation from centro historic hotels to modern Zapopan stays.
+              </p>
+              <p>
+                The nearby town of Tequila, just an hour away, offers tours of legendary distilleries. Combine World
+                Cup matches with Mexican cultural immersion for an unforgettable experience.
+              </p>
+            </article>
+
             <Card className="border-red-400 bg-red-50"><CardContent className="p-6">
               <div className="flex items-center gap-2 mb-2"><Star className="h-6 w-6 text-red-600" /><h3 className="font-bold text-xl text-red-900">Home of Chivas</h3></div>
-              <p className="text-red-800">Estadio Akron is home to CD Guadalajara (Chivas), Mexico's most popular club. The unique volcanic design stadium built into the hillside is an architectural marvel. Guadalajara is Mexico's second-largest city and a passionate football hub.</p>
+              <p className="text-red-800">Estadio Akron is home to CD Guadalajara (Chivas), Mexico&apos;s most popular club. The unique volcanic design stadium built into the hillside is an architectural marvel. Guadalajara is Mexico&apos;s second-largest city and a passionate football hub.</p>
             </CardContent></Card>
             <div>
               <h2 className="text-2xl font-bold mb-4 flex items-center gap-2"><Calendar className="h-6 w-6" />Scheduled Matches</h2>

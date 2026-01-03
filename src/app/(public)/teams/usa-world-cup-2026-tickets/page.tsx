@@ -307,6 +307,96 @@ export default function USATicketsPage() {
               </CardContent>
             </Card>
 
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">USA World Cup 2026: The Golden Generation&apos;s Moment of Destiny</h2>
+              <p>
+                In the 92-year history of the FIFA World Cup, no moment has carried more weight for American soccer
+                than 2026. For the first time since 1994, the United States will host the world&apos;s greatest
+                sporting event - but this time, they do so with the most talented squad in their history. Christian
+                Pulisic, Weston McKennie, Gio Reyna, and company have spent their careers in Europe&apos;s top leagues,
+                preparing for this defining moment on home soil.
+              </p>
+              <p>
+                The pressure is immense. Host nations carry the weight of expectation - South Korea reached the
+                semi-finals in 2002, Germany the semis in 2006, Brazil the semis in 2014. American fans will
+                expect similar heroics at <Link href="/venues/sofi-stadium-world-cup-2026" className="text-blue-700 hover:underline">SoFi Stadium in Los Angeles</Link> and
+                <Link href="/venues/levis-stadium-world-cup-2026" className="text-blue-700 hover:underline">Levi&apos;s Stadium in San Francisco</Link>, where
+                the USMNT will play their group matches.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Group D Analysis: Navigable but Dangerous</h3>
+              <p>
+                The USA received a manageable Group D draw featuring <Link href="/teams/paraguay-world-cup-2026-tickets" className="text-blue-700 hover:underline">Paraguay</Link>,
+                <Link href="/teams/australia-world-cup-2026-tickets" className="text-blue-700 hover:underline">Australia</Link>, and a UEFA playoff winner.
+                The opening match against Paraguay at SoFi Stadium will set the tone - the South Americans are
+                physical and organized, a perfect test of the USMNT&apos;s credentials. Australia, who pushed
+                <Link href="/teams/argentina-world-cup-2026-tickets" className="text-blue-700 hover:underline">Argentina</Link> hard in the 2022
+                Round of 16, cannot be underestimated.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Pulisic&apos;s Prime: The Captain Cometh</h3>
+              <p>
+                Christian Pulisic will be 27 during the 2026 World Cup - the perfect age for a creative forward.
+                His move to AC Milan reinvigorated his career, and he enters 2026 as one of Serie A&apos;s most
+                dangerous attackers. The Hershey, Pennsylvania native carries the hopes of 330 million Americans
+                on his shoulders, and his performances in the biggest moments suggest he&apos;s ready for the burden.
+              </p>
+              <p>
+                Supporting Pulisic is a midfield built for European competition. Weston McKennie brings Juventus
+                steel and aerial prowess, while Gio Reyna&apos;s creativity provides the spark that unlocks defenses.
+                Tyler Adams, the former captain, adds the tactical discipline that gives others freedom to attack.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">CONCACAF Neighbors: The Tres Naciones</h3>
+              <p>
+                The USA co-hosts alongside <Link href="/teams/mexico-world-cup-2026-tickets" className="text-blue-700 hover:underline">Mexico</Link> and
+                <Link href="/teams/canada-world-cup-2026-tickets" className="text-blue-700 hover:underline">Canada</Link>. A potential knockout
+                stage clash with Mexico would be the most anticipated match in CONCACAF history - the fierce
+                rivalry elevated to World Cup stakes on American soil. Mexico opens the tournament at
+                <Link href="/venues/estadio-azteca-world-cup-2026" className="text-blue-700 hover:underline">Estadio Azteca</Link>, while
+                Canada hosts matches at <Link href="/venues/bmo-field-world-cup-2026" className="text-blue-700 hover:underline">BMO Field in Toronto</Link>.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Global Ambitions: Path to Glory</h3>
+              <p>
+                Should the USA advance, clashes with European and South American giants await. Potential matchups
+                against <Link href="/teams/england-world-cup-2026-tickets" className="text-blue-700 hover:underline">England</Link> would
+                reprise the 2022 group stage draw, while <Link href="/teams/germany-world-cup-2026-tickets" className="text-blue-700 hover:underline">Germany</Link>,
+                <Link href="/teams/france-world-cup-2026-tickets" className="text-blue-700 hover:underline">France</Link>, and
+                <Link href="/teams/brazil-world-cup-2026-tickets" className="text-blue-700 hover:underline">Brazil</Link> represent
+                the caliber of opposition that must be overcome to write history.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">American Soccer Culture: A Nation United</h3>
+              <p>
+                The 2026 World Cup arrives at the perfect moment for American soccer. MLS has matured into a
+                serious league, youth development has improved dramatically, and a generation of fans who grew
+                up with the sport are now adults ready to support their team. From coast to coast, from the
+                American Outlaws supporters&apos; groups to casual fans discovering the sport, the USMNT will have
+                the backing of an entire nation.
+              </p>
+            </article>
+
+            {/* Match Venues Section */}
+            <Card>
+              <CardHeader><CardTitle className="flex items-center gap-2"><MapPin className="h-5 w-5 text-blue-700" />USA Match Venues</CardTitle></CardHeader>
+              <CardContent>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <Link href="/venues/sofi-stadium-world-cup-2026" className="p-4 rounded-lg border hover:bg-blue-50 transition-colors">
+                    <p className="font-semibold text-slate-900">SoFi Stadium</p>
+                    <p className="text-sm text-slate-500">Los Angeles, USA</p>
+                    <p className="text-xs text-blue-700 mt-1">Match 1 vs Paraguay & Match 3</p>
+                  </Link>
+                  <Link href="/venues/levis-stadium-world-cup-2026" className="p-4 rounded-lg border hover:bg-blue-50 transition-colors">
+                    <p className="font-semibold text-slate-900">Levi&apos;s Stadium</p>
+                    <p className="text-sm text-slate-500">San Francisco, USA</p>
+                    <p className="text-xs text-blue-700 mt-1">Match 2 vs Australia</p>
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+
             <Card>
               <CardHeader>
                 <CardTitle>About USA National Team</CardTitle>

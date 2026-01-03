@@ -107,6 +107,77 @@ export default function NetherlandsTicketsPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-8">
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Netherlands World Cup 2026: The Eternal Bridesmaids Seek Final Glory</h2>
+              <p>
+                No nation has come closer to World Cup glory without winning than the Netherlands. With three World Cup finals
+                and zero titles, the Oranje carry a bittersweet legacy that defines their footballing identity. The 2026 FIFA
+                World Cup represents perhaps the last chance for Virgil van Dijk&apos;s generation to end this decades-long wait
+                and finally claim football&apos;s ultimate prize.
+              </p>
+              <p>
+                Dutch football is synonymous with &quot;Total Football,&quot; the revolutionary system pioneered by Johan Cruyff and
+                Rinus Michels that changed the sport forever. From the 1974 squad that mesmerized the world to the 2010 team
+                that fell agonizingly short against Spain in South Africa, the Netherlands has consistently produced teams
+                greater than the sum of their parts. Under Ronald Koeman&apos;s leadership, this tradition continues with a squad
+                that blends elite Premier League talent with homegrown Eredivisie excellence.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Group F Analysis: Netherlands vs Japan Headlines Opening Round</h3>
+              <p>
+                The Netherlands face a challenging but navigable Group F, with <Link href="/teams/japan-world-cup-2026-tickets" className="text-orange-600 hover:underline">Japan</Link> representing
+                the most dangerous opponent. The Samurai Blue have become genuine World Cup dark horses, stunning Germany and
+                Spain in Qatar 2022. The opening fixture at <Link href="/venues/mercedes-benz-stadium-world-cup-2026" className="text-orange-600 hover:underline">Mercedes-Benz Stadium in Atlanta</Link> promises
+                to be a tactical chess match between two technically gifted sides.
+              </p>
+              <p>
+                <Link href="/teams/tunisia-world-cup-2026-tickets" className="text-orange-600 hover:underline">Tunisia</Link> presents
+                the physical challenge African teams excel at, while the UEFA playoff winner will complete the group. The Dutch
+                will play their second match at <Link href="/venues/nrg-stadium-world-cup-2026" className="text-orange-600 hover:underline">NRG Stadium in Houston</Link> before
+                concluding the group stage at <Link href="/venues/arrowhead-stadium-world-cup-2026" className="text-orange-600 hover:underline">Arrowhead Stadium in Kansas City</Link>.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Van Dijk&apos;s Last Dance: Captain Leading Dutch Renaissance</h3>
+              <p>
+                Virgil van Dijk has established himself as one of the greatest defenders of his generation. The Liverpool
+                captain brings calm authority and aerial dominance that anchors the Dutch defense. At 34 during the 2026
+                tournament, this represents his best remaining opportunity to add World Cup glory to his Champions League triumph.
+              </p>
+              <p>
+                The midfield belongs to Frenkie de Jong, the Barcelona maestro whose vision and close control epitomize
+                modern Dutch football. Alongside him, Xavi Simons represents the new generation, his creativity at PSG
+                showcasing the attacking flair that makes Dutch football so entertaining. Up front, Cody Gakpo&apos;s breakthrough
+                at Qatar 2022 established him as a genuine world-class threat, while Memphis Depay&apos;s experience provides
+                crucial balance.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">UEFA Rivals: European Powerhouses Await</h3>
+              <p>
+                Should the Netherlands advance, potential matchups against European heavyweights await.
+                <Link href="/teams/germany-world-cup-2026-tickets" className="text-orange-600 hover:underline">Germany</Link> remains
+                their fiercest historical rival, with fixtures between these neighbors carrying immense weight.
+                <Link href="/teams/france-world-cup-2026-tickets" className="text-orange-600 hover:underline">France</Link> and
+                <Link href="/teams/england-world-cup-2026-tickets" className="text-orange-600 hover:underline">England</Link> also
+                loom as potential knockout opponents, reprising classic European battles.
+              </p>
+              <p>
+                The Dutch style of possession football could prove decisive against <Link href="/teams/spain-world-cup-2026-tickets" className="text-orange-600 hover:underline">Spain</Link>,
+                with both nations sharing similar philosophical approaches to the game.
+                <Link href="/teams/portugal-world-cup-2026-tickets" className="text-orange-600 hover:underline">Portugal</Link> and
+                <Link href="/teams/belgium-world-cup-2026-tickets" className="text-orange-600 hover:underline">Belgium</Link> represent
+                neighboring nations with equally strong ambitions.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Dutch Fans in America: Orange Army Invasion</h3>
+              <p>
+                Dutch supporters are among the most passionate and visible in world football. The &quot;Oranje Army&quot; transforms
+                host cities into seas of orange, and the substantial Dutch-American population ensures strong traveling
+                support. Cities like Atlanta, Houston, and Kansas City will experience the unique atmosphere Dutch fans
+                create with their songs, costumes, and unwavering optimism.
+              </p>
+            </article>
+
             <Card>
               <CardHeader><CardTitle className="flex items-center gap-2"><Calendar className="h-5 w-5 text-orange-600" />Group F Match Schedule</CardTitle></CardHeader>
               <CardContent className="space-y-4">
@@ -167,6 +238,30 @@ export default function NetherlandsTicketsPage() {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Match Venues Section */}
+            <Card>
+              <CardHeader><CardTitle className="flex items-center gap-2"><MapPin className="h-5 w-5 text-orange-600" />Netherlands Match Venues</CardTitle></CardHeader>
+              <CardContent>
+                <div className="grid gap-4 md:grid-cols-3">
+                  <Link href="/venues/mercedes-benz-stadium-world-cup-2026" className="p-4 rounded-lg border hover:bg-orange-50 transition-colors">
+                    <p className="font-semibold text-slate-900">Mercedes-Benz Stadium</p>
+                    <p className="text-sm text-slate-500">Atlanta, USA</p>
+                    <p className="text-xs text-orange-600 mt-1">Match 1 vs Japan</p>
+                  </Link>
+                  <Link href="/venues/nrg-stadium-world-cup-2026" className="p-4 rounded-lg border hover:bg-orange-50 transition-colors">
+                    <p className="font-semibold text-slate-900">NRG Stadium</p>
+                    <p className="text-sm text-slate-500">Houston, USA</p>
+                    <p className="text-xs text-orange-600 mt-1">Match 2 vs Tunisia</p>
+                  </Link>
+                  <Link href="/venues/arrowhead-stadium-world-cup-2026" className="p-4 rounded-lg border hover:bg-orange-50 transition-colors">
+                    <p className="font-semibold text-slate-900">Arrowhead Stadium</p>
+                    <p className="text-sm text-slate-500">Kansas City, USA</p>
+                    <p className="text-xs text-orange-600 mt-1">Match 3 vs TBD</p>
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
           </div>
           <div className="space-y-6">
             <Card className="sticky top-24">
@@ -191,6 +286,15 @@ export default function NetherlandsTicketsPage() {
                 <Link href="/teams/japan-world-cup-2026-tickets" className="flex items-center gap-2 p-2 rounded hover:bg-slate-50"><span>🇯🇵</span> Japan</Link>
                 <Link href="/teams/tunisia-world-cup-2026-tickets" className="flex items-center gap-2 p-2 rounded hover:bg-slate-50"><span>🇹🇳</span> Tunisia</Link>
                 <div className="flex items-center gap-2 p-2 text-slate-400"><span>🏳️</span> TBD (UEFA Playoff)</div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader><CardTitle>UEFA Rivals</CardTitle></CardHeader>
+              <CardContent className="space-y-2">
+                <Link href="/teams/germany-world-cup-2026-tickets" className="flex items-center gap-2 p-2 rounded hover:bg-slate-50"><span>🇩🇪</span> Germany</Link>
+                <Link href="/teams/france-world-cup-2026-tickets" className="flex items-center gap-2 p-2 rounded hover:bg-slate-50"><span>🇫🇷</span> France</Link>
+                <Link href="/teams/england-world-cup-2026-tickets" className="flex items-center gap-2 p-2 rounded hover:bg-slate-50"><span>🏴󠁧󠁢󠁥󠁮󠁧󠁿</span> England</Link>
+                <Link href="/teams/belgium-world-cup-2026-tickets" className="flex items-center gap-2 p-2 rounded hover:bg-slate-50"><span>🇧🇪</span> Belgium</Link>
               </CardContent>
             </Card>
           </div>

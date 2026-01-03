@@ -40,9 +40,45 @@ export default function ArrowheadStadiumPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-6">
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Arrowhead Stadium: America&apos;s Loudest Venue Meets Football</h2>
+              <p>
+                Arrowhead Stadium holds the Guinness World Record for crowd noise at a staggering 142.2 decibels - so
+                loud it registers on earthquake sensors. Home of the three-time Super Bowl champion Kansas City Chiefs,
+                this legendary venue brings &quot;Chiefs Kingdom&quot; passion to the 2026 World Cup. But Kansas City isn&apos;t
+                just about NFL football - it&apos;s been called the &quot;Soccer Capital of America,&quot; with Sporting Kansas
+                City&apos;s passionate fanbase proving the region&apos;s genuine football culture.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">76,416 Capacity: America&apos;s Largest World Cup Venue</h3>
+              <p>
+                Arrowhead Stadium offers the largest capacity of any 2026 World Cup venue in the United States. The
+                iconic red seats create a &quot;Sea of Red&quot; that intimidates opponents, while the open-air design delivers
+                classic football atmosphere. For knockout round matches, 76,000 voices creating Arrowhead&apos;s famous
+                noise will produce unforgettable moments.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Tailgating Culture: American Sports Tradition</h3>
+              <p>
+                Arrowhead parking lots host legendary tailgating - an American sports tradition at its finest. Hours
+                before kickoff, fans fire up grills serving Kansas City&apos;s world-famous BBQ. Combine World Cup football
+                with authentic American sports culture for a unique tournament experience.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Kansas City Experience: BBQ Capital and Beyond</h3>
+              <p>
+                Kansas City offers world-famous BBQ, vibrant jazz heritage, and genuine Midwestern hospitality. Joe&apos;s
+                Kansas City, Q39, and Gates BBQ provide legendary cuisine, while the Power &amp; Light District and
+                Crossroads Arts District deliver entertainment. The
+                <Link href="/cities/kansas-city-world-cup-2026-travel-guide" className="text-red-600 hover:underline">Kansas City travel guide</Link> covers
+                accommodation from Country Club Plaza luxury to downtown convention hotels.
+              </p>
+            </article>
+
             <Card className="border-red-400 bg-red-50"><CardContent className="p-6">
               <div className="flex items-center gap-2 mb-2"><Star className="h-6 w-6 text-red-600" /><h3 className="font-bold text-xl text-red-900">The Sea of Red</h3></div>
-              <p className="text-red-800">Arrowhead Stadium is one of the loudest stadiums in the world - holding the Guinness World Record for crowd noise at 142.2 decibels! Home of the Kansas City Chiefs (3x Super Bowl Champions), the passionate "Chiefs Kingdom" fanbase creates an electric atmosphere. Kansas City is also known as the "Soccer Capital of America" with passionate Sporting KC supporters.</p>
+              <p className="text-red-800">Arrowhead Stadium is one of the loudest stadiums in the world - holding the Guinness World Record for crowd noise at 142.2 decibels! Home of the Kansas City Chiefs (3x Super Bowl Champions), the passionate &quot;Chiefs Kingdom&quot; fanbase creates an electric atmosphere. Kansas City is also known as the &quot;Soccer Capital of America&quot; with passionate Sporting KC supporters.</p>
             </CardContent></Card>
             <Card><CardContent className="p-6">
               <h3 className="font-bold text-lg mb-3">Stadium Features</h3>

@@ -89,11 +89,78 @@ export default function ATTStadiumPage() {
               </div>
             </div>
 
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">AT&amp;T Stadium: Jerry World Hosts a World Cup Semi-Final</h2>
+              <p>
+                AT&amp;T Stadium - affectionately known as &quot;Jerry World&quot; after Dallas Cowboys owner Jerry Jones -
+                represents Texas-sized ambition in stadium form. This architectural marvel hosts one of the 2026 World Cup
+                Semi-Finals, putting it among the tournament&apos;s most important venues. With 80,000 capacity, the world&apos;s
+                largest column-free interior, and legendary Texas hospitality, AT&amp;T Stadium delivers an unforgettable
+                World Cup experience.
+              </p>
+              <p>
+                When the Cowboys built this $1.3 billion stadium in 2009, they created something unprecedented. The
+                retractable roof spans an area larger than the Statue of Liberty. The center-hung video board was the
+                world&apos;s largest when installed. For the World Cup Semi-Final, all of this technology serves one purpose:
+                creating the ultimate football atmosphere.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Semi-Final Stakes: Two Matches From Glory</h3>
+              <p>
+                A World Cup Semi-Final carries immense pressure. Two wins separate these teams from immortality.
+                Previous semi-finals have produced legendary drama - <Link href="/teams/germany-world-cup-2026-tickets" className="text-blue-600 hover:underline">Germany</Link>&apos;s
+                7-1 demolition of <Link href="/teams/brazil-world-cup-2026-tickets" className="text-blue-600 hover:underline">Brazil</Link> in
+                2014, <Link href="/teams/croatia-world-cup-2026-tickets" className="text-blue-600 hover:underline">Croatia&apos;s</Link> penalty
+                shootout heroics in 2018, <Link href="/teams/argentina-world-cup-2026-tickets" className="text-blue-600 hover:underline">Argentina</Link> and
+                <Link href="/teams/france-world-cup-2026-tickets" className="text-blue-600 hover:underline">France&apos;s</Link> roads
+                to the 2022 Final. The 2026 edition at AT&amp;T Stadium will add to this legacy.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">USA vs Australia: Host Nation Showdown</h3>
+              <p>
+                AT&amp;T Stadium hosts <Link href="/teams/usa-world-cup-2026-tickets" className="text-blue-600 hover:underline">USA</Link> vs
+                <Link href="/teams/australia-world-cup-2026-tickets" className="text-blue-600 hover:underline">Australia</Link> in
+                Group D - a massive fixture that could determine group qualification. The Socceroos impressed in 2022,
+                reaching the Round of 16 and pushing eventual champions Argentina. Christian Pulisic and the American
+                golden generation face a formidable challenge. Texas will be painted red, white, and blue as the home
+                crowd roars on Team USA.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Texas Stadium Technology: Engineering Marvel</h3>
+              <p>
+                AT&amp;T Stadium pioneered stadium technology that others now imitate. The retractable roof opens in just
+                12 minutes, while the end zone doors rise to create an open-air feel. The center-hung video board stretches
+                160 feet wide - larger than most basketball courts - ensuring every replay and statistic reaches fans
+                throughout the stadium.
+              </p>
+              <p>
+                For the World Cup, natural grass will be installed to FIFA specifications. The stadium&apos;s climate control
+                maintains perfect conditions regardless of Texas summer heat. Premium seating options include field-level
+                suites that put fans feet from the action.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Dallas-Fort Worth: Texan Hospitality</h3>
+              <p>
+                The Dallas-Fort Worth metroplex offers southern hospitality at its finest. From world-class BBQ in Fort
+                Worth&apos;s Stockyards to upscale dining in Dallas&apos;s Arts District, the region delivers culinary excellence.
+                The <Link href="/cities/dallas-world-cup-2026-travel-guide" className="text-blue-600 hover:underline">Dallas travel guide</Link> covers
+                accommodation from luxury downtown hotels to family-friendly suburban options.
+              </p>
+              <p>
+                Mexican-American football culture runs deep in Texas. The state&apos;s proximity to Mexico ensures massive
+                support for <Link href="/teams/mexico-world-cup-2026-tickets" className="text-blue-600 hover:underline">El Tri</Link>,
+                while the growing American soccer community rallies behind Team USA. Combine AT&amp;T Stadium with matches at
+                <Link href="/venues/nrg-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">NRG Stadium in Houston</Link> for
+                the Texas World Cup double.
+              </p>
+            </article>
+
             <Card>
-              <CardHeader><CardTitle>About AT&T Stadium</CardTitle></CardHeader>
+              <CardHeader><CardTitle>About AT&amp;T Stadium</CardTitle></CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-slate-600">Opened in 2009, AT&T Stadium cost $1.3 billion and is home to the Dallas Cowboys. The retractable roof and end zone doors create a unique viewing experience.</p>
-                <p className="text-slate-600">The stadium's 160-foot-wide video board was the largest in the world when it opened. It has hosted Super Bowl XLV, NBA All-Star Games, and major concerts.</p>
+                <p className="text-slate-600">Opened in 2009, AT&amp;T Stadium cost $1.3 billion and is home to the Dallas Cowboys. The retractable roof and end zone doors create a unique viewing experience.</p>
+                <p className="text-slate-600">The stadium&apos;s 160-foot-wide video board was the largest in the world when it opened. It has hosted Super Bowl XLV, NBA All-Star Games, and major concerts.</p>
               </CardContent>
             </Card>
 

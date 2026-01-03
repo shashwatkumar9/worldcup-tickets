@@ -72,11 +72,48 @@ export default function BCPlacePage() {
               </div>
             </div>
 
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">BC Place: Vancouver&apos;s Waterfront World Cup Venue</h2>
+              <p>
+                BC Place offers the most stunning natural setting of any 2026 World Cup venue. Nestled on Vancouver&apos;s
+                spectacular waterfront, with the North Shore mountains rising dramatically behind, this is where
+                <Link href="/teams/canada-world-cup-2026-tickets" className="text-red-600 hover:underline">Canada</Link> writes
+                new chapters in their football history. The retractable roof ensures perfect conditions while maintaining
+                the connection to Vancouver&apos;s natural beauty.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Canada vs Switzerland: Crucial Group B Clash</h3>
+              <p>
+                BC Place hosts <Link href="/teams/canada-world-cup-2026-tickets" className="text-red-600 hover:underline">Canada</Link> vs
+                <Link href="/teams/switzerland-world-cup-2026-tickets" className="text-red-600 hover:underline">Switzerland</Link> - a
+                match that could determine Group B qualification. Alphonso Davies returns to his home country as a
+                Bayern Munich star, leading Canada&apos;s golden generation. The Swiss bring Granit Xhaka&apos;s Bundesliga
+                championship pedigree. Vancouver&apos;s 54,000 fans will create incredible atmosphere.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">2010 Olympics Legacy: World-Class Venue</h3>
+              <p>
+                BC Place hosted the 2010 Winter Olympics opening and closing ceremonies, proving Vancouver&apos;s ability
+                to deliver world-class events. The $563 million renovation in 2011 installed a state-of-the-art
+                retractable roof that opens like a camera aperture. For the World Cup, this venue represents Canadian
+                excellence at its finest.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Vancouver Experience: Mountains, Ocean, and Football</h3>
+              <p>
+                Vancouver offers unparalleled World Cup experiences. Stanley Park&apos;s 1,000 acres of forest, Granville
+                Island&apos;s markets, Gastown&apos;s cobblestone streets, and nearby Whistler&apos;s mountain adventures provide
+                endless exploration. The <Link href="/cities/vancouver-world-cup-2026-travel-guide" className="text-red-600 hover:underline">Vancouver travel guide</Link> covers
+                everything from Coal Harbour luxury hotels to trendy Main Street stays.
+              </p>
+            </article>
+
             <Card>
               <CardHeader><CardTitle>About BC Place</CardTitle></CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-slate-600">BC Place opened in 1983 and underwent a $563 million renovation in 2011 that included a new cable-supported retractable roof. It's home to the BC Lions (CFL) and Vancouver Whitecaps (MLS).</p>
-                <p className="text-slate-600">The stadium hosted the 2010 Winter Olympics opening and closing ceremonies. Vancouver's passionate soccer fanbase will create an incredible atmosphere for the World Cup.</p>
+                <p className="text-slate-600">BC Place opened in 1983 and underwent a $563 million renovation in 2011 that included a new cable-supported retractable roof. It&apos;s home to the BC Lions (CFL) and Vancouver Whitecaps (MLS).</p>
+                <p className="text-slate-600">The stadium hosted the 2010 Winter Olympics opening and closing ceremonies. Vancouver&apos;s passionate soccer fanbase will create an incredible atmosphere for the World Cup.</p>
               </CardContent>
             </Card>
 

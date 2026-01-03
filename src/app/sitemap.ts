@@ -32,7 +32,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .eq("status", "published")
 
   if (competitions) {
-    competitions.forEach((comp) => {
+    competitions.forEach((comp: any) => {
       entries.push({
         url: `${BASE_URL}/${comp.slug}`,
         lastModified: new Date(comp.updated_at),
@@ -49,7 +49,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .eq("status", "published")
 
   if (teams) {
-    teams.forEach((team) => {
+    teams.forEach((team: any) => {
       entries.push({
         url: `${BASE_URL}/${team.slug}`,
         lastModified: new Date(team.updated_at),
@@ -66,7 +66,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .in("status", ["scheduled", "live"])
 
   if (fixtures) {
-    fixtures.forEach((fixture) => {
+    fixtures.forEach((fixture: any) => {
       entries.push({
         url: `${BASE_URL}/${fixture.slug}`,
         lastModified: new Date(fixture.updated_at),
@@ -83,7 +83,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .eq("status", "published")
 
   if (venues) {
-    venues.forEach((venue) => {
+    venues.forEach((venue: any) => {
       entries.push({
         url: `${BASE_URL}/${venue.slug}`,
         lastModified: new Date(venue.updated_at),
