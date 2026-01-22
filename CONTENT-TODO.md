@@ -1,8 +1,62 @@
 # FIFA World Cup 2026 Content Creation To-Do List
 
 ## Overview
-Target: 183 SEO-optimized articles (1500+ words each)
+Target: 195 SEO-optimized articles (1500-2000 words each)
 Strategy: Target keyword integration, H1-H4 structure, meta descriptions, factual content for Google rankings
+
+## ⚠️ CRITICAL ARTICLE REQUIREMENTS (Apply to ALL Articles)
+
+### Word Count Requirements
+- **Minimum:** 1500 words
+- **Target:** 1500-2000 words
+- **Main Competition Article:** 2000+ words
+
+### Internal Links Requirements
+- **Minimum:** 40-50 internal links per article
+- **Team Articles:** Link to 20+ other teams, 10+ fixtures, 5+ venues, 3+ groups, 2+ city guides
+- **Fixture Articles:** Link to 15+ teams involved, 10+ related fixtures, 5+ venues, 3+ knockout rounds
+- **Venue Articles:** Link to 25+ matches at that venue, 15+ teams playing there, 5+ city guide
+- **Group Articles:** Link to ALL 4 teams in group, ALL group matches, related venues, knockout scenarios
+
+### Internal Link Types to Include
+1. **Team Links:** USA, Mexico, Canada, Brazil, Argentina, France, England, Germany, Spain, Portugal, Netherlands, Italy, Belgium, Croatia, Morocco, etc.
+2. **Group Links:** Group A through Group L World Cup 2026 Tickets (all 12 groups)
+3. **Knockout Round Pages:**
+   - Round of 32 World Cup 2026 Tickets
+   - Round of 16 World Cup 2026 Tickets
+   - Quarter-Finals World Cup 2026 Tickets
+   - Semi-Finals World Cup 2026 Tickets
+   - Third Place World Cup 2026 Tickets
+   - **FIFA World Cup 2026 Final Tickets** (always use full "FIFA World Cup 2026 Final Tickets")
+4. **Individual Knockout Matches:** QF1, QF2, QF3, QF4, SF1, SF2, etc.
+5. **Important Fixtures:** USA vs Mexico, Brazil vs Argentina, England vs Germany, France vs Argentina, Brazil vs Morocco
+6. **All 16 Venues:** MetLife Stadium, SoFi Stadium, AT&T Stadium, Mercedes-Benz Stadium, Hard Rock Stadium, NRG Stadium, Lincoln Financial Field, Lumen Field, Levi's Stadium, Gillette Stadium, Arrowhead Stadium, Estadio Azteca, Estadio Akron, Estadio BBVA, BMO Field, BC Place
+7. **City Travel Guides:** 16 city guides for all host cities
+
+### FAQ Requirements
+- **Minimum:** 8-10 FAQs per article
+- **Main Competition Article:** 12-15 FAQs
+- **Team Articles:** 8-10 FAQs
+- **Cover:** Ticket prices, buying process, dates, venues, best seats, package deals, resale options, travel tips, visa requirements, accommodation
+
+### Heading Structure
+- **H1:** 1 (Main title with target keyword)
+- **H2:** 8-12 major sections
+- **H3:** 20-30 subsections
+- **H4:** Optional for detailed breakdowns
+
+### Content Sections to Include (Main Competition Page)
+1. Introduction (300+ words)
+2. Tournament Overview
+3. Venue Guide (ALL 16 venues with details)
+4. Ticket Information (4 categories, pricing, buying process)
+5. Tournament Schedule & Key Dates
+6. Top Matches to Watch (8-10 matches)
+7. Travel Planning (visas, transport, accommodation)
+8. Host Cities Guide
+9. FAQs (12-15 questions)
+10. Why This World Cup is Unforgettable
+11. Planning Guide
 
 ---
 
@@ -154,13 +208,39 @@ Strategy: Target keyword integration, H1-H4 structure, meta descriptions, factua
   - Venue Focus: NRG Stadium, Estadio Azteca
   - Key Match: England vs Ghana
 
-### Knockout Round Articles (6 articles)
-- [ ] **Round of 32 World Cup 2026 Tickets** - First knockout stage
-- [ ] **Round of 16 World Cup 2026 Tickets** - Last 16 matches
-- [ ] **Quarter-Finals World Cup 2026 Tickets** - Elite 8 showdown
-- [ ] **Semi-Finals World Cup 2026 Tickets** - Path to glory
-- [ ] **Third Place World Cup 2026 Tickets** - Bronze medal match
-- [ ] **World Cup 2026 Final Tickets** - The ultimate showdown
+### Knockout Round Overview Articles (6 articles)
+- [ ] **Round of 32 World Cup 2026 Tickets** - All 16 matches, July 4-7
+  - Target Keyword: "Round of 32 World Cup 2026 Tickets"
+  - Content: ALL 16 Round of 32 matches with dates, times, venues
+  - Links: All 16 individual R32 match pages, all venues hosting R32
+
+- [ ] **Round of 16 World Cup 2026 Tickets** - All 8 matches, July 9-12
+  - Target Keyword: "Round of 16 World Cup 2026 Tickets"
+  - Content: ALL 8 Round of 16 matches with dates, times, venues
+  - Links: All 8 individual R16 match pages, all venues hosting R16
+
+- [ ] **Quarter-Finals World Cup 2026 Tickets** - All 4 matches, July 13-15
+  - Target Keyword: "Quarter-Finals World Cup 2026 Tickets"
+  - Content: ALL 4 Quarter-Final matches
+  - Venues: SoFi Stadium, AT&T Stadium, Gillette Stadium, Arrowhead Stadium
+  - Links: QF1, QF2, QF3, QF4 individual pages
+
+- [ ] **Semi-Finals World Cup 2026 Tickets** - 2 matches, July 17-18
+  - Target Keyword: "Semi-Finals World Cup 2026 Tickets"
+  - Content: Both Semi-Final matches
+  - Venues: AT&T Stadium (Dallas), Mercedes-Benz Stadium (Atlanta)
+  - Links: SF1, SF2 individual pages, Final page
+
+- [ ] **Third Place World Cup 2026 Tickets** - Bronze medal match, July 18
+  - Target Keyword: "Third Place World Cup 2026 Tickets"
+  - Venue: Hard Rock Stadium (Miami)
+  - Content: Third place match details, historical significance
+
+- [ ] **FIFA World Cup 2026 Final Tickets** - The ultimate showdown, July 19
+  - Target Keyword: "FIFA World Cup 2026 Final Tickets" (always use full phrase)
+  - Venue: MetLife Stadium (New York/New Jersey)
+  - Content: Final match details, ticketing, atmosphere, history
+  - CRITICAL: Always link as "FIFA World Cup 2026 Final Tickets" (not just "Final")
 
 ### Specific Match Articles - Hot Fixtures (86 articles)
 

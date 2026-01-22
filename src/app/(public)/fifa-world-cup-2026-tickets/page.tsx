@@ -866,19 +866,189 @@ export default function WorldCup2026Page() {
                   <div className="space-y-4">
                     <div className="border-l-4 border-blue-500 pl-4">
                       <h4 className="font-semibold text-slate-900 mb-1">Q: When do FIFA World Cup 2026 tickets go on sale?</h4>
-                      <p className="text-slate-700 text-sm">A: FIFA typically releases tickets in phases starting 8-12 months before the tournament. Expect the first sales phase in late 2025, with subsequent phases through spring 2026.</p>
+                      <p className="text-slate-700 text-sm">A: FIFA typically releases tickets in phases starting 8-12 months before the tournament. Expect the first sales phase (random selection draw) in late 2025, with subsequent first-come-first-served phases through spring 2026. Last-minute sales continue until tournament starts.</p>
                     </div>
                     <div className="border-l-4 border-blue-500 pl-4">
                       <h4 className="font-semibold text-slate-900 mb-1">Q: How much do World Cup 2026 tickets cost?</h4>
-                      <p className="text-slate-700 text-sm">A: Prices range from $50 for Category 4 group-stage matches to $5,000+ for Category 1 Final tickets. Most group-stage matches range $100-$500 depending on category and teams playing.</p>
+                      <p className="text-slate-700 text-sm">A: Prices range from $50 for Category 4 group-stage matches to $5,000+ for Category 1 <Link href="/fixtures/final-world-cup-2026-tickets" className="text-blue-600 hover:underline">FIFA World Cup 2026 Final Tickets</Link>. <Link href="/teams/usa-world-cup-2026-tickets" className="text-blue-600 hover:underline">USA matches</Link> and <Link href="/fixtures/semi-finals-world-cup-2026-tickets" className="text-blue-600 hover:underline">Semi-Finals</Link> range $200-$1,500. Most group-stage matches are $100-$500.</p>
                     </div>
                     <div className="border-l-4 border-blue-500 pl-4">
                       <h4 className="font-semibold text-slate-900 mb-1">Q: Where is the World Cup 2026 Final?</h4>
-                      <p className="text-slate-700 text-sm">A: The FIFA World Cup 2026 Final will be held at <Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium</Link> in East Rutherford, New Jersey (New York metro area) on July 19, 2026.</p>
+                      <p className="text-slate-700 text-sm">A: The <Link href="/fixtures/final-world-cup-2026-tickets" className="text-blue-600 hover:underline font-medium">FIFA World Cup 2026 Final</Link> will be held at <Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium</Link> in East Rutherford, New Jersey (New York/New Jersey metro area) on July 19, 2026 at 21:00 CET (3:00 PM ET). Capacity: 82,500.</p>
                     </div>
                     <div className="border-l-4 border-blue-500 pl-4">
-                      <h4 className="font-semibold text-slate-900 mb-1">Q: Can I buy tickets for specific teams?</h4>
-                      <p className="text-slate-700 text-sm">A: FIFA offers team-specific packages allowing you to follow one team through the group stage (3 matches). Individual match tickets are also available but teams are confirmed only after the draw.</p>
+                      <h4 className="font-semibold text-slate-900 mb-1">Q: Can I buy tickets for specific teams like USA, Brazil, or Argentina?</h4>
+                      <p className="text-slate-700 text-sm">A: Yes! FIFA offers team-specific packages for <Link href="/teams/usa-world-cup-2026-tickets" className="text-blue-600 hover:underline">USA World Cup 2026 Tickets</Link>, <Link href="/teams/brazil-world-cup-2026-tickets" className="text-blue-600 hover:underline">Brazil</Link>, <Link href="/teams/argentina-world-cup-2026-tickets" className="text-blue-600 hover:underline">Argentina</Link>, and all 48 teams allowing you to follow one team through the group stage (3 matches). Team confirmations happen after the December 2025 draw.</p>
+                    </div>
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h4 className="font-semibold text-slate-900 mb-1">Q: Which venues host the knockout rounds?</h4>
+                      <p className="text-slate-700 text-sm">A: <Link href="/fixtures/quarter-finals-world-cup-2026-tickets" className="text-blue-600 hover:underline">Quarter-Finals</Link>: SoFi, Gillette, Arrowhead stadiums. <Link href="/fixtures/semi-finals-world-cup-2026-tickets" className="text-blue-600 hover:underline">Semi-Finals</Link>: <Link href="/venues/att-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">AT&T Stadium (Dallas)</Link>, <Link href="/venues/mercedes-benz-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Mercedes-Benz (Atlanta)</Link>. <Link href="/fixtures/third-place-world-cup-2026-tickets" className="text-blue-600 hover:underline">Third Place</Link>: <Link href="/venues/hard-rock-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Hard Rock Stadium (Miami)</Link>. <Link href="/fixtures/final-world-cup-2026-tickets" className="text-blue-600 hover:underline">Final</Link>: <Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium</Link>.</p>
+                    </div>
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h4 className="font-semibold text-slate-900 mb-1">Q: Do I need visas for all three host countries?</h4>
+                      <p className="text-slate-700 text-sm">A: Only if attending matches in multiple countries. For USA: ESTA ($21, 72 hours advance). For Mexico: FMM tourist card (free). For Canada: ETA (CAD $7, 72 hours). Plan accordingly if seeing matches in different countries.</p>
+                    </div>
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h4 className="font-semibold text-slate-900 mb-1">Q: What are the best matches to watch?</h4>
+                      <p className="text-slate-700 text-sm">A: <Link href="/fixtures/usa-vs-mexico-world-cup-2026-tickets" className="text-blue-600 hover:underline">USA vs Mexico</Link> (CONCACAF rivalry), <Link href="/fixtures/brazil-vs-argentina-world-cup-2026-tickets" className="text-blue-600 hover:underline">Brazil vs Argentina</Link> (Superclásico), <Link href="/fixtures/england-vs-germany-world-cup-2026-tickets" className="text-blue-600 hover:underline">England vs Germany</Link>, <Link href="/fixtures/argentina-vs-france-world-cup-2026-tickets" className="text-blue-600 hover:underline">Argentina vs France</Link> (2022 Final rematch), and any <Link href="/fixtures/semi-finals-world-cup-2026-tickets" className="text-blue-600 hover:underline">Semi-Final</Link> or <Link href="/fixtures/final-world-cup-2026-tickets" className="text-blue-600 hover:underline">Final</Link> match.</p>
+                    </div>
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h4 className="font-semibold text-slate-900 mb-1">Q: Are there payment plans available?</h4>
+                      <p className="text-slate-700 text-sm">A: FIFA typically doesn't offer payment plans for individual tickets. However, some hospitality packages through authorized sellers may offer installment options. Credit cards are accepted for all purchases.</p>
+                    </div>
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h4 className="font-semibold text-slate-900 mb-1">Q: Can I resell my tickets if I can't attend?</h4>
+                      <p className="text-slate-700 text-sm">A: Yes, but only through FIFA's official ticket resale platform. Selling outside official channels may result in ticket cancellation. Always use authorized platforms to avoid fraud.</p>
+                    </div>
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h4 className="font-semibold text-slate-900 mb-1">Q: When is the opening match and where?</h4>
+                      <p className="text-slate-700 text-sm">A: The opening match is on June 11, 2026 at <Link href="/venues/estadio-azteca-world-cup-2026-tickets" className="text-blue-600 hover:underline">Estadio Azteca</Link> in Mexico City, featuring <Link href="/teams/mexico-world-cup-2026-tickets" className="text-blue-600 hover:underline">Mexico</Link>. This will be the stadium's historic 3rd World Cup (1970, 1986, 2026).</p>
+                    </div>
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h4 className="font-semibold text-slate-900 mb-1">Q: Which groups should I watch?</h4>
+                      <p className="text-slate-700 text-sm">A: <Link href="/fixtures/group-a-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group A</Link> (Mexico), <Link href="/fixtures/group-c-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group C</Link> (Brazil, Morocco), <Link href="/fixtures/group-d-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group D</Link> (USA), <Link href="/fixtures/group-i-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group I</Link> (France), <Link href="/fixtures/group-j-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group J</Link> (Argentina), and <Link href="/fixtures/group-l-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group L</Link> (England, Croatia).</p>
+                    </div>
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h4 className="font-semibold text-slate-900 mb-1">Q: What's the best way to experience multiple matches?</h4>
+                      <p className="text-slate-700 text-sm">A: Book team-following packages or create a regional itinerary. East Coast: <Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife</Link>, <Link href="/venues/gillette-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Gillette</Link>, <Link href="/venues/lincoln-financial-field-world-cup-2026-tickets" className="text-blue-600 hover:underline">Lincoln Financial</Link>. West Coast: <Link href="/venues/sofi-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">SoFi</Link>, <Link href="/venues/levis-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Levi's</Link>, <Link href="/venues/lumen-field-world-cup-2026-tickets" className="text-blue-600 hover:underline">Lumen Field</Link>. Mexico: All 3 venues. Check our <Link href="/travel/new-york-world-cup-2026-city-guide" className="text-blue-600 hover:underline">city travel guides</Link>.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Top Teams to Watch */}
+                <div className="mb-8">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-4">Top Teams to Watch at World Cup 2026</h2>
+                  <p className="leading-relaxed mb-4">
+                    The expanded 48-team format brings unprecedented talent to North America. Here are the marquee nations expected to dominate headlines and ticket sales:
+                  </p>
+
+                  <div className="grid md:grid-cols-3 gap-4 mb-4">
+                    <div className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <h4 className="font-bold text-slate-900 mb-2">🇺🇸 <Link href="/teams/usa-world-cup-2026-tickets" className="text-blue-600 hover:underline">United States</Link></h4>
+                      <p className="text-sm text-slate-600">Host nation advantage, home crowd support across 11 venues. Strong roster featuring Christian Pulisic, Weston McKennie. Plays in <Link href="/fixtures/group-d-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group D</Link>.</p>
+                    </div>
+                    <div className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <h4 className="font-bold text-slate-900 mb-2">🇧🇷 <Link href="/teams/brazil-world-cup-2026-tickets" className="text-blue-600 hover:underline">Brazil</Link></h4>
+                      <p className="text-sm text-slate-600">5-time champions seeking redemption after 2022 quarter-final exit. Vinicius Jr., Rodrygo lead the Seleção. Featured in <Link href="/fixtures/group-c-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group C</Link> with Morocco rematch.</p>
+                    </div>
+                    <div className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <h4 className="font-bold text-slate-900 mb-2">🇦🇷 <Link href="/teams/argentina-world-cup-2026-tickets" className="text-blue-600 hover:underline">Argentina</Link></h4>
+                      <p className="text-sm text-slate-600">Defending champions led by Lionel Messi's potential farewell tour. 2022 Qatar champions return in <Link href="/fixtures/group-j-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group J</Link> seeking back-to-back titles.</p>
+                    </div>
+                    <div className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <h4 className="font-bold text-slate-900 mb-2">🇫🇷 <Link href="/teams/france-world-cup-2026-tickets" className="text-blue-600 hover:underline">France</Link></h4>
+                      <p className="text-sm text-slate-600">2022 runners-up with Kylian Mbappé seeking revenge. Les Bleus compete in <Link href="/fixtures/group-i-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group I</Link>. Could face <Link href="/fixtures/argentina-vs-france-world-cup-2026-tickets" className="text-blue-600 hover:underline">Argentina rematch</Link>.</p>
+                    </div>
+                    <div className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <h4 className="font-bold text-slate-900 mb-2">🏴󠁧󠁢󠁥󠁮󠁧󠁿 <Link href="/teams/england-world-cup-2026-tickets" className="text-blue-600 hover:underline">England</Link></h4>
+                      <p className="text-sm text-slate-600">Semifinalists in 2018, runners-up in Euro 2020. Young talented squad in <Link href="/fixtures/group-l-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group L</Link>. Potential <Link href="/fixtures/england-vs-germany-world-cup-2026-tickets" className="text-blue-600 hover:underline">Germany clash</Link>.</p>
+                    </div>
+                    <div className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <h4 className="font-bold text-slate-900 mb-2">🇩🇪 <Link href="/teams/germany-world-cup-2026-tickets" className="text-blue-600 hover:underline">Germany</Link></h4>
+                      <p className="text-sm text-slate-600">4-time champions rebuilding after 2018 and 2022 group stage exits. Competing in <Link href="/fixtures/group-e-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group E</Link>. Historic rivalry with <Link href="/teams/netherlands-world-cup-2026-tickets" className="text-blue-600 hover:underline">Netherlands</Link>.</p>
+                    </div>
+                    <div className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <h4 className="font-bold text-slate-900 mb-2">🇲🇽 <Link href="/teams/mexico-world-cup-2026-tickets" className="text-blue-600 hover:underline">Mexico</Link></h4>
+                      <p className="text-sm text-slate-600">Co-hosts open tournament at legendary <Link href="/venues/estadio-azteca-world-cup-2026-tickets" className="text-blue-600 hover:underline">Estadio Azteca</Link>. El Tri in <Link href="/fixtures/group-a-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group A</Link>. Epic <Link href="/fixtures/usa-vs-mexico-world-cup-2026-tickets" className="text-blue-600 hover:underline">USA rivalry</Link>.</p>
+                    </div>
+                    <div className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <h4 className="font-bold text-slate-900 mb-2">🇪🇸 <Link href="/teams/spain-world-cup-2026-tickets" className="text-blue-600 hover:underline">Spain</Link></h4>
+                      <p className="text-sm text-slate-600">2010 champions with new generation. Technical excellence in <Link href="/fixtures/group-h-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group H</Link>. Potential clash with <Link href="/teams/portugal-world-cup-2026-tickets" className="text-blue-600 hover:underline">Portugal</Link> in knockout rounds.</p>
+                    </div>
+                    <div className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <h4 className="font-bold text-slate-900 mb-2">🇵🇹 <Link href="/teams/portugal-world-cup-2026-tickets" className="text-blue-600 hover:underline">Portugal</Link></h4>
+                      <p className="text-sm text-slate-600">Cristiano Ronaldo's likely final World Cup. In <Link href="/fixtures/group-k-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group K</Link> with <Link href="/teams/colombia-world-cup-2026-tickets" className="text-blue-600 hover:underline">Colombia</Link> clash expected.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Knockout Rounds Guide */}
+                <div className="mb-8">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-4">Knockout Rounds - Road to the Final</h2>
+                  <p className="leading-relaxed mb-4">
+                    The expanded format means 32 teams advance to knockout stages, creating the most exciting tournament structure ever. From June 28 through July 19, every match is do-or-die.
+                  </p>
+
+                  <div className="space-y-4">
+                    <div className="border-l-4 border-purple-500 pl-4 bg-purple-50 p-4 rounded-r">
+                      <h3 className="font-bold text-purple-900 mb-2">
+                        <Link href="/fixtures/round-of-32-world-cup-2026-tickets" className="hover:underline">Round of 32 World Cup 2026 Tickets</Link> • June 28 - July 2
+                      </h3>
+                      <p className="text-sm text-slate-700">16 matches across 16 venues. Top 2 from each group plus 8 best third-place teams compete. Tickets: $150-$800. Venues include <Link href="/venues/sofi-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">SoFi Stadium</Link>, <Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium</Link>, <Link href="/venues/estadio-azteca-world-cup-2026-tickets" className="text-blue-600 hover:underline">Estadio Azteca</Link>.</p>
+                    </div>
+
+                    <div className="border-l-4 border-blue-500 pl-4 bg-blue-50 p-4 rounded-r">
+                      <h3 className="font-bold text-blue-900 mb-2">
+                        <Link href="/fixtures/round-of-16-world-cup-2026-tickets" className="hover:underline">Round of 16 World Cup 2026 Tickets</Link> • July 4-6
+                      </h3>
+                      <p className="text-sm text-slate-700">8 matches, Sweet 16 showdowns. Independence Day football! Tickets: $200-$1,200. Featured venues: <Link href="/venues/att-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">AT&T Stadium</Link>, <Link href="/venues/hard-rock-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Hard Rock Stadium</Link>, <Link href="/venues/mercedes-benz-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Mercedes-Benz Stadium</Link>.</p>
+                    </div>
+
+                    <div className="border-l-4 border-green-500 pl-4 bg-green-50 p-4 rounded-r">
+                      <h3 className="font-bold text-green-900 mb-2">
+                        <Link href="/fixtures/quarter-finals-world-cup-2026-tickets" className="hover:underline">Quarter-Finals World Cup 2026 Tickets</Link> • July 9-10
+                      </h3>
+                      <p className="text-sm text-slate-700">Elite 8 compete in 4 massive stadiums. Tickets: $400-$2,000. Venues: <Link href="/venues/sofi-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">SoFi (LA)</Link>, <Link href="/venues/gillette-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Gillette (Boston)</Link>, <Link href="/venues/hard-rock-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Hard Rock (Miami)</Link>, <Link href="/venues/arrowhead-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Arrowhead (Kansas City)</Link>.</p>
+                    </div>
+
+                    <div className="border-l-4 border-red-500 pl-4 bg-red-50 p-4 rounded-r">
+                      <h3 className="font-bold text-red-900 mb-2">
+                        <Link href="/fixtures/semi-finals-world-cup-2026-tickets" className="hover:underline">Semi-Finals World Cup 2026 Tickets</Link> • July 14-15
+                      </h3>
+                      <p className="text-sm text-slate-700">Final Four battle for championship berth. Tickets: $800-$3,000+. Two massive venues: <Link href="/venues/att-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">AT&T Stadium, Dallas</Link> (80,000 capacity) and <Link href="/venues/mercedes-benz-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Mercedes-Benz Stadium, Atlanta</Link> (71,000 capacity).</p>
+                    </div>
+
+                    <div className="border-l-4 border-yellow-500 pl-4 bg-yellow-50 p-4 rounded-r">
+                      <h3 className="font-bold text-yellow-900 mb-2">
+                        <Link href="/fixtures/final-world-cup-2026-tickets" className="hover:underline font-bold">🏆 FIFA World Cup 2026 Final Tickets</Link> • July 19
+                      </h3>
+                      <p className="text-sm text-slate-700">The pinnacle of football. Tickets: $1,000-$5,000+ (official), resale much higher. <Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline font-medium">MetLife Stadium, New York/New Jersey</Link> - 82,500 capacity. Book accommodation via <Link href="/travel/new-york-world-cup-2026-city-guide" className="text-blue-600 hover:underline">New York City Guide</Link> 12+ months in advance.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Host Cities Guide */}
+                <div className="mb-8">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-4">16 Host Cities - Where to Stay and Play</h2>
+                  <p className="leading-relaxed mb-4">
+                    Three nations, 16 incredible cities, each offering unique World Cup experiences. Plan your multi-city adventure with our comprehensive city guides.
+                  </p>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="border rounded-lg p-4">
+                      <h4 className="font-semibold text-slate-900 mb-2">🗽 <Link href="/travel/new-york-world-cup-2026-city-guide" className="text-blue-600 hover:underline">New York/New Jersey</Link></h4>
+                      <p className="text-sm text-slate-600 mb-2"><Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium</Link> hosts <Link href="/fixtures/final-world-cup-2026-tickets" className="text-blue-600 hover:underline font-medium">FIFA World Cup 2026 Final</Link>. 7+ matches including <Link href="/fixtures/round-of-16-world-cup-2026-tickets" className="text-blue-600 hover:underline">Round of 16</Link>.</p>
+                      <p className="text-xs text-slate-500">Hotels: Times Square, Jersey City. Transport: NJ Transit, subway. Must-see: Statue of Liberty, Central Park.</p>
+                    </div>
+
+                    <div className="border rounded-lg p-4">
+                      <h4 className="font-semibold text-slate-900 mb-2">🌴 <Link href="/travel/los-angeles-world-cup-2026-city-guide" className="text-blue-600 hover:underline">Los Angeles</Link></h4>
+                      <p className="text-sm text-slate-600 mb-2"><Link href="/venues/sofi-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">SoFi Stadium</Link> hosts <Link href="/fixtures/quarter-finals-world-cup-2026-tickets" className="text-blue-600 hover:underline">Quarter-Finals</Link>. 8+ matches. Home to potential <Link href="/teams/usa-world-cup-2026-tickets" className="text-blue-600 hover:underline">USA</Link> opener.</p>
+                      <p className="text-xs text-slate-500">Hotels: Inglewood, Santa Monica. Transport: Metro, rental car. Must-see: Hollywood, Venice Beach.</p>
+                    </div>
+
+                    <div className="border rounded-lg p-4">
+                      <h4 className="font-semibold text-slate-900 mb-2">🤠 <Link href="/travel/dallas-world-cup-2026-city-guide" className="text-blue-600 hover:underline">Dallas</Link></h4>
+                      <p className="text-sm text-slate-600 mb-2"><Link href="/venues/att-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">AT&T Stadium</Link> hosts <Link href="/fixtures/semi-finals-world-cup-2026-tickets" className="text-blue-600 hover:underline">Semi-Finals</Link>. 9+ matches. Largest capacity venue.</p>
+                      <p className="text-xs text-slate-500">Hotels: Arlington, Downtown Dallas. Transport: DART, rental car. Must-see: JFK Memorial, Fort Worth.</p>
+                    </div>
+
+                    <div className="border rounded-lg p-4">
+                      <h4 className="font-semibold text-slate-900 mb-2">🍑 <Link href="/travel/atlanta-world-cup-2026-city-guide" className="text-blue-600 hover:underline">Atlanta</Link></h4>
+                      <p className="text-sm text-slate-600 mb-2"><Link href="/venues/mercedes-benz-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Mercedes-Benz Stadium</Link> hosts <Link href="/fixtures/semi-finals-world-cup-2026-tickets" className="text-blue-600 hover:underline">Semi-Finals</Link>. 8+ matches.</p>
+                      <p className="text-xs text-slate-500">Hotels: Downtown, Midtown. Transport: MARTA. Must-see: World of Coca-Cola, MLK National Park.</p>
+                    </div>
+
+                    <div className="border rounded-lg p-4">
+                      <h4 className="font-semibold text-slate-900 mb-2">🏖️ <Link href="/travel/miami-world-cup-2026-city-guide" className="text-blue-600 hover:underline">Miami</Link></h4>
+                      <p className="text-sm text-slate-600 mb-2"><Link href="/venues/hard-rock-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Hard Rock Stadium</Link> hosts <Link href="/fixtures/third-place-world-cup-2026-tickets" className="text-blue-600 hover:underline">Third Place Match</Link> + <Link href="/fixtures/quarter-finals-world-cup-2026-tickets" className="text-blue-600 hover:underline">Quarter-Final</Link>.</p>
+                      <p className="text-xs text-slate-500">Hotels: South Beach, Brickell. Transport: Metrorail, rental car. Must-see: Art Deco District.</p>
+                    </div>
+
+                    <div className="border rounded-lg p-4">
+                      <h4 className="font-semibold text-slate-900 mb-2">🇲🇽 <Link href="/travel/mexico-city-world-cup-2026-city-guide" className="text-blue-600 hover:underline">Mexico City</Link></h4>
+                      <p className="text-sm text-slate-600 mb-2"><Link href="/venues/estadio-azteca-world-cup-2026-tickets" className="text-blue-600 hover:underline">Estadio Azteca</Link> hosts Opening Match June 11! <Link href="/teams/mexico-world-cup-2026-tickets" className="text-blue-600 hover:underline">Mexico</Link> group matches + <Link href="/fixtures/round-of-16-world-cup-2026-tickets" className="text-blue-600 hover:underline">Round of 16</Link>.</p>
+                      <p className="text-xs text-slate-500">Hotels: Polanco, Condesa. Transport: Metro, Metrobus. Must-see: Zócalo, Teotihuacán.</p>
                     </div>
                   </div>
                 </div>
