@@ -235,7 +235,7 @@ export function PublicHeader() {
                   onMouseEnter={() => !item.simple && setActiveMenu(item.label)}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
-                  <Link
+                  <LanguageLink
                     href={item.href}
                     className={`flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium hover:bg-slate-100 ${
                       item.featured ? "text-blue-600" : "text-slate-700"
