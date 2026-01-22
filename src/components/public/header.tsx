@@ -298,7 +298,7 @@ export function PublicHeader() {
                             ))}
                           </div>
                           <div className="mt-4 pt-4 border-t text-center">
-                            <Link
+                            <LanguageLink
                               href="/fifa-world-cup-2026-tickets#teams"
                               className="text-blue-600 text-sm font-medium hover:underline"
                             >
@@ -313,7 +313,7 @@ export function PublicHeader() {
                         <div className="p-6">
                           <div className="grid grid-cols-3 gap-6">
                             {allVenues.map((venue) => (
-                              <Link
+                              <LanguageLink
                                 key={venue.slug}
                                 href={`/venues/${venue.slug}`}
                                 className="flex items-center justify-between p-2 rounded hover:bg-slate-50 text-sm group"
@@ -339,7 +339,7 @@ export function PublicHeader() {
                             ))}
                           </div>
                           <div className="mt-4 pt-4 border-t text-center">
-                            <Link
+                            <LanguageLink
                               href="/fifa-world-cup-2026-tickets#venues"
                               className="text-blue-600 text-sm font-medium hover:underline"
                             >
@@ -359,7 +359,7 @@ export function PublicHeader() {
                               <ul className="space-y-2">
                                 {["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"].map((group) => (
                                   <li key={group}>
-                                    <Link
+                                    <LanguageLink
                                       href={`/fixtures/group-${group.toLowerCase()}-world-cup-2026-tickets`}
                                       className="text-xs text-slate-600 hover:text-blue-600"
                                     >
@@ -444,7 +444,7 @@ export function PublicHeader() {
                             </div>
                           </div>
                           <div className="mt-4 pt-4 border-t text-center">
-                            <Link
+                            <LanguageLink
                               href="/fifa-world-cup-2026-tickets"
                               className="text-blue-600 text-sm font-medium hover:underline"
                             >
@@ -459,7 +459,7 @@ export function PublicHeader() {
                         <div className="p-6">
                           <div className="grid grid-cols-4 gap-4">
                             {wc2026TravelGuides.map((city) => (
-                              <Link
+                              <LanguageLink
                                 key={city.slug}
                                 href={`/travel/${city.slug}`}
                                 className="flex items-center gap-2 p-3 rounded-lg border hover:bg-slate-50 transition-colors"
@@ -484,7 +484,7 @@ export function PublicHeader() {
                             </div>
                           </div>
                           <div className="mt-4 text-center">
-                            <Link
+                            <LanguageLink
                               href="/fifa-world-cup-2026-tickets#travel"
                               className="text-blue-600 text-sm font-medium hover:underline"
                             >
@@ -508,7 +508,7 @@ export function PublicHeader() {
                             <ul className="space-y-2">
                               {column.items.map((subItem, subIdx) => (
                                 <li key={subIdx}>
-                                  <Link
+                                  <LanguageLink
                                     href={subItem.href}
                                     className="flex items-center gap-2 text-sm text-slate-600 hover:text-blue-600"
                                   >
@@ -586,7 +586,7 @@ export function PublicHeader() {
             <ul className="space-y-2">
               {megaMenuItems.map((item) => (
                 <li key={item.label}>
-                  <Link
+                  <LanguageLink
                     href={item.href}
                     className={`block rounded-lg px-3 py-2 font-medium hover:bg-slate-100 ${
                       item.featured ? "text-blue-600" : "text-slate-700"
