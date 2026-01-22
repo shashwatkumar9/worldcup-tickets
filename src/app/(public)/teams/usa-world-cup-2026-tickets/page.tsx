@@ -126,9 +126,9 @@ export default function USATicketsPage() {
                 <span className="text-7xl">{teamInfo.flag}</span>
                 <div>
                   <h1 className="text-4xl font-bold md:text-5xl text-slate-900">
-                    {teamInfo.name}
+                    USA World Cup 2026 Tickets
                   </h1>
-                  <p className="text-xl text-slate-700 mt-1">{teamInfo.nickname}</p>
+                  <p className="text-xl text-slate-700 mt-1">{teamInfo.nickname} • Host Nation</p>
                 </div>
               </div>
 
@@ -309,7 +309,7 @@ export default function USATicketsPage() {
 
             {/* SEO Article Content */}
             <article className="prose prose-slate max-w-none">
-              <h2 className="text-2xl font-bold text-slate-900">USA World Cup 2026: The Golden Generation&apos;s Moment of Destiny</h2>
+              <h2 className="text-2xl font-bold text-slate-900">USA World Cup 2026 Tickets: The Golden Generation&apos;s Moment of Destiny</h2>
               <p>
                 In the 92-year history of the FIFA World Cup, no moment has carried more weight for American soccer
                 than 2026. For the first time since 1994, the United States will host the world&apos;s greatest

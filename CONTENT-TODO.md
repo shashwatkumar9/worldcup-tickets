@@ -39,6 +39,23 @@ Strategy: Target keyword integration, H1-H4 structure, meta descriptions, factua
 - **Team Articles:** 8-10 FAQs
 - **Cover:** Ticket prices, buying process, dates, venues, best seats, package deals, resale options, travel tips, visa requirements, accommodation
 
+### H1 and Article Title Requirements
+- **H1 MUST include the exact target keyword** (e.g., "USA World Cup 2026 Tickets", "Brazil World Cup 2026 Tickets")
+- **Main article H2 title (first heading in article content) MUST include the target keyword**
+- **Example Formats:**
+  - H1: "USA World Cup 2026 Tickets" (page title)
+  - Article H2: "USA World Cup 2026 Tickets: The Golden Generation's Moment of Destiny"
+  - H1: "Brazil World Cup 2026 Tickets" (page title)
+  - Article H2: "Brazil World Cup 2026 Tickets: Five-Time Champions Return"
+- **This applies to ALL pages:** team pages, fixture pages, venue pages, group pages, city guides
+- **Target keyword format examples:**
+  - Teams: "[Country] World Cup 2026 Tickets"
+  - Fixtures: "[Team A] vs [Team B] World Cup 2026 Tickets"
+  - Venues: "[Stadium Name] World Cup 2026 Tickets"
+  - Groups: "Group [Letter] World Cup 2026 Tickets"
+  - Knockout Rounds: "[Round Name] World Cup 2026 Tickets"
+  - Final: "FIFA World Cup 2026 Final Tickets" (always use full phrase)
+
 ### Heading Structure
 - **H1:** 1 (Main title with target keyword)
 - **H2:** 8-12 major sections

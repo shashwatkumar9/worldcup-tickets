@@ -274,11 +274,11 @@ export default function WorldCup2026Page() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button size="lg" className="bg-green-600 hover:bg-green-700">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white">
                 <Ticket className="mr-2 h-5 w-5" />
                 Buy Tickets from $95
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+              <Button size="lg" className="bg-white/20 border-2 border-white text-white hover:bg-white hover:text-slate-900 backdrop-blur-sm" asChild>
                 <a href="#full-schedule">View Full Schedule</a>
               </Button>
             </div>
