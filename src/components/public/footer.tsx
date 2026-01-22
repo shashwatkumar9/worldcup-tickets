@@ -1,5 +1,8 @@
-import Link from "next/link"
+"use client"
+
 import { Ticket, Facebook, Twitter, Instagram, Youtube } from "lucide-react"
+import { LanguageLink } from "@/components/i18n/LanguageLink"
+import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher"
 
 // Top 15 Teams for Footer
 const top15Teams = [
@@ -77,15 +80,6 @@ const footerLinks = {
   ],
 }
 
-const languages = [
-  { code: "en", name: "English", flag: "🇬🇧" },
-  { code: "de", name: "Deutsch", flag: "🇩🇪" },
-  { code: "fr", name: "Français", flag: "🇫🇷" },
-  { code: "es", name: "Español", flag: "🇪🇸" },
-  { code: "it", name: "Italiano", flag: "🇮🇹" },
-  { code: "ar", name: "العربية", flag: "🇸🇦" },
-]
-
 export function PublicFooter() {
   return (
     <footer className="bg-slate-900 text-slate-300">
@@ -98,9 +92,9 @@ export function PublicFooter() {
             <ul className="space-y-2">
               {top15Teams.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-xs hover:text-white transition-colors">
+                  <LanguageLink href={link.href} className="text-xs hover:text-white transition-colors">
                     {link.name}
-                  </Link>
+                  </LanguageLink>
                 </li>
               ))}
             </ul>
@@ -112,9 +106,9 @@ export function PublicFooter() {
             <ul className="space-y-2">
               {allVenues.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-xs hover:text-white transition-colors">
+                  <LanguageLink href={link.href} className="text-xs hover:text-white transition-colors">
                     {link.name}
-                  </Link>
+                  </LanguageLink>
                 </li>
               ))}
             </ul>
@@ -126,9 +120,9 @@ export function PublicFooter() {
             <ul className="space-y-2">
               {majorGroupFixtures.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-xs hover:text-white transition-colors">
+                  <LanguageLink href={link.href} className="text-xs hover:text-white transition-colors">
                     {link.name}
-                  </Link>
+                  </LanguageLink>
                 </li>
               ))}
             </ul>
@@ -137,18 +131,18 @@ export function PublicFooter() {
             <ul className="space-y-2">
               {knockoutFixtures.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-xs hover:text-white transition-colors">
+                  <LanguageLink href={link.href} className="text-xs hover:text-white transition-colors">
                     {link.name}
-                  </Link>
+                  </LanguageLink>
                 </li>
               ))}
               <li>
-                <Link
+                <LanguageLink
                   href="/fixtures/final-world-cup-2026-tickets"
                   className="text-xs font-bold text-yellow-400 hover:text-yellow-300 transition-colors flex items-center gap-1"
                 >
                   🏆 FIFA World Cup 2026 Final Tickets
-                </Link>
+                </LanguageLink>
               </li>
             </ul>
           </div>
@@ -159,9 +153,9 @@ export function PublicFooter() {
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-xs hover:text-white transition-colors">
+                  <LanguageLink href={link.href} className="text-xs hover:text-white transition-colors">
                     {link.name}
-                  </Link>
+                  </LanguageLink>
                 </li>
               ))}
             </ul>
@@ -170,9 +164,9 @@ export function PublicFooter() {
             <ul className="space-y-2">
               {footerLinks.help.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-xs hover:text-white transition-colors">
+                  <LanguageLink href={link.href} className="text-xs hover:text-white transition-colors">
                     {link.name}
-                  </Link>
+                  </LanguageLink>
                 </li>
               ))}
             </ul>
@@ -181,41 +175,31 @@ export function PublicFooter() {
           {/* Languages */}
           <div>
             <h3 className="mb-4 font-semibold text-white">Languages</h3>
-            <ul className="space-y-2">
-              {languages.map((lang) => (
-                <li key={lang.code}>
-                  <Link
-                    href={lang.code === "en" ? "/" : `/${lang.code}`}
-                    className="flex items-center gap-2 text-xs hover:text-white transition-colors"
-                  >
-                    <span>{lang.flag}</span>
-                    <span>{lang.name}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="mb-4">
+              <LanguageSwitcher variant="footer" />
+            </div>
 
             <h3 className="mb-4 mt-6 font-semibold text-white">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/fifa-world-cup-2026-tickets" className="text-xs hover:text-yellow-400 transition-colors font-semibold">
+                <LanguageLink href="/fifa-world-cup-2026-tickets" className="text-xs hover:text-yellow-400 transition-colors font-semibold">
                   🏆 FIFA World Cup 2026 Tickets
-                </Link>
+                </LanguageLink>
               </li>
               <li>
-                <Link href="/blog" className="text-xs hover:text-white transition-colors">
+                <LanguageLink href="/blog" className="text-xs hover:text-white transition-colors">
                   Blog & News
-                </Link>
+                </LanguageLink>
               </li>
               <li>
-                <Link href="/teams" className="text-xs hover:text-white transition-colors">
+                <LanguageLink href="/teams" className="text-xs hover:text-white transition-colors">
                   All Teams
-                </Link>
+                </LanguageLink>
               </li>
               <li>
-                <Link href="/venues" className="text-xs hover:text-white transition-colors">
+                <LanguageLink href="/venues" className="text-xs hover:text-white transition-colors">
                   All Stadiums
-                </Link>
+                </LanguageLink>
               </li>
             </ul>
           </div>
@@ -228,10 +212,10 @@ export function PublicFooter() {
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             {/* Logo & Copyright */}
             <div className="flex items-center gap-4">
-              <Link href="/" className="flex items-center gap-2">
+              <LanguageLink href="/" className="flex items-center gap-2">
                 <Ticket className="h-6 w-6 text-blue-400" />
                 <span className="font-bold text-white">WorldCup-Tickets</span>
-              </Link>
+              </LanguageLink>
               <span className="text-xs text-slate-500">
                 © {new Date().getFullYear()} WorldCup-Tickets.net. All Rights Reserved.
               </span>
@@ -256,18 +240,18 @@ export function PublicFooter() {
 
           {/* Legal Links */}
           <div className="mt-4 flex flex-wrap justify-center gap-4 text-xs text-slate-500 md:justify-start">
-            <Link href="/privacy" className="hover:text-white transition-colors">
+            <LanguageLink href="/privacy" className="hover:text-white transition-colors">
               Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-white transition-colors">
+            </LanguageLink>
+            <LanguageLink href="/terms" className="hover:text-white transition-colors">
               Terms of Service
-            </Link>
-            <Link href="/cookies" className="hover:text-white transition-colors">
+            </LanguageLink>
+            <LanguageLink href="/cookies" className="hover:text-white transition-colors">
               Cookie Policy
-            </Link>
-            <Link href="/sitemap.xml" className="hover:text-white transition-colors">
+            </LanguageLink>
+            <LanguageLink href="/sitemap.xml" className="hover:text-white transition-colors">
               Sitemap
-            </Link>
+            </LanguageLink>
           </div>
 
           {/* Disclaimer */}

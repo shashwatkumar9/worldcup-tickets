@@ -1,16 +1,16 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { LanguageLink } from "@/components/i18n/LanguageLink"
+import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher"
 import {
   Search,
   User,
   Menu,
   X,
   ChevronDown,
-  Globe,
   Ticket,
   Trophy,
   MapPin,
@@ -18,15 +18,6 @@ import {
   Users,
   Calendar,
 } from "lucide-react"
-
-const languages = [
-  { code: "en", name: "English", flag: "🇬🇧" },
-  { code: "de", name: "Deutsch", flag: "🇩🇪" },
-  { code: "fr", name: "Français", flag: "🇫🇷" },
-  { code: "es", name: "Español", flag: "🇪🇸" },
-  { code: "it", name: "Italiano", flag: "🇮🇹" },
-  { code: "ar", name: "العربية", flag: "🇸🇦" },
-]
 
 // All 46 teams organized in 6 columns for mega menu
 const allTeamsOrganized = [
@@ -197,8 +188,6 @@ export function PublicHeader() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
-  const [selectedLanguage, setSelectedLanguage] = useState(languages[0])
-  const [isLangOpen, setIsLangOpen] = useState(false)
   const [activeWc2026Tab, setActiveWc2026Tab] = useState<"teams" | "venues" | "fixtures" | "travel">("teams")
 
   return (
@@ -206,45 +195,19 @@ export function PublicHeader() {
       {/* Top Bar */}
       <div className="border-b bg-slate-900 text-white">
         <div className="container mx-auto flex h-10 items-center justify-between px-4">
-          <Link href="/" className="flex items-center gap-2">
+          <LanguageLink href="/" className="flex items-center gap-2">
             <Ticket className="h-6 w-6 text-blue-400" />
             <span className="font-bold">WorldCup-Tickets</span>
-          </Link>
+          </LanguageLink>
 
           <div className="flex items-center gap-4">
             <nav className="hidden items-center gap-4 text-sm md:flex">
-              <Link href="/about" className="hover:text-blue-400">About</Link>
-              <Link href="/contact" className="hover:text-blue-400">Contact</Link>
-              <Link href="/help" className="hover:text-blue-400">Help</Link>
+              <LanguageLink href="/about" className="hover:text-blue-400">About</LanguageLink>
+              <LanguageLink href="/contact" className="hover:text-blue-400">Contact</LanguageLink>
+              <LanguageLink href="/help" className="hover:text-blue-400">Help</LanguageLink>
             </nav>
 
-            <div className="relative">
-              <button
-                onClick={() => setIsLangOpen(!isLangOpen)}
-                className="flex items-center gap-1 rounded px-2 py-1 text-sm hover:bg-slate-800"
-              >
-                <span>{selectedLanguage.flag}</span>
-                <span className="hidden sm:inline">{selectedLanguage.code.toUpperCase()}</span>
-                <ChevronDown className="h-3 w-3" />
-              </button>
-              {isLangOpen && (
-                <div className="absolute right-0 top-full mt-1 w-40 rounded-lg border bg-white py-1 shadow-lg z-50">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        setSelectedLanguage(lang)
-                        setIsLangOpen(false)
-                      }}
-                      className="flex w-full items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50"
-                    >
-                      <span>{lang.flag}</span>
-                      <span>{lang.name}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+            <LanguageSwitcher variant="header" />
 
             <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
@@ -284,7 +247,7 @@ export function PublicHeader() {
                     {item.featured && (
                       <span className="ml-1 rounded bg-red-500 px-1.5 py-0.5 text-xs text-white">HOT</span>
                     )}
-                  </Link>
+                  </LanguageLink>
 
                   {/* World Cup 2026 Mega Menu */}
                   {item.megaMenu === "wc2026" && activeMenu === item.label && (
@@ -321,13 +284,13 @@ export function PublicHeader() {
                                 <ul className="space-y-1.5">
                                   {column.map((team) => (
                                     <li key={team.slug}>
-                                      <Link
+                                      <LanguageLink
                                         href={`/teams/${team.slug}`}
                                         className="flex items-start gap-1.5 text-xs text-slate-600 hover:text-blue-600 py-0.5"
                                       >
                                         <span className="text-sm">{team.flag}</span>
                                         <span className="leading-tight">{team.name}</span>
-                                      </Link>
+                                      </LanguageLink>
                                     </li>
                                   ))}
                                 </ul>
@@ -340,7 +303,7 @@ export function PublicHeader() {
                               className="text-blue-600 text-sm font-medium hover:underline"
                             >
                               View All 46 Teams →
-                            </Link>
+                            </LanguageLink>
                           </div>
                         </div>
                       )}
@@ -372,7 +335,7 @@ export function PublicHeader() {
                                     {venue.highlight}
                                   </span>
                                 )}
-                              </Link>
+                              </LanguageLink>
                             ))}
                           </div>
                           <div className="mt-4 pt-4 border-t text-center">
@@ -381,7 +344,7 @@ export function PublicHeader() {
                               className="text-blue-600 text-sm font-medium hover:underline"
                             >
                               View All 16 Venues →
-                            </Link>
+                            </LanguageLink>
                           </div>
                         </div>
                       )}
@@ -401,7 +364,7 @@ export function PublicHeader() {
                                       className="text-xs text-slate-600 hover:text-blue-600"
                                     >
                                       Group {group} World Cup 2026 Tickets
-                                    </Link>
+                                    </LanguageLink>
                                   </li>
                                 ))}
                               </ul>
@@ -412,39 +375,39 @@ export function PublicHeader() {
                               <h4 className="font-semibold text-slate-900 mb-3 text-sm">Knockout Stage</h4>
                               <ul className="space-y-2">
                                 <li>
-                                  <Link href="/fixtures/round-of-32-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
+                                  <LanguageLink href="/fixtures/round-of-32-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
                                     Round of 32 World Cup 2026 Tickets
-                                  </Link>
+                                  </LanguageLink>
                                   <span className="text-xs text-slate-400 block">June 28 - July 3</span>
                                 </li>
                                 <li>
-                                  <Link href="/fixtures/round-of-16-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
+                                  <LanguageLink href="/fixtures/round-of-16-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
                                     Round of 16 World Cup 2026 Tickets
-                                  </Link>
+                                  </LanguageLink>
                                   <span className="text-xs text-slate-400 block">July 4-7</span>
                                 </li>
                                 <li>
-                                  <Link href="/fixtures/quarter-finals-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
+                                  <LanguageLink href="/fixtures/quarter-finals-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
                                     Quarter-Finals World Cup 2026 Tickets
-                                  </Link>
+                                  </LanguageLink>
                                   <span className="text-xs text-slate-400 block">July 9-11</span>
                                 </li>
                                 <li>
-                                  <Link href="/fixtures/semi-finals-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
+                                  <LanguageLink href="/fixtures/semi-finals-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
                                     Semi-Finals World Cup 2026 Tickets
-                                  </Link>
+                                  </LanguageLink>
                                   <span className="text-xs text-slate-400 block">July 14-15</span>
                                 </li>
                                 <li>
-                                  <Link href="/fixtures/third-place-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
+                                  <LanguageLink href="/fixtures/third-place-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
                                     Third Place World Cup 2026 Tickets
-                                  </Link>
+                                  </LanguageLink>
                                   <span className="text-xs text-slate-400 block">July 18</span>
                                 </li>
                                 <li>
-                                  <Link href="/fixtures/final-world-cup-2026-tickets" className="text-xs font-semibold text-yellow-600 hover:text-yellow-700 flex items-center gap-1 block">
+                                  <LanguageLink href="/fixtures/final-world-cup-2026-tickets" className="text-xs font-semibold text-yellow-600 hover:text-yellow-700 flex items-center gap-1 block">
                                     🏆 FINAL World Cup 2026 Tickets
-                                  </Link>
+                                  </LanguageLink>
                                   <span className="text-xs text-slate-400 block">July 19, MetLife Stadium</span>
                                 </li>
                               </ul>
@@ -456,9 +419,9 @@ export function PublicHeader() {
                               <ul className="space-y-2">
                                 {hotFixtures.slice(0, 4).map((fixture) => (
                                   <li key={fixture.slug}>
-                                    <Link href={`/fixtures/${fixture.slug}`} className="text-xs text-slate-600 hover:text-blue-600 block leading-tight">
+                                    <LanguageLink href={`/fixtures/${fixture.slug}`} className="text-xs text-slate-600 hover:text-blue-600 block leading-tight">
                                       {fixture.name}
-                                    </Link>
+                                    </LanguageLink>
                                     <span className="text-xs text-slate-400 block">{fixture.date}</span>
                                   </li>
                                 ))}
@@ -471,9 +434,9 @@ export function PublicHeader() {
                               <ul className="space-y-2">
                                 {hotFixtures.slice(4, 8).map((fixture) => (
                                   <li key={fixture.slug}>
-                                    <Link href={`/fixtures/${fixture.slug}`} className="text-xs text-slate-600 hover:text-blue-600 block leading-tight">
+                                    <LanguageLink href={`/fixtures/${fixture.slug}`} className="text-xs text-slate-600 hover:text-blue-600 block leading-tight">
                                       {fixture.name}
-                                    </Link>
+                                    </LanguageLink>
                                     <span className="text-xs text-slate-400 block">{fixture.date}</span>
                                   </li>
                                 ))}
@@ -486,7 +449,7 @@ export function PublicHeader() {
                               className="text-blue-600 text-sm font-medium hover:underline"
                             >
                               View All 104 Matches →
-                            </Link>
+                            </LanguageLink>
                           </div>
                         </div>
                       )}
@@ -503,7 +466,7 @@ export function PublicHeader() {
                               >
                                 <span className="text-xl">{city.country}</span>
                                 <span className="font-medium text-sm">{city.city}</span>
-                              </Link>
+                              </LanguageLink>
                             ))}
                           </div>
                           <div className="mt-6 grid grid-cols-3 gap-4 pt-4 border-t">
@@ -526,7 +489,7 @@ export function PublicHeader() {
                               className="text-blue-600 text-sm font-medium hover:underline"
                             >
                               View All Travel Guides →
-                            </Link>
+                            </LanguageLink>
                           </div>
                         </div>
                       )}
@@ -555,7 +518,7 @@ export function PublicHeader() {
                                         Hot
                                       </span>
                                     )}
-                                  </Link>
+                                  </LanguageLink>
                                 </li>
                               ))}
                             </ul>
@@ -634,7 +597,7 @@ export function PublicHeader() {
                     {item.featured && (
                       <span className="ml-2 rounded bg-red-500 px-1.5 py-0.5 text-xs text-white">HOT</span>
                     )}
-                  </Link>
+                  </LanguageLink>
                 </li>
               ))}
             </ul>
