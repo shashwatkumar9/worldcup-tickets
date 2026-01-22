@@ -19,7 +19,7 @@ import path from "path"
 import matter from "gray-matter"
 import { marked } from "marked"
 
-// Mock data - In production, this would come from the database
+// Featured Competitions - All 2026 and beyond
 const featuredCompetitions = [
   {
     id: "1",
@@ -32,24 +32,6 @@ const featuredCompetitions = [
   },
   {
     id: "2",
-    name: "Summer Olympics 2028",
-    slug: "summer-olympics-2028-tickets",
-    sport: "Multi-Sport",
-    date: "Jul - Aug 2028",
-    image: "/images/olympics-2028.jpg",
-    is_hot: true,
-  },
-  {
-    id: "3",
-    name: "Euro 2028",
-    slug: "euro-2028-tickets",
-    sport: "Football",
-    date: "Jun - Jul 2028",
-    image: "/images/euro-2028.jpg",
-    is_hot: false,
-  },
-  {
-    id: "4",
     name: "Cricket World Cup 2027",
     slug: "cricket-world-cup-2027-tickets",
     sport: "Cricket",
@@ -58,39 +40,57 @@ const featuredCompetitions = [
     is_hot: true,
   },
   {
-    id: "5",
-    name: "NBA Finals 2025",
-    slug: "nba-finals-2025-tickets",
-    sport: "Basketball",
-    date: "Jun 2025",
-    image: "/images/nba-finals.jpg",
-    is_hot: true,
-  },
-  {
-    id: "6",
-    name: "Super Bowl LIX",
-    slug: "super-bowl-lix-tickets",
-    sport: "American Football",
-    date: "Feb 2025",
-    image: "/images/super-bowl.jpg",
-    is_hot: true,
-  },
-  {
-    id: "7",
+    id: "3",
     name: "Rugby World Cup 2027",
     slug: "rugby-world-cup-2027-tickets",
     sport: "Rugby",
     date: "Sep - Oct 2027",
     image: "/images/rugby-wc.jpg",
+    is_hot: true,
+  },
+  {
+    id: "4",
+    name: "Euro 2028",
+    slug: "euro-2028-tickets",
+    sport: "Football",
+    date: "Jun - Jul 2028",
+    image: "/images/euro-2028.jpg",
+    is_hot: true,
+  },
+  {
+    id: "5",
+    name: "Summer Olympics 2028",
+    slug: "summer-olympics-2028-tickets",
+    sport: "Multi-Sport",
+    date: "Jul - Aug 2028",
+    image: "/images/olympics-2028.jpg",
+    is_hot: true,
+  },
+  {
+    id: "6",
+    name: "FIFA World Cup 2030",
+    slug: "fifa-world-cup-2030-tickets",
+    sport: "Football",
+    date: "Jun - Jul 2030",
+    image: "/images/world-cup-2030.jpg",
+    is_hot: true,
+  },
+  {
+    id: "7",
+    name: "Winter Olympics 2030",
+    slug: "winter-olympics-2030-tickets",
+    sport: "Multi-Sport",
+    date: "Feb - Mar 2030",
+    image: "/images/winter-olympics-2030.jpg",
     is_hot: false,
   },
   {
     id: "8",
-    name: "Copa America 2024",
-    slug: "copa-america-2024-tickets",
+    name: "Copa America 2028",
+    slug: "copa-america-2028-tickets",
     sport: "Football",
-    date: "Jun - Jul 2024",
-    image: "/images/copa-america.jpg",
+    date: "Jun - Jul 2028",
+    image: "/images/copa-america-2028.jpg",
     is_hot: false,
   },
 ]
@@ -206,22 +206,22 @@ export default async function HomePage() {
                 World Cup 2026 Tickets
               </LanguageLink>
               <LanguageLink
+                href="/cricket-world-cup-2027-tickets"
+                className="rounded-full bg-white/10 px-3 py-1 text-sm hover:bg-white/20"
+              >
+                Cricket World Cup 2027 Tickets
+              </LanguageLink>
+              <LanguageLink
+                href="/euro-2028-tickets"
+                className="rounded-full bg-white/10 px-3 py-1 text-sm hover:bg-white/20"
+              >
+                Euro 2028 Tickets
+              </LanguageLink>
+              <LanguageLink
                 href="/summer-olympics-2028-tickets"
                 className="rounded-full bg-white/10 px-3 py-1 text-sm hover:bg-white/20"
               >
                 Olympics 2028 Tickets
-              </LanguageLink>
-              <LanguageLink
-                href="/nba-finals-2025-tickets"
-                className="rounded-full bg-white/10 px-3 py-1 text-sm hover:bg-white/20"
-              >
-                NBA Finals Tickets
-              </LanguageLink>
-              <LanguageLink
-                href="/super-bowl-lix-tickets"
-                className="rounded-full bg-white/10 px-3 py-1 text-sm hover:bg-white/20"
-              >
-                Super Bowl Tickets
               </LanguageLink>
             </div>
           </div>
@@ -413,12 +413,56 @@ export default async function HomePage() {
       </section>
 
       {/* Article Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
         <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-4xl">
-            <article className="prose prose-slate prose-lg max-w-none prose-headings:text-slate-900 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline">
+          <div className="mx-auto max-w-5xl">
+            {/* Article Header */}
+            <div className="mb-12 text-center">
+              <h2 className="text-4xl font-bold text-slate-900 mb-4">
+                World Cup Tickets: Your Complete Guide
+              </h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                Everything you need to know about securing tickets to FIFA World Cup 2026, Olympics, and the world's biggest sporting events
+              </p>
+            </div>
+
+            {/* Article Content */}
+            <article className="prose prose-slate prose-lg max-w-none
+              prose-headings:font-bold prose-headings:text-slate-900
+              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:border-b prose-h2:border-slate-200 prose-h2:pb-4
+              prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+              prose-h4:text-xl prose-h4:mt-6 prose-h4:mb-3
+              prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6
+              prose-a:text-blue-600 prose-a:font-medium prose-a:no-underline hover:prose-a:underline hover:prose-a:text-blue-700
+              prose-strong:text-slate-900 prose-strong:font-semibold
+              prose-ul:my-6 prose-li:my-2
+              bg-white rounded-2xl shadow-sm border border-slate-200 p-8 md:p-12">
               <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
             </article>
+
+            {/* Article Footer CTA */}
+            <div className="mt-12 text-center bg-blue-50 rounded-xl p-8 border border-blue-100">
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                Ready to Secure Your World Cup Tickets?
+              </h3>
+              <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
+                Browse all available FIFA World Cup 2026 tickets, compare prices, and find the perfect seats for your dream match.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <LanguageLink href="/fifa-world-cup-2026-tickets">
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                    <Ticket className="mr-2 h-5 w-5" />
+                    Browse All World Cup Tickets
+                  </Button>
+                </LanguageLink>
+                <LanguageLink href="/teams">
+                  <Button size="lg" variant="outline">
+                    <Users className="mr-2 h-5 w-5" />
+                    View All Teams
+                  </Button>
+                </LanguageLink>
+              </div>
+            </div>
           </div>
         </div>
       </section>
