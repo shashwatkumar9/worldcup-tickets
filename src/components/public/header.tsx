@@ -28,92 +28,99 @@ const languages = [
   { code: "ar", name: "العربية", flag: "🇸🇦" },
 ]
 
-// World Cup 2026 specific data for mega menu
-const wc2026Teams = {
-  concacaf: [
-    { name: "USA", flag: "🇺🇸", slug: "usa-world-cup-2026-tickets" },
-    { name: "Mexico", flag: "🇲🇽", slug: "mexico-world-cup-2026-tickets" },
-    { name: "Canada", flag: "🇨🇦", slug: "canada-world-cup-2026-tickets" },
-    { name: "Panama", flag: "🇵🇦", slug: "panama-world-cup-2026-tickets" },
-    { name: "Haiti", flag: "🇭🇹", slug: "haiti-world-cup-2026-tickets" },
-    { name: "Curacao", flag: "🇨🇼", slug: "curacao-world-cup-2026-tickets" },
+// All 46 teams organized in 6 columns for mega menu
+const allTeamsOrganized = [
+  [
+    { name: "USA World Cup 2026 Tickets", flag: "🇺🇸", slug: "usa-world-cup-2026-tickets" },
+    { name: "Mexico World Cup 2026 Tickets", flag: "🇲🇽", slug: "mexico-world-cup-2026-tickets" },
+    { name: "Canada World Cup 2026 Tickets", flag: "🇨🇦", slug: "canada-world-cup-2026-tickets" },
+    { name: "Panama World Cup 2026 Tickets", flag: "🇵🇦", slug: "panama-world-cup-2026-tickets" },
+    { name: "Haiti World Cup 2026 Tickets", flag: "🇭🇹", slug: "haiti-world-cup-2026-tickets" },
+    { name: "Curacao World Cup 2026 Tickets", flag: "🇨🇼", slug: "curacao-world-cup-2026-tickets" },
+    { name: "Argentina World Cup 2026 Tickets", flag: "🇦🇷", slug: "argentina-world-cup-2026-tickets" },
+    { name: "Brazil World Cup 2026 Tickets", flag: "🇧🇷", slug: "brazil-world-cup-2026-tickets" },
   ],
-  uefa: [
-    { name: "Spain", flag: "🇪🇸", slug: "spain-world-cup-2026-tickets" },
-    { name: "France", flag: "🇫🇷", slug: "france-world-cup-2026-tickets" },
-    { name: "England", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", slug: "england-world-cup-2026-tickets" },
-    { name: "Germany", flag: "🇩🇪", slug: "germany-world-cup-2026-tickets" },
-    { name: "Portugal", flag: "🇵🇹", slug: "portugal-world-cup-2026-tickets" },
-    { name: "Netherlands", flag: "🇳🇱", slug: "netherlands-world-cup-2026-tickets" },
-    { name: "Belgium", flag: "🇧🇪", slug: "belgium-world-cup-2026-tickets" },
-    { name: "Croatia", flag: "🇭🇷", slug: "croatia-world-cup-2026-tickets" },
-    { name: "Italy", flag: "🇮🇹", slug: "italy-world-cup-2026-tickets" },
-    { name: "Scotland", flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿", slug: "scotland-world-cup-2026-tickets" },
-    { name: "Switzerland", flag: "🇨🇭", slug: "switzerland-world-cup-2026-tickets" },
-    { name: "Norway", flag: "🇳🇴", slug: "norway-world-cup-2026-tickets" },
-    { name: "Austria", flag: "🇦🇹", slug: "austria-world-cup-2026-tickets" },
-    { name: "Denmark", flag: "🇩🇰", slug: "denmark-world-cup-2026-tickets" },
-    { name: "Turkey", flag: "🇹🇷", slug: "turkey-world-cup-2026-tickets" },
-    { name: "Ukraine", flag: "🇺🇦", slug: "ukraine-world-cup-2026-tickets" },
+  [
+    { name: "Spain World Cup 2026 Tickets", flag: "🇪🇸", slug: "spain-world-cup-2026-tickets" },
+    { name: "France World Cup 2026 Tickets", flag: "🇫🇷", slug: "france-world-cup-2026-tickets" },
+    { name: "England World Cup 2026 Tickets", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", slug: "england-world-cup-2026-tickets" },
+    { name: "Germany World Cup 2026 Tickets", flag: "🇩🇪", slug: "germany-world-cup-2026-tickets" },
+    { name: "Portugal World Cup 2026 Tickets", flag: "🇵🇹", slug: "portugal-world-cup-2026-tickets" },
+    { name: "Netherlands World Cup 2026 Tickets", flag: "🇳🇱", slug: "netherlands-world-cup-2026-tickets" },
+    { name: "Belgium World Cup 2026 Tickets", flag: "🇧🇪", slug: "belgium-world-cup-2026-tickets" },
+    { name: "Croatia World Cup 2026 Tickets", flag: "🇭🇷", slug: "croatia-world-cup-2026-tickets" },
   ],
-  conmebol: [
-    { name: "Argentina", flag: "🇦🇷", slug: "argentina-world-cup-2026-tickets" },
-    { name: "Brazil", flag: "🇧🇷", slug: "brazil-world-cup-2026-tickets" },
-    { name: "Colombia", flag: "🇨🇴", slug: "colombia-world-cup-2026-tickets" },
-    { name: "Uruguay", flag: "🇺🇾", slug: "uruguay-world-cup-2026-tickets" },
-    { name: "Ecuador", flag: "🇪🇨", slug: "ecuador-world-cup-2026-tickets" },
-    { name: "Paraguay", flag: "🇵🇾", slug: "paraguay-world-cup-2026-tickets" },
+  [
+    { name: "Italy World Cup 2026 Tickets", flag: "🇮🇹", slug: "italy-world-cup-2026-tickets" },
+    { name: "Scotland World Cup 2026 Tickets", flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿", slug: "scotland-world-cup-2026-tickets" },
+    { name: "Switzerland World Cup 2026 Tickets", flag: "🇨🇭", slug: "switzerland-world-cup-2026-tickets" },
+    { name: "Norway World Cup 2026 Tickets", flag: "🇳🇴", slug: "norway-world-cup-2026-tickets" },
+    { name: "Austria World Cup 2026 Tickets", flag: "🇦🇹", slug: "austria-world-cup-2026-tickets" },
+    { name: "Denmark World Cup 2026 Tickets", flag: "🇩🇰", slug: "denmark-world-cup-2026-tickets" },
+    { name: "Turkey World Cup 2026 Tickets", flag: "🇹🇷", slug: "turkey-world-cup-2026-tickets" },
+    { name: "Ukraine World Cup 2026 Tickets", flag: "🇺🇦", slug: "ukraine-world-cup-2026-tickets" },
   ],
-  afc: [
-    { name: "Japan", flag: "🇯🇵", slug: "japan-world-cup-2026-tickets" },
-    { name: "Australia", flag: "🇦🇺", slug: "australia-world-cup-2026-tickets" },
-    { name: "Korea Republic", flag: "🇰🇷", slug: "korea-world-cup-2026-tickets" },
-    { name: "Saudi Arabia", flag: "🇸🇦", slug: "saudi-arabia-world-cup-2026-tickets" },
-    { name: "Iran", flag: "🇮🇷", slug: "iran-world-cup-2026-tickets" },
-    { name: "Qatar", flag: "🇶🇦", slug: "qatar-world-cup-2026-tickets" },
-    { name: "Uzbekistan", flag: "🇺🇿", slug: "uzbekistan-world-cup-2026-tickets" },
-    { name: "Jordan", flag: "🇯🇴", slug: "jordan-world-cup-2026-tickets" },
+  [
+    { name: "Colombia World Cup 2026 Tickets", flag: "🇨🇴", slug: "colombia-world-cup-2026-tickets" },
+    { name: "Uruguay World Cup 2026 Tickets", flag: "🇺🇾", slug: "uruguay-world-cup-2026-tickets" },
+    { name: "Ecuador World Cup 2026 Tickets", flag: "🇪🇨", slug: "ecuador-world-cup-2026-tickets" },
+    { name: "Paraguay World Cup 2026 Tickets", flag: "🇵🇾", slug: "paraguay-world-cup-2026-tickets" },
+    { name: "Japan World Cup 2026 Tickets", flag: "🇯🇵", slug: "japan-world-cup-2026-tickets" },
+    { name: "Australia World Cup 2026 Tickets", flag: "🇦🇺", slug: "australia-world-cup-2026-tickets" },
+    { name: "Korea World Cup 2026 Tickets", flag: "🇰🇷", slug: "korea-world-cup-2026-tickets" },
+    { name: "Saudi Arabia World Cup 2026 Tickets", flag: "🇸🇦", slug: "saudi-arabia-world-cup-2026-tickets" },
   ],
-  caf: [
-    { name: "Morocco", flag: "🇲🇦", slug: "morocco-world-cup-2026-tickets" },
-    { name: "Senegal", flag: "🇸🇳", slug: "senegal-world-cup-2026-tickets" },
-    { name: "Egypt", flag: "🇪🇬", slug: "egypt-world-cup-2026-tickets" },
-    { name: "Ivory Coast", flag: "🇨🇮", slug: "ivory-coast-world-cup-2026-tickets" },
-    { name: "Algeria", flag: "🇩🇿", slug: "algeria-world-cup-2026-tickets" },
-    { name: "South Africa", flag: "🇿🇦", slug: "south-africa-world-cup-2026-tickets" },
-    { name: "Ghana", flag: "🇬🇭", slug: "ghana-world-cup-2026-tickets" },
-    { name: "Tunisia", flag: "🇹🇳", slug: "tunisia-world-cup-2026-tickets" },
-    { name: "Cape Verde", flag: "🇨🇻", slug: "cape-verde-world-cup-2026-tickets" },
+  [
+    { name: "Iran World Cup 2026 Tickets", flag: "🇮🇷", slug: "iran-world-cup-2026-tickets" },
+    { name: "Qatar World Cup 2026 Tickets", flag: "🇶🇦", slug: "qatar-world-cup-2026-tickets" },
+    { name: "Uzbekistan World Cup 2026 Tickets", flag: "🇺🇿", slug: "uzbekistan-world-cup-2026-tickets" },
+    { name: "Jordan World Cup 2026 Tickets", flag: "🇯🇴", slug: "jordan-world-cup-2026-tickets" },
+    { name: "Morocco World Cup 2026 Tickets", flag: "🇲🇦", slug: "morocco-world-cup-2026-tickets" },
+    { name: "Senegal World Cup 2026 Tickets", flag: "🇸🇳", slug: "senegal-world-cup-2026-tickets" },
+    { name: "Egypt World Cup 2026 Tickets", flag: "🇪🇬", slug: "egypt-world-cup-2026-tickets" },
+    { name: "Ivory Coast World Cup 2026 Tickets", flag: "🇨🇮", slug: "ivory-coast-world-cup-2026-tickets" },
   ],
-  ofc: [
-    { name: "New Zealand", flag: "🇳🇿", slug: "new-zealand-world-cup-2026-tickets" },
+  [
+    { name: "Algeria World Cup 2026 Tickets", flag: "🇩🇿", slug: "algeria-world-cup-2026-tickets" },
+    { name: "South Africa World Cup 2026 Tickets", flag: "🇿🇦", slug: "south-africa-world-cup-2026-tickets" },
+    { name: "Ghana World Cup 2026 Tickets", flag: "🇬🇭", slug: "ghana-world-cup-2026-tickets" },
+    { name: "Tunisia World Cup 2026 Tickets", flag: "🇹🇳", slug: "tunisia-world-cup-2026-tickets" },
+    { name: "Cape Verde World Cup 2026 Tickets", flag: "🇨🇻", slug: "cape-verde-world-cup-2026-tickets" },
+    { name: "New Zealand World Cup 2026 Tickets", flag: "🇳🇿", slug: "new-zealand-world-cup-2026-tickets" },
   ],
-}
+]
 
-const wc2026Venues = {
-  usa: [
-    { name: "MetLife Stadium", city: "New York/NJ", slug: "metlife-stadium-world-cup-2026-tickets", highlight: "Final" },
-    { name: "SoFi Stadium", city: "Los Angeles", slug: "sofi-stadium-world-cup-2026-tickets", highlight: "QF" },
-    { name: "AT&T Stadium", city: "Dallas", slug: "att-stadium-world-cup-2026-tickets", highlight: "SF" },
-    { name: "Mercedes-Benz", city: "Atlanta", slug: "mercedes-benz-stadium-world-cup-2026-tickets", highlight: "SF" },
-    { name: "Hard Rock Stadium", city: "Miami", slug: "hard-rock-stadium-world-cup-2026-tickets", highlight: "QF" },
-    { name: "NRG Stadium", city: "Houston", slug: "nrg-stadium-world-cup-2026-tickets" },
-    { name: "Lincoln Financial", city: "Philadelphia", slug: "lincoln-financial-field-world-cup-2026-tickets" },
-    { name: "Lumen Field", city: "Seattle", slug: "lumen-field-world-cup-2026-tickets" },
-    { name: "Levi's Stadium", city: "San Francisco", slug: "levis-stadium-world-cup-2026-tickets" },
-    { name: "Gillette Stadium", city: "Boston", slug: "gillette-stadium-world-cup-2026-tickets", highlight: "QF" },
-    { name: "Arrowhead Stadium", city: "Kansas City", slug: "arrowhead-stadium-world-cup-2026-tickets", highlight: "QF" },
-  ],
-  mexico: [
-    { name: "Estadio Azteca", city: "Mexico City", slug: "estadio-azteca-world-cup-2026-tickets", highlight: "Opening" },
-    { name: "Estadio Akron", city: "Guadalajara", slug: "estadio-akron-world-cup-2026-tickets" },
-    { name: "Estadio BBVA", city: "Monterrey", slug: "estadio-bbva-world-cup-2026-tickets" },
-  ],
-  canada: [
-    { name: "BMO Field", city: "Toronto", slug: "bmo-field-world-cup-2026-tickets" },
-    { name: "BC Place", city: "Vancouver", slug: "bc-place-world-cup-2026-tickets" },
-  ],
-}
+// All 16 venues
+const allVenues = [
+  { name: "MetLife Stadium World Cup 2026 Tickets", city: "New York/NJ", slug: "metlife-stadium-world-cup-2026-tickets", highlight: "FINAL" },
+  { name: "SoFi Stadium World Cup 2026 Tickets", city: "Los Angeles", slug: "sofi-stadium-world-cup-2026-tickets", highlight: "QF" },
+  { name: "AT&T Stadium World Cup 2026 Tickets", city: "Dallas", slug: "att-stadium-world-cup-2026-tickets", highlight: "SF" },
+  { name: "Mercedes-Benz Stadium World Cup 2026 Tickets", city: "Atlanta", slug: "mercedes-benz-stadium-world-cup-2026-tickets", highlight: "SF" },
+  { name: "Hard Rock Stadium World Cup 2026 Tickets", city: "Miami", slug: "hard-rock-stadium-world-cup-2026-tickets", highlight: "3rd Place" },
+  { name: "NRG Stadium World Cup 2026 Tickets", city: "Houston", slug: "nrg-stadium-world-cup-2026-tickets" },
+  { name: "Lincoln Financial Field World Cup 2026 Tickets", city: "Philadelphia", slug: "lincoln-financial-field-world-cup-2026-tickets" },
+  { name: "Lumen Field World Cup 2026 Tickets", city: "Seattle", slug: "lumen-field-world-cup-2026-tickets" },
+  { name: "Levi's Stadium World Cup 2026 Tickets", city: "San Francisco", slug: "levis-stadium-world-cup-2026-tickets" },
+  { name: "Gillette Stadium World Cup 2026 Tickets", city: "Boston", slug: "gillette-stadium-world-cup-2026-tickets", highlight: "QF" },
+  { name: "Arrowhead Stadium World Cup 2026 Tickets", city: "Kansas City", slug: "arrowhead-stadium-world-cup-2026-tickets", highlight: "QF" },
+  { name: "Estadio Azteca World Cup 2026 Tickets", city: "Mexico City", slug: "estadio-azteca-world-cup-2026-tickets", highlight: "OPENING" },
+  { name: "Estadio Akron World Cup 2026 Tickets", city: "Guadalajara", slug: "estadio-akron-world-cup-2026-tickets" },
+  { name: "Estadio BBVA World Cup 2026 Tickets", city: "Monterrey", slug: "estadio-bbva-world-cup-2026-tickets" },
+  { name: "BMO Field World Cup 2026 Tickets", city: "Toronto", slug: "bmo-field-world-cup-2026-tickets" },
+  { name: "BC Place World Cup 2026 Tickets", city: "Vancouver", slug: "bc-place-world-cup-2026-tickets" },
+]
+
+// Major fixtures for menu
+const hotFixtures = [
+  { name: "USA vs Mexico World Cup 2026 Tickets", slug: "usa-vs-mexico-world-cup-2026-tickets", date: "Jun 12" },
+  { name: "Brazil vs Morocco World Cup 2026 Tickets", slug: "brazil-vs-morocco-world-cup-2026-tickets", date: "Jun 13" },
+  { name: "England vs Croatia World Cup 2026 Tickets", slug: "england-vs-croatia-world-cup-2026-tickets", date: "Jun 17" },
+  { name: "France vs Norway World Cup 2026 Tickets", slug: "france-vs-norway-world-cup-2026-tickets", date: "Jun 22" },
+  { name: "Argentina vs Algeria World Cup 2026 Tickets", slug: "argentina-vs-algeria-world-cup-2026-tickets", date: "Jun 14" },
+  { name: "Spain vs Uruguay World Cup 2026 Tickets", slug: "spain-vs-uruguay-world-cup-2026-tickets", date: "Jun 14" },
+  { name: "Germany vs Korea World Cup 2026 Tickets", slug: "germany-vs-korea-world-cup-2026-tickets", date: "Jun 18" },
+  { name: "Portugal vs Colombia World Cup 2026 Tickets", slug: "portugal-vs-colombia-world-cup-2026-tickets", date: "Jun 19" },
+]
 
 const wc2026TravelGuides = [
   { city: "New York", country: "🇺🇸", slug: "new-york-world-cup-2026-travel-guide" },
@@ -281,7 +288,7 @@ export function PublicHeader() {
 
                   {/* World Cup 2026 Mega Menu */}
                   {item.megaMenu === "wc2026" && activeMenu === item.label && (
-                    <div className="absolute left-0 top-full z-50 w-[900px] rounded-lg border bg-white shadow-xl">
+                    <div className="absolute left-0 top-full z-50 w-[1100px] rounded-lg border bg-white shadow-xl">
                       {/* Tabs */}
                       <div className="flex border-b bg-slate-50 px-4">
                         {[
@@ -305,133 +312,34 @@ export function PublicHeader() {
                         ))}
                       </div>
 
-                      {/* Teams Tab */}
+                      {/* Teams Tab - 6 columns, 7-8 teams each */}
                       {activeWc2026Tab === "teams" && (
                         <div className="p-6">
-                          <div className="grid grid-cols-5 gap-6">
-                            {/* CONCACAF */}
-                            <div>
-                              <h4 className="font-semibold text-slate-900 mb-2 text-xs uppercase tracking-wide">CONCACAF (6)</h4>
-                              <ul className="space-y-1">
-                                {wc2026Teams.concacaf.map((team) => (
-                                  <li key={team.slug}>
-                                    <Link
-                                      href={`/teams/${team.slug}`}
-                                      className="flex items-center gap-2 text-sm text-slate-600 hover:text-blue-600 py-1"
-                                    >
-                                      <span>{team.flag}</span>
-                                      {team.name}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-
-                            {/* UEFA - Split into 2 columns */}
-                            <div>
-                              <h4 className="font-semibold text-slate-900 mb-2 text-xs uppercase tracking-wide">UEFA (16)</h4>
-                              <ul className="space-y-1">
-                                {wc2026Teams.uefa.slice(0, 8).map((team) => (
-                                  <li key={team.slug}>
-                                    <Link
-                                      href={`/teams/${team.slug}`}
-                                      className="flex items-center gap-2 text-sm text-slate-600 hover:text-blue-600 py-1"
-                                    >
-                                      <span>{team.flag}</span>
-                                      {team.name}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div>
-                              <h4 className="font-semibold text-slate-900 mb-2 text-xs uppercase tracking-wide">&nbsp;</h4>
-                              <ul className="space-y-1">
-                                {wc2026Teams.uefa.slice(8).map((team) => (
-                                  <li key={team.slug}>
-                                    <Link
-                                      href={`/teams/${team.slug}`}
-                                      className="flex items-center gap-2 text-sm text-slate-600 hover:text-blue-600 py-1"
-                                    >
-                                      <span>{team.flag}</span>
-                                      {team.name}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-
-                            {/* CONMEBOL + AFC */}
-                            <div>
-                              <h4 className="font-semibold text-slate-900 mb-2 text-xs uppercase tracking-wide">CONMEBOL (6)</h4>
-                              <ul className="space-y-1">
-                                {wc2026Teams.conmebol.map((team) => (
-                                  <li key={team.slug}>
-                                    <Link
-                                      href={`/teams/${team.slug}`}
-                                      className="flex items-center gap-2 text-sm text-slate-600 hover:text-blue-600 py-1"
-                                    >
-                                      <span>{team.flag}</span>
-                                      {team.name}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                              <h4 className="font-semibold text-slate-900 mb-2 mt-4 text-xs uppercase tracking-wide">OFC (1)</h4>
-                              <ul className="space-y-1">
-                                {wc2026Teams.ofc.map((team) => (
-                                  <li key={team.slug}>
-                                    <Link
-                                      href={`/teams/${team.slug}`}
-                                      className="flex items-center gap-2 text-sm text-slate-600 hover:text-blue-600 py-1"
-                                    >
-                                      <span>{team.flag}</span>
-                                      {team.name}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-
-                            {/* AFC + CAF */}
-                            <div>
-                              <h4 className="font-semibold text-slate-900 mb-2 text-xs uppercase tracking-wide">AFC (8)</h4>
-                              <ul className="space-y-1">
-                                {wc2026Teams.afc.map((team) => (
-                                  <li key={team.slug}>
-                                    <Link
-                                      href={`/teams/${team.slug}`}
-                                      className="flex items-center gap-2 text-sm text-slate-600 hover:text-blue-600 py-1"
-                                    >
-                                      <span>{team.flag}</span>
-                                      {team.name}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-                          <div className="mt-4 pt-4 border-t">
-                            <h4 className="font-semibold text-slate-900 mb-2 text-xs uppercase tracking-wide">CAF (9)</h4>
-                            <div className="flex flex-wrap gap-3">
-                              {wc2026Teams.caf.map((team) => (
-                                <Link
-                                  key={team.slug}
-                                  href={`/teams/${team.slug}`}
-                                  className="flex items-center gap-1 text-sm text-slate-600 hover:text-blue-600"
-                                >
-                                  <span>{team.flag}</span>
-                                  {team.name}
-                                </Link>
-                              ))}
-                            </div>
+                          <div className="grid grid-cols-6 gap-4">
+                            {allTeamsOrganized.map((column, colIdx) => (
+                              <div key={colIdx}>
+                                <ul className="space-y-1.5">
+                                  {column.map((team) => (
+                                    <li key={team.slug}>
+                                      <Link
+                                        href={`/teams/${team.slug}`}
+                                        className="flex items-start gap-1.5 text-xs text-slate-600 hover:text-blue-600 py-0.5"
+                                      >
+                                        <span className="text-sm">{team.flag}</span>
+                                        <span className="leading-tight">{team.name}</span>
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
                           </div>
                           <div className="mt-4 pt-4 border-t text-center">
                             <Link
                               href="/fifa-world-cup-2026-tickets#teams"
                               className="text-blue-600 text-sm font-medium hover:underline"
                             >
-                              View All 48 Teams →
+                              View All 46 Teams →
                             </Link>
                           </div>
                         </div>
@@ -441,75 +349,31 @@ export function PublicHeader() {
                       {activeWc2026Tab === "venues" && (
                         <div className="p-6">
                           <div className="grid grid-cols-3 gap-6">
-                            {/* USA Venues */}
-                            <div className="col-span-2">
-                              <h4 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                                <span>🇺🇸</span> United States (11 Venues)
-                              </h4>
-                              <div className="grid grid-cols-2 gap-2">
-                                {wc2026Venues.usa.map((venue) => (
-                                  <Link
-                                    key={venue.slug}
-                                    href={`/venues/${venue.slug}`}
-                                    className="flex items-center justify-between p-2 rounded hover:bg-slate-50 text-sm"
-                                  >
-                                    <div>
-                                      <span className="font-medium text-slate-900">{venue.name}</span>
-                                      <span className="text-slate-500 ml-1">({venue.city})</span>
-                                    </div>
-                                    {venue.highlight && (
-                                      <span className={`text-xs px-1.5 py-0.5 rounded ${
-                                        venue.highlight === "Final" ? "bg-yellow-100 text-yellow-700" : "bg-blue-100 text-blue-700"
-                                      }`}>
-                                        {venue.highlight}
-                                      </span>
-                                    )}
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-
-                            {/* Mexico + Canada */}
-                            <div>
-                              <h4 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                                <span>🇲🇽</span> Mexico (3 Venues)
-                              </h4>
-                              <ul className="space-y-2">
-                                {wc2026Venues.mexico.map((venue) => (
-                                  <li key={venue.slug}>
-                                    <Link
-                                      href={`/venues/${venue.slug}`}
-                                      className="flex items-center justify-between text-sm text-slate-600 hover:text-blue-600"
-                                    >
-                                      <span>{venue.name}</span>
-                                      {venue.highlight && (
-                                        <span className="text-xs bg-green-100 text-green-700 px-1.5 py-0.5 rounded">
-                                          {venue.highlight}
-                                        </span>
-                                      )}
-                                    </Link>
-                                    <span className="text-xs text-slate-400">{venue.city}</span>
-                                  </li>
-                                ))}
-                              </ul>
-
-                              <h4 className="font-semibold text-slate-900 mb-3 mt-6 flex items-center gap-2">
-                                <span>🇨🇦</span> Canada (2 Venues)
-                              </h4>
-                              <ul className="space-y-2">
-                                {wc2026Venues.canada.map((venue) => (
-                                  <li key={venue.slug}>
-                                    <Link
-                                      href={`/venues/${venue.slug}`}
-                                      className="text-sm text-slate-600 hover:text-blue-600"
-                                    >
-                                      {venue.name}
-                                    </Link>
-                                    <span className="text-xs text-slate-400 block">{venue.city}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
+                            {allVenues.map((venue) => (
+                              <Link
+                                key={venue.slug}
+                                href={`/venues/${venue.slug}`}
+                                className="flex items-center justify-between p-2 rounded hover:bg-slate-50 text-sm group"
+                              >
+                                <div className="flex-1">
+                                  <span className="font-medium text-slate-900 group-hover:text-blue-600 text-xs block">
+                                    {venue.name}
+                                  </span>
+                                  <span className="text-xs text-slate-500">{venue.city}</span>
+                                </div>
+                                {venue.highlight && (
+                                  <span className={`text-xs px-1.5 py-0.5 rounded ml-2 ${
+                                    venue.highlight === "FINAL"
+                                      ? "bg-yellow-100 text-yellow-700 font-semibold"
+                                      : venue.highlight === "OPENING"
+                                      ? "bg-green-100 text-green-700 font-semibold"
+                                      : "bg-blue-100 text-blue-700"
+                                  }`}>
+                                    {venue.highlight}
+                                  </span>
+                                )}
+                              </Link>
+                            ))}
                           </div>
                           <div className="mt-4 pt-4 border-t text-center">
                             <Link
@@ -528,15 +392,15 @@ export function PublicHeader() {
                           <div className="grid grid-cols-4 gap-6">
                             {/* Group Stage */}
                             <div>
-                              <h4 className="font-semibold text-slate-900 mb-3">Group Stage</h4>
+                              <h4 className="font-semibold text-slate-900 mb-3 text-sm">Group Stage</h4>
                               <ul className="space-y-2">
                                 {["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"].map((group) => (
                                   <li key={group}>
                                     <Link
                                       href={`/fixtures/group-${group.toLowerCase()}-world-cup-2026-tickets`}
-                                      className="text-sm text-slate-600 hover:text-blue-600"
+                                      className="text-xs text-slate-600 hover:text-blue-600"
                                     >
-                                      Group {group}
+                                      Group {group} World Cup 2026 Tickets
                                     </Link>
                                   </li>
                                 ))}
@@ -545,90 +409,74 @@ export function PublicHeader() {
 
                             {/* Knockout Rounds */}
                             <div>
-                              <h4 className="font-semibold text-slate-900 mb-3">Knockout Stage</h4>
+                              <h4 className="font-semibold text-slate-900 mb-3 text-sm">Knockout Stage</h4>
                               <ul className="space-y-2">
                                 <li>
-                                  <Link href="/fixtures/round-of-32-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600">
-                                    Round of 32
+                                  <Link href="/fixtures/round-of-32-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
+                                    Round of 32 World Cup 2026 Tickets
                                   </Link>
                                   <span className="text-xs text-slate-400 block">June 28 - July 3</span>
                                 </li>
                                 <li>
-                                  <Link href="/fixtures/round-of-16-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600">
-                                    Round of 16
+                                  <Link href="/fixtures/round-of-16-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
+                                    Round of 16 World Cup 2026 Tickets
                                   </Link>
                                   <span className="text-xs text-slate-400 block">July 4-7</span>
                                 </li>
                                 <li>
-                                  <Link href="/fixtures/quarter-finals-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600">
-                                    Quarter-Finals
+                                  <Link href="/fixtures/quarter-finals-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
+                                    Quarter-Finals World Cup 2026 Tickets
                                   </Link>
                                   <span className="text-xs text-slate-400 block">July 9-11</span>
                                 </li>
                                 <li>
-                                  <Link href="/fixtures/semi-finals-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600">
-                                    Semi-Finals
+                                  <Link href="/fixtures/semi-finals-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
+                                    Semi-Finals World Cup 2026 Tickets
                                   </Link>
                                   <span className="text-xs text-slate-400 block">July 14-15</span>
                                 </li>
-                              </ul>
-                            </div>
-
-                            {/* Special Matches */}
-                            <div>
-                              <h4 className="font-semibold text-slate-900 mb-3">Special Matches</h4>
-                              <ul className="space-y-2">
                                 <li>
-                                  <Link href="/fixtures/mexico-vs-south-africa-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600 flex items-center gap-1">
-                                    Opening Match
-                                    <span className="text-xs bg-green-100 text-green-700 px-1 rounded">Jun 11</span>
+                                  <Link href="/fixtures/third-place-world-cup-2026-tickets" className="text-xs text-slate-600 hover:text-blue-600 block">
+                                    Third Place World Cup 2026 Tickets
                                   </Link>
-                                  <span className="text-xs text-slate-400 block">Mexico vs South Africa</span>
+                                  <span className="text-xs text-slate-400 block">July 18</span>
                                 </li>
                                 <li>
-                                  <Link href="/fixtures/third-place-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600">
-                                    Third Place Match
+                                  <Link href="/fixtures/final-world-cup-2026-tickets" className="text-xs font-semibold text-yellow-600 hover:text-yellow-700 flex items-center gap-1 block">
+                                    🏆 FINAL World Cup 2026 Tickets
                                   </Link>
-                                  <span className="text-xs text-slate-400 block">July 18, Miami</span>
-                                </li>
-                                <li>
-                                  <Link href="/fixtures/final-world-cup-2026-tickets" className="text-sm font-medium text-yellow-600 hover:text-yellow-700 flex items-center gap-1">
-                                    🏆 WORLD CUP FINAL
-                                    <span className="text-xs bg-yellow-100 text-yellow-700 px-1 rounded">Jul 19</span>
-                                  </Link>
-                                  <span className="text-xs text-slate-400 block">MetLife Stadium, NJ</span>
+                                  <span className="text-xs text-slate-400 block">July 19, MetLife Stadium</span>
                                 </li>
                               </ul>
                             </div>
 
-                            {/* Hot Fixtures */}
+                            {/* Hot Fixtures Column 1 */}
                             <div>
-                              <h4 className="font-semibold text-slate-900 mb-3">Hot Fixtures</h4>
+                              <h4 className="font-semibold text-slate-900 mb-3 text-sm">Hot Fixtures</h4>
                               <ul className="space-y-2">
-                                <li>
-                                  <Link href="/fixtures/brazil-vs-morocco-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600">
-                                    🇧🇷 Brazil vs Morocco 🇲🇦
-                                  </Link>
-                                  <span className="text-xs text-slate-400 block">Jun 13, Philadelphia</span>
-                                </li>
-                                <li>
-                                  <Link href="/fixtures/france-vs-norway-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600">
-                                    🇫🇷 France vs Norway 🇳🇴
-                                  </Link>
-                                  <span className="text-xs text-slate-400 block">Jun 22, Atlanta</span>
-                                </li>
-                                <li>
-                                  <Link href="/fixtures/england-vs-croatia-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600">
-                                    🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs Croatia 🇭🇷
-                                  </Link>
-                                  <span className="text-xs text-slate-400 block">Jun 17, Dallas</span>
-                                </li>
-                                <li>
-                                  <Link href="/fixtures/usa-vs-paraguay-world-cup-2026-tickets" className="text-sm text-slate-600 hover:text-blue-600">
-                                    🇺🇸 USA vs Paraguay 🇵🇾
-                                  </Link>
-                                  <span className="text-xs text-slate-400 block">Jun 12, Los Angeles</span>
-                                </li>
+                                {hotFixtures.slice(0, 4).map((fixture) => (
+                                  <li key={fixture.slug}>
+                                    <Link href={`/fixtures/${fixture.slug}`} className="text-xs text-slate-600 hover:text-blue-600 block leading-tight">
+                                      {fixture.name}
+                                    </Link>
+                                    <span className="text-xs text-slate-400 block">{fixture.date}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+
+                            {/* Hot Fixtures Column 2 */}
+                            <div>
+                              <h4 className="font-semibold text-slate-900 mb-3 text-sm">&nbsp;</h4>
+                              <ul className="space-y-2">
+                                {hotFixtures.slice(4, 8).map((fixture) => (
+                                  <li key={fixture.slug}>
+                                    <Link href={`/fixtures/${fixture.slug}`} className="text-xs text-slate-600 hover:text-blue-600 block leading-tight">
+                                      {fixture.name}
+                                    </Link>
+                                    <span className="text-xs text-slate-400 block">{fixture.date}</span>
+                                  </li>
+                                ))}
                               </ul>
                             </div>
                           </div>
@@ -637,7 +485,7 @@ export function PublicHeader() {
                               href="/fifa-world-cup-2026-tickets"
                               className="text-blue-600 text-sm font-medium hover:underline"
                             >
-                              View Full Match Schedule →
+                              View All 104 Matches →
                             </Link>
                           </div>
                         </div>

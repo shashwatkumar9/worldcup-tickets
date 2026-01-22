@@ -1,46 +1,66 @@
 import Link from "next/link"
 import { Ticket, Facebook, Twitter, Instagram, Youtube } from "lucide-react"
 
+// Top 15 Teams for Footer
+const top15Teams = [
+  { name: "Argentina World Cup 2026 Tickets", href: "/teams/argentina-world-cup-2026-tickets" },
+  { name: "Brazil World Cup 2026 Tickets", href: "/teams/brazil-world-cup-2026-tickets" },
+  { name: "France World Cup 2026 Tickets", href: "/teams/france-world-cup-2026-tickets" },
+  { name: "England World Cup 2026 Tickets", href: "/teams/england-world-cup-2026-tickets" },
+  { name: "Spain World Cup 2026 Tickets", href: "/teams/spain-world-cup-2026-tickets" },
+  { name: "Germany World Cup 2026 Tickets", href: "/teams/germany-world-cup-2026-tickets" },
+  { name: "Portugal World Cup 2026 Tickets", href: "/teams/portugal-world-cup-2026-tickets" },
+  { name: "Netherlands World Cup 2026 Tickets", href: "/teams/netherlands-world-cup-2026-tickets" },
+  { name: "Belgium World Cup 2026 Tickets", href: "/teams/belgium-world-cup-2026-tickets" },
+  { name: "Italy World Cup 2026 Tickets", href: "/teams/italy-world-cup-2026-tickets" },
+  { name: "USA World Cup 2026 Tickets", href: "/teams/usa-world-cup-2026-tickets" },
+  { name: "Mexico World Cup 2026 Tickets", href: "/teams/mexico-world-cup-2026-tickets" },
+  { name: "Uruguay World Cup 2026 Tickets", href: "/teams/uruguay-world-cup-2026-tickets" },
+  { name: "Colombia World Cup 2026 Tickets", href: "/teams/colombia-world-cup-2026-tickets" },
+  { name: "Croatia World Cup 2026 Tickets", href: "/teams/croatia-world-cup-2026-tickets" },
+]
+
+// All 16 Venues for Footer
+const allVenues = [
+  { name: "MetLife Stadium World Cup 2026 Tickets", href: "/venues/metlife-stadium-world-cup-2026-tickets" },
+  { name: "SoFi Stadium World Cup 2026 Tickets", href: "/venues/sofi-stadium-world-cup-2026-tickets" },
+  { name: "AT&T Stadium World Cup 2026 Tickets", href: "/venues/att-stadium-world-cup-2026-tickets" },
+  { name: "Mercedes-Benz Stadium World Cup 2026 Tickets", href: "/venues/mercedes-benz-stadium-world-cup-2026-tickets" },
+  { name: "Hard Rock Stadium World Cup 2026 Tickets", href: "/venues/hard-rock-stadium-world-cup-2026-tickets" },
+  { name: "NRG Stadium World Cup 2026 Tickets", href: "/venues/nrg-stadium-world-cup-2026-tickets" },
+  { name: "Lincoln Financial Field World Cup 2026 Tickets", href: "/venues/lincoln-financial-field-world-cup-2026-tickets" },
+  { name: "Lumen Field World Cup 2026 Tickets", href: "/venues/lumen-field-world-cup-2026-tickets" },
+  { name: "Levi's Stadium World Cup 2026 Tickets", href: "/venues/levis-stadium-world-cup-2026-tickets" },
+  { name: "Gillette Stadium World Cup 2026 Tickets", href: "/venues/gillette-stadium-world-cup-2026-tickets" },
+  { name: "Arrowhead Stadium World Cup 2026 Tickets", href: "/venues/arrowhead-stadium-world-cup-2026-tickets" },
+  { name: "Estadio Azteca World Cup 2026 Tickets", href: "/venues/estadio-azteca-world-cup-2026-tickets" },
+  { name: "Estadio Akron World Cup 2026 Tickets", href: "/venues/estadio-akron-world-cup-2026-tickets" },
+  { name: "Estadio BBVA World Cup 2026 Tickets", href: "/venues/estadio-bbva-world-cup-2026-tickets" },
+  { name: "BMO Field World Cup 2026 Tickets", href: "/venues/bmo-field-world-cup-2026-tickets" },
+  { name: "BC Place World Cup 2026 Tickets", href: "/venues/bc-place-world-cup-2026-tickets" },
+]
+
+// Major Fixtures - Group Stage Clashes + Knockouts
+const majorGroupFixtures = [
+  { name: "USA vs Mexico World Cup 2026 Tickets", href: "/fixtures/usa-vs-mexico-world-cup-2026-tickets" },
+  { name: "Brazil vs Morocco World Cup 2026 Tickets", href: "/fixtures/brazil-vs-morocco-world-cup-2026-tickets" },
+  { name: "Argentina vs Algeria World Cup 2026 Tickets", href: "/fixtures/argentina-vs-algeria-world-cup-2026-tickets" },
+  { name: "England vs Croatia World Cup 2026 Tickets", href: "/fixtures/england-vs-croatia-world-cup-2026-tickets" },
+  { name: "France vs Norway World Cup 2026 Tickets", href: "/fixtures/france-vs-norway-world-cup-2026-tickets" },
+  { name: "Spain vs Uruguay World Cup 2026 Tickets", href: "/fixtures/spain-vs-uruguay-world-cup-2026-tickets" },
+  { name: "Germany vs Korea World Cup 2026 Tickets", href: "/fixtures/germany-vs-korea-world-cup-2026-tickets" },
+  { name: "Portugal vs Colombia World Cup 2026 Tickets", href: "/fixtures/portugal-vs-colombia-world-cup-2026-tickets" },
+]
+
+const knockoutFixtures = [
+  { name: "Round of 32 World Cup 2026 Tickets", href: "/fixtures/round-of-32-world-cup-2026-tickets" },
+  { name: "Round of 16 World Cup 2026 Tickets", href: "/fixtures/round-of-16-world-cup-2026-tickets" },
+  { name: "Quarter-Finals World Cup 2026 Tickets", href: "/fixtures/quarter-finals-world-cup-2026-tickets" },
+  { name: "Semi-Finals World Cup 2026 Tickets", href: "/fixtures/semi-finals-world-cup-2026-tickets" },
+  { name: "Third Place World Cup 2026 Tickets", href: "/fixtures/third-place-world-cup-2026-tickets" },
+]
+
 const footerLinks = {
-  competitions: [
-    { name: "FIFA World Cup 2026", href: "/fifa-world-cup-2026-tickets" },
-    { name: "Olympics 2028", href: "/summer-olympics-2028-tickets" },
-    { name: "Euro 2028", href: "/euro-2028-tickets" },
-    { name: "Cricket World Cup", href: "/cricket-world-cup-tickets" },
-    { name: "Rugby World Cup", href: "/rugby-world-cup-tickets" },
-    { name: "NBA Finals", href: "/nba-finals-tickets" },
-    { name: "Super Bowl", href: "/super-bowl-tickets" },
-    { name: "MLB World Series", href: "/mlb-world-series-tickets" },
-    { name: "Stanley Cup", href: "/stanley-cup-tickets" },
-    { name: "MLS Cup", href: "/mls-cup-tickets" },
-  ],
-  teams: [
-    { name: "Argentina", href: "/argentina-tickets" },
-    { name: "Brazil", href: "/brazil-tickets" },
-    { name: "USA", href: "/usa-tickets" },
-    { name: "Germany", href: "/germany-tickets" },
-    { name: "France", href: "/france-tickets" },
-    { name: "England", href: "/england-tickets" },
-    { name: "LA Lakers", href: "/la-lakers-tickets" },
-    { name: "Dallas Cowboys", href: "/dallas-cowboys-tickets" },
-    { name: "India Cricket", href: "/india-cricket-tickets" },
-    { name: "All Blacks", href: "/all-blacks-tickets" },
-  ],
-  fixtures: [
-    { name: "USA vs Mexico", href: "/usa-vs-mexico-tickets" },
-    { name: "Brazil vs Argentina", href: "/brazil-vs-argentina-tickets" },
-    { name: "World Cup Final 2026", href: "/world-cup-final-2026-tickets" },
-    { name: "India vs Pakistan", href: "/india-vs-pakistan-tickets" },
-    { name: "Super Bowl LIX", href: "/super-bowl-lix-tickets" },
-    { name: "NBA Finals Game 7", href: "/nba-finals-game-7-tickets" },
-  ],
-  venues: [
-    { name: "MetLife Stadium", href: "/metlife-stadium-tickets" },
-    { name: "SoFi Stadium", href: "/sofi-stadium-tickets" },
-    { name: "Wembley Stadium", href: "/wembley-stadium-tickets" },
-    { name: "Madison Square Garden", href: "/madison-square-garden-tickets" },
-    { name: "Azteca Stadium", href: "/azteca-stadium-tickets" },
-  ],
   company: [
     { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },
@@ -72,13 +92,13 @@ export function PublicFooter() {
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
-          {/* Competitions */}
+          {/* Top 15 Teams */}
           <div>
-            <h3 className="mb-4 font-semibold text-white">Top Competitions</h3>
+            <h3 className="mb-4 font-semibold text-white">Top Teams</h3>
             <ul className="space-y-2">
-              {footerLinks.competitions.slice(0, 8).map((link) => (
+              {top15Teams.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm hover:text-white">
+                  <Link href={link.href} className="text-xs hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -86,13 +106,13 @@ export function PublicFooter() {
             </ul>
           </div>
 
-          {/* Teams */}
+          {/* All 16 Venues */}
           <div>
-            <h3 className="mb-4 font-semibold text-white">Popular Teams</h3>
+            <h3 className="mb-4 font-semibold text-white">All Venues</h3>
             <ul className="space-y-2">
-              {footerLinks.teams.slice(0, 8).map((link) => (
+              {allVenues.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm hover:text-white">
+                  <Link href={link.href} className="text-xs hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -100,28 +120,36 @@ export function PublicFooter() {
             </ul>
           </div>
 
-          {/* Fixtures */}
+          {/* Major Group Stage Clashes */}
           <div>
-            <h3 className="mb-4 font-semibold text-white">Hot Fixtures</h3>
+            <h3 className="mb-4 font-semibold text-white">Group Stage Clashes</h3>
             <ul className="space-y-2">
-              {footerLinks.fixtures.map((link) => (
+              {majorGroupFixtures.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm hover:text-white">
+                  <Link href={link.href} className="text-xs hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
 
-            <h3 className="mb-4 mt-6 font-semibold text-white">Top Venues</h3>
+            <h3 className="mb-4 mt-6 font-semibold text-white">Knockout Rounds</h3>
             <ul className="space-y-2">
-              {footerLinks.venues.map((link) => (
+              {knockoutFixtures.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm hover:text-white">
+                  <Link href={link.href} className="text-xs hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/fixtures/final-world-cup-2026-tickets"
+                  className="text-xs font-bold text-yellow-400 hover:text-yellow-300 transition-colors flex items-center gap-1"
+                >
+                  🏆 FIFA World Cup 2026 Final Tickets
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -131,7 +159,7 @@ export function PublicFooter() {
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm hover:text-white">
+                  <Link href={link.href} className="text-xs hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -142,7 +170,7 @@ export function PublicFooter() {
             <ul className="space-y-2">
               {footerLinks.help.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm hover:text-white">
+                  <Link href={link.href} className="text-xs hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -158,13 +186,37 @@ export function PublicFooter() {
                 <li key={lang.code}>
                   <Link
                     href={lang.code === "en" ? "/" : `/${lang.code}`}
-                    className="flex items-center gap-2 text-sm hover:text-white"
+                    className="flex items-center gap-2 text-xs hover:text-white transition-colors"
                   >
                     <span>{lang.flag}</span>
                     <span>{lang.name}</span>
                   </Link>
                 </li>
               ))}
+            </ul>
+
+            <h3 className="mb-4 mt-6 font-semibold text-white">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/fifa-world-cup-2026-tickets" className="text-xs hover:text-yellow-400 transition-colors font-semibold">
+                  🏆 FIFA World Cup 2026 Tickets
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-xs hover:text-white transition-colors">
+                  Blog & News
+                </Link>
+              </li>
+              <li>
+                <Link href="/teams" className="text-xs hover:text-white transition-colors">
+                  All Teams
+                </Link>
+              </li>
+              <li>
+                <Link href="/venues" className="text-xs hover:text-white transition-colors">
+                  All Stadiums
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -180,40 +232,40 @@ export function PublicFooter() {
                 <Ticket className="h-6 w-6 text-blue-400" />
                 <span className="font-bold text-white">WorldCup-Tickets</span>
               </Link>
-              <span className="text-sm text-slate-500">
+              <span className="text-xs text-slate-500">
                 © {new Date().getFullYear()} WorldCup-Tickets.net. All Rights Reserved.
               </span>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-4">
-              <a href="#" className="hover:text-white">
+              <a href="#" className="hover:text-white transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-white">
+              <a href="#" className="hover:text-white transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-white">
+              <a href="#" className="hover:text-white transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-white">
+              <a href="#" className="hover:text-white transition-colors">
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
           </div>
 
           {/* Legal Links */}
-          <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm text-slate-500 md:justify-start">
-            <Link href="/privacy" className="hover:text-white">
+          <div className="mt-4 flex flex-wrap justify-center gap-4 text-xs text-slate-500 md:justify-start">
+            <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-white">
+            <Link href="/terms" className="hover:text-white transition-colors">
               Terms of Service
             </Link>
-            <Link href="/cookies" className="hover:text-white">
+            <Link href="/cookies" className="hover:text-white transition-colors">
               Cookie Policy
             </Link>
-            <Link href="/sitemap.xml" className="hover:text-white">
+            <Link href="/sitemap.xml" className="hover:text-white transition-colors">
               Sitemap
             </Link>
           </div>
