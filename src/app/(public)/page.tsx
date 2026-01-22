@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { LanguageLink } from "@/components/i18n/LanguageLink"
+import { SuggestiveSearch } from "@/components/search/SuggestiveSearch"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import {
-  Search,
   ChevronRight,
   Calendar,
   MapPin,
@@ -13,6 +14,10 @@ import {
   Users,
   Star,
 } from "lucide-react"
+import fs from "fs"
+import path from "path"
+import matter from "gray-matter"
+import { marked } from "marked"
 
 // Mock data - In production, this would come from the database
 const featuredCompetitions = [
@@ -91,85 +96,91 @@ const featuredCompetitions = [
 ]
 
 const popularTeams = [
-  { id: "1", name: "Argentina", slug: "argentina-tickets", flag: "🇦🇷", sport: "Football" },
-  { id: "2", name: "Brazil", slug: "brazil-tickets", flag: "🇧🇷", sport: "Football" },
-  { id: "3", name: "USA", slug: "usa-tickets", flag: "🇺🇸", sport: "Football" },
-  { id: "4", name: "Germany", slug: "germany-tickets", flag: "🇩🇪", sport: "Football" },
-  { id: "5", name: "France", slug: "france-tickets", flag: "🇫🇷", sport: "Football" },
-  { id: "6", name: "England", slug: "england-tickets", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", sport: "Football" },
-  { id: "7", name: "LA Lakers", slug: "la-lakers-tickets", flag: "🏀", sport: "Basketball" },
-  { id: "8", name: "Dallas Cowboys", slug: "dallas-cowboys-tickets", flag: "🏈", sport: "NFL" },
-  { id: "9", name: "India", slug: "india-cricket-tickets", flag: "🇮🇳", sport: "Cricket" },
-  { id: "10", name: "Inter Miami", slug: "inter-miami-tickets", flag: "⚽", sport: "MLS" },
-  { id: "11", name: "NY Yankees", slug: "new-york-yankees-tickets", flag: "⚾", sport: "MLB" },
-  { id: "12", name: "All Blacks", slug: "all-blacks-tickets", flag: "🇳🇿", sport: "Rugby" },
+  { id: "1", name: "Argentina", slug: "teams/argentina-world-cup-2026-tickets", flag: "🇦🇷", sport: "World Cup 2026" },
+  { id: "2", name: "Brazil", slug: "teams/brazil-world-cup-2026-tickets", flag: "🇧🇷", sport: "World Cup 2026" },
+  { id: "3", name: "USA", slug: "teams/usa-world-cup-2026-tickets", flag: "🇺🇸", sport: "World Cup 2026" },
+  { id: "4", name: "Germany", slug: "teams/germany-world-cup-2026-tickets", flag: "🇩🇪", sport: "World Cup 2026" },
+  { id: "5", name: "France", slug: "teams/france-world-cup-2026-tickets", flag: "🇫🇷", sport: "World Cup 2026" },
+  { id: "6", name: "England", slug: "teams/england-world-cup-2026-tickets", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", sport: "World Cup 2026" },
+  { id: "7", name: "Mexico", slug: "teams/mexico-world-cup-2026-tickets", flag: "🇲🇽", sport: "World Cup 2026" },
+  { id: "8", name: "Spain", slug: "teams/spain-world-cup-2026-tickets", flag: "🇪🇸", sport: "World Cup 2026" },
+  { id: "9", name: "Portugal", slug: "teams/portugal-world-cup-2026-tickets", flag: "🇵🇹", sport: "World Cup 2026" },
+  { id: "10", name: "Netherlands", slug: "teams/netherlands-world-cup-2026-tickets", flag: "🇳🇱", sport: "World Cup 2026" },
+  { id: "11", name: "Belgium", slug: "teams/belgium-world-cup-2026-tickets", flag: "🇧🇪", sport: "World Cup 2026" },
+  { id: "12", name: "Italy", slug: "teams/italy-world-cup-2026-tickets", flag: "🇮🇹", sport: "World Cup 2026" },
 ]
 
 const hotFixtures = [
   {
     id: "1",
-    title: "Argentina vs Brazil",
-    slug: "argentina-vs-brazil-tickets",
-    competition: "World Cup Qualifier",
-    date: "Nov 19, 2024",
-    venue: "Estadio Monumental",
-    home_flag: "🇦🇷",
-    away_flag: "🇧🇷",
-  },
-  {
-    id: "2",
-    title: "India vs Australia",
-    slug: "india-vs-australia-cricket-tickets",
-    competition: "Cricket World Cup",
-    date: "Nov 21, 2024",
-    venue: "Wankhede Stadium",
-    home_flag: "🇮🇳",
-    away_flag: "🇦🇺",
-  },
-  {
-    id: "3",
-    title: "NY Giants vs Dallas Cowboys",
-    slug: "giants-vs-cowboys-tickets",
-    competition: "NFL Week 12",
-    date: "Nov 24, 2024",
-    venue: "MetLife Stadium",
-    home_flag: "🏈",
-    away_flag: "🏈",
-  },
-  {
-    id: "4",
     title: "USA vs Mexico",
-    slug: "usa-vs-mexico-world-cup-2026-tickets",
-    competition: "World Cup 2026",
+    slug: "fixtures/usa-vs-mexico-world-cup-2026-tickets",
+    competition: "World Cup 2026 Group Stage",
     date: "Jun 15, 2026",
     venue: "MetLife Stadium",
     home_flag: "🇺🇸",
     away_flag: "🇲🇽",
   },
   {
-    id: "5",
-    title: "Brazil vs Argentina",
-    slug: "brazil-vs-argentina-world-cup-2026-tickets",
-    competition: "World Cup 2026",
-    date: "Jun 22, 2026",
+    id: "2",
+    title: "Brazil vs Morocco",
+    slug: "fixtures/brazil-vs-morocco-world-cup-2026-tickets",
+    competition: "World Cup 2026 Group Stage",
+    date: "Jun 18, 2026",
     venue: "SoFi Stadium",
     home_flag: "🇧🇷",
-    away_flag: "🇦🇷",
+    away_flag: "🇲🇦",
+  },
+  {
+    id: "3",
+    title: "Argentina vs Algeria",
+    slug: "fixtures/argentina-vs-algeria-world-cup-2026-tickets",
+    competition: "World Cup 2026 Group Stage",
+    date: "Jun 20, 2026",
+    venue: "AT&T Stadium",
+    home_flag: "🇦🇷",
+    away_flag: "🇩🇿",
+  },
+  {
+    id: "4",
+    title: "England vs Croatia",
+    slug: "fixtures/england-vs-croatia-world-cup-2026-tickets",
+    competition: "World Cup 2026 Group Stage",
+    date: "Jun 22, 2026",
+    venue: "Hard Rock Stadium",
+    home_flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    away_flag: "🇭🇷",
+  },
+  {
+    id: "5",
+    title: "Final",
+    slug: "fixtures/final-world-cup-2026-tickets",
+    competition: "World Cup 2026 Final",
+    date: "Jul 19, 2026",
+    venue: "MetLife Stadium",
+    home_flag: "🏆",
+    away_flag: "🏆",
   },
 ]
 
 const majorVenues = [
-  { id: "1", name: "MetLife Stadium", slug: "metlife-stadium-tickets", city: "New Jersey, USA", capacity: "82,500" },
-  { id: "2", name: "SoFi Stadium", slug: "sofi-stadium-tickets", city: "Los Angeles, USA", capacity: "70,000" },
-  { id: "3", name: "Wembley Stadium", slug: "wembley-stadium-tickets", city: "London, UK", capacity: "90,000" },
-  { id: "4", name: "Madison Square Garden", slug: "madison-square-garden-tickets", city: "New York, USA", capacity: "20,789" },
-  { id: "5", name: "Azteca Stadium", slug: "azteca-stadium-tickets", city: "Mexico City, Mexico", capacity: "87,000" },
-  { id: "6", name: "Stade de France", slug: "stade-de-france-tickets", city: "Paris, France", capacity: "81,338" },
-  { id: "7", name: "Melbourne Cricket Ground", slug: "mcg-tickets", city: "Melbourne, Australia", capacity: "100,024" },
-  { id: "8", name: "AT&T Stadium", slug: "att-stadium-tickets", city: "Dallas, USA", capacity: "80,000" },
+  { id: "1", name: "MetLife Stadium", slug: "venues/metlife-stadium-world-cup-2026-tickets", city: "New Jersey, USA", capacity: "82,500", role: "Final Venue" },
+  { id: "2", name: "SoFi Stadium", slug: "venues/sofi-stadium-world-cup-2026-tickets", city: "Los Angeles, USA", capacity: "70,000", role: "Host City" },
+  { id: "3", name: "AT&T Stadium", slug: "venues/att-stadium-world-cup-2026-tickets", city: "Dallas, USA", capacity: "80,000", role: "Host City" },
+  { id: "4", name: "Estadio Azteca", slug: "venues/estadio-azteca-world-cup-2026-tickets", city: "Mexico City, Mexico", capacity: "87,000", role: "Opening Match" },
+  { id: "5", name: "Mercedes-Benz Stadium", slug: "venues/mercedes-benz-stadium-world-cup-2026-tickets", city: "Atlanta, USA", capacity: "71,000", role: "Host City" },
+  { id: "6", name: "Hard Rock Stadium", slug: "venues/hard-rock-stadium-world-cup-2026-tickets", city: "Miami, USA", capacity: "65,000", role: "Host City" },
+  { id: "7", name: "Gillette Stadium", slug: "venues/gillette-stadium-world-cup-2026-tickets", city: "Boston, USA", capacity: "65,878", role: "Host City" },
+  { id: "8", name: "Levi's Stadium", slug: "venues/levis-stadium-world-cup-2026-tickets", city: "San Francisco, USA", capacity: "68,500", role: "Host City" },
 ]
 
-export default function HomePage() {
+export default async function HomePage() {
+  // Load homepage article
+  const articlePath = path.join(process.cwd(), "content", "articles", "homepage-world-cup-tickets.md")
+  const articleContent = fs.readFileSync(articlePath, "utf8")
+  const { data: frontmatter, content } = matter(articleContent)
+  const htmlContent = marked(content)
+
   return (
     <div>
       {/* Hero Section */}
@@ -177,37 +188,41 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-20" />
         <div className="container relative mx-auto px-4 text-center">
           <h1 className="mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">
-            Your Gateway to Global Sports Events
+            World Cup Tickets | FIFA World Cup 2026 Tickets
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-slate-300">
-            Find and compare tickets to the world&apos;s biggest sporting events. World Cup, Olympics, NBA, NFL, and more.
+            Your trusted source for FIFA World Cup 2026 tickets. Compare prices for all matches, teams, and venues across USA, Mexico, and Canada. Secure your World Cup tickets today.
           </p>
 
           {/* Search Bar */}
           <div className="mx-auto max-w-2xl">
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
-              <Input
-                placeholder="Search events, teams, or venues..."
-                className="h-14 bg-white pl-12 text-lg text-slate-900"
-              />
-              <Button className="absolute right-2 top-1/2 -translate-y-1/2">
-                Search
-              </Button>
-            </div>
+            <SuggestiveSearch />
             <div className="mt-4 flex flex-wrap justify-center gap-2">
               <span className="text-sm text-slate-400">Popular:</span>
-              {["World Cup 2026", "Olympics 2028", "NBA Finals", "Super Bowl"].map(
-                (term) => (
-                  <Link
-                    key={term}
-                    href={`/search?q=${encodeURIComponent(term)}`}
-                    className="rounded-full bg-white/10 px-3 py-1 text-sm hover:bg-white/20"
-                  >
-                    {term}
-                  </Link>
-                )
-              )}
+              <LanguageLink
+                href="/fifa-world-cup-2026-tickets"
+                className="rounded-full bg-white/10 px-3 py-1 text-sm hover:bg-white/20"
+              >
+                World Cup 2026 Tickets
+              </LanguageLink>
+              <LanguageLink
+                href="/summer-olympics-2028-tickets"
+                className="rounded-full bg-white/10 px-3 py-1 text-sm hover:bg-white/20"
+              >
+                Olympics 2028 Tickets
+              </LanguageLink>
+              <LanguageLink
+                href="/nba-finals-2025-tickets"
+                className="rounded-full bg-white/10 px-3 py-1 text-sm hover:bg-white/20"
+              >
+                NBA Finals Tickets
+              </LanguageLink>
+              <LanguageLink
+                href="/super-bowl-lix-tickets"
+                className="rounded-full bg-white/10 px-3 py-1 text-sm hover:bg-white/20"
+              >
+                Super Bowl Tickets
+              </LanguageLink>
             </div>
           </div>
         </div>
@@ -265,12 +280,12 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="mb-8 flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-bold text-slate-900">Popular Teams</h2>
-              <p className="text-slate-500">Follow your favorite teams</p>
+              <h2 className="text-2xl font-bold text-slate-900">World Cup 2026 Teams</h2>
+              <p className="text-slate-500">Top nations competing for the trophy</p>
             </div>
             <Link href="/teams">
               <Button variant="outline">
-                View All
+                View All Teams
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -301,13 +316,13 @@ export default function HomePage() {
             <div>
               <h2 className="text-2xl font-bold text-slate-900">
                 <Star className="mr-2 inline-block h-6 w-6 text-yellow-500" />
-                Hot Fixtures
+                World Cup 2026 Fixtures
               </h2>
-              <p className="text-slate-500">Don&apos;t miss these matches</p>
+              <p className="text-slate-500">Must-see matches and knockout rounds</p>
             </div>
             <Link href="/fixtures">
               <Button variant="outline">
-                View All
+                View All Fixtures
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -358,12 +373,12 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="mb-8 flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-bold text-slate-900">Major Venues</h2>
-              <p className="text-slate-500">Iconic stadiums and arenas</p>
+              <h2 className="text-2xl font-bold text-slate-900">World Cup 2026 Venues</h2>
+              <p className="text-slate-500">Official stadiums across USA, Mexico & Canada</p>
             </div>
             <Link href="/venues">
               <Button variant="outline">
-                View All
+                View All Venues
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -383,10 +398,12 @@ export default function HomePage() {
                       {venue.name}
                     </h3>
                     <p className="text-sm text-slate-500">{venue.city}</p>
-                    <p className="mt-1 flex items-center gap-1 text-sm text-slate-500">
-                      <Users className="h-4 w-4" />
-                      Capacity: {venue.capacity}
-                    </p>
+                    <div className="mt-2 flex items-center justify-between">
+                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                        {venue.role}
+                      </span>
+                      <span className="text-xs text-slate-500">{venue.capacity}</span>
+                    </div>
                   </CardContent>
                 </Card>
               </Link>
@@ -395,19 +412,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Article Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl">
+            <article className="prose prose-slate prose-lg max-w-none prose-headings:text-slate-900 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline">
+              <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="bg-blue-600 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-4 text-3xl font-bold">Never Miss a Game</h2>
+          <h2 className="mb-4 text-3xl font-bold">Never Miss a World Cup 2026 Match</h2>
           <p className="mx-auto mb-8 max-w-xl text-blue-100">
-            Get notified about ticket sales, price drops, and upcoming events for your favorite teams.
+            Get notified about FIFA World Cup 2026 ticket releases, price drops, and match updates for your favorite teams. Be the first to secure your tickets.
           </p>
           <div className="mx-auto flex max-w-md gap-2">
             <Input
               placeholder="Enter your email"
               className="bg-white text-slate-900"
             />
-            <Button variant="secondary">Subscribe</Button>
+            <Button variant="secondary">Get World Cup Alerts</Button>
           </div>
         </div>
       </section>
