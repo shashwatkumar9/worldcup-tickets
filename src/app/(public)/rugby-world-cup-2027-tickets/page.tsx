@@ -1,0 +1,14 @@
+import { ComingSoon } from "@/components/public/coming-soon"
+
+export default function RugbyWorldCup2027Page() {
+  return (
+    <ComingSoon
+      title="Rugby World Cup 2027 Tickets"
+      message="Coming Soon"
+      description="Rugby World Cup 2027 Australia ticket comparison coming soon. Check out our FIFA World Cup 2026 platform now!"
+      backLink="/fifa-world-cup-2026-tickets"
+      backText="Explore World Cup 2026 Tickets"
+      expectedDate="Launching 2026"
+    />
+  )
+}
