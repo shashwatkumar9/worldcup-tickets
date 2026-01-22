@@ -128,9 +128,9 @@ export default function MexicoTicketsPage() {
                 <span className="text-7xl">{teamInfo.flag}</span>
                 <div>
                   <h1 className="text-4xl font-bold md:text-5xl text-slate-900">
-                    {teamInfo.name}
+                    Mexico World Cup 2026 Tickets
                   </h1>
-                  <p className="text-xl text-slate-700 mt-1">{teamInfo.nickname}</p>
+                  <p className="text-xl text-slate-700 mt-1">{teamInfo.nickname} • Co-Host Nation</p>
                 </div>
               </div>
 
@@ -315,39 +315,135 @@ export default function MexicoTicketsPage() {
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>About Mexico National Team</CardTitle>
-              </CardHeader>
-              <CardContent className="prose max-w-none">
-                <p>
-                  The <strong>Mexico national football team</strong> (Spanish: Selección de fútbol de México),
-                  known as El Tri (The Tricolor), is one of the most successful teams in CONCACAF with
-                  11 Gold Cup titles and two FIFA Confederations Cup victories.
-                </p>
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">Mexico World Cup 2026 Tickets: El Tri&apos;s Historic Third Hosting</h2>
+              <p>
+                History will be made on June 11, 2026, when Mexico opens the FIFA World Cup at the legendary <Link href="/venues/estadio-azteca-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Azteca World Cup 2026 Tickets</Link>. For the first time ever, a nation will host or co-host the World Cup for a third time (1970, 1986, 2026), and El Tri will have the rare privilege of playing all group matches on home soil before passionate Mexican fans. Secure your <Link href="/fifa-world-cup-2026-tickets" className="text-green-700 hover:underline">FIFA World Cup 2026 Tickets</Link> to witness this monumental occasion.
+              </p>
+              <p>
+                Mexico enters the tournament ranked 15th in the FIFA rankings but with the immeasurable advantage of home support across three iconic Mexican stadiums: <Link href="/venues/estadio-azteca-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Azteca in Mexico City</Link>, <Link href="/venues/estadio-akron-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Akron in Guadalajara</Link>, and <Link href="/venues/estadio-bbva-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio BBVA in Monterrey</Link>. The challenge? Finally breaking the &quot;Quinto Partido&quot; curse that has seen El Tri reach the Round of 16 seven consecutive times without advancing further.
+              </p>
 
-                <h3>Historic Third Hosting</h3>
-                <p>
-                  Mexico becomes the first country to host or co-host three FIFA World Cups (1970, 1986, 2026).
-                  The legendary Estadio Azteca will host the opening match - making it the only stadium to
-                  host three World Cup opening games.
-                </p>
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Group A Analysis: Favorable Draw with High Expectations</h3>
+              <p>
+                Mexico drew <Link href="/fixtures/group-a-world-cup-2026-tickets" className="text-green-700 hover:underline">Group A</Link> alongside <Link href="/teams/south-africa-world-cup-2026-tickets" className="text-green-700 hover:underline">South Africa World Cup 2026 Tickets</Link>, <Link href="/teams/korea-republic-world-cup-2026-tickets" className="text-green-700 hover:underline">Korea Republic World Cup 2026 Tickets</Link>, and a UEFA playoff qualifier. The <Link href="/fixtures/mexico-vs-south-africa-world-cup-2026-tickets" className="text-green-700 hover:underline">opening match against South Africa</Link> on June 11 at Estadio Azteca will set the tone for El Tri&apos;s tournament. With 87,523 passionate fans creating a deafening atmosphere at 2,240 meters altitude, Mexico has every advantage.
+              </p>
+              <p>
+                The second match against <Link href="/teams/korea-republic-world-cup-2026-tickets" className="text-green-700 hover:underline">Korea Republic</Link> at <Link href="/venues/estadio-akron-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Akron in Guadalajara</Link> presents a tougher challenge - the Koreans are tactically disciplined and athletic. Mexico concludes group play at <Link href="/venues/estadio-bbva-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio BBVA in Monterrey</Link>, where they must secure qualification to the <Link href="/fixtures/round-of-32-world-cup-2026-tickets" className="text-green-700 hover:underline">Round of 32</Link> and potentially <Link href="/fixtures/round-of-16-world-cup-2026-tickets" className="text-green-700 hover:underline">Round of 16</Link>.
+              </p>
 
-                <h3>Breaking the &quot;Quinto Partido&quot; Curse</h3>
-                <p>
-                  Mexico has reached the Round of 16 in seven consecutive World Cups but failed to advance
-                  further (known as the &quot;Fifth Game Curse&quot;). With home advantage and passionate
-                  support, 2026 represents their best chance to finally break through.
-                </p>
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Breaking the Quinto Partido Curse: Mexico&apos;s Recurring Nightmare</h3>
+              <p>
+                Seven consecutive World Cups. Seven consecutive eliminations in the Round of 16. Mexico&apos;s inability to reach the quarter-finals since 1986 (on home soil) has become the defining narrative of El Tri. They&apos;ve fallen to the <Link href="/teams/usa-world-cup-2026-tickets" className="text-green-700 hover:underline">USA (2002)</Link>, <Link href="/teams/argentina-world-cup-2026-tickets" className="text-green-700 hover:underline">Argentina (2006, 2010)</Link>, <Link href="/teams/netherlands-world-cup-2026-tickets" className="text-green-700 hover:underline">Netherlands (2014)</Link>, <Link href="/teams/brazil-world-cup-2026-tickets" className="text-green-700 hover:underline">Brazil (2018)</Link>, and failed to escape the group in 2022.
+              </p>
+              <p>
+                But 2026 offers something previous tournaments couldn&apos;t: home advantage, altitude, and three venues filled with green-clad supporters singing &quot;Cielito Lindo.&quot; If Mexico can top <Link href="/fixtures/group-a-world-cup-2026-tickets" className="text-green-700 hover:underline">Group A</Link>, a potentially favorable <Link href="/fixtures/round-of-32-world-cup-2026-tickets" className="text-green-700 hover:underline">Round of 32</Link> draw awaits. A deep run could see El Tri playing <Link href="/fixtures/quarter-finals-world-cup-2026-tickets" className="text-green-700 hover:underline">Quarter-Finals</Link> at venues like <Link href="/venues/sofi-stadium-world-cup-2026-tickets" className="text-green-700 hover:underline">SoFi Stadium in Los Angeles</Link> or <Link href="/venues/arrowhead-stadium-world-cup-2026-tickets" className="text-green-700 hover:underline">Arrowhead Stadium in Kansas City</Link>, where large Mexican-American populations will create home-like atmospheres.
+              </p>
 
-                <h3>Mexican Venues</h3>
-                <p>
-                  Mexico will host 13 World Cup matches across three cities: Mexico City (Estadio Azteca),
-                  Guadalajara (Estadio Akron), and Monterrey (Estadio BBVA). El Tri will play all group
-                  matches in Mexico.
-                </p>
-              </CardContent>
-            </Card>
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Estadio Azteca: The Cathedral of Football</h3>
+              <p>
+                No stadium in World Cup history carries more weight than <Link href="/venues/estadio-azteca-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Azteca</Link>. This is where Pelé won his third World Cup in 1970. Where Diego Maradona scored both the &quot;Hand of God&quot; and the &quot;Goal of the Century&quot; against England in 1986. Where Mexico reached the quarter-finals as hosts in both 1970 and 1986. On June 11, 2026, Estadio Azteca will host its third World Cup opening match - an unprecedented achievement for any venue.
+              </p>
+              <p>
+                The <Link href="/fixtures/mexico-vs-south-africa-world-cup-2026-tickets" className="text-green-700 hover:underline">Mexico vs South Africa opening match</Link> will be one of the hottest tickets of the tournament. Expect ticket prices from $300-$2,000 depending on category. The altitude (2,240m above sea level) gives Mexico a physiological edge, while the noise from 87,523 fans makes communication nearly impossible for opponents.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Key Players: The New Generation</h3>
+              <p>
+                Edson Álvarez anchors the midfield with his West Ham experience, while Santiago Giménez brings Eredivisie goalscoring pedigree from Feyenoord. Hirving &quot;Chucky&quot; Lozano provides pace on the wing, and the ageless Raúl Jiménez offers veteran leadership up front. Goalkeeper Guillermo Ochoa, who could be playing his sixth World Cup, remains El Tri&apos;s last line of defense - a shot-stopping legend known for heroic performances against <Link href="/teams/brazil-world-cup-2026-tickets" className="text-green-700 hover:underline">Brazil</Link> and <Link href="/teams/germany-world-cup-2026-tickets" className="text-green-700 hover:underline">Germany</Link> in previous tournaments.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">CONCACAF Rivalry: USA Clash Looms Large</h3>
+              <p>
+                Mexico and the <Link href="/teams/usa-world-cup-2026-tickets" className="text-green-700 hover:underline">USA</Link> are in different groups, preventing a group-stage meeting. But if both advance - and they&apos;re expected to - a potential <Link href="/fixtures/usa-vs-mexico-world-cup-2026-tickets" className="text-green-700 hover:underline">USA vs Mexico World Cup 2026 Tickets</Link> knockout clash would be the most anticipated match in CONCACAF history. The rivalry that has defined regional football for decades, elevated to World Cup knockout stakes, with a spot in the <Link href="/fixtures/quarter-finals-world-cup-2026-tickets" className="text-green-700 hover:underline">Quarter-Finals</Link> or beyond on the line. Co-host <Link href="/teams/canada-world-cup-2026-tickets" className="text-green-700 hover:underline">Canada</Link> also presents an intriguing matchup.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Knockout Round Scenarios: Path to Glory</h3>
+              <p>
+                Should Mexico advance from <Link href="/fixtures/group-a-world-cup-2026-tickets" className="text-green-700 hover:underline">Group A</Link>, the knockout rounds become increasingly challenging. Potential opponents include teams from <Link href="/fixtures/group-b-world-cup-2026-tickets" className="text-green-700 hover:underline">Group B</Link> (featuring <Link href="/teams/canada-world-cup-2026-tickets" className="text-green-700 hover:underline">Canada</Link> and <Link href="/teams/switzerland-world-cup-2026-tickets" className="text-green-700 hover:underline">Switzerland</Link>) or <Link href="/fixtures/group-d-world-cup-2026-tickets" className="text-green-700 hover:underline">Group D</Link> (featuring the <Link href="/teams/usa-world-cup-2026-tickets" className="text-green-700 hover:underline">USA</Link>).
+              </p>
+              <p>
+                A quarter-final appearance would require defeating elite opposition - teams like <Link href="/teams/england-world-cup-2026-tickets" className="text-green-700 hover:underline">England</Link>, <Link href="/teams/france-world-cup-2026-tickets" className="text-green-700 hover:underline">France</Link>, <Link href="/teams/spain-world-cup-2026-tickets" className="text-green-700 hover:underline">Spain</Link>, or <Link href="/teams/portugal-world-cup-2026-tickets" className="text-green-700 hover:underline">Portugal</Link>. Should Mexico reach the <Link href="/fixtures/semi-finals-world-cup-2026-tickets" className="text-green-700 hover:underline">Semi-Finals</Link>, matches at <Link href="/venues/att-stadium-world-cup-2026-tickets" className="text-green-700 hover:underline">AT&T Stadium in Dallas</Link> or <Link href="/venues/mercedes-benz-stadium-world-cup-2026-tickets" className="text-green-700 hover:underline">Mercedes-Benz Stadium in Atlanta</Link> await. The ultimate dream? Playing in the <Link href="/fixtures/final-world-cup-2026-tickets" className="text-green-700 hover:underline">FIFA World Cup 2026 Final Tickets</Link> at <Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-green-700 hover:underline">MetLife Stadium</Link> on July 19, 2026.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Mexican Venues: Three Cities, One Passion</h3>
+              <p>
+                Mexico will host 13 World Cup matches across its three iconic venues. <Link href="/venues/estadio-azteca-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Azteca in Mexico City</Link> (capacity: 87,523) hosts the opening match and multiple knockout games. <Link href="/venues/estadio-akron-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Akron in Guadalajara</Link> (capacity: 46,232) offers a modern setting for group-stage drama. <Link href="/venues/estadio-bbva-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio BBVA in Monterrey</Link> (capacity: 53,500) provides a stunning mountain backdrop for crucial matches.
+              </p>
+              <p>
+                Plan your Mexico match trip with our city guides: <Link href="/travel/mexico-city-world-cup-2026-city-guide" className="text-green-700 hover:underline">Mexico City Guide</Link>, <Link href="/travel/guadalajara-world-cup-2026-city-guide" className="text-green-700 hover:underline">Guadalajara Guide</Link>, and <Link href="/travel/monterrey-world-cup-2026-city-guide" className="text-green-700 hover:underline">Monterrey Guide</Link> for accommodation, local cuisine, and cultural experiences.
+              </p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-6">Mexico Ticket Buying Guide</h3>
+              <p>
+                Mexico World Cup 2026 tickets will be among the most in-demand of the entire tournament. The opening match at Estadio Azteca is expected to sell out within hours during the FIFA lottery phase. Expect ticket prices:
+              </p>
+              <ul>
+                <li><strong>Opening Match (Mexico vs South Africa):</strong> $300-$2,000</li>
+                <li><strong>Group Stage Matches 2-3:</strong> $150-$800</li>
+                <li><strong>Potential Knockout Matches:</strong> $400-$1,500+</li>
+              </ul>
+              <p>
+                Official <Link href="/fifa-world-cup-2026-tickets" className="text-green-700 hover:underline">FIFA World Cup 2026 tickets</Link> sales begin through FIFA.com in late 2025. Team-specific packages for all three Mexico group matches offer the best value and guaranteed seats across all three Mexican venues.
+              </p>
+
+              <div className="bg-green-50 border-l-4 border-green-700 p-6 my-8 rounded">
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions - Mexico World Cup 2026 Tickets</h2>
+
+                <div className="space-y-4">
+                  <div className="border-b border-green-200 pb-4">
+                    <h4 className="font-semibold text-slate-900 mb-2">Q: When and where does Mexico play their opening match at World Cup 2026?</h4>
+                    <p className="text-slate-700 text-sm">A: Mexico opens the entire FIFA World Cup 2026 on June 11, 2026, at <Link href="/venues/estadio-azteca-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Azteca in Mexico City</Link> against <Link href="/teams/south-africa-world-cup-2026-tickets" className="text-green-700 hover:underline">South Africa</Link>. This historic match marks the third time Estadio Azteca hosts a World Cup opening game. Mexico then faces <Link href="/teams/korea-republic-world-cup-2026-tickets" className="text-green-700 hover:underline">Korea Republic</Link> on June 16 at <Link href="/venues/estadio-akron-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Akron in Guadalajara</Link>, before concluding <Link href="/fixtures/group-a-world-cup-2026-tickets" className="text-green-700 hover:underline">Group A</Link> on June 21 at <Link href="/venues/estadio-bbva-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio BBVA in Monterrey</Link>.</p>
+                  </div>
+
+                  <div className="border-b border-green-200 pb-4">
+                    <h4 className="font-semibold text-slate-900 mb-2">Q: How much do Mexico World Cup 2026 tickets cost?</h4>
+                    <p className="text-slate-700 text-sm">A: The opening match at <Link href="/venues/estadio-azteca-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Azteca</Link> will cost $300-$2,000 depending on seating category. Other group-stage matches at <Link href="/venues/estadio-akron-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Akron</Link> and <Link href="/venues/estadio-bbva-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio BBVA</Link> range from $150-$800. If Mexico advances to the <Link href="/fixtures/round-of-32-world-cup-2026-tickets" className="text-green-700 hover:underline">Round of 32</Link> or <Link href="/fixtures/round-of-16-world-cup-2026-tickets" className="text-green-700 hover:underline">Round of 16</Link>, expect tickets from $400-$1,500.</p>
+                  </div>
+
+                  <div className="border-b border-green-200 pb-4">
+                    <h4 className="font-semibold text-slate-900 mb-2">Q: What is Group A at World Cup 2026 and who are Mexico&apos;s opponents?</h4>
+                    <p className="text-slate-700 text-sm">A: Mexico is in <Link href="/fixtures/group-a-world-cup-2026-tickets" className="text-green-700 hover:underline">Group A</Link> alongside <Link href="/teams/south-africa-world-cup-2026-tickets" className="text-green-700 hover:underline">South Africa</Link>, <Link href="/teams/korea-republic-world-cup-2026-tickets" className="text-green-700 hover:underline">Korea Republic</Link>, and a UEFA playoff qualifier. This is considered a favorable draw for El Tri, though Korea Republic (2022 Round of 16 team) presents a genuine challenge. All three Mexico matches will be played at home in Mexican stadiums.</p>
+                  </div>
+
+                  <div className="border-b border-green-200 pb-4">
+                    <h4 className="font-semibold text-slate-900 mb-2">Q: What is the &quot;Quinto Partido&quot; curse and can Mexico break it in 2026?</h4>
+                    <p className="text-slate-700 text-sm">A: The &quot;Quinto Partido&quot; (Fifth Game) curse refers to Mexico&apos;s seven consecutive Round of 16 eliminations at World Cups from 1994-2018. They&apos;ve never won a Round of 16 match outside of Mexico. With home advantage in 2026, playing at <Link href="/venues/estadio-azteca-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Azteca</Link>, <Link href="/venues/estadio-akron-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Akron</Link>, and <Link href="/venues/estadio-bbva-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio BBVA</Link>, this represents their best chance since 1986 to reach the <Link href="/fixtures/quarter-finals-world-cup-2026-tickets" className="text-green-700 hover:underline">Quarter-Finals</Link>.</p>
+                  </div>
+
+                  <div className="border-b border-green-200 pb-4">
+                    <h4 className="font-semibold text-slate-900 mb-2">Q: Will Mexico play the USA at World Cup 2026?</h4>
+                    <p className="text-slate-700 text-sm">A: Mexico and the <Link href="/teams/usa-world-cup-2026-tickets" className="text-green-700 hover:underline">USA</Link> cannot meet in the group stage (Mexico in <Link href="/fixtures/group-a-world-cup-2026-tickets" className="text-green-700 hover:underline">Group A</Link>, USA in <Link href="/fixtures/group-d-world-cup-2026-tickets" className="text-green-700 hover:underline">Group D</Link>). However, if both advance, a potential <Link href="/fixtures/usa-vs-mexico-world-cup-2026-tickets" className="text-green-700 hover:underline">USA vs Mexico</Link> knockout match could occur in the <Link href="/fixtures/round-of-32-world-cup-2026-tickets" className="text-green-700 hover:underline">Round of 32</Link>, <Link href="/fixtures/round-of-16-world-cup-2026-tickets" className="text-green-700 hover:underline">Round of 16</Link>, or <Link href="/fixtures/quarter-finals-world-cup-2026-tickets" className="text-green-700 hover:underline">Quarter-Finals</Link> depending on group finishes. This would be the most anticipated match in CONCACAF history.</p>
+                  </div>
+
+                  <div className="border-b border-green-200 pb-4">
+                    <h4 className="font-semibold text-slate-900 mb-2">Q: Why is Estadio Azteca so significant for World Cup history?</h4>
+                    <p className="text-slate-700 text-sm">A: <Link href="/venues/estadio-azteca-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Azteca</Link> is the only stadium to host three World Cup opening matches (1970, 1986, 2026). It hosted Pelé&apos;s 1970 World Cup Final victory and Maradona&apos;s legendary 1986 quarter-final against England. At 2,240 meters altitude with 87,523 capacity, it provides an unparalleled home advantage. Mexico reached the quarter-finals both times they hosted at Estadio Azteca (1970, 1986).</p>
+                  </div>
+
+                  <div className="border-b border-green-200 pb-4">
+                    <h4 className="font-semibold text-slate-900 mb-2">Q: Who are Mexico&apos;s key players for World Cup 2026?</h4>
+                    <p className="text-slate-700 text-sm">A: Captain Edson Álvarez (West Ham) anchors the midfield. Santiago Giménez (Feyenoord) leads the attack with Eredivisie goalscoring form. Hirving &quot;Chucky&quot; Lozano (PSV) brings pace, Raúl Jiménez (Fulham) provides veteran experience, and Guillermo Ochoa could be playing his sixth World Cup in goal - a legendary shot-stopper known for heroics against top teams.</p>
+                  </div>
+
+                  <div className="border-b border-green-200 pb-4">
+                    <h4 className="font-semibold text-slate-900 mb-2">Q: How do I buy official Mexico World Cup 2026 tickets?</h4>
+                    <p className="text-slate-700 text-sm">A: Official <Link href="/fifa-world-cup-2026-tickets" className="text-green-700 hover:underline">FIFA World Cup 2026 tickets</Link> are sold through FIFA.com starting late 2025. Phase 1 uses a random selection lottery for high-demand matches like the Mexico opening game. Phase 2 is first-come, first-served in spring 2026. Team-specific packages following Mexico through all three <Link href="/fixtures/group-a-world-cup-2026-tickets" className="text-green-700 hover:underline">Group A</Link> matches offer the best value.</p>
+                  </div>
+
+                  <div className="border-b border-green-200 pb-4">
+                    <h4 className="font-semibold text-slate-900 mb-2">Q: What venues will host Mexico&apos;s matches?</h4>
+                    <p className="text-slate-700 text-sm">A: All three Mexico group matches will be played at home: <Link href="/venues/estadio-azteca-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Azteca (Mexico City)</Link> for the opening match, <Link href="/venues/estadio-akron-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio Akron (Guadalajara)</Link> for Match 2, and <Link href="/venues/estadio-bbva-world-cup-2026-tickets" className="text-green-700 hover:underline">Estadio BBVA (Monterrey)</Link> for Match 3. If Mexico advances, knockout matches could be at US venues like <Link href="/venues/att-stadium-world-cup-2026-tickets" className="text-green-700 hover:underline">AT&T Stadium (Dallas)</Link> or <Link href="/venues/sofi-stadium-world-cup-2026-tickets" className="text-green-700 hover:underline">SoFi Stadium (Los Angeles)</Link> with large Mexican-American populations.</p>
+                  </div>
+
+                  <div className="pb-4">
+                    <h4 className="font-semibold text-slate-900 mb-2">Q: Which other top teams should Mexico fans watch at World Cup 2026?</h4>
+                    <p className="text-slate-700 text-sm">A: The tournament features defending champions <Link href="/teams/argentina-world-cup-2026-tickets" className="text-green-700 hover:underline">Argentina</Link>, five-time winners <Link href="/teams/brazil-world-cup-2026-tickets" className="text-green-700 hover:underline">Brazil</Link>, 2022 runners-up <Link href="/teams/france-world-cup-2026-tickets" className="text-green-700 hover:underline">France</Link>, and powerhouses <Link href="/teams/england-world-cup-2026-tickets" className="text-green-700 hover:underline">England</Link>, <Link href="/teams/germany-world-cup-2026-tickets" className="text-green-700 hover:underline">Germany</Link>, <Link href="/teams/spain-world-cup-2026-tickets" className="text-green-700 hover:underline">Spain</Link>, and <Link href="/teams/portugal-world-cup-2026-tickets" className="text-green-700 hover:underline">Portugal</Link>. Co-hosts <Link href="/teams/usa-world-cup-2026-tickets" className="text-green-700 hover:underline">USA</Link> and <Link href="/teams/canada-world-cup-2026-tickets" className="text-green-700 hover:underline">Canada</Link> will also have strong home support.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
 
           <div className="space-y-6">
