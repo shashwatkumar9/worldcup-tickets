@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "slug": "mexico-opening-match-world-cup-2026-tickets",
+    "home_team_id": "2",
+    "away_team_id": null,
+    "venue_id": "12",
+    "fixture_type": "group_stage",
+    "match_date": "2026-06-11",
+    "match_time": "20:00:00",
+    "group_name": "A",
+    "status": "scheduled"
+  },
+  {
+    "id": "2",
+    "slug": "usa-group-match-1-world-cup-2026-tickets",
+    "home_team_id": "1",
+    "away_team_id": null,
+    "venue_id": "1",
+    "fixture_type": "group_stage",
+    "match_date": "2026-06-12",
+    "match_time": "20:00:00",
+    "group_name": "D",
+    "status": "scheduled"
+  }
+]

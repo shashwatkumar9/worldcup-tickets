@@ -580,16 +580,19 @@ export function RichTextEditor({
       attributes: {
         class: cn(
           'prose prose-invert max-w-none focus:outline-none min-h-[300px] p-4',
-          'prose-headings:text-white prose-p:text-slate-300',
-          'prose-strong:text-white prose-em:text-slate-200',
-          'prose-ul:text-slate-300 prose-ol:text-slate-300',
-          'prose-blockquote:border-l-emerald-500 prose-blockquote:text-slate-400',
+          'prose-headings:text-white prose-p:text-slate-100',
+          'prose-strong:text-white prose-em:text-slate-100',
+          'prose-ul:text-slate-100 prose-ol:text-slate-100',
+          'prose-li:text-slate-100',
+          'prose-blockquote:border-l-emerald-500 prose-blockquote:text-slate-300',
           'prose-code:text-emerald-400 prose-code:bg-slate-700 prose-code:px-1 prose-code:rounded',
           'prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:text-emerald-300',
-          '[&_.ProseMirror-placeholder]:text-slate-500'
+          '[&_.ProseMirror-placeholder]:text-slate-400',
+          '[&_*]:text-slate-100'
         ),
       },
     },
+    immediatelyRender: false,
   })
 
   return (

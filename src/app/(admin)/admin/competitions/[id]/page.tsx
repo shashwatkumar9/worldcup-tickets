@@ -451,7 +451,16 @@ export default function CompetitionEditPage() {
                     <CardTitle>Host Countries</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <Input placeholder="US, CA, MX" value={formData.host_countries.join(", ")} />
+                    <Input
+                      placeholder="US, CA, MX"
+                      value={formData.host_countries.join(", ")}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          host_countries: e.target.value.split(",").map(c => c.trim()).filter(c => c)
+                        })
+                      }
+                    />
                     <p className="mt-2 text-xs text-slate-500">
                       Comma-separated country codes
                     </p>

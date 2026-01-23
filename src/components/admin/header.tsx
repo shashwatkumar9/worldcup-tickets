@@ -44,14 +44,14 @@ export function AdminHeader({ title }: AdminHeaderProps) {
   }
 
   return (
-    <header className="flex h-16 items-center justify-between border-b bg-white px-6">
-      <div className="flex items-center gap-4">
+    <header className="flex h-16 items-center justify-between border-b bg-white px-6" suppressHydrationWarning>
+      <div className="flex items-center gap-4" suppressHydrationWarning>
         {title && <h1 className="text-xl font-semibold text-slate-900">{title}</h1>}
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4" suppressHydrationWarning>
         {/* Search */}
-        <div className="relative hidden md:block">
+        <div className="relative hidden md:block" suppressHydrationWarning>
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
           <Input
             placeholder="Search..."
@@ -68,7 +68,7 @@ export function AdminHeader({ title }: AdminHeaderProps) {
         </Button>
 
         {/* User menu */}
-        <div className="relative" ref={menuRef}>
+        <div className="relative" ref={menuRef} suppressHydrationWarning>
           <Button
             variant="ghost"
             size="icon"

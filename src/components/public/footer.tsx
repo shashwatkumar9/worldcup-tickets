@@ -4,7 +4,7 @@ import { Ticket, Facebook, Twitter, Instagram, Youtube } from "lucide-react"
 import { LanguageLink } from "@/components/i18n/LanguageLink"
 import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher"
 
-// Top 15 Teams for Footer
+// Top 15 Teams for Footer (Only Qualified Teams)
 const top15Teams = [
   { name: "Argentina World Cup 2026 Tickets", href: "/teams/argentina-world-cup-2026-tickets" },
   { name: "Brazil World Cup 2026 Tickets", href: "/teams/brazil-world-cup-2026-tickets" },
@@ -15,12 +15,12 @@ const top15Teams = [
   { name: "Portugal World Cup 2026 Tickets", href: "/teams/portugal-world-cup-2026-tickets" },
   { name: "Netherlands World Cup 2026 Tickets", href: "/teams/netherlands-world-cup-2026-tickets" },
   { name: "Belgium World Cup 2026 Tickets", href: "/teams/belgium-world-cup-2026-tickets" },
-  { name: "Italy World Cup 2026 Tickets", href: "/teams/italy-world-cup-2026-tickets" },
+  { name: "Croatia World Cup 2026 Tickets", href: "/teams/croatia-world-cup-2026-tickets" },
   { name: "USA World Cup 2026 Tickets", href: "/teams/usa-world-cup-2026-tickets" },
   { name: "Mexico World Cup 2026 Tickets", href: "/teams/mexico-world-cup-2026-tickets" },
+  { name: "Canada World Cup 2026 Tickets", href: "/teams/canada-world-cup-2026-tickets" },
   { name: "Uruguay World Cup 2026 Tickets", href: "/teams/uruguay-world-cup-2026-tickets" },
   { name: "Colombia World Cup 2026 Tickets", href: "/teams/colombia-world-cup-2026-tickets" },
-  { name: "Croatia World Cup 2026 Tickets", href: "/teams/croatia-world-cup-2026-tickets" },
 ]
 
 // All 16 Venues for Footer

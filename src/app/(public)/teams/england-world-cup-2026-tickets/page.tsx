@@ -290,69 +290,101 @@ export default function EnglandTicketsPage() {
               </CardContent>
             </Card>
 
-            {/* Team Info - Comprehensive Article */}
-            <Card>
-              <CardHeader>
-                <CardTitle>England World Cup 2026: Complete Guide to the Three Lions&apos; Quest to End 60 Years of Hurt</CardTitle>
-              </CardHeader>
-              <CardContent className="prose prose-slate max-w-none">
-                <p>
-                  The <strong>England national football team</strong> enters the <Link href="/fifa-world-cup-2026-tickets" className="text-blue-600 hover:underline">2026 FIFA World Cup</Link> with arguably their most talented squad since 1966 — the year they won their only World Cup trophy. After reaching the Euro 2024 final and the 2018 World Cup semifinal, England are desperate to finally end 60 years of hurt in North America.
-                </p>
+            {/* SEO Article Content */}
+            <article className="prose prose-slate max-w-none">
+              <h2 className="text-2xl font-bold text-slate-900">⚽ England World Cup 2026 Tickets: Three Lions Quest for Glory</h2>
+              <p>
+                The Three Lions return to North America seeking their first World Cup trophy since 1966. With a golden generation of talent led by Harry Kane and supported by young stars like Jude Bellingham and Bukayo Saka, England enters <Link href="/fifa-world-cup-2026-tickets" className="text-blue-700 hover:underline">FIFA World Cup 2026</Link> as one of the favorites. Secure your England World Cup 2026 tickets now and witness history as the Three Lions attempt to end 60 years of hurt.
+              </p>
 
-                <h2 className="text-xl font-bold mt-6 mb-3">2026 World Cup Prospects</h2>
-                <p>
-                  Under manager Thomas Tuchel, England have evolved into genuine contenders. Jude Bellingham, the Real Madrid superstar, leads a golden generation that includes Harry Kane (England&apos;s all-time top scorer), Phil Foden, Bukayo Saka, Declan Rice, and Cole Palmer.
-                </p>
-                <p>
-                  The squad depth is remarkable — England can field two completely different XIs and still compete with the world&apos;s best. Trent Alexander-Arnold&apos;s creativity from defense, combined with the firepower up front, makes England incredibly dangerous.
-                </p>
+              <h3 className="text-xl font-bold text-slate-900 mt-6">⭐ Stars to Watch</h3>
+              <p>
+                <strong>Jude Bellingham</strong> - At just 22 years old in 2026, Bellingham has established himself as one of the world's premier midfielders. His performances for Real Madrid combining goalscoring with complete midfield control make him England's heartbeat.
+              </p>
+              <p>
+                <strong>Harry Kane</strong> - England's captain and all-time leading goalscorer enters the World Cup at his peak. After his move to Bayern Munich, Kane has elevated his game combining clinical finishing with exceptional playmaking.
+              </p>
+              <p>
+                <strong>Bukayo Saka</strong> - Has transformed into an established star. His pace, direct running, and ability to deliver in crucial moments make him one of England's most dangerous weapons providing width, goals, and assists.
+              </p>
 
-                <h2 className="text-xl font-bold mt-6 mb-3">Group L Analysis</h2>
-                <p>
-                  England has been drawn into <Link href="/fixtures/group-l-world-cup-2026-tickets" className="text-blue-600 hover:underline">Group L</Link> alongside <Link href="/teams/ghana-world-cup-2026-tickets" className="text-blue-600 hover:underline">Ghana</Link>, <Link href="/teams/panama-world-cup-2026-tickets" className="text-blue-600 hover:underline">Panama</Link>, and <Link href="/teams/croatia-world-cup-2026-tickets" className="text-blue-600 hover:underline">Croatia</Link>. A challenging group awaits:
-                </p>
-                <ul>
-                  <li><strong><Link href="/teams/ghana-world-cup-2026-tickets" className="text-blue-600 hover:underline">Ghana</Link></strong> — The Black Stars bring pace, passion, and Premier League talent. A potential banana skin.</li>
-                  <li><strong><Link href="/teams/panama-world-cup-2026-tickets" className="text-blue-600 hover:underline">Panama</Link></strong> — CONCACAF qualifiers who will have home-crowd support in North America.</li>
-                  <li><strong><Link href="/teams/croatia-world-cup-2026-tickets" className="text-blue-600 hover:underline">Croatia</Link></strong> — Revenge mission! Croatia beat England in the 2018 semifinal. Modrić&apos;s possible last World Cup adds extra spice.</li>
-                </ul>
+              <h3 className="text-xl font-bold text-slate-900 mt-6">🏆 England's Glorious History</h3>
+              <p>
+                England's World Cup history is defined by one glorious triumph in 1966—hosting and winning with a 4-2 victory over West Germany at Wembley Stadium. Geoff Hurst's hat-trick and Bobby Moore's legendary captaincy created moments that remain etched in football folklore.
+              </p>
+              <p>
+                Recent tournaments have seen England consistently reach the latter stages. The 2018 semi-final, Euro 2020 final, and 2022 quarter-final suggest England is building toward another major trophy. The 2026 World Cup presents the perfect opportunity for this talented generation to create their own legacy.
+              </p>
 
-                <h2 className="text-xl font-bold mt-6 mb-3">Match Venues</h2>
-                <p>England will play in iconic American venues:</p>
-                <ul>
-                  <li><Link href="/venues/lincoln-financial-field-world-cup-2026-tickets" className="text-blue-600 hover:underline">Lincoln Financial Field</Link> (Philadelphia) — vs Ghana</li>
-                  <li><Link href="/venues/gillette-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">Gillette Stadium</Link> (Boston) — vs Panama (huge English fan presence expected in Boston)</li>
-                  <li><Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium</Link> (New York/NJ) — vs Croatia (2018 semifinal rematch at the Final venue!)</li>
-                </ul>
-                <p>
-                  The England vs Croatia clash at <Link href="/venues/metlife-stadium-world-cup-2026-tickets" className="text-blue-600 hover:underline">MetLife Stadium</Link> is one of the most anticipated group stage matches.
-                </p>
+              <h3 className="text-xl font-bold text-slate-900 mt-6">🏟️ Where England Will Play</h3>
+              <p>
+                England's journey will take them across North America's most impressive stadiums. The Three Lions are expected to play group stage matches at venues like MetLife Stadium in New York/New Jersey (capacity 82,500), Lincoln Financial Field in Philadelphia, and AT&T Stadium in Dallas.
+              </p>
+              <p>
+                Should England progress deep, knockout matches could take place at iconic venues across the United States. The final at MetLife Stadium represents the ultimate destination for England's World Cup 2026 dreams—a chance to lift the trophy for the first time in 60 years.
+              </p>
 
-                <h2 className="text-xl font-bold mt-6 mb-3">UEFA Rivals &amp; Potential Knockout Clashes</h2>
-                <p>
-                  England will need to navigate Europe&apos;s elite to lift the trophy:
-                </p>
-                <ul>
-                  <li><Link href="/teams/france-world-cup-2026-tickets" className="text-blue-600 hover:underline">France</Link> — The classic rivalry renewed. A potential semifinal blockbuster.</li>
-                  <li><Link href="/teams/spain-world-cup-2026-tickets" className="text-blue-600 hover:underline">Spain</Link> — Euro 2024 final rematch? England will want revenge.</li>
-                  <li><Link href="/teams/germany-world-cup-2026-tickets" className="text-blue-600 hover:underline">Germany</Link> — Historic rivalry with echoes of 1966 and 2010.</li>
-                  <li><Link href="/teams/portugal-world-cup-2026-tickets" className="text-blue-600 hover:underline">Portugal</Link> — Ronaldo vs the Three Lions once more.</li>
-                  <li><Link href="/teams/netherlands-world-cup-2026-tickets" className="text-blue-600 hover:underline">Netherlands</Link> — Old enemies from major tournament history.</li>
-                  <li><Link href="/teams/italy-world-cup-2026-tickets" className="text-blue-600 hover:underline">Italy</Link> — Euro 2020 final heartbreak still fresh.</li>
-                </ul>
+              <h3 className="text-xl font-bold text-slate-900 mt-6">🎯 Tournament Predictions</h3>
+              <p>
+                England enters FIFA World Cup 2026 among the top favorites. The combination of experienced leaders, emerging young talent, and recent tournament success creates realistic expectations of a deep run. Potential matchups against traditional powerhouses like <Link href="/teams/brazil-world-cup-2026-tickets" className="text-blue-700 hover:underline">Brazil</Link>, <Link href="/teams/argentina-world-cup-2026-tickets" className="text-blue-700 hover:underline">Argentina</Link>, <Link href="/teams/france-world-cup-2026-tickets" className="text-blue-700 hover:underline">France</Link>, or <Link href="/teams/germany-world-cup-2026-tickets" className="text-blue-700 hover:underline">Germany</Link> await in the knockout stages.
+              </p>
+              <p>
+                England's greatest strength lies in squad depth and balance. This squad offers quality options in every position, crucial in managing the demands of a 48-team tournament. Combined with the experience of handling tournament pressure and the motivation to end 60 years of hurt, England has everything needed to go all the way in 2026.
+              </p>
 
-                <h2 className="text-xl font-bold mt-6 mb-3">World Cup History</h2>
-                <p>
-                  England&apos;s only World Cup triumph came in 1966 at Wembley, with Geoff Hurst&apos;s hat-trick in the final against West Germany. Since then, they&apos;ve reached semifinals (1990, 2018) and quarterfinals, but never the final. The 2026 squad is considered the best since Bobby Moore lifted the Jules Rimet trophy.
-                </p>
+              <h3 className="text-xl font-bold text-slate-900 mt-6">🎫 How to Get Tickets</h3>
+              <p>
+                Securing England World Cup 2026 tickets requires early planning. Demand for Three Lions matches will be extremely high. FIFA manages official ticketing through their website with sales beginning approximately one year before the tournament.
+              </p>
+              <p>
+                The England Supporters' Travel Club offers official travel packages including match tickets, accommodation, and arrangements. Membership provides priority access and exclusive benefits. Alternative options include FIFA's official resale platform and corporate hospitality packages.
+              </p>
 
-                <h2 className="text-xl font-bold mt-6 mb-3">How to Buy England Tickets</h2>
-                <p>
-                  England matches attract massive demand from the Barmy Army traveling support. We compare prices from Ticketmaster, StubHub, Viagogo, and SeatGeek. Group stage tickets start from approximately $155, with the England vs Croatia clash commanding premium prices. Book early — England fans travel in numbers!
-                </p>
-              </CardContent>
-            </Card>
+              <div className="bg-red-50 border-l-4 border-red-600 p-6 my-8 rounded">
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">❓ Frequently Asked Questions</h2>
+
+                <div className="space-y-4">
+                  <div className="border-b border-red-200 pb-4">
+                    <h3 className="font-semibold text-slate-900 mb-2">When do England World Cup 2026 tickets go on sale?</h3>
+                    <p className="text-slate-700">
+                      FIFA typically begins ticket sales approximately one year before the tournament. The first sales phase operates as a random selection draw for popular matches including England fixtures. Register early on FIFA's official ticketing website.
+                    </p>
+                  </div>
+
+                  <div className="border-b border-red-200 pb-4">
+                    <h3 className="font-semibold text-slate-900 mb-2">How much will England tickets cost?</h3>
+                    <p className="text-slate-700">
+                      England group stage matches will likely range from $200-$1,000 depending on category and venue. Knockout stage matches featuring England will command higher prices due to increased demand and significance.
+                    </p>
+                  </div>
+
+                  <div className="border-b border-red-200 pb-4">
+                    <h3 className="font-semibold text-slate-900 mb-2">Where will England play their matches?</h3>
+                    <p className="text-slate-700">
+                      England's specific venues depend on the group draw and progression. As a top-seeded team, they'll play at major stadiums including potential venues like MetLife Stadium, AT&T Stadium, and Lincoln Financial Field.
+                    </p>
+                  </div>
+
+                  <div className="border-b border-red-200 pb-4">
+                    <h3 className="font-semibold text-slate-900 mb-2">Who are England's key players?</h3>
+                    <p className="text-slate-700">
+                      England's star players include captain Harry Kane, midfield maestro Jude Bellingham, winger Bukayo Saka, creative talent Phil Foden, and defensive anchor Declan Rice. This generation combines experience with youth creating one of the most balanced squads in world football.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold text-slate-900 mb-2">What are England's chances of winning?</h3>
+                    <p className="text-slate-700">
+                      England enters the tournament as one of the favorites. With a talented squad, recent tournament experience, excellent squad depth, and players competing at the highest level, the Three Lions have a realistic chance of winning their first World Cup since 1966.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-slate-700 bg-slate-100 p-4 rounded-lg">
+                Don't miss your chance to witness England's quest for World Cup glory. Explore tickets for other top teams: <Link href="/teams/france-world-cup-2026-tickets" className="text-blue-700 hover:underline">France</Link>, <Link href="/teams/brazil-world-cup-2026-tickets" className="text-blue-700 hover:underline">Brazil</Link>, <Link href="/teams/argentina-world-cup-2026-tickets" className="text-blue-700 hover:underline">Argentina</Link>, <Link href="/teams/spain-world-cup-2026-tickets" className="text-blue-700 hover:underline">Spain</Link>, and <Link href="/teams/germany-world-cup-2026-tickets" className="text-blue-700 hover:underline">Germany</Link>.
+              </p>
+            </article>
           </div>
 
           <div className="space-y-6">

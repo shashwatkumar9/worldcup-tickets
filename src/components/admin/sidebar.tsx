@@ -69,6 +69,11 @@ const navigation = [
     icon: FileText,
   },
   {
+    name: "Page Content",
+    href: "/admin/page-content",
+    icon: FileText,
+  },
+  {
     name: "Translations",
     href: "/admin/translations",
     icon: Languages,
@@ -99,9 +104,9 @@ export function AdminSidebar() {
   const pathname = usePathname()
 
   return (
-    <div className="flex h-screen w-64 flex-col bg-slate-900 text-white">
+    <div className="flex h-screen w-64 flex-col bg-slate-900 text-white" suppressHydrationWarning>
       {/* Logo */}
-      <div className="flex h-16 items-center gap-2 border-b border-slate-700 px-6">
+      <div className="flex h-16 items-center gap-2 border-b border-slate-700 px-6" suppressHydrationWarning>
         <Ticket className="h-8 w-8 text-blue-400" />
         <div>
           <span className="text-lg font-bold">WorldCup</span>
@@ -110,8 +115,8 @@ export function AdminSidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 overflow-y-auto py-4">
-        <ul className="space-y-1 px-3">
+      <nav className="flex-1 overflow-y-auto py-4" suppressHydrationWarning>
+        <ul className="space-y-1 px-3" suppressHydrationWarning>
           {navigation.map((item) => {
             const isActive = pathname === item.href ||
               (item.href !== "/admin" && pathname.startsWith(item.href))
@@ -137,7 +142,7 @@ export function AdminSidebar() {
       </nav>
 
       {/* Footer */}
-      <div className="border-t border-slate-700 p-4">
+      <div className="border-t border-slate-700 p-4" suppressHydrationWarning>
         <Link
           href="/"
           target="_blank"

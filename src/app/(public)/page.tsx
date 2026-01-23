@@ -179,7 +179,7 @@ export default async function HomePage() {
   const articlePath = path.join(process.cwd(), "content", "articles", "homepage-world-cup-tickets.md")
   const articleContent = fs.readFileSync(articlePath, "utf8")
   const { data: frontmatter, content } = matter(articleContent)
-  const htmlContent = marked(content)
+  const htmlContent = await marked.parse(content)
 
   return (
     <div>
@@ -427,46 +427,44 @@ export default async function HomePage() {
             </div>
 
             {/* Article Content */}
-            <article className="prose prose-slate prose-lg max-w-none
-              prose-headings:font-bold prose-headings:text-slate-900 prose-headings:tracking-tight
-              prose-h2:text-4xl prose-h2:mt-16 prose-h2:mb-8 prose-h2:border-b-2 prose-h2:border-blue-200 prose-h2:pb-6 prose-h2:text-blue-900
-              prose-h3:text-2xl prose-h3:mt-12 prose-h3:mb-6 prose-h3:text-blue-800
-              prose-h4:text-xl prose-h4:mt-8 prose-h4:mb-4 prose-h4:text-purple-700
-              prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6 prose-p:text-[17px]
-              prose-a:text-blue-600 prose-a:font-medium prose-a:no-underline hover:prose-a:underline hover:prose-a:text-blue-700 prose-a:transition-colors
-              prose-strong:text-slate-900 prose-strong:font-semibold
-              prose-ul:my-8 prose-ul:space-y-3 prose-li:my-0 prose-li:text-slate-700 prose-li:leading-relaxed
-              prose-ol:my-8 prose-ol:space-y-3
-              prose-table:border-collapse prose-table:w-full prose-table:my-10
-              prose-th:bg-blue-50 prose-th:p-4 prose-th:text-left prose-th:font-semibold prose-th:text-blue-900
-              prose-td:border prose-td:border-slate-200 prose-td:p-4
-              prose-hr:border-slate-300 prose-hr:my-12
-              bg-white rounded-2xl shadow-sm border border-slate-200 p-8 md:p-16
-              [&>blockquote]:border-l-4 [&>blockquote]:border-blue-500 [&>blockquote]:bg-gradient-to-r [&>blockquote]:from-blue-50 [&>blockquote]:to-blue-100/50 [&>blockquote]:p-6 [&>blockquote]:rounded-r-lg [&>blockquote]:my-10 [&>blockquote]:shadow-sm
-              [&>blockquote>p]:text-blue-900 [&>blockquote>p]:font-medium [&>blockquote>p]:mb-0 [&>blockquote>p]:text-base [&>blockquote>p]:leading-relaxed
-              [&>blockquote:nth-of-type(2n)]:border-purple-500 [&>blockquote:nth-of-type(2n)]:from-purple-50 [&>blockquote:nth-of-type(2n)]:to-purple-100/50 [&>blockquote:nth-of-type(2n)>p]:text-purple-900
-              [&>blockquote:nth-of-type(3n)]:border-green-500 [&>blockquote:nth-of-type(3n)]:from-green-50 [&>blockquote:nth-of-type(3n)]:to-green-100/50 [&>blockquote:nth-of-type(3n)>p]:text-green-900
-              [&>blockquote:nth-of-type(4n)]:border-orange-500 [&>blockquote:nth-of-type(4n)]:from-orange-50 [&>blockquote:nth-of-type(4n)]:to-orange-100/50 [&>blockquote:nth-of-type(4n)>p]:text-orange-900">
-              <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            <article className="prose prose-slate max-w-none
+              bg-white rounded-2xl shadow-lg border border-slate-200 p-8 md:p-12 lg:p-16">
+              <div
+                className="
+                  [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-blue-900 [&_h2]:mt-16 [&_h2]:mb-8 [&_h2]:pb-6 [&_h2]:border-b-2 [&_h2]:border-blue-200 [&_h2]:first:mt-0
+                  [&_h3]:text-2xl [&_h3]:font-bold [&_h3]:text-blue-800 [&_h3]:mt-12 [&_h3]:mb-6
+                  [&_h4]:text-xl [&_h4]:font-bold [&_h4]:text-purple-700 [&_h4]:mt-8 [&_h4]:mb-4
+                  [&_p]:text-[17px] [&_p]:text-slate-700 [&_p]:leading-[1.8] [&_p]:mb-6 [&_p]:text-justify
+                  [&_a]:text-blue-600 [&_a]:font-medium [&_a]:no-underline hover:[&_a]:underline hover:[&_a]:text-blue-700
+                  [&_strong]:text-slate-900 [&_strong]:font-semibold
+                  [&_ul]:my-6 [&_ul]:space-y-2 [&_ul]:pl-6
+                  [&_li]:text-slate-700 [&_li]:leading-[1.8] [&_li]:text-[16px]
+                  [&_blockquote]:border-l-4 [&_blockquote]:border-blue-500 [&_blockquote]:bg-gradient-to-r [&_blockquote]:from-blue-50 [&_blockquote]:to-blue-100/50 [&_blockquote]:p-6 [&_blockquote]:rounded-r-lg [&_blockquote]:my-8 [&_blockquote]:shadow-sm
+                  [&_blockquote_p]:text-blue-900 [&_blockquote_p]:font-medium [&_blockquote_p]:mb-0 [&_blockquote_p]:text-base [&_blockquote_p]:leading-relaxed
+                  [&_hr]:border-slate-300 [&_hr]:my-12
+                  [&_img]:rounded-xl [&_img]:shadow-lg [&_img]:my-8
+                "
+                dangerouslySetInnerHTML={{ __html: htmlContent }}
+              />
             </article>
 
             {/* Article Footer CTA */}
-            <div className="mt-12 text-center bg-blue-50 rounded-xl p-8 border border-blue-100">
-              <h3 className="text-2xl font-bold text-slate-900 mb-3">
+            <div className="mt-16 text-center bg-gradient-to-br from-blue-50 via-blue-100/50 to-purple-50 rounded-2xl p-10 border border-blue-200 shadow-md">
+              <h3 className="text-3xl font-bold text-slate-900 mb-4">
                 Ready to Secure Your World Cup Tickets?
               </h3>
-              <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
-                Browse all available FIFA World Cup 2026 tickets, compare prices, and find the perfect seats for your dream match.
+              <p className="text-lg text-slate-700 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Browse all available FIFA World Cup 2026 tickets, compare prices, and find the perfect seats for your dream match. Experience the world's greatest sporting event live!
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <LanguageLink href="/fifa-world-cup-2026-tickets">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-base">
                     <Ticket className="mr-2 h-5 w-5" />
                     Browse All World Cup Tickets
                   </Button>
                 </LanguageLink>
                 <LanguageLink href="/teams">
-                  <Button size="lg" variant="outline">
+                  <Button size="lg" variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6 text-base">
                     <Users className="mr-2 h-5 w-5" />
                     View All Teams
                   </Button>

@@ -6,6 +6,7 @@ import {
   createOrganizationSchema,
   createWebsiteSchema,
 } from "@/components/seo/json-ld";
+import { AuthProvider } from "@/components/providers/session-provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -98,12 +99,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <JsonLd data={[createOrganizationSchema(), createWebsiteSchema()]} />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
-        {children}
+      <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );

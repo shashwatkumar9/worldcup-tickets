@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "slug": "usa-world-cup-2026-tickets",
+    "name": "United States",
+    "short_name": "USA",
+    "country_code": "US",
+    "confederation": "CONCACAF",
+    "fifa_ranking": 11,
+    "world_cup_titles": 0,
+    "status": "published",
+    "is_featured": true
+  },
+  {
+    "id": "2",
+    "slug": "mexico-world-cup-2026-tickets",
+    "name": "Mexico",
+    "short_name": "MEX",
+    "country_code": "MX",
+    "confederation": "CONCACAF",
+    "fifa_ranking": 15,
+    "world_cup_titles": 0,
+    "status": "published",
+    "is_featured": true
+  },
+  {
+    "id": "3",
+    "slug": "canada-world-cup-2026-tickets",
+    "name": "Canada",
+    "short_name": "CAN",
+    "country_code": "CA",
+    "confederation": "CONCACAF",
+    "fifa_ranking": 49,
+    "world_cup_titles": 0,
+    "status": "published",
+    "is_featured": true
+  },
+  {
+    "id": "4",
+    "slug": "brazil-world-cup-2026-tickets",
+    "name": "Brazil",
+    "short_name": "BRA",
+    "country_code": "BR",
+    "confederation": "CONMEBOL",
+    "fifa_ranking": 5,
+    "world_cup_titles": 5,
+    "status": "published",
+    "is_featured": true
+  },
+  {
+    "id": "5",
+    "slug": "argentina-world-cup-2026-tickets",
+    "name": "Argentina",
+    "short_name": "ARG",
+    "country_code": "AR",
+    "confederation": "CONMEBOL",
+    "fifa_ranking": 1,
+    "world_cup_titles": 3,
+    "status": "published",
+    "is_featured": true
+  },
+  {
+    "id": "6",
+    "slug": "france-world-cup-2026-tickets",
+    "name": "France",
+    "short_name": "FRA",
+    "country_code": "FR",
+    "confederation": "UEFA",
+    "fifa_ranking": 2,
+    "world_cup_titles": 2,
+    "status": "published",
+    "is_featured": true
+  },
+  {
+    "id": "7",
+    "slug": "england-world-cup-2026-tickets",
+    "name": "England",
+    "short_name": "ENG",
+    "country_code": "GB",
+    "confederation": "UEFA",
+    "fifa_ranking": 4,
+    "world_cup_titles": 1,
+    "status": "published",
+    "is_featured": true
+  },
+  {
+    "id": "8",
+    "slug": "spain-world-cup-2026-tickets",
+    "name": "Spain",
+    "short_name": "ESP",
+    "country_code": "ES",
+    "confederation": "UEFA",
+    "fifa_ranking": 3,
+    "world_cup_titles": 1,
+    "status": "published",
+    "is_featured": true
+  },
+  {
+    "id": "9",
+    "slug": "germany-world-cup-2026-tickets",
+    "name": "Germany",
+    "short_name": "GER",
+    "country_code": "DE",
+    "confederation": "UEFA",
+    "fifa_ranking": 12,
+    "world_cup_titles": 4,
+    "status": "published",
+    "is_featured": true
+  }
+]

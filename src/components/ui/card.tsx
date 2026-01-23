@@ -11,6 +11,7 @@ const Card = React.forwardRef<
       "rounded-xl border bg-card text-card-foreground shadow",
       className
     )}
+    suppressHydrationWarning
     {...props}
   />
 ))
@@ -23,6 +24,7 @@ const CardHeader = React.forwardRef<
   <div
     ref={ref}
     className={cn("flex flex-col space-y-1.5 p-6", className)}
+    suppressHydrationWarning
     {...props}
   />
 ))
@@ -56,7 +58,7 @@ const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+  <div ref={ref} className={cn("p-6 pt-0", className)} suppressHydrationWarning {...props} />
 ))
 CardContent.displayName = "CardContent"
 

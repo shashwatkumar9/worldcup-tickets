@@ -87,14 +87,14 @@ const alerts = [
 
 export default function AdminDashboard() {
   return (
-    <div>
+    <div suppressHydrationWarning>
       <AdminHeader title="Dashboard" />
 
-      <div className="p-6">
+      <div className="p-6" suppressHydrationWarning>
         {/* Overview Stats */}
-        <div className="mb-8">
+        <div className="mb-8" suppressHydrationWarning>
           <h2 className="mb-4 text-lg font-semibold text-slate-900">Overview</h2>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4" suppressHydrationWarning>
             {stats.map((stat) => (
               <Card key={stat.name}>
                 <CardContent className="flex items-center gap-4 p-6">
@@ -113,9 +113,9 @@ export default function AdminDashboard() {
         </div>
 
         {/* Performance Stats */}
-        <div className="mb-8">
+        <div className="mb-8" suppressHydrationWarning>
           <h2 className="mb-4 text-lg font-semibold text-slate-900">Performance (Last 30 days)</h2>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-3" suppressHydrationWarning>
             {performanceStats.map((stat) => (
               <Card key={stat.name}>
                 <CardContent className="flex items-center gap-4 p-6">
@@ -132,7 +132,7 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-6 lg:grid-cols-2" suppressHydrationWarning>
           {/* Hot Fixtures */}
           <Card>
             <CardHeader className="flex flex-row items-center justify-between">
