@@ -1,6 +1,9 @@
 import Database from 'better-sqlite3'
 import path from 'path'
 import fs from 'fs'
+import teamsData from '../data/teams.json'
+import venuesData from '../data/venues.json'
+import fixturesData from '../data/fixtures.json'
 
 const dbPath = path.join(process.cwd(), 'data', 'worldcup.db')
 
@@ -93,6 +96,7 @@ function initializeDatabase() {
       match_date TEXT,
       match_time TEXT,
       group_name TEXT,
+      round TEXT,
       status TEXT DEFAULT 'scheduled',
       created_at TEXT DEFAULT CURRENT_TIMESTAMP,
       updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
@@ -119,8 +123,83 @@ function initializeDatabase() {
     )
   `)
 
+  // Create affiliate_links table
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS affiliate_links (
+      id TEXT PRIMARY KEY,
+      entity_type TEXT NOT NULL,
+      entity_id TEXT NOT NULL,
+      page_slug TEXT,
+      provider TEXT NOT NULL,
+      affiliate_url TEXT,
+      button_text TEXT DEFAULT 'Buy Now',
+      display_order INTEGER DEFAULT 0,
+      is_active INTEGER DEFAULT 1,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+      updated_at TEXT DEFAULT CURRENT_TIMESTAMP
+    )
+  `)
+
+  // Create seo_meta table
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS seo_meta (
+      id TEXT PRIMARY KEY,
+      page_url TEXT UNIQUE NOT NULL,
+      entity_type TEXT,
+      entity_id TEXT,
+      meta_title TEXT,
+      meta_description TEXT,
+      meta_keywords TEXT,
+      og_title TEXT,
+      og_description TEXT,
+      og_image TEXT,
+      canonical_url TEXT,
+      robots TEXT DEFAULT 'index, follow',
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+      updated_at TEXT DEFAULT CURRENT_TIMESTAMP
+    )
+  `)
+
+  // Run migrations
+  runMigrations()
+
   // Seed initial data
   seedData()
+}
+
+function runMigrations() {
+  if (!db) return
+
+  try {
+    // Check if competition_id column exists in teams table
+    const teamsColumns = db.prepare("PRAGMA table_info(teams)").all() as any[]
+    const hasCompetitionIdInTeams = teamsColumns.some(col => col.name === 'competition_id')
+
+    if (!hasCompetitionIdInTeams) {
+      console.log('Adding competition_id to teams table...')
+      db.exec('ALTER TABLE teams ADD COLUMN competition_id TEXT')
+      // Link all existing teams to FIFA World Cup 2026
+      db.exec("UPDATE teams SET competition_id = '1' WHERE competition_id IS NULL")
+    }
+
+    // Check if competition_id column exists in venues table
+    const venuesColumns = db.prepare("PRAGMA table_info(venues)").all() as any[]
+    const hasCompetitionIdInVenues = venuesColumns.some(col => col.name === 'competition_id')
+
+    if (!hasCompetitionIdInVenues) {
+      console.log('Adding competition_id to venues table...')
+      db.exec('ALTER TABLE venues ADD COLUMN competition_id TEXT')
+      // Link all existing venues to FIFA World Cup 2026
+      db.exec("UPDATE venues SET competition_id = '1' WHERE competition_id IS NULL")
+    }
+
+    // Update all existing fixtures to link to FIFA World Cup 2026 if not set
+    db.exec("UPDATE fixtures SET competition_id = '1' WHERE competition_id IS NULL OR competition_id = ''")
+
+    console.log('✅ Migrations completed successfully')
+  } catch (error) {
+    console.error('Migration error:', error)
+  }
 }
 
 function seedData() {
@@ -130,52 +209,52 @@ function seedData() {
   const teamsCount = db.prepare('SELECT COUNT(*) as count FROM teams').get() as { count: number }
   if (teamsCount.count > 0) return // Already seeded
 
-  // Seed teams
+  // Seed teams from JSON data
   const insertTeam = db.prepare(`
     INSERT INTO teams (id, slug, name, short_name, country_code, confederation, fifa_ranking, world_cup_titles, status, is_featured)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `)
 
-  const teams = [
-    ['1', 'usa-world-cup-2026-tickets', 'United States', 'USA', 'US', 'CONCACAF', 11, 0, 'published', 1],
-    ['2', 'mexico-world-cup-2026-tickets', 'Mexico', 'MEX', 'MX', 'CONCACAF', 15, 0, 'published', 1],
-    ['3', 'canada-world-cup-2026-tickets', 'Canada', 'CAN', 'CA', 'CONCACAF', 49, 0, 'published', 1],
-    ['4', 'brazil-world-cup-2026-tickets', 'Brazil', 'BRA', 'BR', 'CONMEBOL', 5, 5, 'published', 1],
-    ['5', 'argentina-world-cup-2026-tickets', 'Argentina', 'ARG', 'AR', 'CONMEBOL', 1, 3, 'published', 1],
-    ['6', 'france-world-cup-2026-tickets', 'France', 'FRA', 'FR', 'UEFA', 2, 2, 'published', 1],
-    ['7', 'england-world-cup-2026-tickets', 'England', 'ENG', 'GB', 'UEFA', 4, 1, 'published', 1],
-    ['8', 'spain-world-cup-2026-tickets', 'Spain', 'ESP', 'ES', 'UEFA', 3, 1, 'published', 1],
-    ['9', 'germany-world-cup-2026-tickets', 'Germany', 'GER', 'DE', 'UEFA', 12, 4, 'published', 1],
-  ]
+  teamsData.forEach(team => {
+    insertTeam.run(
+      team.id,
+      team.slug,
+      team.name,
+      team.short_name,
+      team.country_code,
+      team.confederation,
+      team.fifa_ranking,
+      team.world_cup_titles,
+      team.status,
+      team.is_featured ? 1 : 0
+    )
+  })
 
-  teams.forEach(team => insertTeam.run(...team))
+  console.log(`✅ Seeded ${teamsData.length} teams`)
 
-  // Seed venues
+  // Seed venues from JSON data
   const insertVenue = db.prepare(`
     INSERT INTO venues (id, slug, name, city, state, country, country_code, capacity, venue_type, status, is_world_cup_venue)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `)
 
-  const venues = [
-    ['1', 'sofi-stadium-world-cup-2026-tickets', 'SoFi Stadium', 'Los Angeles', 'California', 'United States', 'US', 70240, 'stadium', 'published', 1],
-    ['2', 'metlife-stadium-world-cup-2026-tickets', 'MetLife Stadium', 'East Rutherford', 'New Jersey', 'United States', 'US', 82500, 'stadium', 'published', 1],
-    ['3', 'att-stadium-world-cup-2026-tickets', 'AT&T Stadium', 'Arlington', 'Texas', 'United States', 'US', 80000, 'stadium', 'published', 1],
-    ['4', 'mercedes-benz-stadium-world-cup-2026-tickets', 'Mercedes-Benz Stadium', 'Atlanta', 'Georgia', 'United States', 'US', 71000, 'stadium', 'published', 1],
-    ['5', 'hard-rock-stadium-world-cup-2026-tickets', 'Hard Rock Stadium', 'Miami Gardens', 'Florida', 'United States', 'US', 65326, 'stadium', 'published', 1],
-    ['6', 'gillette-stadium-world-cup-2026-tickets', 'Gillette Stadium', 'Foxborough', 'Massachusetts', 'United States', 'US', 65878, 'stadium', 'published', 1],
-    ['7', 'arrowhead-stadium-world-cup-2026-tickets', 'Arrowhead Stadium', 'Kansas City', 'Missouri', 'United States', 'US', 76416, 'stadium', 'published', 1],
-    ['8', 'lincoln-financial-field-world-cup-2026-tickets', 'Lincoln Financial Field', 'Philadelphia', 'Pennsylvania', 'United States', 'US', 69796, 'stadium', 'published', 1],
-    ['9', 'levis-stadium-world-cup-2026-tickets', "Levi's Stadium", 'Santa Clara', 'California', 'United States', 'US', 68500, 'stadium', 'published', 1],
-    ['10', 'lumen-field-world-cup-2026-tickets', 'Lumen Field', 'Seattle', 'Washington', 'United States', 'US', 68740, 'stadium', 'published', 1],
-    ['11', 'nrg-stadium-world-cup-2026-tickets', 'NRG Stadium', 'Houston', 'Texas', 'United States', 'US', 72220, 'stadium', 'published', 1],
-    ['12', 'estadio-azteca-world-cup-2026-tickets', 'Estadio Azteca', 'Mexico City', null, 'Mexico', 'MX', 87523, 'stadium', 'published', 1],
-    ['13', 'estadio-akron-world-cup-2026-tickets', 'Estadio Akron', 'Guadalajara', null, 'Mexico', 'MX', 46232, 'stadium', 'published', 1],
-    ['14', 'estadio-bbva-world-cup-2026-tickets', 'Estadio BBVA', 'Monterrey', null, 'Mexico', 'MX', 53500, 'stadium', 'published', 1],
-    ['15', 'bmo-field-world-cup-2026-tickets', 'BMO Field', 'Toronto', 'Ontario', 'Canada', 'CA', 30000, 'stadium', 'published', 1],
-    ['16', 'bc-place-world-cup-2026-tickets', 'BC Place', 'Vancouver', 'British Columbia', 'Canada', 'CA', 54500, 'stadium', 'published', 1],
-  ]
+  venuesData.forEach(venue => {
+    insertVenue.run(
+      venue.id,
+      venue.slug,
+      venue.name,
+      venue.city,
+      venue.state,
+      venue.country,
+      venue.country_code,
+      venue.capacity,
+      venue.venue_type,
+      venue.status,
+      venue.is_world_cup_venue ? 1 : 0
+    )
+  })
 
-  venues.forEach(venue => insertVenue.run(...venue))
+  console.log(`✅ Seeded ${venuesData.length} venues`)
 
   // Seed competition
   db.prepare(`
@@ -183,15 +262,30 @@ function seedData() {
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `).run('1', 'fifa-world-cup-2026', 'FIFA World Cup 2026', 'football', 'world_cup', '2026-06-11', '2026-07-19', 'US,MX,CA', '2026', 'published', 1)
 
-  // Seed fixtures
+  // Seed fixtures from JSON data
   const insertFixture = db.prepare(`
-    INSERT INTO fixtures (id, slug, competition_id, home_team_id, venue_id, fixture_type, match_date, match_time, group_name, status)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO fixtures (id, slug, competition_id, home_team_id, away_team_id, venue_id, fixture_type, match_date, match_time, group_name, round, status)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `)
 
-  insertFixture.run('1', 'mexico-opening-match-world-cup-2026-tickets', '1', '2', '12', 'group_stage', '2026-06-11', '20:00:00', 'A', 'scheduled')
-  insertFixture.run('2', 'usa-group-match-1-world-cup-2026-tickets', '1', '1', '1', 'group_stage', '2026-06-12', '20:00:00', 'D', 'scheduled')
+  fixturesData.forEach(fixture => {
+    insertFixture.run(
+      fixture.id,
+      fixture.slug,
+      '1', // competition_id for FIFA World Cup 2026
+      fixture.home_team_id,
+      fixture.away_team_id,
+      fixture.venue_id,
+      fixture.fixture_type,
+      fixture.match_date,
+      fixture.match_time,
+      fixture.group_name,
+      fixture.round,
+      fixture.status
+    )
+  })
 
+  console.log(`✅ Seeded ${fixturesData.length} fixtures`)
   console.log('✅ Database seeded successfully!')
 }
 
