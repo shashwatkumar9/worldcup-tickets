@@ -9,7 +9,7 @@ created: "2026-01-23T00:00:00.000Z"
 lastModified: "2026-01-23T00:00:00.000Z"
 ---
 
-# USA World Cup 2026 Tickets: The Golden Generation's Moment of Destiny
+# USA World Cup 2026 Tickets
 
 In the 92-year history of the FIFA World Cup, no moment has carried more weight for American soccer than 2026. For the first time since 1994, the United States will host the world's greatest sporting event - but this time, they do so with the most talented squad in their history. Christian Pulisic, Weston McKennie, Gio Reyna, and company have spent their careers in Europe's top leagues, preparing for this defining moment on home soil. Secure your [FIFA World Cup 2026 Tickets](/fifa-world-cup-2026-tickets) now to witness history.
 

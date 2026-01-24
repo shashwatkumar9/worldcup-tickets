@@ -9,7 +9,7 @@ created: "2026-01-23T00:00:00.000Z"
 lastModified: "2026-01-23T00:00:00.000Z"
 ---
 
-# France World Cup 2026 Tickets: Les Bleus Seek Redemption
+# France World Cup 2026 Tickets
 
 France enters the 2026 FIFA World Cup carrying the pain of their 2022 Final defeat. Leading 2-0 and then 3-2 against [Argentina](/teams/argentina-world-cup-2026-tickets) in Qatar, Les Bleus watched Lionel Messi and La Albiceleste claim glory in the most dramatic Final in World Cup history. Kylian Mbappé scored a historic hat-trick in the Final - the first since Geoff Hurst in 1966 - yet finished on the losing side of a penalty shootout. That devastating loss fuels France's 2026 campaign: redemption, revenge, and reclaiming the throne. Secure your [FIFA World Cup 2026 Tickets](/fifa-world-cup-2026-tickets) to witness footballing excellence.
 

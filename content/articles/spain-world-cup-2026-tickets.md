@@ -8,7 +8,7 @@ date: "2026-01-24"
 image: "/images/teams/spain-world-cup-2026.jpg"
 ---
 
-# Spain World Cup 2026 Tickets: La Roja Returns as World's Best
+# Spain World Cup 2026 Tickets
 
 The **Spain World Cup 2026 Tickets** are among the most coveted in football as La Roja arrives in North America as the FIFA #1 ranked team. Spain's quest for a second World Cup title brings their mesmerizing tiki-taka style to 16 stadiums across the United States, Mexico, and Canada from June 11 to July 19, 2026.
 

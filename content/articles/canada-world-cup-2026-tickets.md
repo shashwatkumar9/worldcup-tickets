@@ -9,7 +9,7 @@ created: "2026-01-23T00:00:00.000Z"
 lastModified: "2026-01-23T00:00:00.000Z"
 ---
 
-# Canada World Cup 2026 Tickets: The Great White North's Moment of Glory
+# Canada World Cup 2026 Tickets
 
 For 36 years, Canadian soccer fans waited. From their last World Cup appearance in 1986 Mexico until the triumphant return in 2022 Qatar, an entire generation grew up without seeing Les Rouges on football's biggest stage. Now, in 2026, Canada doesn't just return to the World Cup - they co-host it alongside the [USA World Cup 2026 Tickets](/teams/usa-world-cup-2026-tickets) and [Mexico World Cup 2026 Tickets](/teams/mexico-world-cup-2026-tickets), with matches at [BMO Field in Toronto](/venues/bmo-field-world-cup-2026-tickets) and [BC Place in Vancouver](/venues/bc-place-world-cup-2026-tickets). Secure your [FIFA World Cup 2026 Tickets](/fifa-world-cup-2026-tickets) to witness history.
 

@@ -9,7 +9,7 @@ created: "2026-01-23T00:00:00.000Z"
 lastModified: "2026-01-23T00:00:00.000Z"
 ---
 
-# Brazil World Cup 2026 Tickets: A Seleção's Quest for La Sexta
+# Brazil World Cup 2026 Tickets
 
 Brazil enters the 2026 FIFA World Cup carrying the weight of history and expectation. The five-time world champions - winners in 1958, 1962, 1970, 1994, and 2002 - haven't lifted the trophy in 24 years, their longest drought since before the Pelé era. The 2022 Qatar quarter-final elimination to Croatia on penalties was a devastating blow. Now, under new management and with a blend of global superstars and emerging talent, A Seleção returns to North America seeking "La Sexta" - the sixth star that would cement Brazil's status as football's most dominant nation. Secure your [FIFA World Cup 2026 Tickets](/fifa-world-cup-2026-tickets) to witness the beautiful game at its finest.
 

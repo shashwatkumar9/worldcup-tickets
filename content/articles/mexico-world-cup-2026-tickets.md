@@ -9,7 +9,7 @@ created: "2026-01-23T00:00:00.000Z"
 lastModified: "2026-01-23T00:00:00.000Z"
 ---
 
-# Mexico World Cup 2026 Tickets: El Tri's Historic Third Hosting
+# Mexico World Cup 2026 Tickets
 
 History will be made on June 11, 2026, when Mexico opens the FIFA World Cup at the legendary [Estadio Azteca World Cup 2026 Tickets](/venues/estadio-azteca-world-cup-2026-tickets). For the first time ever, a nation will host or co-host the World Cup for a third time (1970, 1986, 2026), and El Tri will have the rare privilege of playing all group matches on home soil before passionate Mexican fans. Secure your [FIFA World Cup 2026 Tickets](/fifa-world-cup-2026-tickets) to witness this monumental occasion.
 
