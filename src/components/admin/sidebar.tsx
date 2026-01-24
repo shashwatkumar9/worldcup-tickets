@@ -110,9 +110,9 @@ export function AdminSidebar() {
   }, [])
 
   return (
-    <div className="flex h-screen w-64 flex-col bg-slate-900 text-white" suppressHydrationWarning>
+    <div className="flex h-screen w-64 flex-col bg-slate-900 text-white">
       {/* Logo */}
-      <div className="flex h-16 items-center gap-2 border-b border-slate-700 px-6" suppressHydrationWarning>
+      <div className="flex h-16 items-center gap-2 border-b border-slate-700 px-6">
         <Ticket className="h-8 w-8 text-blue-400" />
         <div>
           <span className="text-lg font-bold">WorldCup</span>
@@ -121,34 +121,52 @@ export function AdminSidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 overflow-y-auto py-4" suppressHydrationWarning>
-        <ul className="space-y-1 px-3" suppressHydrationWarning>
-          {navigation.map((item) => {
-            const isActive = mounted && (pathname === item.href ||
-              (item.href !== "/admin" && pathname.startsWith(item.href)))
-
-            return (
+      <nav className="flex-1 overflow-y-auto py-4">
+        {!mounted ? (
+          // Server-side render: show navigation without active states
+          <ul className="space-y-1 px-3">
+            {navigation.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className={cn(
-                    "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-                    isActive
-                      ? "bg-blue-600 text-white"
-                      : "text-slate-300 hover:bg-slate-800 hover:text-white"
-                  )}
+                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors text-slate-300 hover:bg-slate-800 hover:text-white"
                 >
                   <item.icon className="h-5 w-5" />
                   {item.name}
                 </Link>
               </li>
-            )
-          })}
-        </ul>
+            ))}
+          </ul>
+        ) : (
+          // Client-side render: show navigation with active states
+          <ul className="space-y-1 px-3">
+            {navigation.map((item) => {
+              const isActive = pathname === item.href ||
+                (item.href !== "/admin" && pathname.startsWith(item.href))
+
+              return (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                      isActive
+                        ? "bg-blue-600 text-white"
+                        : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                    )}
+                  >
+                    <item.icon className="h-5 w-5" />
+                    {item.name}
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        )}
       </nav>
 
       {/* Footer */}
-      <div className="border-t border-slate-700 p-4" suppressHydrationWarning>
+      <div className="border-t border-slate-700 p-4">
         <Link
           href="/"
           target="_blank"

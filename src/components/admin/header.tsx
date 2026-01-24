@@ -14,10 +14,12 @@ interface AdminHeaderProps {
 export function AdminHeader({ title }: AdminHeaderProps) {
   const [showUserMenu, setShowUserMenu] = useState(false)
   const [userEmail, setUserEmail] = useState<string | null>(null)
+  const [mounted, setMounted] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
 
   useEffect(() => {
+    setMounted(true)
     const getUser = async () => {
       const supabase = createClient()
       const { data: { user } } = await supabase.auth.getUser()
@@ -44,14 +46,14 @@ export function AdminHeader({ title }: AdminHeaderProps) {
   }
 
   return (
-    <header className="flex h-16 items-center justify-between border-b bg-white px-6" suppressHydrationWarning>
-      <div className="flex items-center gap-4" suppressHydrationWarning>
+    <header className="flex h-16 items-center justify-between border-b bg-white px-6">
+      <div className="flex items-center gap-4">
         {title && <h1 className="text-xl font-semibold text-slate-900">{title}</h1>}
       </div>
 
-      <div className="flex items-center gap-4" suppressHydrationWarning>
+      <div className="flex items-center gap-4">
         {/* Search */}
-        <div className="relative hidden md:block" suppressHydrationWarning>
+        <div className="relative hidden md:block">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
           <Input
             placeholder="Search..."
@@ -68,7 +70,7 @@ export function AdminHeader({ title }: AdminHeaderProps) {
         </Button>
 
         {/* User menu */}
-        <div className="relative" ref={menuRef} suppressHydrationWarning>
+        <div className="relative" ref={menuRef}>
           <Button
             variant="ghost"
             size="icon"
@@ -77,7 +79,7 @@ export function AdminHeader({ title }: AdminHeaderProps) {
             <User className="h-5 w-5 text-slate-600" />
           </Button>
 
-          {showUserMenu && (
+          {mounted && showUserMenu && (
             <div className="absolute right-0 top-full z-50 mt-2 w-56 rounded-lg border bg-white py-2 shadow-lg">
               {userEmail && (
                 <div className="border-b px-4 py-2">
