@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils/cn"
@@ -102,6 +103,11 @@ const navigation = [
 
 export function AdminSidebar() {
   const pathname = usePathname()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <div className="flex h-screen w-64 flex-col bg-slate-900 text-white" suppressHydrationWarning>
@@ -118,8 +124,8 @@ export function AdminSidebar() {
       <nav className="flex-1 overflow-y-auto py-4" suppressHydrationWarning>
         <ul className="space-y-1 px-3" suppressHydrationWarning>
           {navigation.map((item) => {
-            const isActive = pathname === item.href ||
-              (item.href !== "/admin" && pathname.startsWith(item.href))
+            const isActive = mounted && (pathname === item.href ||
+              (item.href !== "/admin" && pathname.startsWith(item.href)))
 
             return (
               <li key={item.name}>
