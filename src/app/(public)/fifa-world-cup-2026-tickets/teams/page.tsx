@@ -3,12 +3,12 @@ import Link from "next/link"
 import { Trophy, MapPin, Calendar, Users, Star, Globe } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "FIFA World Cup 2026 Teams Tickets | All 48 Qualified Teams",
-  description: "Secure FIFA World Cup 2026 Teams Tickets for all 48 participating nations. From USA, Mexico, Brazil, Argentina to all qualified teams. Official tickets available now.",
+  title: "FIFA World Cup 2026 Teams Tickets | 42 Qualified Teams",
+  description: "Secure FIFA World Cup 2026 Teams Tickets for all 42 qualified nations. From USA, Mexico, Brazil, Argentina to all confirmed teams. Official tickets available now.",
   keywords: "FIFA World Cup 2026 Teams Tickets, World Cup Teams Tickets, FIFA 2026 Teams, World Cup Qualified Teams, Team Tickets 2026",
   openGraph: {
-    title: "FIFA World Cup 2026 Teams Tickets | All 48 Qualified Teams",
-    description: "Get tickets for your favorite team at FIFA World Cup 2026. All 48 teams, all matches.",
+    title: "FIFA World Cup 2026 Teams Tickets | 42 Qualified Teams",
+    description: "Get tickets for your favorite team at FIFA World Cup 2026. 42 teams qualified, 6 playoff spots remaining.",
     type: "website",
   },
 }
@@ -98,7 +98,7 @@ export default function TeamsPage() {
               FIFA World Cup 2026 Teams Tickets
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100">
-              All {totalTeams} Qualified Teams | Your Complete Guide to Team Tickets
+              {totalTeams} Qualified Teams + 6 Playoff Spots | Your Complete Guide to Team Tickets
             </p>
             <div className="flex flex-wrap gap-4 justify-center text-sm md:text-base">
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
@@ -326,7 +326,7 @@ export default function TeamsPage() {
                 <div>
                   <h4 className="font-bold text-slate-900 mb-2">How many teams will participate in FIFA World Cup 2026?</h4>
                   <p className="text-slate-700">
-                    48 teams will compete in FIFA World Cup 2026, expanded from 32 teams in previous tournaments. This includes 42 confirmed qualifiers and 6 playoff spots.
+                    48 teams will compete in FIFA World Cup 2026, expanded from 32 teams in previous tournaments. As of January 2026, 42 teams have confirmed qualification, with 6 remaining spots to be determined through UEFA playoffs and inter-confederation playoffs in March 2026.
                   </p>
                 </div>
 
