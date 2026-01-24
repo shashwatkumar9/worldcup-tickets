@@ -56,7 +56,7 @@ export default function SenegalTicketsPage() {
                 <Badge className="bg-yellow-400 text-black">AFCON 2021 CHAMPIONS</Badge>
                 <Badge variant="outline" className="border-white text-white">GROUP I</Badge>
               </div>
-              <h1 className="text-4xl font-bold text-white">{teamInfo.name}</h1>
+              <h1 className="text-4xl font-bold text-white">Senegal World Cup 2026 Tickets</h1>
               <p className="text-xl text-slate-200">{teamInfo.nickname}</p>
             </div>
           </div>

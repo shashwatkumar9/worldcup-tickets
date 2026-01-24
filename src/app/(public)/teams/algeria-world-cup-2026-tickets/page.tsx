@@ -33,7 +33,7 @@ export default function AlgeriaTicketsPage() {
         <div className="container relative mx-auto px-4">
           <div className="mt-8 flex items-center gap-4">
             <span className="text-7xl">{teamInfo.flag}</span>
-            <div><Badge className="bg-green-600 text-white mb-2">2019 AFCON CHAMPIONS</Badge><h1 className="text-4xl font-bold text-slate-900">{teamInfo.name}</h1><p className="text-xl text-slate-700">{teamInfo.nickname}</p></div>
+            <div><Badge className="bg-green-600 text-white mb-2">2019 AFCON CHAMPIONS</Badge><h1 className="text-4xl font-bold text-slate-900">Algeria World Cup 2026 Tickets</h1><p className="text-xl text-slate-700">{teamInfo.nickname}</p></div>
           </div>
           <p className="mt-4 text-lg text-slate-800 max-w-2xl">Les Fennecs return! Led by Riyad Mahrez and AC Milan's Bennacer, Algeria bring pace, skill, and passionate fans to the World Cup.</p>
           <Button size="lg" className="mt-6 bg-green-600 hover:bg-green-700"><Ticket className="mr-2 h-5 w-5" />Buy Algeria Tickets</Button>

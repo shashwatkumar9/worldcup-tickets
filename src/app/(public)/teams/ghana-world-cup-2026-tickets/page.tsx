@@ -33,7 +33,7 @@ export default function GhanaTicketsPage() {
         <div className="container relative mx-auto px-4">
           <div className="mt-8 flex items-center gap-4">
             <span className="text-7xl">{teamInfo.flag}</span>
-            <div><Badge className="bg-yellow-400 text-black mb-2">GROUP L</Badge><h1 className="text-4xl font-bold text-white">{teamInfo.name}</h1><p className="text-xl text-slate-200">{teamInfo.nickname}</p></div>
+            <div><Badge className="bg-yellow-400 text-black mb-2">GROUP L</Badge><h1 className="text-4xl font-bold text-white">Ghana World Cup 2026 Tickets</h1><p className="text-xl text-slate-200">{teamInfo.nickname}</p></div>
           </div>
           <p className="mt-4 text-lg text-slate-100 max-w-2xl">The Black Stars! Mohammed Kudus and Thomas Partey lead a talented Ghana squad seeking to repeat their 2010 heroics.</p>
           <Button size="lg" className="mt-6 bg-yellow-400 text-black hover:bg-yellow-500"><Ticket className="mr-2 h-5 w-5" />Buy Ghana Tickets</Button>

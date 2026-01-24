@@ -33,7 +33,7 @@ export default function NewZealandTicketsPage() {
         <div className="container relative mx-auto px-4">
           <div className="mt-8 flex items-center gap-4">
             <span className="text-7xl">{teamInfo.flag}</span>
-            <div><Badge className="bg-black text-white mb-2">OFC CHAMPIONS</Badge><h1 className="text-4xl font-bold text-slate-900">{teamInfo.name}</h1><p className="text-xl text-slate-700">{teamInfo.nickname}</p></div>
+            <div><Badge className="bg-black text-white mb-2">OFC CHAMPIONS</Badge><h1 className="text-4xl font-bold text-slate-900">New Zealand World Cup 2026 Tickets</h1><p className="text-xl text-slate-700">{teamInfo.nickname}</p></div>
           </div>
           <p className="mt-4 text-lg text-slate-800 max-w-2xl">The All Whites return! Led by Premier League striker Chris Wood, New Zealand aims to build on their unbeaten 2010 World Cup campaign.</p>
           <Button size="lg" className="mt-6 bg-black hover:bg-slate-800"><Ticket className="mr-2 h-5 w-5" />Buy New Zealand Tickets</Button>

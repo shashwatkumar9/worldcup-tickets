@@ -33,7 +33,7 @@ export default function ScotlandTicketsPage() {
         <div className="container relative mx-auto px-4">
           <div className="mt-8 flex items-center gap-4">
             <span className="text-7xl">{teamInfo.flag}</span>
-            <div><Badge className="bg-blue-900 text-white mb-2">GROUP C</Badge><h1 className="text-4xl font-bold text-slate-900">{teamInfo.name}</h1><p className="text-xl text-slate-700">{teamInfo.nickname}</p></div>
+            <div><Badge className="bg-blue-900 text-white mb-2">GROUP C</Badge><h1 className="text-4xl font-bold text-slate-900">Scotland World Cup 2026 Tickets</h1><p className="text-xl text-slate-700">{teamInfo.nickname}</p></div>
           </div>
           <p className="mt-4 text-lg text-slate-800 max-w-2xl">The Tartan Army returns! Scotland&apos;s passionate fanbase will travel in huge numbers. Captain Andy Robertson leads a determined squad.</p>
           <Button size="lg" className="mt-6 bg-blue-900 hover:bg-blue-950"><Ticket className="mr-2 h-5 w-5" />Buy Scotland Tickets</Button>

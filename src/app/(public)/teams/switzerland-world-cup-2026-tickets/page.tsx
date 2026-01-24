@@ -33,7 +33,7 @@ export default function SwitzerlandTicketsPage() {
         <div className="container relative mx-auto px-4">
           <div className="mt-8 flex items-center gap-4">
             <span className="text-7xl">{teamInfo.flag}</span>
-            <div><Badge className="bg-red-600 text-white mb-2">GROUP B</Badge><h1 className="text-4xl font-bold text-slate-900">{teamInfo.name}</h1><p className="text-xl text-slate-700">{teamInfo.nickname}</p></div>
+            <div><Badge className="bg-red-600 text-white mb-2">GROUP B</Badge><h1 className="text-4xl font-bold text-slate-900">Switzerland World Cup 2026 Tickets</h1><p className="text-xl text-slate-700">{teamInfo.nickname}</p></div>
           </div>
           <p className="mt-4 text-lg text-slate-800 max-w-2xl">Consistent performers at major tournaments. Led by Granit Xhaka, Switzerland are always tough to beat and capable of upsets.</p>
           <Button size="lg" className="mt-6 bg-red-600 hover:bg-red-700"><Ticket className="mr-2 h-5 w-5" />Buy Switzerland Tickets</Button>

@@ -78,7 +78,7 @@ export default function BelgiumTicketsPage() {
               <div className="flex items-center gap-4">
                 <span className="text-7xl">{teamInfo.flag}</span>
                 <div>
-                  <h1 className="text-4xl font-bold md:text-5xl text-white">{teamInfo.name}</h1>
+                  <h1 className="text-4xl font-bold md:text-5xl text-white">Belgium World Cup 2026 Tickets</h1>
                   <p className="text-xl text-slate-200 mt-1">{teamInfo.nickname}</p>
                 </div>
               </div>

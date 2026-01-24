@@ -125,7 +125,7 @@ export default function ArgentinaTicketsPage() {
                 <span className="text-7xl">{teamInfo.flag}</span>
                 <div>
                   <h1 className="text-4xl font-bold md:text-5xl text-slate-900">
-                    {teamInfo.name}
+                    Argentina World Cup 2026 Tickets
                   </h1>
                   <p className="text-xl text-slate-600 mt-1">{teamInfo.nickname}</p>
                 </div>

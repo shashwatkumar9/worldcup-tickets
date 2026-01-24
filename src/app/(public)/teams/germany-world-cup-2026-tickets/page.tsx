@@ -124,7 +124,7 @@ export default function GermanyTicketsPage() {
                 <span className="text-7xl">{teamInfo.flag}</span>
                 <div>
                   <h1 className="text-4xl font-bold md:text-5xl text-white">
-                    {teamInfo.name}
+                    Germany World Cup 2026 Tickets
                   </h1>
                   <p className="text-xl text-slate-100 mt-1">{teamInfo.nickname}</p>
                 </div>

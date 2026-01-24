@@ -33,7 +33,7 @@ export default function JordanTicketsPage() {
         <div className="container relative mx-auto px-4">
           <div className="mt-8 flex items-center gap-4">
             <span className="text-7xl">{teamInfo.flag}</span>
-            <div><Badge className="bg-red-600 text-white mb-2">WORLD CUP DEBUT</Badge><h1 className="text-4xl font-bold text-white">{teamInfo.name}</h1><p className="text-xl text-slate-200">{teamInfo.nickname}</p></div>
+            <div><Badge className="bg-red-600 text-white mb-2">WORLD CUP DEBUT</Badge><h1 className="text-4xl font-bold text-white">Jordan World Cup 2026 Tickets</h1><p className="text-xl text-slate-200">{teamInfo.nickname}</p></div>
           </div>
           <p className="mt-4 text-lg text-slate-100 max-w-2xl">Historic achievement! The 2024 Asian Cup runners-up qualify for their first ever World Cup. Al Nashama captures the hearts of a nation.</p>
           <Button size="lg" className="mt-6 bg-red-600 hover:bg-red-700"><Ticket className="mr-2 h-5 w-5" />Buy Jordan Tickets</Button>

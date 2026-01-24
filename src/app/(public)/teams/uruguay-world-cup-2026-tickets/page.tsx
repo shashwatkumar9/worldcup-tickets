@@ -58,7 +58,7 @@ export default function UruguayTicketsPage() {
                 <Badge className="bg-yellow-500 text-black">2X WORLD CHAMPIONS</Badge>
                 <Badge variant="outline" className="border-sky-700">GROUP H</Badge>
               </div>
-              <h1 className="text-4xl font-bold text-slate-900">{teamInfo.name}</h1>
+              <h1 className="text-4xl font-bold text-slate-900">Uruguay World Cup 2026 Tickets</h1>
               <p className="text-xl text-slate-700">{teamInfo.nickname}</p>
             </div>
           </div>

@@ -33,7 +33,7 @@ export default function CapeVerdeTicketsPage() {
         <div className="container relative mx-auto px-4">
           <div className="mt-8 flex items-center gap-4">
             <span className="text-7xl">{teamInfo.flag}</span>
-            <div><Badge className="bg-blue-700 text-white mb-2">WORLD CUP DEBUT</Badge><h1 className="text-4xl font-bold text-slate-900">{teamInfo.name}</h1><p className="text-xl text-slate-700">{teamInfo.nickname}</p></div>
+            <div><Badge className="bg-blue-700 text-white mb-2">WORLD CUP DEBUT</Badge><h1 className="text-4xl font-bold text-slate-900">Cape Verde World Cup 2026 Tickets</h1><p className="text-xl text-slate-700">{teamInfo.nickname}</p></div>
           </div>
           <p className="mt-4 text-lg text-slate-800 max-w-2xl">The ultimate underdog story! Cape Verde, an island nation of just 600,000 people, qualifies for their first World Cup. Football dreams do come true.</p>
           <Button size="lg" className="mt-6 bg-blue-700 hover:bg-blue-800"><Ticket className="mr-2 h-5 w-5" />Buy Cape Verde Tickets</Button>

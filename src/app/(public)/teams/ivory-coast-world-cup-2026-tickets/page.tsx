@@ -33,7 +33,7 @@ export default function IvoryCoastTicketsPage() {
         <div className="container relative mx-auto px-4">
           <div className="mt-8 flex items-center gap-4">
             <span className="text-7xl">{teamInfo.flag}</span>
-            <div><Badge className="bg-orange-500 text-white mb-2">2024 AFCON CHAMPIONS</Badge><h1 className="text-4xl font-bold text-slate-900">{teamInfo.name}</h1><p className="text-xl text-slate-700">{teamInfo.nickname}</p></div>
+            <div><Badge className="bg-orange-500 text-white mb-2">2024 AFCON CHAMPIONS</Badge><h1 className="text-4xl font-bold text-slate-900">Ivory Coast World Cup 2026 Tickets</h1><p className="text-xl text-slate-700">{teamInfo.nickname}</p></div>
           </div>
           <p className="mt-4 text-lg text-slate-800 max-w-2xl">African Champions! Les Éléphants won AFCON 2024 on home soil with an incredible comeback. Sébastien Haller leads a talented squad.</p>
           <Button size="lg" className="mt-6 bg-orange-500 hover:bg-orange-600"><Ticket className="mr-2 h-5 w-5" />Buy Ivory Coast Tickets</Button>

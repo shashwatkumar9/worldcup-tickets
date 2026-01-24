@@ -33,7 +33,7 @@ export default function CuracaoTicketsPage() {
         <div className="container relative mx-auto px-4">
           <div className="mt-8 flex items-center gap-4">
             <span className="text-7xl">{teamInfo.flag}</span>
-            <div><Badge className="bg-blue-600 text-white mb-2">WORLD CUP DEBUT</Badge><h1 className="text-4xl font-bold text-white">{teamInfo.name}</h1><p className="text-xl text-slate-200">{teamInfo.nickname}</p></div>
+            <div><Badge className="bg-blue-600 text-white mb-2">WORLD CUP DEBUT</Badge><h1 className="text-4xl font-bold text-white">Curacao World Cup 2026 Tickets</h1><p className="text-xl text-slate-200">{teamInfo.nickname}</p></div>
           </div>
           <p className="mt-4 text-lg text-slate-100 max-w-2xl">Historic moment! Curacao makes their first ever World Cup appearance. The tiny Caribbean island with a population of 150,000 writes football history.</p>
           <Button size="lg" className="mt-6 bg-blue-600 hover:bg-blue-700"><Ticket className="mr-2 h-5 w-5" />Buy Curacao Tickets</Button>

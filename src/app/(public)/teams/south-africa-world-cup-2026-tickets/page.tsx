@@ -33,7 +33,7 @@ export default function SouthAfricaTicketsPage() {
         <div className="container relative mx-auto px-4">
           <div className="mt-8 flex items-center gap-4">
             <span className="text-7xl">{teamInfo.flag}</span>
-            <div><Badge className="bg-green-600 text-white mb-2">2010 HOSTS RETURN</Badge><h1 className="text-4xl font-bold text-white">{teamInfo.name}</h1><p className="text-xl text-slate-200">{teamInfo.nickname}</p></div>
+            <div><Badge className="bg-green-600 text-white mb-2">2010 HOSTS RETURN</Badge><h1 className="text-4xl font-bold text-white">South Africa World Cup 2026 Tickets</h1><p className="text-xl text-slate-200">{teamInfo.nickname}</p></div>
           </div>
           <p className="mt-4 text-lg text-slate-100 max-w-2xl">Bafana Bafana are back! The 2010 World Cup hosts qualify for their first tournament since then. Captain Ronwen Williams leads from the back.</p>
           <Button size="lg" className="mt-6 bg-green-600 hover:bg-green-700"><Ticket className="mr-2 h-5 w-5" />Buy South Africa Tickets</Button>

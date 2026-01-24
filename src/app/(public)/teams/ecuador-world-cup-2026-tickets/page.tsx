@@ -38,7 +38,7 @@ export default function EcuadorTicketsPage() {
             <span className="text-7xl">{teamInfo.flag}</span>
             <div>
               <Badge className="bg-yellow-400 text-black mb-2">GROUP E</Badge>
-              <h1 className="text-4xl font-bold text-white">{teamInfo.name}</h1>
+              <h1 className="text-4xl font-bold text-white">Ecuador World Cup 2026 Tickets</h1>
               <p className="text-xl text-slate-200">{teamInfo.nickname}</p>
             </div>
           </div>

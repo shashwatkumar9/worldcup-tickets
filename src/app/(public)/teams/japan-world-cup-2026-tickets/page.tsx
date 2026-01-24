@@ -57,7 +57,7 @@ export default function JapanTicketsPage() {
             <span className="text-7xl">{teamInfo.flag}</span>
             <div>
               <Badge className="bg-red-600 text-white mb-2">GROUP F</Badge>
-              <h1 className="text-4xl font-bold text-slate-900">{teamInfo.name}</h1>
+              <h1 className="text-4xl font-bold text-slate-900">Japan World Cup 2026 Tickets</h1>
               <p className="text-xl text-slate-700">{teamInfo.nickname}</p>
             </div>
           </div>

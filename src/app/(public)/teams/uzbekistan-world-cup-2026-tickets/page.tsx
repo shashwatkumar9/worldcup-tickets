@@ -33,7 +33,7 @@ export default function UzbekistanTicketsPage() {
         <div className="container relative mx-auto px-4">
           <div className="mt-8 flex items-center gap-4">
             <span className="text-7xl">{teamInfo.flag}</span>
-            <div><Badge className="bg-blue-600 text-white mb-2">WORLD CUP DEBUT</Badge><h1 className="text-4xl font-bold text-slate-900">{teamInfo.name}</h1><p className="text-xl text-slate-700">{teamInfo.nickname}</p></div>
+            <div><Badge className="bg-blue-600 text-white mb-2">WORLD CUP DEBUT</Badge><h1 className="text-4xl font-bold text-slate-900">Uzbekistan World Cup 2026 Tickets</h1><p className="text-xl text-slate-700">{teamInfo.nickname}</p></div>
           </div>
           <p className="mt-4 text-lg text-slate-800 max-w-2xl">Historic first! The White Wolves finally reach the World Cup after decades of near misses. Led by Roma striker Eldor Shomurodov.</p>
           <Button size="lg" className="mt-6 bg-blue-600 hover:bg-blue-700"><Ticket className="mr-2 h-5 w-5" />Buy Uzbekistan Tickets</Button>

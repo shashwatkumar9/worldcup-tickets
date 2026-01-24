@@ -33,7 +33,7 @@ export default function HaitiTicketsPage() {
         <div className="container relative mx-auto px-4">
           <div className="mt-8 flex items-center gap-4">
             <span className="text-7xl">{teamInfo.flag}</span>
-            <div><Badge className="bg-red-600 text-white mb-2">GROUP C</Badge><h1 className="text-4xl font-bold text-white">{teamInfo.name}</h1><p className="text-xl text-slate-200">{teamInfo.nickname}</p></div>
+            <div><Badge className="bg-red-600 text-white mb-2">GROUP C</Badge><h1 className="text-4xl font-bold text-white">Haiti World Cup 2026 Tickets</h1><p className="text-xl text-slate-200">{teamInfo.nickname}</p></div>
           </div>
           <p className="mt-4 text-lg text-slate-100 max-w-2xl">Historic qualification! Haiti returns to the World Cup for the first time since 1974. Les Grenadiers will face Brazil in an epic matchup.</p>
           <Button size="lg" className="mt-6 bg-red-600 hover:bg-red-700"><Ticket className="mr-2 h-5 w-5" />Buy Haiti Tickets</Button>

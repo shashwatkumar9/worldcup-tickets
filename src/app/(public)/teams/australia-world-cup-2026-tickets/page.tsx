@@ -45,7 +45,7 @@ export default function AustraliaTicketsPage() {
             <span className="text-7xl">{teamInfo.flag}</span>
             <div>
               <Badge className="bg-yellow-400 text-black mb-2">GROUP D</Badge>
-              <h1 className="text-4xl font-bold text-white">{teamInfo.name}</h1>
+              <h1 className="text-4xl font-bold text-white">Australia World Cup 2026 Tickets</h1>
               <p className="text-xl text-slate-200">{teamInfo.nickname}</p>
             </div>
           </div>

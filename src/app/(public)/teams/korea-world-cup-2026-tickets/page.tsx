@@ -43,7 +43,7 @@ export default function KoreaTicketsPage() {
                 <Badge className="bg-red-600 text-white">2002 FOURTH PLACE</Badge>
                 <Badge variant="outline">GROUP A</Badge>
               </div>
-              <h1 className="text-4xl font-bold text-slate-900">{teamInfo.name}</h1>
+              <h1 className="text-4xl font-bold text-slate-900">Korea World Cup 2026 Tickets</h1>
               <p className="text-xl text-slate-700">{teamInfo.nickname}</p>
             </div>
           </div>

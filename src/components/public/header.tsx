@@ -19,7 +19,7 @@ import {
   Calendar,
 } from "lucide-react"
 
-// All 46 teams organized in 6 columns for mega menu
+// All 42 qualified teams organized in 6 columns for mega menu (7 teams per column)
 const allTeamsOrganized = [
   [
     { name: "USA World Cup 2026 Tickets", flag: "🇺🇸", slug: "usa-world-cup-2026-tickets" },
@@ -29,52 +29,51 @@ const allTeamsOrganized = [
     { name: "Haiti World Cup 2026 Tickets", flag: "🇭🇹", slug: "haiti-world-cup-2026-tickets" },
     { name: "Curacao World Cup 2026 Tickets", flag: "🇨🇼", slug: "curacao-world-cup-2026-tickets" },
     { name: "Argentina World Cup 2026 Tickets", flag: "🇦🇷", slug: "argentina-world-cup-2026-tickets" },
-    { name: "Brazil World Cup 2026 Tickets", flag: "🇧🇷", slug: "brazil-world-cup-2026-tickets" },
   ],
   [
+    { name: "Brazil World Cup 2026 Tickets", flag: "🇧🇷", slug: "brazil-world-cup-2026-tickets" },
     { name: "Spain World Cup 2026 Tickets", flag: "🇪🇸", slug: "spain-world-cup-2026-tickets" },
     { name: "France World Cup 2026 Tickets", flag: "🇫🇷", slug: "france-world-cup-2026-tickets" },
     { name: "England World Cup 2026 Tickets", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", slug: "england-world-cup-2026-tickets" },
     { name: "Germany World Cup 2026 Tickets", flag: "🇩🇪", slug: "germany-world-cup-2026-tickets" },
     { name: "Portugal World Cup 2026 Tickets", flag: "🇵🇹", slug: "portugal-world-cup-2026-tickets" },
     { name: "Netherlands World Cup 2026 Tickets", flag: "🇳🇱", slug: "netherlands-world-cup-2026-tickets" },
-    { name: "Belgium World Cup 2026 Tickets", flag: "🇧🇪", slug: "belgium-world-cup-2026-tickets" },
-    { name: "Croatia World Cup 2026 Tickets", flag: "🇭🇷", slug: "croatia-world-cup-2026-tickets" },
   ],
   [
+    { name: "Belgium World Cup 2026 Tickets", flag: "🇧🇪", slug: "belgium-world-cup-2026-tickets" },
+    { name: "Croatia World Cup 2026 Tickets", flag: "🇭🇷", slug: "croatia-world-cup-2026-tickets" },
     { name: "Scotland World Cup 2026 Tickets", flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿", slug: "scotland-world-cup-2026-tickets" },
     { name: "Switzerland World Cup 2026 Tickets", flag: "🇨🇭", slug: "switzerland-world-cup-2026-tickets" },
     { name: "Norway World Cup 2026 Tickets", flag: "🇳🇴", slug: "norway-world-cup-2026-tickets" },
     { name: "Austria World Cup 2026 Tickets", flag: "🇦🇹", slug: "austria-world-cup-2026-tickets" },
     { name: "Colombia World Cup 2026 Tickets", flag: "🇨🇴", slug: "colombia-world-cup-2026-tickets" },
+  ],
+  [
     { name: "Uruguay World Cup 2026 Tickets", flag: "🇺🇾", slug: "uruguay-world-cup-2026-tickets" },
     { name: "Ecuador World Cup 2026 Tickets", flag: "🇪🇨", slug: "ecuador-world-cup-2026-tickets" },
     { name: "Paraguay World Cup 2026 Tickets", flag: "🇵🇾", slug: "paraguay-world-cup-2026-tickets" },
-  ],
-  [
     { name: "Japan World Cup 2026 Tickets", flag: "🇯🇵", slug: "japan-world-cup-2026-tickets" },
     { name: "Australia World Cup 2026 Tickets", flag: "🇦🇺", slug: "australia-world-cup-2026-tickets" },
     { name: "Korea World Cup 2026 Tickets", flag: "🇰🇷", slug: "korea-world-cup-2026-tickets" },
     { name: "Saudi Arabia World Cup 2026 Tickets", flag: "🇸🇦", slug: "saudi-arabia-world-cup-2026-tickets" },
+  ],
+  [
     { name: "Iran World Cup 2026 Tickets", flag: "🇮🇷", slug: "iran-world-cup-2026-tickets" },
     { name: "Qatar World Cup 2026 Tickets", flag: "🇶🇦", slug: "qatar-world-cup-2026-tickets" },
     { name: "Uzbekistan World Cup 2026 Tickets", flag: "🇺🇿", slug: "uzbekistan-world-cup-2026-tickets" },
     { name: "Jordan World Cup 2026 Tickets", flag: "🇯🇴", slug: "jordan-world-cup-2026-tickets" },
-  ],
-  [
     { name: "Morocco World Cup 2026 Tickets", flag: "🇲🇦", slug: "morocco-world-cup-2026-tickets" },
     { name: "Senegal World Cup 2026 Tickets", flag: "🇸🇳", slug: "senegal-world-cup-2026-tickets" },
     { name: "Egypt World Cup 2026 Tickets", flag: "🇪🇬", slug: "egypt-world-cup-2026-tickets" },
+  ],
+  [
     { name: "Ivory Coast World Cup 2026 Tickets", flag: "🇨🇮", slug: "ivory-coast-world-cup-2026-tickets" },
     { name: "Algeria World Cup 2026 Tickets", flag: "🇩🇿", slug: "algeria-world-cup-2026-tickets" },
     { name: "South Africa World Cup 2026 Tickets", flag: "🇿🇦", slug: "south-africa-world-cup-2026-tickets" },
     { name: "Ghana World Cup 2026 Tickets", flag: "🇬🇭", slug: "ghana-world-cup-2026-tickets" },
     { name: "Tunisia World Cup 2026 Tickets", flag: "🇹🇳", slug: "tunisia-world-cup-2026-tickets" },
-  ],
-  [
     { name: "Cape Verde World Cup 2026 Tickets", flag: "🇨🇻", slug: "cape-verde-world-cup-2026-tickets" },
     { name: "New Zealand World Cup 2026 Tickets", flag: "🇳🇿", slug: "new-zealand-world-cup-2026-tickets" },
-    { name: "Canada World Cup 2026 Tickets", flag: "🇨🇦", slug: "canada-world-cup-2026-tickets" },
   ],
 ]
 
