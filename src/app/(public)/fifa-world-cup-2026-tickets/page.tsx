@@ -17,30 +17,34 @@ import {
   Flag,
   Plane,
 } from "lucide-react"
+import { getCompetitionWithContentBySlug } from "@/lib/db/competition-content"
 
-export const metadata: Metadata = {
-  title: "FIFA World Cup 2026 Tickets | Full Schedule - All 104 Matches",
-  description:
-    "Buy FIFA World Cup 2026 tickets. Complete schedule of all 104 matches with dates, times (CET), and venues. 48-team World Cup hosted by USA, Mexico & Canada.",
-  keywords: [
-    "FIFA World Cup 2026 tickets",
-    "World Cup 2026 schedule",
-    "World Cup 2026 fixtures",
-    "USA World Cup tickets",
-    "Mexico World Cup tickets",
-    "Canada World Cup tickets",
-    "World Cup Final tickets",
-  ],
+export async function generateMetadata(): Promise<Metadata> {
+  const data = getCompetitionWithContentBySlug("fifa-world-cup-2026-tickets")
+
+  if (!data) {
+    return {
+      title: "FIFA World Cup 2026 Tickets",
+      description: "Buy FIFA World Cup 2026 tickets",
+    }
+  }
+
+  const { competition } = data
+
+  return {
+    title: competition.meta_title || "FIFA World Cup 2026 Tickets | Full Schedule - All 104 Matches",
+    description: competition.meta_description || "Buy FIFA World Cup 2026 tickets. Complete schedule of all 104 matches with dates, times (CET), and venues. 48-team World Cup hosted by USA, Mexico & Canada.",
+    keywords: competition.meta_keywords?.split(", ") || [
+      "FIFA World Cup 2026 tickets",
+      "World Cup 2026 schedule",
+      "World Cup 2026 fixtures",
+      "USA World Cup tickets",
+      "Mexico World Cup tickets",
+      "Canada World Cup tickets",
+      "World Cup Final tickets",
+    ],
+  }
 }
-
-const tournamentStats = [
-  { label: "Teams", value: "48", icon: Users },
-  { label: "Matches", value: "104", icon: Trophy },
-  { label: "Venues", value: "16", icon: MapPin },
-  { label: "Host Countries", value: "3", icon: Globe },
-  { label: "Duration", value: "39 Days", icon: Calendar },
-  { label: "Cities", value: "16", icon: Flag },
-]
 
 // Complete Group Stage Schedule - 72 Matches
 const groupStageMatches = [
@@ -232,14 +236,58 @@ const groups = [
   { name: "Group L", teams: ["England", "Ghana", "Panama", "Croatia"], host: "East" },
 ]
 
-const affiliateLinks = [
-  { partner: "Ticketmaster", price_from: 95, logo: "🎫", url: "#", rating: "Official Partner" },
-  { partner: "StubHub", price_from: 120, logo: "🎟️", url: "#", rating: "Verified Reseller" },
-  { partner: "Viagogo", price_from: 110, logo: "🎫", url: "#", rating: "Global Marketplace" },
-  { partner: "SeatGeek", price_from: 105, logo: "🎟️", url: "#", rating: "Best Value" },
-]
-
 export default function WorldCup2026Page() {
+  // Fetch competition data from database
+  const data = getCompetitionWithContentBySlug("fifa-world-cup-2026-tickets")
+
+  // Extract content sections
+  const heroSection = data?.content.find(c => c.section_key === 'hero_section')
+  const statsSection = data?.content.find(c => c.section_key === 'tournament_stats')
+  const seoSection = data?.content.find(c => c.section_key === 'seo_article')
+
+  // Parse JSON content
+  const heroData = heroSection?.content_json ? JSON.parse(heroSection.content_json) : null
+  const statsData = statsSection?.content_json ? JSON.parse(statsSection.content_json) : null
+
+  // Extract Quick Links section
+  const quickLinksSection = data?.content.find(c => c.section_key === 'sidebar_quick_links')
+  const quickLinksData = quickLinksSection?.content_json ? JSON.parse(quickLinksSection.content_json) : null
+
+  // Extract Tournament Info section
+  const tournamentInfoSection = data?.content.find(c => c.section_key === 'sidebar_tournament_info')
+  const tournamentInfoData = tournamentInfoSection?.content_json ? JSON.parse(tournamentInfoSection.content_json) : null
+
+  // Extract Venues section
+  const venuesSection = data?.content.find(c => c.section_key === 'host_venues')
+  const venuesData = venuesSection?.content_json ? JSON.parse(venuesSection.content_json) : null
+
+  // Extract City Guides section
+  const cityGuidesSection = data?.content.find(c => c.section_key === 'travel_guides')
+  const cityGuidesData = cityGuidesSection?.content_json ? JSON.parse(cityGuidesSection.content_json) : null
+
+  // Extract Groups section
+  const groupsSection = data?.content.find(c => c.section_key === 'tournament_groups')
+  const groupsData = groupsSection?.content_json ? JSON.parse(groupsSection.content_json) : null
+
+  // Fallback affiliate links if none in database
+  const defaultAffiliateLinks = [
+    { partner: "Ticketmaster", price_from: 95, logo: "🎫", url: "#", rating: "Official Partner" },
+    { partner: "StubHub", price_from: 120, logo: "🎟️", url: "#", rating: "Verified Reseller" },
+    { partner: "Viagogo", price_from: 110, logo: "🎫", url: "#", rating: "Global Marketplace" },
+    { partner: "SeatGeek", price_from: 105, logo: "🎟️", url: "#", rating: "Best Value" },
+  ]
+
+  // Use database affiliate links if available, otherwise fallback
+  const affiliateLinks = data?.affiliateLinks && data.affiliateLinks.length > 0
+    ? data.affiliateLinks.map((link, index) => ({
+        partner: link.provider,
+        price_from: 95 + (index * 10), // Calculate price based on display order
+        logo: index % 2 === 0 ? "🎫" : "🎟️",
+        url: link.affiliate_url || "#",
+        rating: link.button_text || "Buy Now"
+      }))
+    : defaultAffiliateLinks
+
   return (
     <div>
       {/* Hero Section */}
@@ -255,33 +303,51 @@ export default function WorldCup2026Page() {
           </div>
 
           <div className="mt-8 max-w-4xl">
-            <div className="flex items-center gap-4 mb-4">
-              <Badge className="bg-yellow-500 text-black">HISTORIC 48-TEAM FORMAT</Badge>
-              <Badge variant="destructive">HOT</Badge>
-            </div>
+            {heroData && (
+              <>
+                <div className="flex items-center gap-4 mb-4">
+                  {heroData.badges?.map((badge: any, index: number) => (
+                    <Badge
+                      key={index}
+                      className={
+                        badge.color === 'yellow' ? 'bg-yellow-500 text-black' :
+                        badge.color === 'red' ? 'bg-red-600 text-white' :
+                        badge.color === 'blue' ? 'bg-blue-600 text-white' :
+                        badge.color === 'green' ? 'bg-green-600 text-white' :
+                        'bg-slate-600 text-white'
+                      }
+                      variant={badge.color === 'red' ? 'destructive' : 'default'}
+                    >
+                      {badge.text}
+                    </Badge>
+                  )) || <Badge className="bg-yellow-500 text-black">{heroData.badge}</Badge>}
+                </div>
 
-            <h1 className="text-4xl font-bold md:text-6xl">
-              FIFA World Cup 2026™ Tickets
-            </h1>
+                <h1 className="text-4xl font-bold md:text-6xl">
+                  {heroData.title}
+                </h1>
 
-            <p className="mt-2 text-2xl text-slate-200">
-              🇺🇸 United States • 🇲🇽 Mexico • 🇨🇦 Canada
-            </p>
+                <p className="mt-2 text-2xl text-slate-200">
+                  {heroData.subtitle}
+                </p>
 
-            <p className="mt-4 text-lg text-slate-300 max-w-2xl">
-              The first World Cup with 48 teams. 104 matches across 16 cities in 3 countries.
-              Experience football history from June 11 to July 19, 2026.
-            </p>
+                <p className="mt-4 text-lg text-slate-300 max-w-2xl">
+                  {heroData.description}
+                </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white">
-                <Ticket className="mr-2 h-5 w-5" />
-                Buy Tickets from $95
-              </Button>
-              <Button size="lg" className="bg-white/20 border-2 border-white text-white hover:bg-white hover:text-slate-900 backdrop-blur-sm" asChild>
-                <a href="#full-schedule">View Full Schedule</a>
-              </Button>
-            </div>
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white" asChild>
+                    <a href={heroData.primaryButton.url}>
+                      <Ticket className="mr-2 h-5 w-5" />
+                      {heroData.primaryButton.text}
+                    </a>
+                  </Button>
+                  <Button size="lg" className="bg-white/20 border-2 border-white text-white hover:bg-white hover:text-slate-900 backdrop-blur-sm" asChild>
+                    <a href={heroData.secondaryButton.url}>{heroData.secondaryButton.text}</a>
+                  </Button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>
@@ -289,15 +355,25 @@ export default function WorldCup2026Page() {
       {/* Stats Bar */}
       <section className="bg-slate-900 py-6">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {tournamentStats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <stat.icon className="h-6 w-6 mx-auto text-yellow-400 mb-2" />
-                <p className="text-2xl font-bold text-white">{stat.value}</p>
-                <p className="text-sm text-slate-400">{stat.label}</p>
-              </div>
-            ))}
-          </div>
+          {statsData && (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {statsData.stats.map((stat: any) => {
+                const IconComponent = stat.icon === "Users" ? Users :
+                                     stat.icon === "Trophy" ? Trophy :
+                                     stat.icon === "MapPin" ? MapPin :
+                                     stat.icon === "Globe" ? Globe :
+                                     stat.icon === "Calendar" ? Calendar :
+                                     stat.icon === "Flag" ? Flag : Users
+                return (
+                  <div key={stat.label} className="text-center">
+                    <IconComponent className="h-6 w-6 mx-auto text-yellow-400 mb-2" />
+                    <p className="text-2xl font-bold text-white">{stat.value}</p>
+                    <p className="text-sm text-slate-400">{stat.label}</p>
+                  </div>
+                )
+              })}
+            </div>
+          )}
         </div>
       </section>
 
@@ -648,7 +724,7 @@ export default function WorldCup2026Page() {
               </CardHeader>
               <CardContent>
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                  {groups.map((group) => (
+                  {(groupsData?.groups || groups).map((group: any) => (
                     <Link
                       key={group.name}
                       href={`/fixtures/${group.name.toLowerCase().replace(' ', '-')}-world-cup-2026-tickets`}
@@ -707,12 +783,12 @@ export default function WorldCup2026Page() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <MapPin className="h-5 w-5 text-blue-600" />
-                  All 16 Host Venues
+                  {venuesSection?.section_title || "All 16 Host Venues"}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid gap-3 md:grid-cols-2">
-                  {[
+                  {(venuesData?.venues || [
                     { name: "MetLife Stadium", city: "New York/NJ", highlight: "FINAL", slug: "metlife-stadium-world-cup-2026-tickets" },
                     { name: "SoFi Stadium", city: "Los Angeles", highlight: "QF", slug: "sofi-stadium-world-cup-2026-tickets" },
                     { name: "AT&T Stadium", city: "Dallas", highlight: "SF", slug: "att-stadium-world-cup-2026-tickets" },
@@ -729,7 +805,7 @@ export default function WorldCup2026Page() {
                     { name: "Estadio BBVA", city: "Monterrey", highlight: "Group", slug: "estadio-bbva-world-cup-2026-tickets" },
                     { name: "BMO Field", city: "Toronto", highlight: "R32", slug: "bmo-field-world-cup-2026-tickets" },
                     { name: "BC Place", city: "Vancouver", highlight: "R32", slug: "bc-place-world-cup-2026-tickets" },
-                  ].map((venue) => (
+                  ]).map((venue: any) => (
                     <Link key={venue.slug} href={`/venues/${venue.slug}`}>
                       <div className="flex items-center justify-between p-3 rounded-lg border hover:bg-slate-50 transition-colors">
                         <div className="flex items-center gap-3">
@@ -750,12 +826,26 @@ export default function WorldCup2026Page() {
             </Card>
 
             {/* SEO Article Content Section */}
-            <Card id="complete-guide">
-              <CardHeader>
-                <CardTitle className="text-3xl">Complete Guide to FIFA World Cup 2026 Tickets</CardTitle>
-                <p className="text-slate-600 mt-2">Everything you need to know about the biggest tournament in football history</p>
-              </CardHeader>
-              <CardContent className="prose prose-slate max-w-none">
+            {seoSection && (
+              <Card id="complete-guide">
+                <CardHeader>
+                  <CardTitle className="text-3xl">{seoSection.section_title}</CardTitle>
+                  <p className="text-slate-600 mt-2">Everything you need to know about the biggest tournament in football history</p>
+                </CardHeader>
+                <CardContent className="prose prose-slate max-w-none">
+                  <div dangerouslySetInnerHTML={{ __html: seoSection.content_text || '' }} />
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Legacy SEO Content - keeping for reference */}
+            {!seoSection && (
+              <Card id="complete-guide">
+                <CardHeader>
+                  <CardTitle className="text-3xl">Complete Guide to FIFA World Cup 2026 Tickets</CardTitle>
+                  <p className="text-slate-600 mt-2">Everything you need to know about the biggest tournament in football history</p>
+                </CardHeader>
+                <CardContent className="prose prose-slate max-w-none">
 
                 {/* Introduction */}
                 <div className="mb-8">
@@ -1099,6 +1189,7 @@ export default function WorldCup2026Page() {
 
               </CardContent>
             </Card>
+            )}
           </div>
 
           {/* Sidebar */}
@@ -1147,10 +1238,19 @@ export default function WorldCup2026Page() {
             {/* Quick Links */}
             <Card>
               <CardHeader>
-                <CardTitle>Quick Links</CardTitle>
+                <CardTitle>{quickLinksSection?.section_title || "Quick Links"}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                {[
+                {quickLinksData?.links?.map((link: any) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="flex items-center justify-between p-2 rounded hover:bg-slate-50"
+                  >
+                    <span className="text-sm font-medium">{link.label}</span>
+                    <ChevronRight className="h-4 w-4 text-slate-400" />
+                  </Link>
+                )) || [
                   { label: "Group A Tickets", href: "/fixtures/group-a-world-cup-2026-tickets" },
                   { label: "Round of 32 Tickets", href: "/fixtures/round-of-32-world-cup-2026-tickets" },
                   { label: "Round of 16 Tickets", href: "/fixtures/round-of-16-world-cup-2026-tickets" },
@@ -1174,30 +1274,49 @@ export default function WorldCup2026Page() {
             {/* Event Info */}
             <Card>
               <CardHeader>
-                <CardTitle>Tournament Info</CardTitle>
+                <CardTitle>{tournamentInfoSection?.section_title || "Tournament Info"}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <Calendar className="h-5 w-5 text-slate-400" />
-                  <div>
-                    <p className="text-sm text-slate-500">Dates</p>
-                    <p className="font-medium">June 11 - July 19, 2026</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-5 w-5 text-slate-400" />
-                  <div>
-                    <p className="text-sm text-slate-500">Final Venue</p>
-                    <p className="font-medium">MetLife Stadium, New Jersey</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Trophy className="h-5 w-5 text-slate-400" />
-                  <div>
-                    <p className="text-sm text-slate-500">Defending Champions</p>
-                    <p className="font-medium">🇦🇷 Argentina</p>
-                  </div>
-                </div>
+                {tournamentInfoData?.info?.map((item: any, index: number) => {
+                  const IconComponent = item.icon === "Calendar" ? Calendar :
+                                       item.icon === "MapPin" ? MapPin :
+                                       item.icon === "Trophy" ? Trophy :
+                                       item.icon === "Users" ? Users :
+                                       item.icon === "Globe" ? Globe : Calendar
+                  return (
+                    <div key={index} className="flex items-center gap-3">
+                      <IconComponent className="h-5 w-5 text-slate-400" />
+                      <div>
+                        <p className="text-sm text-slate-500">{item.label}</p>
+                        <p className="font-medium">{item.value}</p>
+                      </div>
+                    </div>
+                  )
+                }) || (
+                  <>
+                    <div className="flex items-center gap-3">
+                      <Calendar className="h-5 w-5 text-slate-400" />
+                      <div>
+                        <p className="text-sm text-slate-500">Dates</p>
+                        <p className="font-medium">June 11 - July 19, 2026</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <MapPin className="h-5 w-5 text-slate-400" />
+                      <div>
+                        <p className="text-sm text-slate-500">Final Venue</p>
+                        <p className="font-medium">MetLife Stadium, New Jersey</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Trophy className="h-5 w-5 text-slate-400" />
+                      <div>
+                        <p className="text-sm text-slate-500">Defending Champions</p>
+                        <p className="font-medium">🇦🇷 Argentina</p>
+                      </div>
+                    </div>
+                  </>
+                )}
                 <div className="flex items-center gap-3">
                   <Clock className="h-5 w-5 text-slate-400" />
                   <div>

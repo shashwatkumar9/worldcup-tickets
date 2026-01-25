@@ -4,9 +4,32 @@ import { getDb } from '@/lib/db/sqlite'
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { action, table, values, filters, orderBy, limit, single, where } = body
+    const { action, table, values, filters, orderBy, limit, single, where, query, params } = body
 
     const db = getDb()
+
+    // Support raw SQL queries
+    if (query) {
+      const stmt = db.prepare(query)
+
+      // Determine if query returns data (SELECT) or not (INSERT, UPDATE, DELETE)
+      const queryType = query.trim().toUpperCase().split(/\s+/)[0]
+
+      if (queryType === 'SELECT') {
+        const results = params ? stmt.all(...params) : stmt.all()
+        return NextResponse.json({ results, error: null })
+      } else {
+        // INSERT, UPDATE, DELETE
+        const result = params ? stmt.run(...params) : stmt.run()
+        return NextResponse.json({
+          results: [{
+            changes: result.changes,
+            lastInsertRowid: result.lastInsertRowid
+          }],
+          error: null
+        })
+      }
+    }
 
     switch (action) {
       case 'select': {

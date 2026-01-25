@@ -29,6 +29,7 @@ export function CompetitionSelector() {
                   <button
                     onClick={() => setShowDropdown(!showDropdown)}
                     className="flex items-center gap-2 text-lg font-semibold text-slate-900 hover:text-blue-600"
+                    suppressHydrationWarning
                   >
                     {selectedCompetition?.name || "Select Competition"}
                     <ChevronDown className="h-4 w-4" />
@@ -46,6 +47,7 @@ export function CompetitionSelector() {
                                 ? "bg-blue-50 text-blue-900"
                                 : "hover:bg-slate-50"
                             }`}
+                            suppressHydrationWarning
                           >
                             <Trophy
                               className={`mt-0.5 h-5 w-5 shrink-0 ${

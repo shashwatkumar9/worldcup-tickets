@@ -95,11 +95,12 @@ export function AdminNavbar() {
             <button
               onClick={() => handleNavigation("/admin")}
               className="flex items-center gap-2"
+              suppressHydrationWarning
             >
               <Trophy className="h-8 w-8 text-blue-600" />
               <div className="hidden sm:block">
-                <div className="text-lg font-bold text-slate-900">Sports CMS</div>
-                <div className="text-xs text-slate-500">Admin Panel</div>
+                <div className="text-lg font-bold text-slate-900">WCT Admin</div>
+                <div className="text-xs text-slate-500">World Cup Tickets</div>
               </div>
             </button>
 
@@ -118,6 +119,7 @@ export function AdminNavbar() {
                           ? "bg-blue-50 text-blue-600"
                           : "text-slate-700 hover:bg-slate-50"
                       }`}
+                      suppressHydrationWarning
                     >
                       <Icon className="h-4 w-4" />
                       {section.title}
@@ -137,6 +139,7 @@ export function AdminNavbar() {
                           ? "bg-blue-50 text-blue-600"
                           : "text-slate-700 hover:bg-slate-50"
                       }`}
+                      suppressHydrationWarning
                     >
                       <Icon className="h-4 w-4" />
                       {section.title}
@@ -161,6 +164,7 @@ export function AdminNavbar() {
                                   ? "bg-blue-50 text-blue-600"
                                   : "text-slate-700 hover:bg-slate-50"
                               }`}
+                              suppressHydrationWarning
                             >
                               <ItemIcon className="h-4 w-4" />
                               {item.label}
@@ -181,6 +185,7 @@ export function AdminNavbar() {
             <button
               onClick={() => window.open("/", "_blank")}
               className="hidden items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 sm:flex"
+              suppressHydrationWarning
             >
               <Home className="h-4 w-4" />
               <span>View Site</span>
@@ -190,12 +195,13 @@ export function AdminNavbar() {
             <button
               onClick={() => handleNavigation("/admin/settings")}
               className="hidden rounded-lg p-2 text-slate-700 hover:bg-slate-50 sm:block"
+              suppressHydrationWarning
             >
               <Settings className="h-5 w-5" />
             </button>
 
             {/* Logout */}
-            <button className="hidden rounded-lg p-2 text-slate-700 hover:bg-slate-50 sm:block">
+            <button className="hidden rounded-lg p-2 text-slate-700 hover:bg-slate-50 sm:block" suppressHydrationWarning>
               <LogOut className="h-5 w-5" />
             </button>
 
@@ -203,6 +209,7 @@ export function AdminNavbar() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="rounded-lg p-2 text-slate-700 hover:bg-slate-50 md:hidden"
+              suppressHydrationWarning
             >
               {mobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -231,6 +238,7 @@ export function AdminNavbar() {
                         ? "bg-blue-50 text-blue-600"
                         : "text-slate-700 hover:bg-slate-50"
                     }`}
+                    suppressHydrationWarning
                   >
                     <Icon className="h-5 w-5" />
                     {section.title}
@@ -257,6 +265,7 @@ export function AdminNavbar() {
                             ? "bg-blue-50 text-blue-600"
                             : "text-slate-700 hover:bg-slate-50"
                         }`}
+                        suppressHydrationWarning
                       >
                         <ItemIcon className="h-4 w-4" />
                         {item.label}

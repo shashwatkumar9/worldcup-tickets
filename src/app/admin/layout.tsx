@@ -4,6 +4,7 @@ import { AdminNavbar } from "@/components/admin/navbar"
 import { CompetitionSelector } from "@/components/admin/competition-selector"
 import { CompetitionProvider } from "@/contexts/competition-context"
 import { SessionProvider } from "next-auth/react"
+import { Toaster } from "@/components/ui/toaster"
 
 export default function AdminLayout({
   children,
@@ -19,6 +20,7 @@ export default function AdminLayout({
           <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             {children}
           </main>
+          <Toaster />
         </div>
       </CompetitionProvider>
     </SessionProvider>

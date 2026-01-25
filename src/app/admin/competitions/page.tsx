@@ -128,7 +128,7 @@ export default function CompetitionsPage() {
           <Card
             key={competition.id}
             className="cursor-pointer transition-all hover:shadow-lg"
-            onClick={() => router.push(`/admin/competitions/${competition.id}`)}
+            onClick={() => router.push(`/admin/competitions/${competition.slug}`)}
           >
             <CardHeader>
               <div className="flex items-start justify-between">
