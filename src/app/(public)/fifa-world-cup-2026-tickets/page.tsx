@@ -732,7 +732,7 @@ export default function WorldCup2026Page() {
                       <div className="rounded-lg border p-4 hover:bg-slate-50 transition-colors">
                         <h4 className="font-semibold text-blue-600">{group.name}</h4>
                         <ul className="mt-2 space-y-1">
-                          {group.teams.map((team, idx) => (
+                          {group.teams.map((team: string, idx: number) => (
                             <li key={idx} className={`text-sm ${team === "TBD" ? "text-slate-400 italic" : "text-slate-700"}`}>
                               {team}
                             </li>
