@@ -59,11 +59,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   }
 
-  // Fixtures
-  const { data: fixtures } = await supabase
+  // Fixtures - get all and filter in JS since .in() is not available
+  const { data: allFixtures } = await supabase
     .from("fixtures")
-    .select("slug, updated_at")
-    .in("status", ["scheduled", "live"])
+    .select("slug, updated_at, status")
+
+  const fixtures = allFixtures?.filter((f: any) => f.status === "scheduled" || f.status === "live")
 
   if (fixtures) {
     fixtures.forEach((fixture: any) => {
