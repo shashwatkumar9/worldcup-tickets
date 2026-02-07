@@ -20,7 +20,8 @@ import {
   FileText,
   Link as LinkIcon,
   Trophy,
-  Sparkles
+  Sparkles,
+  MapPin
 } from "lucide-react"
 import { useToast } from "@/components/ui/use-toast"
 
