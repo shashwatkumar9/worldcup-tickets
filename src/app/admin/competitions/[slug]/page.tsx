@@ -698,7 +698,7 @@ export default function CompetitionEditPage() {
     }
   }
 
-  const deleteAffiliateLink = async (id: number) => {
+  const deleteAffiliateLink = async (id: string) => {
     if (!confirm("Are you sure you want to delete this affiliate link?")) return
 
     try {
