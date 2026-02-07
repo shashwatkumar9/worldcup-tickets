@@ -73,7 +73,7 @@ export default function GroupsPage() {
   const { selectedCompetition } = useCompetition()
 
   // Determine which groups to display based on selected competition
-  const groups = selectedCompetition?.id === 1 ? worldCup2026Groups : otherCompetitionGroups
+  const groups = selectedCompetition?.id === "1" ? worldCup2026Groups : otherCompetitionGroups
   const totalGroups = groups.length
   const totalTeams = groups.reduce((sum, group) => sum + group.teams.length, 0)
   const teamsPerGroup = groups[0]?.teams.length || 4

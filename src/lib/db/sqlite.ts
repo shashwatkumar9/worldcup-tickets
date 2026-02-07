@@ -396,6 +396,7 @@ export function createQueryBuilder(tableName: string) {
   }
 
   // Make it thenable
+  // @ts-ignore - Adding then property for promise-like behavior
   builder.then = function(resolve: any) {
     return builder.execute().then(resolve)
   }
